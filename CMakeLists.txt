@@ -16,28 +16,28 @@ set(GLFW_BUILD_TESTS OFF CACHE BOOL "Build the GLFW test programs")
 set(GLFW_BUILD_DOCS OFF CACHE BOOL "Build the GLFW documentation")
 set(GLFW_INSTALL OFF CACHE BOOL "Generate installation target")
 
-if(UNIX AND NOT APPLE)
-    # Try to find dependencies
-    find_package(PkgConfig)
-    if(PKG_CONFIG_FOUND)
-        pkg_check_modules(WAYLAND QUIET wayland-client wayland-protocols xkbcommon)
-    endif()
-    
-    find_package(X11 QUIET)
-    
-    if(NOT WAYLAND_FOUND OR NOT X11_FOUND)
-        message(WARNING "\n\nMissing Linux dependencies for GLFW and OpenGL!\n"
-            "Please install required packages for your distribution:\n"
-            "  Debian/Ubuntu/Mint:\n"
-            "    sudo apt update\n"
-            "    sudo apt install -y libwayland-dev libxkbcommon-dev xorg-dev libgl1-mesa-dev\n"
-            "  Fedora/RHEL/CentOS:\n"
-            "    sudo dnf install -y wayland-devel libxkbcommon-devel libXcursor-devel libXi-devel libXinerama-devel libXrandr-devel mesa-libGL-devel"
-            "  FreeBSD:\n"
-            "    sudo pkg install -y wayland libxkbcommon evdev-proto xorgproto mesa-libs"
-            "Or run './install_deps.sh' if available.\n")
-    endif()
-endif()
+# if(UNIX AND NOT APPLE)
+#     # Try to find dependencies
+#     find_package(PkgConfig)
+#     if(PKG_CONFIG_FOUND)
+#         pkg_check_modules(WAYLAND QUIET wayland-client wayland-protocols xkbcommon)
+#     endif()
+#     
+#     find_package(X11 QUIET)
+#     
+#     if(NOT WAYLAND_FOUND OR NOT X11_FOUND)
+#         message(WARNING "\n\nMissing Linux dependencies for GLFW and OpenGL!\n"
+#             "Please install required packages for your distribution:\n"
+#             "  Debian/Ubuntu/Mint:\n"
+#             "    sudo apt update\n"
+#             "    sudo apt install -y libwayland-dev libxkbcommon-dev xorg-dev libgl1-mesa-dev\n"
+#             "  Fedora/RHEL/CentOS:\n"
+#             "    sudo dnf install -y wayland-devel libxkbcommon-devel libXcursor-devel libXi-devel libXinerama-devel libXrandr-devel mesa-libGL-devel"
+#             "  FreeBSD:\n"
+#             "    sudo pkg install -y wayland libxkbcommon evdev-proto xorgproto mesa-libs"
+#             "Or run './install_deps.sh' if available.\n")
+#     endif()
+# endif()
 
 # Include sub-projects.
 add_subdirectory ("dep/glfw-3.4")
