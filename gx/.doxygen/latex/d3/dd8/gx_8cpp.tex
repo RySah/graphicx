@@ -1,0 +1,455 @@
+\doxysection{gx.\+cpp File Reference}
+\hypertarget{gx_8cpp}{}\label{gx_8cpp}\index{gx.cpp@{gx.cpp}}
+{\ttfamily \#include "{}gx/gx.\+h"{}}\newline
+{\ttfamily \#include $<$cstdint$>$}\newline
+{\ttfamily \#include $<$cstdlib$>$}\newline
+{\ttfamily \#include $<$cstring$>$}\newline
+{\ttfamily \#include $<$filesystem$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$GLFW/glfw3.\+h$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{gx_8h_a68763dfc6bb00b662abc7f535ebd08e1}{GXResource\+Status}} \mbox{\hyperlink{gx_8cpp_ad96ea45654882a93cc3949e46c52adf0}{operator\texorpdfstring{$\vert$}{|}}} (\mbox{\hyperlink{gx_8h_a68763dfc6bb00b662abc7f535ebd08e1}{GXResource\+Status}} lhs, \mbox{\hyperlink{gx_8h_a68763dfc6bb00b662abc7f535ebd08e1}{GXResource\+Status}} rhs)
+\item 
+static \mbox{\hyperlink{gx_8h_a68763dfc6bb00b662abc7f535ebd08e1}{GXResource\+Status}} \& \mbox{\hyperlink{gx_8cpp_a37a1aff46115ea8e2645de7925bb5b84}{operator\texorpdfstring{$\vert$}{|}=}} (\mbox{\hyperlink{gx_8h_a68763dfc6bb00b662abc7f535ebd08e1}{GXResource\+Status}} \&lhs, \mbox{\hyperlink{gx_8h_a68763dfc6bb00b662abc7f535ebd08e1}{GXResource\+Status}} rhs)
+\item 
+static \mbox{\hyperlink{gx_8h_a68763dfc6bb00b662abc7f535ebd08e1}{GXResource\+Status}} \mbox{\hyperlink{gx_8cpp_a816c5358724825237274c78764ea6056}{operator\&}} (\mbox{\hyperlink{gx_8h_a68763dfc6bb00b662abc7f535ebd08e1}{GXResource\+Status}} lhs, \mbox{\hyperlink{gx_8h_a68763dfc6bb00b662abc7f535ebd08e1}{GXResource\+Status}} rhs)
+\item 
+static \mbox{\hyperlink{gx_8h_a68763dfc6bb00b662abc7f535ebd08e1}{GXResource\+Status}} \& \mbox{\hyperlink{gx_8cpp_a1307f422d25352875dcfd3f1494fb715}{operator\&=}} (\mbox{\hyperlink{gx_8h_a68763dfc6bb00b662abc7f535ebd08e1}{GXResource\+Status}} \&lhs, \mbox{\hyperlink{gx_8h_a68763dfc6bb00b662abc7f535ebd08e1}{GXResource\+Status}} rhs)
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{gx_8cpp_a6a96a1574c45c3c92db36ae621d1c01b}{gx\+Init}} ()
+\begin{DoxyCompactList}\small\item\em Initializes GX library and dependencies (GLFW). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{gx_8cpp_a6866c6c7ebec5d428312044ebb69e09f}{gx\+Terminate}} ()
+\begin{DoxyCompactList}\small\item\em Terminates GX library and cleans up resources. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{gx_8cpp_a8140bf23ef718afb015601f6a0d9fc79}{gx\+Add\+Keyboard\+Callback}} (\mbox{\hyperlink{gx_8h_ae21f5494d0a63e4159607dda10f81ef8}{GXKeyboard\+Callback}} cb)
+\begin{DoxyCompactList}\small\item\em Registers a keyboard event callback. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{gx_8cpp_a6b32abc8f590072c657118464d4abd74}{gx\+Clear\+Keyboard\+Callback}} ()
+\begin{DoxyCompactList}\small\item\em Clears all keyboard callbacks. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{gx_8cpp_a2e98a4fe44a3a8747a969d12d18c086b}{gx\+Init\+Dynamic\+Pointer\+Array}} (\mbox{\hyperlink{struct_g_x_dynamic_pointer_array}{GXDynamic\+Pointer\+Array}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_a3309789fc188587d666cda5ece79cf82}{a}}, \mbox{\hyperlink{gx_8h_a654d5b7b8a558cfa629d71f0021aa6a5}{GXDynamic\+Pointer\+Array\+Int}} init\+\_\+size, \mbox{\hyperlink{gx_8h_a654d5b7b8a558cfa629d71f0021aa6a5}{GXDynamic\+Pointer\+Array\+Int}} element\+\_\+size)
+\begin{DoxyCompactList}\small\item\em Initializes a dynamic pointer array. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{gx_8cpp_aee3db62dc5cdc65034e812536cb4bbea}{gx\+Destroy\+Dynamic\+Pointer\+Array}} (\mbox{\hyperlink{struct_g_x_dynamic_pointer_array}{GXDynamic\+Pointer\+Array}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_a3309789fc188587d666cda5ece79cf82}{a}})
+\begin{DoxyCompactList}\small\item\em Releases array memory and resets structure. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{gx_8cpp_a7ad537ef816e6e88a7a87200d23c2129}{gx\+Dynamic\+Pointer\+Array\+Append}} (\mbox{\hyperlink{struct_g_x_dynamic_pointer_array}{GXDynamic\+Pointer\+Array}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_a3309789fc188587d666cda5ece79cf82}{a}}, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \texorpdfstring{$\ast$}{*}element)
+\begin{DoxyCompactList}\small\item\em Appends a deep/complete copy of a element to the array. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{gx_8cpp_a6b0d1c52ae3830808dc28baee81385dd}{gx\+Dynamic\+Pointer\+Array\+Store}} (\mbox{\hyperlink{struct_g_x_dynamic_pointer_array}{GXDynamic\+Pointer\+Array}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_a3309789fc188587d666cda5ece79cf82}{a}}, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \texorpdfstring{$\ast$}{*}mem)
+\item 
+bool \mbox{\hyperlink{gx_8cpp_afe4a42d5a24ce566e3e6c91e67e5ab99}{gx\+Dynamic\+Pointer\+Array\+Clear}} (\mbox{\hyperlink{struct_g_x_dynamic_pointer_array}{GXDynamic\+Pointer\+Array}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_a3309789fc188587d666cda5ece79cf82}{a}})
+\item 
+bool \mbox{\hyperlink{gx_8cpp_aff55a30a9dcfd81184f899d59d0c214d}{gx\+Dynamic\+Pointer\+Array\+Insert}} (\mbox{\hyperlink{struct_g_x_dynamic_pointer_array}{GXDynamic\+Pointer\+Array}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_a3309789fc188587d666cda5ece79cf82}{a}}, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \texorpdfstring{$\ast$}{*}element, \mbox{\hyperlink{gx_8h_a0c451fb72d0d5205d6ed8f2663896c6d}{GXDynamic\+Pointer\+Array\+Index}} \mbox{\hyperlink{glad_8h_a6468fe3bfff24d7d939eb21863b88268}{index}})
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{gx_8cpp_a79360e07b4c7598512a9d10be476acfc}{gx\+Dynamic\+Pointer\+Array\+Unsafe\+Get}} (\mbox{\hyperlink{struct_g_x_dynamic_pointer_array}{GXDynamic\+Pointer\+Array}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_a3309789fc188587d666cda5ece79cf82}{a}}, \mbox{\hyperlink{gx_8h_a0c451fb72d0d5205d6ed8f2663896c6d}{GXDynamic\+Pointer\+Array\+Index}} \mbox{\hyperlink{glad_8h_a6468fe3bfff24d7d939eb21863b88268}{index}})
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{gx_8cpp_a7a64534fdba5d0569d1e570837f70639}{gx\+Dynamic\+Pointer\+Array\+Get}} (\mbox{\hyperlink{struct_g_x_dynamic_pointer_array}{GXDynamic\+Pointer\+Array}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_a3309789fc188587d666cda5ece79cf82}{a}}, \mbox{\hyperlink{gx_8h_a0c451fb72d0d5205d6ed8f2663896c6d}{GXDynamic\+Pointer\+Array\+Index}} \mbox{\hyperlink{glad_8h_a6468fe3bfff24d7d939eb21863b88268}{index}})
+\item 
+bool \mbox{\hyperlink{gx_8cpp_a080649cfa61e20c1811f7154ccc57a43}{gx\+Dynamic\+Pointer\+Array\+Unsafe\+Set}} (\mbox{\hyperlink{struct_g_x_dynamic_pointer_array}{GXDynamic\+Pointer\+Array}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_a3309789fc188587d666cda5ece79cf82}{a}}, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \texorpdfstring{$\ast$}{*}element, \mbox{\hyperlink{gx_8h_a0c451fb72d0d5205d6ed8f2663896c6d}{GXDynamic\+Pointer\+Array\+Index}} \mbox{\hyperlink{glad_8h_a6468fe3bfff24d7d939eb21863b88268}{index}})
+\item 
+bool \mbox{\hyperlink{gx_8cpp_a45b2584dc4fbf4d00d11177bfcd5e6e1}{gx\+Dynamic\+Pointer\+Array\+Set}} (\mbox{\hyperlink{struct_g_x_dynamic_pointer_array}{GXDynamic\+Pointer\+Array}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_a3309789fc188587d666cda5ece79cf82}{a}}, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \texorpdfstring{$\ast$}{*}element, \mbox{\hyperlink{gx_8h_a0c451fb72d0d5205d6ed8f2663896c6d}{GXDynamic\+Pointer\+Array\+Index}} \mbox{\hyperlink{glad_8h_a6468fe3bfff24d7d939eb21863b88268}{index}})
+\item 
+bool \mbox{\hyperlink{gx_8cpp_acf9632bdfc4a624ab16f3267a6cfbbff}{gx\+Dynamic\+Pointer\+Array\+Unordered\+Remove\+At}} (\mbox{\hyperlink{struct_g_x_dynamic_pointer_array}{GXDynamic\+Pointer\+Array}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_a3309789fc188587d666cda5ece79cf82}{a}}, \mbox{\hyperlink{gx_8h_a0c451fb72d0d5205d6ed8f2663896c6d}{GXDynamic\+Pointer\+Array\+Index}} \mbox{\hyperlink{glad_8h_a6468fe3bfff24d7d939eb21863b88268}{index}})
+\item 
+bool \mbox{\hyperlink{gx_8cpp_a9756679798e40e12ce76bba681d2131c}{gx\+Dynamic\+Pointer\+Array\+Ordered\+Remove\+At}} (\mbox{\hyperlink{struct_g_x_dynamic_pointer_array}{GXDynamic\+Pointer\+Array}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_a3309789fc188587d666cda5ece79cf82}{a}}, \mbox{\hyperlink{gx_8h_a0c451fb72d0d5205d6ed8f2663896c6d}{GXDynamic\+Pointer\+Array\+Index}} \mbox{\hyperlink{glad_8h_a6468fe3bfff24d7d939eb21863b88268}{index}})
+\item 
+bool \mbox{\hyperlink{gx_8cpp_ad5a171d5c3bd0ade5193a66a7b8c771c}{gx\+Dynamic\+Pointer\+Array\+Unordered\+Remove}} (\mbox{\hyperlink{struct_g_x_dynamic_pointer_array}{GXDynamic\+Pointer\+Array}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_a3309789fc188587d666cda5ece79cf82}{a}}, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_a10a82eabcb59d2fcd74acee063775f90}{v}})
+\item 
+bool \mbox{\hyperlink{gx_8cpp_a2d2d7e8d69cfa639aa80ef05ab4f7e30}{gx\+Dynamic\+Pointer\+Array\+Ordered\+Remove}} (\mbox{\hyperlink{struct_g_x_dynamic_pointer_array}{GXDynamic\+Pointer\+Array}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_a3309789fc188587d666cda5ece79cf82}{a}}, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_a10a82eabcb59d2fcd74acee063775f90}{v}})
+\item 
+bool \mbox{\hyperlink{gx_8cpp_a84f6e69e8db872b4a27f4b006a104d8a}{gx\+Dynamic\+Pointer\+Array\+Shrink}} (\mbox{\hyperlink{struct_g_x_dynamic_pointer_array}{GXDynamic\+Pointer\+Array}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_a3309789fc188587d666cda5ece79cf82}{a}})
+\item 
+\mbox{\hyperlink{gx_8h_a654d5b7b8a558cfa629d71f0021aa6a5}{GXDynamic\+Pointer\+Array\+Int}} \mbox{\hyperlink{gx_8cpp_a5dc358236b56f7edff636e33c4cdcaaa}{gx\+Dynamic\+Pointer\+Array\+Length}} (\mbox{\hyperlink{struct_g_x_dynamic_pointer_array}{GXDynamic\+Pointer\+Array}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_a3309789fc188587d666cda5ece79cf82}{a}})
+\item 
+\mbox{\hyperlink{gx_8h_a654d5b7b8a558cfa629d71f0021aa6a5}{GXDynamic\+Pointer\+Array\+Int}} \mbox{\hyperlink{gx_8cpp_a08b2246908e8d643c457c478421fe2a4}{gx\+Dynamic\+Pointer\+Array\+Capacity}} (\mbox{\hyperlink{struct_g_x_dynamic_pointer_array}{GXDynamic\+Pointer\+Array}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_a3309789fc188587d666cda5ece79cf82}{a}})
+\item 
+bool \mbox{\hyperlink{gx_8cpp_a1b8cc70cbb7a5a7ba297ae9eec086d2b}{gx\+Dynamic\+Pointer\+Array\+For}} (\mbox{\hyperlink{struct_g_x_dynamic_pointer_array}{GXDynamic\+Pointer\+Array}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_a3309789fc188587d666cda5ece79cf82}{a}}, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}args, \mbox{\hyperlink{gx_8h_a0c451fb72d0d5205d6ed8f2663896c6d}{GXDynamic\+Pointer\+Array\+Index}} start\+\_\+inclusive, \mbox{\hyperlink{gx_8h_a0c451fb72d0d5205d6ed8f2663896c6d}{GXDynamic\+Pointer\+Array\+Index}} end\+\_\+exclusive, \mbox{\hyperlink{gx_8h_ab2a8d3adb0422677d39d9f488d7bb334}{GXDynamic\+Array\+Element\+Handler}} handler)
+\item 
+bool \mbox{\hyperlink{gx_8cpp_a74bfbf98e1de25e7d60c6877ebe6804d}{gx\+Dynamic\+Pointer\+Array\+Foreach}} (\mbox{\hyperlink{struct_g_x_dynamic_pointer_array}{GXDynamic\+Pointer\+Array}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_a3309789fc188587d666cda5ece79cf82}{a}}, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}args, \mbox{\hyperlink{gx_8h_ab2a8d3adb0422677d39d9f488d7bb334}{GXDynamic\+Array\+Element\+Handler}} handler)
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{gx_8cpp_a982378df3a58ebc754e238f548f6d947}{gx\+Destroy\+Application}} (\mbox{\hyperlink{struct_g_x_application}{GXApplication}} \texorpdfstring{$\ast$}{*}application)
+\begin{DoxyCompactList}\small\item\em Releases application resources. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_g_x_application}{GXApplication}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{gx_8cpp_afc7f563785198dd63cec3036190814bf}{gx\+Create\+Application}} (\mbox{\hyperlink{gx_8h_a87d336541f9413db24108524a42c0dfb}{GXApplication\+Options}} options)
+\begin{DoxyCompactList}\small\item\em Creates main application context. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_g_x_application}{GXApplication}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{gx_8cpp_a6bf81f3c41110e3803cdea7f89de0453}{gx\+Get\+Application}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves current application context. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{gx_8cpp_ab6590137d7afddb0f81edacb9f56f987}{exec\+Iter}} ()
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{gx_8cpp_ac4e353e027dfde8cf57a71c69abf9f28}{gx\+Exec}} ()
+\begin{DoxyCompactList}\small\item\em Main application execution loop. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_g_x_window}{GXWindow}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{gx_8cpp_adc5ac80a754ec2d98502dc75c39ee9f4}{gx\+Get\+Window\+From}} (\mbox{\hyperlink{struct_g_x_resource}{GXResource}} \texorpdfstring{$\ast$}{*}resource)
+\item 
+\mbox{\hyperlink{struct_g_x_window}{GXWindow}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{gx_8cpp_ab520557ed388189e4efbf4dc59cc418b}{gx\+Create\+Window}} (bool show, int \mbox{\hyperlink{glad_8h_a77a72419a6bb6d8b56f8d9db93a120d0}{width}}, int \mbox{\hyperlink{glad_8h_a2e94a4956fa3fc42600a71518b6e6284}{height}}, const char \texorpdfstring{$\ast$}{*}title)
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{gx_8cpp_a3d9d8203ffca6db536ff37c7f3277d87}{gx\+Window\+Set\+Draw\+Callback}} (\mbox{\hyperlink{struct_g_x_window}{GXWindow}} \texorpdfstring{$\ast$}{*}win, \mbox{\hyperlink{gx_8h_a8c1bb3a81f7d02905db77991971f46a0}{GXDraw\+Callback}} cb)
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{gx_8cpp_acbe1e81fd4ce60bd48bbcd69586fda46}{gx\+Window\+Close}} (\mbox{\hyperlink{struct_g_x_window}{GXWindow}} \texorpdfstring{$\ast$}{*}win)
+\item 
+bool \mbox{\hyperlink{gx_8cpp_a2d042094acd151bcd40f68313b18c5cc}{gx\+Window\+Should\+Close}} (\mbox{\hyperlink{struct_g_x_window}{GXWindow}} \texorpdfstring{$\ast$}{*}win)
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{gx_8cpp_a43d3ec5489b32af9e4da04ee1a1b36e4}{gx\+Destroy\+Resource}} (\mbox{\hyperlink{struct_g_x_resource}{GXResource}} \texorpdfstring{$\ast$}{*}resource)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_g_x_application}{GXApplication}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{gx_8cpp_aa674fbf0dbadd6edd95e4a1cce30f18e}{m\+\_\+app}} = nullptr
+\item 
+static bool \mbox{\hyperlink{gx_8cpp_a581bacbba5ff44cc5b0fb550bfe66a21}{\+\_\+\+\_\+set\+\_\+glfw\+\_\+key\+\_\+callback}} = false
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{gx_8cpp_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{gx_8cpp_ab6590137d7afddb0f81edacb9f56f987}\index{gx.cpp@{gx.cpp}!execIter@{execIter}}
+\index{execIter@{execIter}!gx.cpp@{gx.cpp}}
+\doxysubsubsection{\texorpdfstring{execIter()}{execIter()}}
+{\footnotesize\ttfamily \label{gx_8cpp_ab6590137d7afddb0f81edacb9f56f987} 
+bool exec\+Iter (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{gx_8cpp_a8140bf23ef718afb015601f6a0d9fc79}\index{gx.cpp@{gx.cpp}!gxAddKeyboardCallback@{gxAddKeyboardCallback}}
+\index{gxAddKeyboardCallback@{gxAddKeyboardCallback}!gx.cpp@{gx.cpp}}
+\doxysubsubsection{\texorpdfstring{gxAddKeyboardCallback()}{gxAddKeyboardCallback()}}
+{\footnotesize\ttfamily \label{gx_8cpp_a8140bf23ef718afb015601f6a0d9fc79} 
+bool gx\+Add\+Keyboard\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gx_8h_ae21f5494d0a63e4159607dda10f81ef8}{GXKeyboard\+Callback}}}]{cb}{}\end{DoxyParamCaption})}
+
+
+
+Registers a keyboard event callback. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cb} & Callback function to register \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true on success, false on failure 
+\end{DoxyReturn}
+\Hypertarget{gx_8cpp_a6b32abc8f590072c657118464d4abd74}\index{gx.cpp@{gx.cpp}!gxClearKeyboardCallback@{gxClearKeyboardCallback}}
+\index{gxClearKeyboardCallback@{gxClearKeyboardCallback}!gx.cpp@{gx.cpp}}
+\doxysubsubsection{\texorpdfstring{gxClearKeyboardCallback()}{gxClearKeyboardCallback()}}
+{\footnotesize\ttfamily \label{gx_8cpp_a6b32abc8f590072c657118464d4abd74} 
+bool gx\+Clear\+Keyboard\+Callback (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Clears all keyboard callbacks. 
+
+\begin{DoxyReturn}{Returns}
+true on success, false on failure 
+\end{DoxyReturn}
+\Hypertarget{gx_8cpp_afc7f563785198dd63cec3036190814bf}\index{gx.cpp@{gx.cpp}!gxCreateApplication@{gxCreateApplication}}
+\index{gxCreateApplication@{gxCreateApplication}!gx.cpp@{gx.cpp}}
+\doxysubsubsection{\texorpdfstring{gxCreateApplication()}{gxCreateApplication()}}
+{\footnotesize\ttfamily \label{gx_8cpp_afc7f563785198dd63cec3036190814bf} 
+\mbox{\hyperlink{struct_g_x_application}{GXApplication}} \texorpdfstring{$\ast$}{*} gx\+Create\+Application (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gx_8h_a87d336541f9413db24108524a42c0dfb}{GXApplication\+Options}}}]{options}{}\end{DoxyParamCaption})}
+
+
+
+Creates main application context. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em options} & Configuration flags \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to application context 
+\end{DoxyReturn}
+\Hypertarget{gx_8cpp_ab520557ed388189e4efbf4dc59cc418b}\index{gx.cpp@{gx.cpp}!gxCreateWindow@{gxCreateWindow}}
+\index{gxCreateWindow@{gxCreateWindow}!gx.cpp@{gx.cpp}}
+\doxysubsubsection{\texorpdfstring{gxCreateWindow()}{gxCreateWindow()}}
+{\footnotesize\ttfamily \label{gx_8cpp_ab520557ed388189e4efbf4dc59cc418b} 
+\mbox{\hyperlink{struct_g_x_window}{GXWindow}} \texorpdfstring{$\ast$}{*} gx\+Create\+Window (\begin{DoxyParamCaption}\item[{bool}]{show}{, }\item[{int}]{width}{, }\item[{int}]{height}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{title}{}\end{DoxyParamCaption})}
+
+\Hypertarget{gx_8cpp_a982378df3a58ebc754e238f548f6d947}\index{gx.cpp@{gx.cpp}!gxDestroyApplication@{gxDestroyApplication}}
+\index{gxDestroyApplication@{gxDestroyApplication}!gx.cpp@{gx.cpp}}
+\doxysubsubsection{\texorpdfstring{gxDestroyApplication()}{gxDestroyApplication()}}
+{\footnotesize\ttfamily \label{gx_8cpp_a982378df3a58ebc754e238f548f6d947} 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} gx\+Destroy\+Application (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_x_application}{GXApplication}} \texorpdfstring{$\ast$}{*}}]{application}{}\end{DoxyParamCaption})}
+
+
+
+Releases application resources. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em application} & Application context to destroy \\
+\hline
+\end{DoxyParams}
+\Hypertarget{gx_8cpp_aee3db62dc5cdc65034e812536cb4bbea}\index{gx.cpp@{gx.cpp}!gxDestroyDynamicPointerArray@{gxDestroyDynamicPointerArray}}
+\index{gxDestroyDynamicPointerArray@{gxDestroyDynamicPointerArray}!gx.cpp@{gx.cpp}}
+\doxysubsubsection{\texorpdfstring{gxDestroyDynamicPointerArray()}{gxDestroyDynamicPointerArray()}}
+{\footnotesize\ttfamily \label{gx_8cpp_aee3db62dc5cdc65034e812536cb4bbea} 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} gx\+Destroy\+Dynamic\+Pointer\+Array (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_x_dynamic_pointer_array}{GXDynamic\+Pointer\+Array}} \texorpdfstring{$\ast$}{*}}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Releases array memory and resets structure. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & Target array structure \\
+\hline
+\end{DoxyParams}
+\Hypertarget{gx_8cpp_a43d3ec5489b32af9e4da04ee1a1b36e4}\index{gx.cpp@{gx.cpp}!gxDestroyResource@{gxDestroyResource}}
+\index{gxDestroyResource@{gxDestroyResource}!gx.cpp@{gx.cpp}}
+\doxysubsubsection{\texorpdfstring{gxDestroyResource()}{gxDestroyResource()}}
+{\footnotesize\ttfamily \label{gx_8cpp_a43d3ec5489b32af9e4da04ee1a1b36e4} 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} gx\+Destroy\+Resource (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_x_resource}{GXResource}} \texorpdfstring{$\ast$}{*}}]{resource}{}\end{DoxyParamCaption})}
+
+\Hypertarget{gx_8cpp_a7ad537ef816e6e88a7a87200d23c2129}\index{gx.cpp@{gx.cpp}!gxDynamicPointerArrayAppend@{gxDynamicPointerArrayAppend}}
+\index{gxDynamicPointerArrayAppend@{gxDynamicPointerArrayAppend}!gx.cpp@{gx.cpp}}
+\doxysubsubsection{\texorpdfstring{gxDynamicPointerArrayAppend()}{gxDynamicPointerArrayAppend()}}
+{\footnotesize\ttfamily \label{gx_8cpp_a7ad537ef816e6e88a7a87200d23c2129} 
+bool gx\+Dynamic\+Pointer\+Array\+Append (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_x_dynamic_pointer_array}{GXDynamic\+Pointer\+Array}} \texorpdfstring{$\ast$}{*}}]{a}{, }\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \texorpdfstring{$\ast$}{*}}]{element}{}\end{DoxyParamCaption})}
+
+
+
+Appends a deep/complete copy of a element to the array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & Target array structure \\
+\hline
+{\em element} & Element to append \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true on success, false on failure 
+\end{DoxyReturn}
+\Hypertarget{gx_8cpp_a08b2246908e8d643c457c478421fe2a4}\index{gx.cpp@{gx.cpp}!gxDynamicPointerArrayCapacity@{gxDynamicPointerArrayCapacity}}
+\index{gxDynamicPointerArrayCapacity@{gxDynamicPointerArrayCapacity}!gx.cpp@{gx.cpp}}
+\doxysubsubsection{\texorpdfstring{gxDynamicPointerArrayCapacity()}{gxDynamicPointerArrayCapacity()}}
+{\footnotesize\ttfamily \label{gx_8cpp_a08b2246908e8d643c457c478421fe2a4} 
+\mbox{\hyperlink{gx_8h_a654d5b7b8a558cfa629d71f0021aa6a5}{GXDynamic\+Pointer\+Array\+Int}} gx\+Dynamic\+Pointer\+Array\+Capacity (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_x_dynamic_pointer_array}{GXDynamic\+Pointer\+Array}} \texorpdfstring{$\ast$}{*}}]{a}{}\end{DoxyParamCaption})}
+
+\Hypertarget{gx_8cpp_afe4a42d5a24ce566e3e6c91e67e5ab99}\index{gx.cpp@{gx.cpp}!gxDynamicPointerArrayClear@{gxDynamicPointerArrayClear}}
+\index{gxDynamicPointerArrayClear@{gxDynamicPointerArrayClear}!gx.cpp@{gx.cpp}}
+\doxysubsubsection{\texorpdfstring{gxDynamicPointerArrayClear()}{gxDynamicPointerArrayClear()}}
+{\footnotesize\ttfamily \label{gx_8cpp_afe4a42d5a24ce566e3e6c91e67e5ab99} 
+bool gx\+Dynamic\+Pointer\+Array\+Clear (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_x_dynamic_pointer_array}{GXDynamic\+Pointer\+Array}} \texorpdfstring{$\ast$}{*}}]{a}{}\end{DoxyParamCaption})}
+
+TODO\+: Make this less BAD, not sure whether I can allocate 0 or not.\Hypertarget{gx_8cpp_a1b8cc70cbb7a5a7ba297ae9eec086d2b}\index{gx.cpp@{gx.cpp}!gxDynamicPointerArrayFor@{gxDynamicPointerArrayFor}}
+\index{gxDynamicPointerArrayFor@{gxDynamicPointerArrayFor}!gx.cpp@{gx.cpp}}
+\doxysubsubsection{\texorpdfstring{gxDynamicPointerArrayFor()}{gxDynamicPointerArrayFor()}}
+{\footnotesize\ttfamily \label{gx_8cpp_a1b8cc70cbb7a5a7ba297ae9eec086d2b} 
+bool gx\+Dynamic\+Pointer\+Array\+For (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_x_dynamic_pointer_array}{GXDynamic\+Pointer\+Array}} \texorpdfstring{$\ast$}{*}}]{a}{, }\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{args}{, }\item[{\mbox{\hyperlink{gx_8h_a0c451fb72d0d5205d6ed8f2663896c6d}{GXDynamic\+Pointer\+Array\+Index}}}]{start\+\_\+inclusive}{, }\item[{\mbox{\hyperlink{gx_8h_a0c451fb72d0d5205d6ed8f2663896c6d}{GXDynamic\+Pointer\+Array\+Index}}}]{end\+\_\+exclusive}{, }\item[{\mbox{\hyperlink{gx_8h_ab2a8d3adb0422677d39d9f488d7bb334}{GXDynamic\+Array\+Element\+Handler}}}]{handler}{}\end{DoxyParamCaption})}
+
+\Hypertarget{gx_8cpp_a74bfbf98e1de25e7d60c6877ebe6804d}\index{gx.cpp@{gx.cpp}!gxDynamicPointerArrayForeach@{gxDynamicPointerArrayForeach}}
+\index{gxDynamicPointerArrayForeach@{gxDynamicPointerArrayForeach}!gx.cpp@{gx.cpp}}
+\doxysubsubsection{\texorpdfstring{gxDynamicPointerArrayForeach()}{gxDynamicPointerArrayForeach()}}
+{\footnotesize\ttfamily \label{gx_8cpp_a74bfbf98e1de25e7d60c6877ebe6804d} 
+bool gx\+Dynamic\+Pointer\+Array\+Foreach (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_x_dynamic_pointer_array}{GXDynamic\+Pointer\+Array}} \texorpdfstring{$\ast$}{*}}]{a}{, }\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{args}{, }\item[{\mbox{\hyperlink{gx_8h_ab2a8d3adb0422677d39d9f488d7bb334}{GXDynamic\+Array\+Element\+Handler}}}]{handler}{}\end{DoxyParamCaption})}
+
+\Hypertarget{gx_8cpp_a7a64534fdba5d0569d1e570837f70639}\index{gx.cpp@{gx.cpp}!gxDynamicPointerArrayGet@{gxDynamicPointerArrayGet}}
+\index{gxDynamicPointerArrayGet@{gxDynamicPointerArrayGet}!gx.cpp@{gx.cpp}}
+\doxysubsubsection{\texorpdfstring{gxDynamicPointerArrayGet()}{gxDynamicPointerArrayGet()}}
+{\footnotesize\ttfamily \label{gx_8cpp_a7a64534fdba5d0569d1e570837f70639} 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \texorpdfstring{$\ast$}{*} gx\+Dynamic\+Pointer\+Array\+Get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_x_dynamic_pointer_array}{GXDynamic\+Pointer\+Array}} \texorpdfstring{$\ast$}{*}}]{a}{, }\item[{\mbox{\hyperlink{gx_8h_a0c451fb72d0d5205d6ed8f2663896c6d}{GXDynamic\+Pointer\+Array\+Index}}}]{index}{}\end{DoxyParamCaption})}
+
+\Hypertarget{gx_8cpp_aff55a30a9dcfd81184f899d59d0c214d}\index{gx.cpp@{gx.cpp}!gxDynamicPointerArrayInsert@{gxDynamicPointerArrayInsert}}
+\index{gxDynamicPointerArrayInsert@{gxDynamicPointerArrayInsert}!gx.cpp@{gx.cpp}}
+\doxysubsubsection{\texorpdfstring{gxDynamicPointerArrayInsert()}{gxDynamicPointerArrayInsert()}}
+{\footnotesize\ttfamily \label{gx_8cpp_aff55a30a9dcfd81184f899d59d0c214d} 
+bool gx\+Dynamic\+Pointer\+Array\+Insert (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_x_dynamic_pointer_array}{GXDynamic\+Pointer\+Array}} \texorpdfstring{$\ast$}{*}}]{a}{, }\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \texorpdfstring{$\ast$}{*}}]{element}{, }\item[{\mbox{\hyperlink{gx_8h_a0c451fb72d0d5205d6ed8f2663896c6d}{GXDynamic\+Pointer\+Array\+Index}}}]{index}{}\end{DoxyParamCaption})}
+
+\Hypertarget{gx_8cpp_a5dc358236b56f7edff636e33c4cdcaaa}\index{gx.cpp@{gx.cpp}!gxDynamicPointerArrayLength@{gxDynamicPointerArrayLength}}
+\index{gxDynamicPointerArrayLength@{gxDynamicPointerArrayLength}!gx.cpp@{gx.cpp}}
+\doxysubsubsection{\texorpdfstring{gxDynamicPointerArrayLength()}{gxDynamicPointerArrayLength()}}
+{\footnotesize\ttfamily \label{gx_8cpp_a5dc358236b56f7edff636e33c4cdcaaa} 
+\mbox{\hyperlink{gx_8h_a654d5b7b8a558cfa629d71f0021aa6a5}{GXDynamic\+Pointer\+Array\+Int}} gx\+Dynamic\+Pointer\+Array\+Length (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_x_dynamic_pointer_array}{GXDynamic\+Pointer\+Array}} \texorpdfstring{$\ast$}{*}}]{a}{}\end{DoxyParamCaption})}
+
+\Hypertarget{gx_8cpp_a2d2d7e8d69cfa639aa80ef05ab4f7e30}\index{gx.cpp@{gx.cpp}!gxDynamicPointerArrayOrderedRemove@{gxDynamicPointerArrayOrderedRemove}}
+\index{gxDynamicPointerArrayOrderedRemove@{gxDynamicPointerArrayOrderedRemove}!gx.cpp@{gx.cpp}}
+\doxysubsubsection{\texorpdfstring{gxDynamicPointerArrayOrderedRemove()}{gxDynamicPointerArrayOrderedRemove()}}
+{\footnotesize\ttfamily \label{gx_8cpp_a2d2d7e8d69cfa639aa80ef05ab4f7e30} 
+bool gx\+Dynamic\+Pointer\+Array\+Ordered\+Remove (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_x_dynamic_pointer_array}{GXDynamic\+Pointer\+Array}} \texorpdfstring{$\ast$}{*}}]{a}{, }\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \texorpdfstring{$\ast$}{*}}]{v}{}\end{DoxyParamCaption})}
+
+\Hypertarget{gx_8cpp_a9756679798e40e12ce76bba681d2131c}\index{gx.cpp@{gx.cpp}!gxDynamicPointerArrayOrderedRemoveAt@{gxDynamicPointerArrayOrderedRemoveAt}}
+\index{gxDynamicPointerArrayOrderedRemoveAt@{gxDynamicPointerArrayOrderedRemoveAt}!gx.cpp@{gx.cpp}}
+\doxysubsubsection{\texorpdfstring{gxDynamicPointerArrayOrderedRemoveAt()}{gxDynamicPointerArrayOrderedRemoveAt()}}
+{\footnotesize\ttfamily \label{gx_8cpp_a9756679798e40e12ce76bba681d2131c} 
+bool gx\+Dynamic\+Pointer\+Array\+Ordered\+Remove\+At (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_x_dynamic_pointer_array}{GXDynamic\+Pointer\+Array}} \texorpdfstring{$\ast$}{*}}]{a}{, }\item[{\mbox{\hyperlink{gx_8h_a0c451fb72d0d5205d6ed8f2663896c6d}{GXDynamic\+Pointer\+Array\+Index}}}]{index}{}\end{DoxyParamCaption})}
+
+\Hypertarget{gx_8cpp_a45b2584dc4fbf4d00d11177bfcd5e6e1}\index{gx.cpp@{gx.cpp}!gxDynamicPointerArraySet@{gxDynamicPointerArraySet}}
+\index{gxDynamicPointerArraySet@{gxDynamicPointerArraySet}!gx.cpp@{gx.cpp}}
+\doxysubsubsection{\texorpdfstring{gxDynamicPointerArraySet()}{gxDynamicPointerArraySet()}}
+{\footnotesize\ttfamily \label{gx_8cpp_a45b2584dc4fbf4d00d11177bfcd5e6e1} 
+bool gx\+Dynamic\+Pointer\+Array\+Set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_x_dynamic_pointer_array}{GXDynamic\+Pointer\+Array}} \texorpdfstring{$\ast$}{*}}]{a}{, }\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \texorpdfstring{$\ast$}{*}}]{element}{, }\item[{\mbox{\hyperlink{gx_8h_a0c451fb72d0d5205d6ed8f2663896c6d}{GXDynamic\+Pointer\+Array\+Index}}}]{index}{}\end{DoxyParamCaption})}
+
+\Hypertarget{gx_8cpp_a84f6e69e8db872b4a27f4b006a104d8a}\index{gx.cpp@{gx.cpp}!gxDynamicPointerArrayShrink@{gxDynamicPointerArrayShrink}}
+\index{gxDynamicPointerArrayShrink@{gxDynamicPointerArrayShrink}!gx.cpp@{gx.cpp}}
+\doxysubsubsection{\texorpdfstring{gxDynamicPointerArrayShrink()}{gxDynamicPointerArrayShrink()}}
+{\footnotesize\ttfamily \label{gx_8cpp_a84f6e69e8db872b4a27f4b006a104d8a} 
+bool gx\+Dynamic\+Pointer\+Array\+Shrink (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_x_dynamic_pointer_array}{GXDynamic\+Pointer\+Array}} \texorpdfstring{$\ast$}{*}}]{a}{}\end{DoxyParamCaption})}
+
+\Hypertarget{gx_8cpp_a6b0d1c52ae3830808dc28baee81385dd}\index{gx.cpp@{gx.cpp}!gxDynamicPointerArrayStore@{gxDynamicPointerArrayStore}}
+\index{gxDynamicPointerArrayStore@{gxDynamicPointerArrayStore}!gx.cpp@{gx.cpp}}
+\doxysubsubsection{\texorpdfstring{gxDynamicPointerArrayStore()}{gxDynamicPointerArrayStore()}}
+{\footnotesize\ttfamily \label{gx_8cpp_a6b0d1c52ae3830808dc28baee81385dd} 
+bool gx\+Dynamic\+Pointer\+Array\+Store (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_x_dynamic_pointer_array}{GXDynamic\+Pointer\+Array}} \texorpdfstring{$\ast$}{*}}]{a}{, }\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \texorpdfstring{$\ast$}{*}}]{mem}{}\end{DoxyParamCaption})}
+
+\Hypertarget{gx_8cpp_ad5a171d5c3bd0ade5193a66a7b8c771c}\index{gx.cpp@{gx.cpp}!gxDynamicPointerArrayUnorderedRemove@{gxDynamicPointerArrayUnorderedRemove}}
+\index{gxDynamicPointerArrayUnorderedRemove@{gxDynamicPointerArrayUnorderedRemove}!gx.cpp@{gx.cpp}}
+\doxysubsubsection{\texorpdfstring{gxDynamicPointerArrayUnorderedRemove()}{gxDynamicPointerArrayUnorderedRemove()}}
+{\footnotesize\ttfamily \label{gx_8cpp_ad5a171d5c3bd0ade5193a66a7b8c771c} 
+bool gx\+Dynamic\+Pointer\+Array\+Unordered\+Remove (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_x_dynamic_pointer_array}{GXDynamic\+Pointer\+Array}} \texorpdfstring{$\ast$}{*}}]{a}{, }\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \texorpdfstring{$\ast$}{*}}]{v}{}\end{DoxyParamCaption})}
+
+\Hypertarget{gx_8cpp_acf9632bdfc4a624ab16f3267a6cfbbff}\index{gx.cpp@{gx.cpp}!gxDynamicPointerArrayUnorderedRemoveAt@{gxDynamicPointerArrayUnorderedRemoveAt}}
+\index{gxDynamicPointerArrayUnorderedRemoveAt@{gxDynamicPointerArrayUnorderedRemoveAt}!gx.cpp@{gx.cpp}}
+\doxysubsubsection{\texorpdfstring{gxDynamicPointerArrayUnorderedRemoveAt()}{gxDynamicPointerArrayUnorderedRemoveAt()}}
+{\footnotesize\ttfamily \label{gx_8cpp_acf9632bdfc4a624ab16f3267a6cfbbff} 
+bool gx\+Dynamic\+Pointer\+Array\+Unordered\+Remove\+At (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_x_dynamic_pointer_array}{GXDynamic\+Pointer\+Array}} \texorpdfstring{$\ast$}{*}}]{a}{, }\item[{\mbox{\hyperlink{gx_8h_a0c451fb72d0d5205d6ed8f2663896c6d}{GXDynamic\+Pointer\+Array\+Index}}}]{index}{}\end{DoxyParamCaption})}
+
+\Hypertarget{gx_8cpp_a79360e07b4c7598512a9d10be476acfc}\index{gx.cpp@{gx.cpp}!gxDynamicPointerArrayUnsafeGet@{gxDynamicPointerArrayUnsafeGet}}
+\index{gxDynamicPointerArrayUnsafeGet@{gxDynamicPointerArrayUnsafeGet}!gx.cpp@{gx.cpp}}
+\doxysubsubsection{\texorpdfstring{gxDynamicPointerArrayUnsafeGet()}{gxDynamicPointerArrayUnsafeGet()}}
+{\footnotesize\ttfamily \label{gx_8cpp_a79360e07b4c7598512a9d10be476acfc} 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \texorpdfstring{$\ast$}{*} gx\+Dynamic\+Pointer\+Array\+Unsafe\+Get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_x_dynamic_pointer_array}{GXDynamic\+Pointer\+Array}} \texorpdfstring{$\ast$}{*}}]{a}{, }\item[{\mbox{\hyperlink{gx_8h_a0c451fb72d0d5205d6ed8f2663896c6d}{GXDynamic\+Pointer\+Array\+Index}}}]{index}{}\end{DoxyParamCaption})}
+
+\Hypertarget{gx_8cpp_a080649cfa61e20c1811f7154ccc57a43}\index{gx.cpp@{gx.cpp}!gxDynamicPointerArrayUnsafeSet@{gxDynamicPointerArrayUnsafeSet}}
+\index{gxDynamicPointerArrayUnsafeSet@{gxDynamicPointerArrayUnsafeSet}!gx.cpp@{gx.cpp}}
+\doxysubsubsection{\texorpdfstring{gxDynamicPointerArrayUnsafeSet()}{gxDynamicPointerArrayUnsafeSet()}}
+{\footnotesize\ttfamily \label{gx_8cpp_a080649cfa61e20c1811f7154ccc57a43} 
+bool gx\+Dynamic\+Pointer\+Array\+Unsafe\+Set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_x_dynamic_pointer_array}{GXDynamic\+Pointer\+Array}} \texorpdfstring{$\ast$}{*}}]{a}{, }\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \texorpdfstring{$\ast$}{*}}]{element}{, }\item[{\mbox{\hyperlink{gx_8h_a0c451fb72d0d5205d6ed8f2663896c6d}{GXDynamic\+Pointer\+Array\+Index}}}]{index}{}\end{DoxyParamCaption})}
+
+\Hypertarget{gx_8cpp_ac4e353e027dfde8cf57a71c69abf9f28}\index{gx.cpp@{gx.cpp}!gxExec@{gxExec}}
+\index{gxExec@{gxExec}!gx.cpp@{gx.cpp}}
+\doxysubsubsection{\texorpdfstring{gxExec()}{gxExec()}}
+{\footnotesize\ttfamily \label{gx_8cpp_ac4e353e027dfde8cf57a71c69abf9f28} 
+const char \texorpdfstring{$\ast$}{*} gx\+Exec (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Main application execution loop. 
+
+\begin{DoxyReturn}{Returns}
+nullptr on clean exit, error message otherwise 
+\end{DoxyReturn}
+\Hypertarget{gx_8cpp_a6bf81f3c41110e3803cdea7f89de0453}\index{gx.cpp@{gx.cpp}!gxGetApplication@{gxGetApplication}}
+\index{gxGetApplication@{gxGetApplication}!gx.cpp@{gx.cpp}}
+\doxysubsubsection{\texorpdfstring{gxGetApplication()}{gxGetApplication()}}
+{\footnotesize\ttfamily \label{gx_8cpp_a6bf81f3c41110e3803cdea7f89de0453} 
+\mbox{\hyperlink{struct_g_x_application}{GXApplication}} \texorpdfstring{$\ast$}{*} gx\+Get\+Application (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves current application context. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to application context (null if not initialized) 
+\end{DoxyReturn}
+\Hypertarget{gx_8cpp_adc5ac80a754ec2d98502dc75c39ee9f4}\index{gx.cpp@{gx.cpp}!gxGetWindowFrom@{gxGetWindowFrom}}
+\index{gxGetWindowFrom@{gxGetWindowFrom}!gx.cpp@{gx.cpp}}
+\doxysubsubsection{\texorpdfstring{gxGetWindowFrom()}{gxGetWindowFrom()}}
+{\footnotesize\ttfamily \label{gx_8cpp_adc5ac80a754ec2d98502dc75c39ee9f4} 
+\mbox{\hyperlink{struct_g_x_window}{GXWindow}} \texorpdfstring{$\ast$}{*} gx\+Get\+Window\+From (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_x_resource}{GXResource}} \texorpdfstring{$\ast$}{*}}]{resource}{}\end{DoxyParamCaption})}
+
+\Hypertarget{gx_8cpp_a6a96a1574c45c3c92db36ae621d1c01b}\index{gx.cpp@{gx.cpp}!gxInit@{gxInit}}
+\index{gxInit@{gxInit}!gx.cpp@{gx.cpp}}
+\doxysubsubsection{\texorpdfstring{gxInit()}{gxInit()}}
+{\footnotesize\ttfamily \label{gx_8cpp_a6a96a1574c45c3c92db36ae621d1c01b} 
+const char \texorpdfstring{$\ast$}{*} gx\+Init (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Initializes GX library and dependencies (GLFW). 
+
+\begin{DoxyReturn}{Returns}
+nullptr on success, error message on failure. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{gx_8h_a6866c6c7ebec5d428312044ebb69e09f}{gx\+Terminate()} 
+\end{DoxySeeAlso}
+\Hypertarget{gx_8cpp_a2e98a4fe44a3a8747a969d12d18c086b}\index{gx.cpp@{gx.cpp}!gxInitDynamicPointerArray@{gxInitDynamicPointerArray}}
+\index{gxInitDynamicPointerArray@{gxInitDynamicPointerArray}!gx.cpp@{gx.cpp}}
+\doxysubsubsection{\texorpdfstring{gxInitDynamicPointerArray()}{gxInitDynamicPointerArray()}}
+{\footnotesize\ttfamily \label{gx_8cpp_a2e98a4fe44a3a8747a969d12d18c086b} 
+bool gx\+Init\+Dynamic\+Pointer\+Array (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_x_dynamic_pointer_array}{GXDynamic\+Pointer\+Array}} \texorpdfstring{$\ast$}{*}}]{a}{, }\item[{\mbox{\hyperlink{gx_8h_a654d5b7b8a558cfa629d71f0021aa6a5}{GXDynamic\+Pointer\+Array\+Int}}}]{init\+\_\+size}{, }\item[{\mbox{\hyperlink{gx_8h_a654d5b7b8a558cfa629d71f0021aa6a5}{GXDynamic\+Pointer\+Array\+Int}}}]{element\+\_\+size}{}\end{DoxyParamCaption})}
+
+
+
+Initializes a dynamic pointer array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & Target array structure \\
+\hline
+{\em init\+\_\+size} & Initial capacity \\
+\hline
+{\em element\+\_\+size} & Size of each element in bytes \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true on success, false on failure 
+\end{DoxyReturn}
+\Hypertarget{gx_8cpp_a6866c6c7ebec5d428312044ebb69e09f}\index{gx.cpp@{gx.cpp}!gxTerminate@{gxTerminate}}
+\index{gxTerminate@{gxTerminate}!gx.cpp@{gx.cpp}}
+\doxysubsubsection{\texorpdfstring{gxTerminate()}{gxTerminate()}}
+{\footnotesize\ttfamily \label{gx_8cpp_a6866c6c7ebec5d428312044ebb69e09f} 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} gx\+Terminate (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Terminates GX library and cleans up resources. 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{gx_8h_a6a96a1574c45c3c92db36ae621d1c01b}{gx\+Init()} 
+\end{DoxySeeAlso}
+\Hypertarget{gx_8cpp_acbe1e81fd4ce60bd48bbcd69586fda46}\index{gx.cpp@{gx.cpp}!gxWindowClose@{gxWindowClose}}
+\index{gxWindowClose@{gxWindowClose}!gx.cpp@{gx.cpp}}
+\doxysubsubsection{\texorpdfstring{gxWindowClose()}{gxWindowClose()}}
+{\footnotesize\ttfamily \label{gx_8cpp_acbe1e81fd4ce60bd48bbcd69586fda46} 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} gx\+Window\+Close (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_x_window}{GXWindow}} \texorpdfstring{$\ast$}{*}}]{win}{}\end{DoxyParamCaption})}
+
+\Hypertarget{gx_8cpp_a3d9d8203ffca6db536ff37c7f3277d87}\index{gx.cpp@{gx.cpp}!gxWindowSetDrawCallback@{gxWindowSetDrawCallback}}
+\index{gxWindowSetDrawCallback@{gxWindowSetDrawCallback}!gx.cpp@{gx.cpp}}
+\doxysubsubsection{\texorpdfstring{gxWindowSetDrawCallback()}{gxWindowSetDrawCallback()}}
+{\footnotesize\ttfamily \label{gx_8cpp_a3d9d8203ffca6db536ff37c7f3277d87} 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} gx\+Window\+Set\+Draw\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_x_window}{GXWindow}} \texorpdfstring{$\ast$}{*}}]{win}{, }\item[{\mbox{\hyperlink{gx_8h_a8c1bb3a81f7d02905db77991971f46a0}{GXDraw\+Callback}}}]{cb}{}\end{DoxyParamCaption})}
+
+\Hypertarget{gx_8cpp_a2d042094acd151bcd40f68313b18c5cc}\index{gx.cpp@{gx.cpp}!gxWindowShouldClose@{gxWindowShouldClose}}
+\index{gxWindowShouldClose@{gxWindowShouldClose}!gx.cpp@{gx.cpp}}
+\doxysubsubsection{\texorpdfstring{gxWindowShouldClose()}{gxWindowShouldClose()}}
+{\footnotesize\ttfamily \label{gx_8cpp_a2d042094acd151bcd40f68313b18c5cc} 
+bool gx\+Window\+Should\+Close (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_x_window}{GXWindow}} \texorpdfstring{$\ast$}{*}}]{win}{}\end{DoxyParamCaption})}
+
+\Hypertarget{gx_8cpp_a816c5358724825237274c78764ea6056}\index{gx.cpp@{gx.cpp}!operator\&@{operator\&}}
+\index{operator\&@{operator\&}!gx.cpp@{gx.cpp}}
+\doxysubsubsection{\texorpdfstring{operator\&()}{operator\&()}}
+{\footnotesize\ttfamily \label{gx_8cpp_a816c5358724825237274c78764ea6056} 
+\mbox{\hyperlink{gx_8h_a68763dfc6bb00b662abc7f535ebd08e1}{GXResource\+Status}} operator\& (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gx_8h_a68763dfc6bb00b662abc7f535ebd08e1}{GXResource\+Status}}}]{lhs}{, }\item[{\mbox{\hyperlink{gx_8h_a68763dfc6bb00b662abc7f535ebd08e1}{GXResource\+Status}}}]{rhs}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{gx_8cpp_a1307f422d25352875dcfd3f1494fb715}\index{gx.cpp@{gx.cpp}!operator\&=@{operator\&=}}
+\index{operator\&=@{operator\&=}!gx.cpp@{gx.cpp}}
+\doxysubsubsection{\texorpdfstring{operator\&=()}{operator\&=()}}
+{\footnotesize\ttfamily \label{gx_8cpp_a1307f422d25352875dcfd3f1494fb715} 
+\mbox{\hyperlink{gx_8h_a68763dfc6bb00b662abc7f535ebd08e1}{GXResource\+Status}} \& operator\&= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gx_8h_a68763dfc6bb00b662abc7f535ebd08e1}{GXResource\+Status}} \&}]{lhs}{, }\item[{\mbox{\hyperlink{gx_8h_a68763dfc6bb00b662abc7f535ebd08e1}{GXResource\+Status}}}]{rhs}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{gx_8cpp_ad96ea45654882a93cc3949e46c52adf0}\index{gx.cpp@{gx.cpp}!operator\texttt{"|}@{operator\texttt{"|}}}
+\index{operator\texttt{"|}@{operator\texttt{"|}}!gx.cpp@{gx.cpp}}
+\doxysubsubsection{\texorpdfstring{operator\texttt{"|}()}{operator|()}}
+{\footnotesize\ttfamily \label{gx_8cpp_ad96ea45654882a93cc3949e46c52adf0} 
+\mbox{\hyperlink{gx_8h_a68763dfc6bb00b662abc7f535ebd08e1}{GXResource\+Status}} operator\texorpdfstring{$\vert$}{|} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gx_8h_a68763dfc6bb00b662abc7f535ebd08e1}{GXResource\+Status}}}]{lhs}{, }\item[{\mbox{\hyperlink{gx_8h_a68763dfc6bb00b662abc7f535ebd08e1}{GXResource\+Status}}}]{rhs}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{gx_8cpp_a37a1aff46115ea8e2645de7925bb5b84}\index{gx.cpp@{gx.cpp}!operator\texttt{"|}=@{operator\texttt{"|}=}}
+\index{operator\texttt{"|}=@{operator\texttt{"|}=}!gx.cpp@{gx.cpp}}
+\doxysubsubsection{\texorpdfstring{operator\texttt{"|}=()}{operator|=()}}
+{\footnotesize\ttfamily \label{gx_8cpp_a37a1aff46115ea8e2645de7925bb5b84} 
+\mbox{\hyperlink{gx_8h_a68763dfc6bb00b662abc7f535ebd08e1}{GXResource\+Status}} \& operator\texorpdfstring{$\vert$}{|}= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gx_8h_a68763dfc6bb00b662abc7f535ebd08e1}{GXResource\+Status}} \&}]{lhs}{, }\item[{\mbox{\hyperlink{gx_8h_a68763dfc6bb00b662abc7f535ebd08e1}{GXResource\+Status}}}]{rhs}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\label{doc-var-members}
+\Hypertarget{gx_8cpp_doc-var-members}
+\doxysubsection{Variable Documentation}
+\Hypertarget{gx_8cpp_a581bacbba5ff44cc5b0fb550bfe66a21}\index{gx.cpp@{gx.cpp}!\_\_set\_glfw\_key\_callback@{\_\_set\_glfw\_key\_callback}}
+\index{\_\_set\_glfw\_key\_callback@{\_\_set\_glfw\_key\_callback}!gx.cpp@{gx.cpp}}
+\doxysubsubsection{\texorpdfstring{\_\_set\_glfw\_key\_callback}{\_\_set\_glfw\_key\_callback}}
+{\footnotesize\ttfamily \label{gx_8cpp_a581bacbba5ff44cc5b0fb550bfe66a21} 
+bool \+\_\+\+\_\+set\+\_\+glfw\+\_\+key\+\_\+callback = false\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{gx_8cpp_aa674fbf0dbadd6edd95e4a1cce30f18e}\index{gx.cpp@{gx.cpp}!m\_app@{m\_app}}
+\index{m\_app@{m\_app}!gx.cpp@{gx.cpp}}
+\doxysubsubsection{\texorpdfstring{m\_app}{m\_app}}
+{\footnotesize\ttfamily \label{gx_8cpp_aa674fbf0dbadd6edd95e4a1cce30f18e} 
+\mbox{\hyperlink{struct_g_x_application}{GXApplication}}\texorpdfstring{$\ast$}{*} m\+\_\+app = nullptr}
+

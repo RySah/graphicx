@@ -1,0 +1,20 @@
+\chapter{Core Library Initialization }
+\hypertarget{_basics}{}\label{_basics}\index{Core Library Initialization@{Core Library Initialization}}
+Basic library initialization and termination functions.
+
+Before using the libary both of these functions should be used respectively.
+\begin{DoxyItemize}
+\item \doxylink{gx_8h_a6a96a1574c45c3c92db36ae621d1c01b}{gx\+Init()}
+\item \doxylink{gx_8h_a6866c6c7ebec5d428312044ebb69e09f}{gx\+Terminate()}
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ main(...)\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{gx_8h_a6a96a1574c45c3c92db36ae621d1c01b}{gxInit}}();}
+\DoxyCodeLine{\ \ \ \ ...}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{gx_8h_a6866c6c7ebec5d428312044ebb69e09f}{gxTerminate}}();}
+\DoxyCodeLine{\ \}}
+
+\end{DoxyCode}
+ Both serve to initiate and terminate its own dependencies, and clean up memory usage. 

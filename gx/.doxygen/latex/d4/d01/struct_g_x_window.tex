@@ -1,0 +1,94 @@
+\doxysection{GXWindow Struct Reference}
+\hypertarget{struct_g_x_window}{}\label{struct_g_x_window}\index{GXWindow@{GXWindow}}
+
+
+Window configuration and state.  
+
+
+
+
+{\ttfamily \#include $<$gx.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_g_x_resource}{GXResource}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_g_x_window_a68462c2bb794bf599052010ccf3dfdde}{resource}}
+\item 
+int \mbox{\hyperlink{struct_g_x_window_af2a367f8a47cc2b5c618dae5f136cc45}{width}}
+\item 
+int \mbox{\hyperlink{struct_g_x_window_a6a0d1ebadf70f0e48201201c1af0243e}{height}}
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_g_x_window_a1b86dc320de94ede09fbf0edcd350293}{title}}
+\item 
+bool \mbox{\hyperlink{struct_g_x_window_afceb3d8aee08beb8b057280a49f26636}{show}}
+\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_g_x_window_abef1f6d20f56e0e839e2c34aff6d922d}{internal}}
+\item 
+\mbox{\hyperlink{gx_8h_a8c1bb3a81f7d02905db77991971f46a0}{GXDraw\+Callback}} \mbox{\hyperlink{struct_g_x_window_a046945fc082ae7bf955116e755fb873f}{draw\+\_\+callback}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Window configuration and state. 
+
+Members\+:
+\begin{DoxyItemize}
+\item {\ttfamily resource}\+: Pointer to container resource
+\item {\ttfamily width}\+: Window width in pixels
+\item {\ttfamily height}\+: Window height in pixels
+\item {\ttfamily title}\+: Window title string
+\item {\ttfamily show}\+: Window visibility flag
+\item {\ttfamily internal}\+: Internal platform-\/specific handle
+\item {\ttfamily draw\+\_\+callback}\+: Rendering callback function 
+\end{DoxyItemize}
+
+\label{doc-variable-members}
+\Hypertarget{struct_g_x_window_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct_g_x_window_a046945fc082ae7bf955116e755fb873f}\index{GXWindow@{GXWindow}!draw\_callback@{draw\_callback}}
+\index{draw\_callback@{draw\_callback}!GXWindow@{GXWindow}}
+\doxysubsubsection{\texorpdfstring{draw\_callback}{draw\_callback}}
+{\footnotesize\ttfamily \label{struct_g_x_window_a046945fc082ae7bf955116e755fb873f} 
+\mbox{\hyperlink{gx_8h_a8c1bb3a81f7d02905db77991971f46a0}{GXDraw\+Callback}} GXWindow\+::draw\+\_\+callback}
+
+\Hypertarget{struct_g_x_window_a6a0d1ebadf70f0e48201201c1af0243e}\index{GXWindow@{GXWindow}!height@{height}}
+\index{height@{height}!GXWindow@{GXWindow}}
+\doxysubsubsection{\texorpdfstring{height}{height}}
+{\footnotesize\ttfamily \label{struct_g_x_window_a6a0d1ebadf70f0e48201201c1af0243e} 
+int GXWindow\+::height}
+
+\Hypertarget{struct_g_x_window_abef1f6d20f56e0e839e2c34aff6d922d}\index{GXWindow@{GXWindow}!internal@{internal}}
+\index{internal@{internal}!GXWindow@{GXWindow}}
+\doxysubsubsection{\texorpdfstring{internal}{internal}}
+{\footnotesize\ttfamily \label{struct_g_x_window_abef1f6d20f56e0e839e2c34aff6d922d} 
+void\texorpdfstring{$\ast$}{*} GXWindow\+::internal}
+
+\Hypertarget{struct_g_x_window_a68462c2bb794bf599052010ccf3dfdde}\index{GXWindow@{GXWindow}!resource@{resource}}
+\index{resource@{resource}!GXWindow@{GXWindow}}
+\doxysubsubsection{\texorpdfstring{resource}{resource}}
+{\footnotesize\ttfamily \label{struct_g_x_window_a68462c2bb794bf599052010ccf3dfdde} 
+\mbox{\hyperlink{struct_g_x_resource}{GXResource}}\texorpdfstring{$\ast$}{*} GXWindow\+::resource}
+
+\Hypertarget{struct_g_x_window_afceb3d8aee08beb8b057280a49f26636}\index{GXWindow@{GXWindow}!show@{show}}
+\index{show@{show}!GXWindow@{GXWindow}}
+\doxysubsubsection{\texorpdfstring{show}{show}}
+{\footnotesize\ttfamily \label{struct_g_x_window_afceb3d8aee08beb8b057280a49f26636} 
+bool GXWindow\+::show}
+
+\Hypertarget{struct_g_x_window_a1b86dc320de94ede09fbf0edcd350293}\index{GXWindow@{GXWindow}!title@{title}}
+\index{title@{title}!GXWindow@{GXWindow}}
+\doxysubsubsection{\texorpdfstring{title}{title}}
+{\footnotesize\ttfamily \label{struct_g_x_window_a1b86dc320de94ede09fbf0edcd350293} 
+const char\texorpdfstring{$\ast$}{*} GXWindow\+::title}
+
+\Hypertarget{struct_g_x_window_af2a367f8a47cc2b5c618dae5f136cc45}\index{GXWindow@{GXWindow}!width@{width}}
+\index{width@{width}!GXWindow@{GXWindow}}
+\doxysubsubsection{\texorpdfstring{width}{width}}
+{\footnotesize\ttfamily \label{struct_g_x_window_af2a367f8a47cc2b5c618dae5f136cc45} 
+int GXWindow\+::width}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/gx/\mbox{\hyperlink{gx_8h}{gx.\+h}}\end{DoxyCompactItemize}

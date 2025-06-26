@@ -1,0 +1,1872 @@
+\doxysection{include/gx/gx.h File Reference}
+\hypertarget{gx_8h}{}\label{gx_8h}\index{include/gx/gx.h@{include/gx/gx.h}}
+{\ttfamily \#include $<$cstdint$>$}\newline
+{\ttfamily \#include $<$glad/glad.\+h$>$}\newline
+{\ttfamily \#include $<$GLFW/glfw3.\+h$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_g_x_application}{GXApplication}}
+\begin{DoxyCompactList}\small\item\em Main application context. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_g_x_window}{GXWindow}}
+\begin{DoxyCompactList}\small\item\em Window configuration and state. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_g_x_object}{GXObject}}
+\begin{DoxyCompactList}\small\item\em Renderable object. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_g_x_resource}{GXResource}}
+\begin{DoxyCompactList}\small\item\em Managed resource container. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_g_x_shader_compilation_result}{GXShader\+Compilation\+Result}}
+\begin{DoxyCompactList}\small\item\em Result of shader compilation. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_g_x_program_compilation_result}{GXProgram\+Compilation\+Result}}
+\begin{DoxyCompactList}\small\item\em Result of shader program compilation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{gx_8h_a8c1bb3a81f7d02905db77991971f46a0}{GXDraw\+Callback}}) (\mbox{\hyperlink{struct_g_x_window}{GXWindow}} \texorpdfstring{$\ast$}{*})
+\begin{DoxyCompactList}\small\item\em Window rendering callback type. \end{DoxyCompactList}\item 
+typedef void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{gx_8h_ae21f5494d0a63e4159607dda10f81ef8}{GXKeyboard\+Callback}}) (\mbox{\hyperlink{struct_g_x_application}{GXApplication}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{struct_g_x_window}{GXWindow}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2}{GXKey}}, int, int, int)
+\begin{DoxyCompactList}\small\item\em Keyboard event callback. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2}{GXKey}} \{ \newline
+\mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a27037cbb7b7f11d4bc2843b8fbfef8d6}{GX\+\_\+\+KEY\+\_\+\+SPACE}} = 32
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2aa3f514cd55b075446036af0b8eef0407}{GX\+\_\+\+KEY\+\_\+\+APOSTROPHE}} = 39
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a5b8e94a6ce08da8f06f129f65999c9cb}{GX\+\_\+\+KEY\+\_\+\+COMMA}} = 44
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a5e0aeb8d74e0fc750256d5ead18d8462}{GX\+\_\+\+KEY\+\_\+\+MINUS}} = 45
+, \newline
+\mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2adfb746800f1c6d203f9aebbb3f418599}{GX\+\_\+\+KEY\+\_\+\+PERIOD}} = 46
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2aa7ba43b28225964b822ef9473c0614dc}{GX\+\_\+\+KEY\+\_\+\+SLASH}} = 47
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2ab0dbb2b090ac6273b083c621edb243a6}{GX\+\_\+\+KEY\+\_\+0}} = 48
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2addaf74ca383ead29cec2e1291453d4c2}{GX\+\_\+\+KEY\+\_\+1}} = 49
+, \newline
+\mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a271b66524f10b1aeb6822cce530e94f8}{GX\+\_\+\+KEY\+\_\+2}} = 50
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2af96045b2bceb15d5d412365eb530f3d7}{GX\+\_\+\+KEY\+\_\+3}} = 51
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2adebf66a876a7353db6717a1536d6bfbd}{GX\+\_\+\+KEY\+\_\+4}} = 52
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2aa4b32ee851ffc9a1493e4331df614472}{GX\+\_\+\+KEY\+\_\+5}} = 53
+, \newline
+\mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a41d8948828057cf676607327587ab5d6}{GX\+\_\+\+KEY\+\_\+6}} = 54
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2ac1299fd08efd2c6d8126aac1c8ced7fa}{GX\+\_\+\+KEY\+\_\+7}} = 55
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2ad2754bbd8e9b06d5245b9f6a8280a9af}{GX\+\_\+\+KEY\+\_\+8}} = 56
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a22ca05f2534ba79a0c3472a3560c6838}{GX\+\_\+\+KEY\+\_\+9}} = 57
+, \newline
+\mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a3330734f38334107a2b73fa79bf164aa}{GX\+\_\+\+KEY\+\_\+\+SEMICOLON}} = 59
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a29241007b7d46b6025bdacdc86ba8f76}{GX\+\_\+\+KEY\+\_\+\+EQUAL}} = 61
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2ad4ca84a3458d4ebf64d9739a07aee240}{GX\+\_\+\+KEY\+\_\+A}} = 65
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a152ae4f837fe39a88a841b8b9ffe7eb2}{GX\+\_\+\+KEY\+\_\+B}} = 66
+, \newline
+\mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2ae7d3e093866bce8078fa626ed3fc329e}{GX\+\_\+\+KEY\+\_\+C}} = 67
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2aa09ad12b15983afd86bd757efc33e7fa}{GX\+\_\+\+KEY\+\_\+D}} = 68
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2ad82c2ef34c5d0d372c4f732725805d04}{GX\+\_\+\+KEY\+\_\+E}} = 69
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a4baddab40326740bf42b066702b43cf5}{GX\+\_\+\+KEY\+\_\+F}} = 70
+, \newline
+\mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a01957dc1c22fe165531cc450032bca7f}{GX\+\_\+\+KEY\+\_\+G}} = 71
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2ab9b1b1baebfbff9e4cdd606e7a81130d}{GX\+\_\+\+KEY\+\_\+H}} = 72
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2acbd9c5439bfbebeb556983fc8ea51977}{GX\+\_\+\+KEY\+\_\+I}} = 73
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a2bfafe242c6e6208eda282e594846acf}{GX\+\_\+\+KEY\+\_\+J}} = 74
+, \newline
+\mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2ae66bbf67d465b9edc37540a56c9dd53e}{GX\+\_\+\+KEY\+\_\+K}} = 75
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a03249f538e7d494711de07650be637b9}{GX\+\_\+\+KEY\+\_\+L}} = 76
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a1ea7db8e9f3c17647ec4fd2854943a18}{GX\+\_\+\+KEY\+\_\+M}} = 77
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a66bc550706b0227f4ffcd782f38edc81}{GX\+\_\+\+KEY\+\_\+N}} = 78
+, \newline
+\mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2aac11fbe3153a81d6f1fb9d069ffab6da}{GX\+\_\+\+KEY\+\_\+O}} = 79
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a69cdd6c776c5ddcb8c68d9b3257679eb}{GX\+\_\+\+KEY\+\_\+P}} = 80
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2ae4ae8389daf333003cb9bd72f017eff1}{GX\+\_\+\+KEY\+\_\+Q}} = 81
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a247fe34c8e764dc0ab1de56a19b60ef9}{GX\+\_\+\+KEY\+\_\+R}} = 82
+, \newline
+\mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a9b034d001d06d1c54fc4740c32314b06}{GX\+\_\+\+KEY\+\_\+S}} = 83
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a13679470ff6bfc07233cf8c3c3f61516}{GX\+\_\+\+KEY\+\_\+T}} = 84
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2aac0dc266adbbe9769859be92b8d3db72}{GX\+\_\+\+KEY\+\_\+U}} = 85
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2aa1ebbce979a4188f5784400127611226}{GX\+\_\+\+KEY\+\_\+V}} = 86
+, \newline
+\mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a8a16dd66045cbc936ba18269f769b600}{GX\+\_\+\+KEY\+\_\+W}} = 87
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2ab62aeb32300a9d634f96f94b41d3ebb6}{GX\+\_\+\+KEY\+\_\+X}} = 88
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a981ff10c20d38856d90205558fc3e16b}{GX\+\_\+\+KEY\+\_\+Y}} = 89
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a94e5f7cf80485900a5ca6800a26c1d24}{GX\+\_\+\+KEY\+\_\+Z}} = 90
+, \newline
+\mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a45698ed922f0c00d833c0b28c9910c4e}{GX\+\_\+\+KEY\+\_\+\+LEFT\+\_\+\+BRACKET}} = 91
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a993ead194838290cc78daa3759092e5f}{GX\+\_\+\+KEY\+\_\+\+BACKSLASH}} = 92
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2adfb93da2384437b59e0cd7fd66f6c962}{GX\+\_\+\+KEY\+\_\+\+RIGHT\+\_\+\+BRACKET}} = 93
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a7b24f8ed4ad057791698a07b7e8247a4}{GX\+\_\+\+KEY\+\_\+\+GRAVE\+\_\+\+ACCENT}} = 96
+, \newline
+\mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a37ee841d4ad08ff859c2ba9630f385be}{GX\+\_\+\+KEY\+\_\+\+WORLD\+\_\+1}} = 161
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a5e8c13aef815dea0aea782c7c37a428b}{GX\+\_\+\+KEY\+\_\+\+WORLD\+\_\+2}} = 162
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a70f36ddf38dcdf6d22effd6e54720478}{GX\+\_\+\+KEY\+\_\+\+ESCAPE}} = 256
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a9aaf7eefef9e6e1a0ee2ad01a3d39d24}{GX\+\_\+\+KEY\+\_\+\+ENTER}} = 257
+, \newline
+\mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a3fe0759638d2ff86e5caa16de6e8f010}{GX\+\_\+\+KEY\+\_\+\+TAB}} = 258
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2ab98cda2d0967e2d38ba439d7ac85c226}{GX\+\_\+\+KEY\+\_\+\+BACKSPACE}} = 259
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2affe7ae03c14cb4b2c1a7642db27e6015}{GX\+\_\+\+KEY\+\_\+\+INSERT}} = 260
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a3bdd14b802ae9cadfd96c85530e00098}{GX\+\_\+\+KEY\+\_\+\+DELETE}} = 261
+, \newline
+\mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a7c39b05ade675c988697d2ec7bc9c568}{GX\+\_\+\+KEY\+\_\+\+RIGHT}} = 262
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a3986febc58fce23a9de0d97024caed7f}{GX\+\_\+\+KEY\+\_\+\+LEFT}} = 263
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a510164b273034c954454e458b15059c8}{GX\+\_\+\+KEY\+\_\+\+DOWN}} = 264
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a3331e30a2ce522ba3560f74bfb58483b}{GX\+\_\+\+KEY\+\_\+\+UP}} = 265
+, \newline
+\mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a54cd0422399079fc59fa152fbda89e10}{GX\+\_\+\+KEY\+\_\+\+PAGE\+\_\+\+UP}} = 266
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a51975d47be4276c51299757458f66cda}{GX\+\_\+\+KEY\+\_\+\+PAGE\+\_\+\+DOWN}} = 267
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a0a629597fb7abd919a6ceb0db8c8a0e6}{GX\+\_\+\+KEY\+\_\+\+HOME}} = 268
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a6d258921ff931f22fef2dd14762940e5}{GX\+\_\+\+KEY\+\_\+\+END}} = 269
+, \newline
+\mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a62ddb6c2d35d42f5c23f237951f8500b}{GX\+\_\+\+KEY\+\_\+\+CAPS\+\_\+\+LOCK}} = 280
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2afed19db24561813acf5da44fb2f39308}{GX\+\_\+\+KEY\+\_\+\+SCROLL\+\_\+\+LOCK}} = 281
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a5c2e719848e7b40864c36fa70a5aa349}{GX\+\_\+\+KEY\+\_\+\+NUM\+\_\+\+LOCK}} = 282
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a8470f743fbc93b30ac4ad086ce0c2320}{GX\+\_\+\+KEY\+\_\+\+PRINT\+\_\+\+SCREEN}} = 283
+, \newline
+\mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a044680a68f0df870dc350ffac75b5e70}{GX\+\_\+\+KEY\+\_\+\+PAUSE}} = 284
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2ab286c6cf60a36dfc99c3cab95991015f}{GX\+\_\+\+KEY\+\_\+\+F1}} = 290
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a805ad595f5b1f1b5e7966b6d76321bda}{GX\+\_\+\+KEY\+\_\+\+F2}} = 291
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a76906798080eb4241f72439cc0b0da56}{GX\+\_\+\+KEY\+\_\+\+F3}} = 292
+, \newline
+\mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a3d2fbb724541f0210a092241df318e86}{GX\+\_\+\+KEY\+\_\+\+F4}} = 293
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2abd78e61975ea82e381263d11589ca07a}{GX\+\_\+\+KEY\+\_\+\+F5}} = 294
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a7ce9f941d673d8412b85b102a9b87465}{GX\+\_\+\+KEY\+\_\+\+F6}} = 295
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a65e33065cc701acd0cb92e0bbf7cd413}{GX\+\_\+\+KEY\+\_\+\+F7}} = 296
+, \newline
+\mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a5efb14b8b1abc7bfd42ddb6b4c8ae7c8}{GX\+\_\+\+KEY\+\_\+\+F8}} = 297
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a73cba4b455e03d230ed601a1479060bc}{GX\+\_\+\+KEY\+\_\+\+F9}} = 298
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2aec0fc7ee4953a770dc026178a6a2c5f9}{GX\+\_\+\+KEY\+\_\+\+F10}} = 299
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a76da3cee8727a303f231da49006910d6}{GX\+\_\+\+KEY\+\_\+\+F11}} = 300
+, \newline
+\mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a4eb767d8e6885bb68868c4b068829352}{GX\+\_\+\+KEY\+\_\+\+F12}} = 301
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a3f08689a863c6ea83ab18465e3a85e6d}{GX\+\_\+\+KEY\+\_\+\+F13}} = 302
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a0535cb6177e0cb426383456039a6067f}{GX\+\_\+\+KEY\+\_\+\+F14}} = 303
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2ad75468dad40dd95c183ee63c6e7ad8cc}{GX\+\_\+\+KEY\+\_\+\+F15}} = 304
+, \newline
+\mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a0fec0fed855344cdf22948cce2ad0e0f}{GX\+\_\+\+KEY\+\_\+\+F16}} = 305
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2ae503b6f441953dc654c8067f8873840b}{GX\+\_\+\+KEY\+\_\+\+F17}} = 306
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a9ab70ff2ef54cd1d5594335c8fd65cbb}{GX\+\_\+\+KEY\+\_\+\+F18}} = 307
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a5c1df06f2d64cbaa7a1163237c585291}{GX\+\_\+\+KEY\+\_\+\+F19}} = 308
+, \newline
+\mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2aa59ad540f36631fb964a3ec189cd527a}{GX\+\_\+\+KEY\+\_\+\+F20}} = 309
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a767f99fbe12a62c203c044d066abf980}{GX\+\_\+\+KEY\+\_\+\+F21}} = 310
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a2160fe954b33e66bbb41e941f645b9e7}{GX\+\_\+\+KEY\+\_\+\+F22}} = 311
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a0cc34ceab6dcd6142a2d7e0636e8fa0c}{GX\+\_\+\+KEY\+\_\+\+F23}} = 312
+, \newline
+\mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a2b88b2c88c3bf4d2cb1b0047634be4b6}{GX\+\_\+\+KEY\+\_\+\+F24}} = 313
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a0d5cbcf9a1f0c177c400eae0edec896f}{GX\+\_\+\+KEY\+\_\+\+F25}} = 314
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a2b658c2b52734bad986bb61222d9f975}{GX\+\_\+\+KEY\+\_\+\+KP\+\_\+0}} = 320
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a823dd1d6de1451b599a2e6cdea537050}{GX\+\_\+\+KEY\+\_\+\+KP\+\_\+1}} = 321
+, \newline
+\mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a4e6258ad1686f3b16b35e2bc054c7d53}{GX\+\_\+\+KEY\+\_\+\+KP\+\_\+2}} = 322
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a3d16d0ce2419f0ed9b88e20fa532c360}{GX\+\_\+\+KEY\+\_\+\+KP\+\_\+3}} = 323
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a73a589f75f565d811d84db6d8ecc46e3}{GX\+\_\+\+KEY\+\_\+\+KP\+\_\+4}} = 324
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a1561645be592f9c0a6bfd5f053e3dc0f}{GX\+\_\+\+KEY\+\_\+\+KP\+\_\+5}} = 325
+, \newline
+\mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2ac450a3c45ca1c5ca215a2ff194a08b80}{GX\+\_\+\+KEY\+\_\+\+KP\+\_\+6}} = 326
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a392d29d8f15d1f0fb56e8034efa00b62}{GX\+\_\+\+KEY\+\_\+\+KP\+\_\+7}} = 327
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2ad34052f792721a16448bc23778b37f64}{GX\+\_\+\+KEY\+\_\+\+KP\+\_\+8}} = 328
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a615233a410f79f22562e5c78004050e9}{GX\+\_\+\+KEY\+\_\+\+KP\+\_\+9}} = 329
+, \newline
+\mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2afd1a492b3ee32a36d6e7b65bf61156d2}{GX\+\_\+\+KEY\+\_\+\+KP\+\_\+\+DECIMAL}} = 330
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a11fdb06da7c7df06f3a86400a21ce577}{GX\+\_\+\+KEY\+\_\+\+KP\+\_\+\+DIVIDE}} = 331
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2afcfef7fd448d897f68e1d8ea8b8fbc7f}{GX\+\_\+\+KEY\+\_\+\+KP\+\_\+\+MULTIPLY}} = 332
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2afb4b846e6619b9fbcdb22a706daea59e}{GX\+\_\+\+KEY\+\_\+\+KP\+\_\+\+SUBTRACT}} = 333
+, \newline
+\mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a26dfcd86ea3c4514dcfb1d6fbcc7e9d0}{GX\+\_\+\+KEY\+\_\+\+KP\+\_\+\+ADD}} = 334
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2aebdbb4f571e3fbd56c2855e3968c8f1d}{GX\+\_\+\+KEY\+\_\+\+KP\+\_\+\+ENTER}} = 335
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2ad4bd43c666791e97e842e369ce7ce703}{GX\+\_\+\+KEY\+\_\+\+KP\+\_\+\+EQUAL}} = 336
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2aaddfecd7519f60934e1d94f3d49d264c}{GX\+\_\+\+KEY\+\_\+\+LEFT\+\_\+\+SHIFT}} = 340
+, \newline
+\mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2afd09090768a33b8764eb9f6a655282fd}{GX\+\_\+\+KEY\+\_\+\+LEFT\+\_\+\+CONTROL}} = 341
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a33ea0a3a5d974bea86e3ecc665bd0ca2}{GX\+\_\+\+KEY\+\_\+\+LEFT\+\_\+\+ALT}} = 342
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2ab152b6c4395480c25f8127d2c33e5b2d}{GX\+\_\+\+KEY\+\_\+\+LEFT\+\_\+\+SUPER}} = 343
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2aa36230f7ed9f0c7448eaca433e31036e}{GX\+\_\+\+KEY\+\_\+\+RIGHT\+\_\+\+SHIFT}} = 344
+, \newline
+\mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a43a6fafb540ccc714fb00c56c83a092e}{GX\+\_\+\+KEY\+\_\+\+RIGHT\+\_\+\+CONTROL}} = 345
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2ad6cc95426470fe24a4eadcc3c78a4dcf}{GX\+\_\+\+KEY\+\_\+\+RIGHT\+\_\+\+ALT}} = 346
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2ad943c11d3334b7f0afa922cf52ddb6f3}{GX\+\_\+\+KEY\+\_\+\+RIGHT\+\_\+\+SUPER}} = 347
+, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a82a0d059bb243760f5b474149ef2be94}{GX\+\_\+\+KEY\+\_\+\+MENU}} = 348
+ \}
+\begin{DoxyCompactList}\small\item\em Keyboard key enumeration (mirrors GLFW key values). \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{gx_8h_a87d336541f9413db24108524a42c0dfb}{GXApplication\+Options}} \{ \mbox{\hyperlink{gx_8h_a87d336541f9413db24108524a42c0dfba97a5c8e838a507c6a70e8ee09bd3c2f3}{GX\+\_\+\+APP\+\_\+\+OPTION\+\_\+\+NONE}} = 0
+ \}
+\begin{DoxyCompactList}\small\item\em Application configuration flags. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{gx_8h_a060bcfb6c531edd54e25817f312a2b85}{GXResource\+Type}} \{ \mbox{\hyperlink{gx_8h_a060bcfb6c531edd54e25817f312a2b85a8cb89865bb92fd4ebf9fd761c5c8b68e}{GX\+\_\+\+RESOURCE\+\_\+\+WINDOW}}
+, \mbox{\hyperlink{gx_8h_a060bcfb6c531edd54e25817f312a2b85ade79dce00383cc4e07e064860a792782}{GX\+\_\+\+RESOURCE\+\_\+\+OBJECT}}
+ \}
+\begin{DoxyCompactList}\small\item\em Resource type identifiers. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{gx_8h_a68763dfc6bb00b662abc7f535ebd08e1}{GXResource\+Status}} \{ \newline
+\mbox{\hyperlink{gx_8h_a68763dfc6bb00b662abc7f535ebd08e1a441a971f556f17d9a313bbc15fb95b79}{GX\+\_\+\+RESOURCE\+\_\+\+STATUS\+\_\+\+NONE}} = 0
+, \mbox{\hyperlink{gx_8h_a68763dfc6bb00b662abc7f535ebd08e1ac28973cc7ee78376dc4cfddf9cdd0845}{GX\+\_\+\+RESOURCE\+\_\+\+STATUS\+\_\+\+SHOWING}} = 1
+, \mbox{\hyperlink{gx_8h_a68763dfc6bb00b662abc7f535ebd08e1a4f8f5cba59022c9633018ea3217c00f3}{GX\+\_\+\+RESOURCE\+\_\+\+STATUS\+\_\+\+SHOWING\+\_\+\+MASK}} = \texorpdfstring{$\sim$}{\string~}\+GX\+\_\+\+RESOURCE\+\_\+\+STATUS\+\_\+\+SHOWING
+, \mbox{\hyperlink{gx_8h_a68763dfc6bb00b662abc7f535ebd08e1aaa02b4bc8e3ab1a2ef51285c39b367b3}{GX\+\_\+\+RESOURCE\+\_\+\+STATUS\+\_\+\+INITIATED}} = 2
+, \newline
+\mbox{\hyperlink{gx_8h_a68763dfc6bb00b662abc7f535ebd08e1a5fbccd29a02675c55593469b51f5eeca}{GX\+\_\+\+RESOURCE\+\_\+\+STATUS\+\_\+\+INITIATED\+\_\+\+MASK}} = \texorpdfstring{$\sim$}{\string~}\+GX\+\_\+\+RESOURCE\+\_\+\+STATUS\+\_\+\+INITIATED
+, \mbox{\hyperlink{gx_8h_a68763dfc6bb00b662abc7f535ebd08e1a1b6d162e07e021628906ec2c92ad4cfc}{GX\+\_\+\+RESOURCE\+\_\+\+STATUS\+\_\+\+SHOULD\+\_\+\+CLOSE}} = 4
+, \mbox{\hyperlink{gx_8h_a68763dfc6bb00b662abc7f535ebd08e1a6605e85978d1cb0139dad28b396439d7}{GX\+\_\+\+RESOURCE\+\_\+\+STATUS\+\_\+\+SHOULD\+\_\+\+CLOSE\+\_\+\+MASK}} = \texorpdfstring{$\sim$}{\string~}\+GX\+\_\+\+RESOURCE\+\_\+\+STATUS\+\_\+\+SHOULD\+\_\+\+CLOSE
+ \}
+\begin{DoxyCompactList}\small\item\em Resource state flags. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{gx_8h_a12b600ff948f2fb55b73974e5bef17e2}{GXBuffer\+Usage\+Type}} \{ \mbox{\hyperlink{gx_8h_a12b600ff948f2fb55b73974e5bef17e2aad92ce4a6b781316ba744d6775397443}{GX\+\_\+\+BUFFER\+\_\+\+USAGE\+\_\+\+TYPE\+\_\+\+STATIC}} = 0x88\+E4
+, \mbox{\hyperlink{gx_8h_a12b600ff948f2fb55b73974e5bef17e2a2238c7f438b8edbb5a36c0021fd0bfb1}{GX\+\_\+\+BUFFER\+\_\+\+USAGE\+\_\+\+TYPE\+\_\+\+DYNAMIC}} = 0x88\+E8
+, \mbox{\hyperlink{gx_8h_a12b600ff948f2fb55b73974e5bef17e2a38b72106879e537fb2e42a9e06c129ee}{GX\+\_\+\+BUFFER\+\_\+\+USAGE\+\_\+\+TYPE\+\_\+\+STREAM}} = 0x88\+E0
+ \}
+\begin{DoxyCompactList}\small\item\em Buffer usage type identifiers for buffer objects. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{gx_8h_acf407c4416240bb057bea98cc48d2a11}{GXBuffer\+Type}} \{ \mbox{\hyperlink{gx_8h_acf407c4416240bb057bea98cc48d2a11a87268ae25321cbeebb2727312e10d14a}{GX\+\_\+\+BUFFER\+\_\+\+TYPE\+\_\+\+ARRAY}} = 0x8892
+, \mbox{\hyperlink{gx_8h_acf407c4416240bb057bea98cc48d2a11aacfd830268ff17b3c855042a83fa467e}{GX\+\_\+\+BUFFER\+\_\+\+TYPE\+\_\+\+ELEMENT\+\_\+\+ARRAY}} = 0x8893
+ \}
+\begin{DoxyCompactList}\small\item\em Buffer type identifiers for buffer objects. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{gx_8h_a531e89fed7a77bbc53ed923fd8a4f71c}{GXBuffer\+Bit}} \+: unsigned int \{ \mbox{\hyperlink{gx_8h_a531e89fed7a77bbc53ed923fd8a4f71ca524bb42b0524ee1e8d496d1e7e248d17}{GX\+\_\+\+DEPTH\+\_\+\+BUFFER\+\_\+\+BIT}} = UINT32\+\_\+C(0x00000100)
+, \mbox{\hyperlink{gx_8h_a531e89fed7a77bbc53ed923fd8a4f71ca1a849207f187a27197b18ff721e052d7}{GX\+\_\+\+STENCIL\+\_\+\+BUFFER\+\_\+\+BIT}} = UINT32\+\_\+C(0x00000400)
+, \mbox{\hyperlink{gx_8h_a531e89fed7a77bbc53ed923fd8a4f71caf526503cd1387a1a56f300abf946c044}{GX\+\_\+\+COLOR\+\_\+\+BUFFER\+\_\+\+BIT}} = UINT32\+\_\+C(0x00004000)
+ \}
+\begin{DoxyCompactList}\small\item\em Buffer bit bindings for glads GL\+\_\+\+DEPTH\+\_\+\+BUFFER\+\_\+\+BIT, GL\+\_\+\+STENCIL\+\_\+\+BUFFER\+\_\+\+BIT, and GX\+\_\+\+COLOR\+\_\+\+BUFFER\+\_\+\+BIT. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{gx_8h_a2eb7ea5dfbda0b5ecb3846115c56fe83}{GXShader\+Type}} \{ \mbox{\hyperlink{gx_8h_a2eb7ea5dfbda0b5ecb3846115c56fe83a73a7e0272d9d8cd8b92a01ee565087ee}{GX\+\_\+\+GLSL\+\_\+\+FRAGMENT\+\_\+\+SHADER}} = 0x8\+B30
+, \mbox{\hyperlink{gx_8h_a2eb7ea5dfbda0b5ecb3846115c56fe83aa3307c254f6feef5d1f9505849097f86}{GX\+\_\+\+GLSL\+\_\+\+VERTEX\+\_\+\+SHADER}} = 0x8\+B31
+ \}
+\begin{DoxyCompactList}\small\item\em Shader type bindings for glads GL\+\_\+\+FRAGMENT\+\_\+\+SHADER, and GL\+\_\+\+VERTEX\+\_\+\+SHADER. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{gx_8h_a0e90335b7087af15a4b53fb23b65faf2}{GXMapping\+Bits}} \{ \newline
+\mbox{\hyperlink{gx_8h_a0e90335b7087af15a4b53fb23b65faf2a96a18be9af738adb20b464f071850ed9}{GX\+\_\+\+MAP\+\_\+\+READ\+\_\+\+BIT}} = 0x0001
+, \mbox{\hyperlink{gx_8h_a0e90335b7087af15a4b53fb23b65faf2a39d81fd3f5b35fb4cd919ac0c457be71}{GX\+\_\+\+MAP\+\_\+\+WRITE\+\_\+\+BIT}} = 0x0002
+, \mbox{\hyperlink{gx_8h_a0e90335b7087af15a4b53fb23b65faf2a7db06bebb2d4f8797f7cef45ad9dda7d}{GX\+\_\+\+MAP\+\_\+\+INVALIDATE\+\_\+\+RANGE\+\_\+\+BIT}} = 0x0004
+, \mbox{\hyperlink{gx_8h_a0e90335b7087af15a4b53fb23b65faf2afe99e4cf2b5db838d3168f92de9a503f}{GX\+\_\+\+MAP\+\_\+\+INVALIDATE\+\_\+\+BUFFER\+\_\+\+BIT}} = 0x0008
+, \newline
+\mbox{\hyperlink{gx_8h_a0e90335b7087af15a4b53fb23b65faf2a83f19d54ee45e5c678a35fc1cb074d91}{GX\+\_\+\+MAP\+\_\+\+UNSYNCHRONIZED\+\_\+\+BIT}} = 0x0020
+, \mbox{\hyperlink{gx_8h_a0e90335b7087af15a4b53fb23b65faf2abc4e8d19aca1cf36e4c709306fef0309}{GX\+\_\+\+MAP\+\_\+\+SIMPLE\+\_\+\+WRITE}} = GX\+\_\+\+MAP\+\_\+\+WRITE\+\_\+\+BIT \texorpdfstring{$\vert$}{|} GX\+\_\+\+MAP\+\_\+\+INVALIDATE\+\_\+\+BUFFER\+\_\+\+BIT
+, \mbox{\hyperlink{gx_8h_a0e90335b7087af15a4b53fb23b65faf2aea4c2418edfae28979a2d01131e2adbe}{GX\+\_\+\+MAP\+\_\+\+FREQUENT\+\_\+\+WRITE}} = GX\+\_\+\+MAP\+\_\+\+SIMPLE\+\_\+\+WRITE
+, \mbox{\hyperlink{gx_8h_a0e90335b7087af15a4b53fb23b65faf2ad6d3e3e97df0ddf0ca9af3f6705cf257}{GX\+\_\+\+MAP\+\_\+\+UNSAFE\+\_\+\+HIGH\+\_\+\+PERFORMANCE\+\_\+\+WRITE}} = GX\+\_\+\+MAP\+\_\+\+WRITE\+\_\+\+BIT \texorpdfstring{$\vert$}{|} GX\+\_\+\+MAP\+\_\+\+UNSYNCHRONIZED\+\_\+\+BIT
+ \}
+\begin{DoxyCompactList}\small\item\em Buffer mapping bits for gl\+Map\+Buffer\+Range/gx\+Map\+Buffer\+Range. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{gx_8h_a7fd0c624c6c69095149db64b99d41cb1}{GXVertex\+Attribute\+Type}} \{ \newline
+\mbox{\hyperlink{gx_8h_a7fd0c624c6c69095149db64b99d41cb1a824f905eb761d6a66a66a9bf39f83856}{GX\+\_\+\+VERTEX\+\_\+\+ATTRIB\+\_\+\+TYPE\+\_\+\+BYTE}} = 0x1400
+, \mbox{\hyperlink{gx_8h_a7fd0c624c6c69095149db64b99d41cb1a27241808a2f2aba8cbd1c008ec2e23b8}{GX\+\_\+\+VERTEX\+\_\+\+ATTRIB\+\_\+\+TYPE\+\_\+\+UNSIGNED\+\_\+\+BYTE}} = 0x1401
+, \mbox{\hyperlink{gx_8h_a7fd0c624c6c69095149db64b99d41cb1a1acd97b35d5686416405588b98d81950}{GX\+\_\+\+VERTEX\+\_\+\+ATTRIB\+\_\+\+TYPE\+\_\+\+SHORT}} = 0x1402
+, \mbox{\hyperlink{gx_8h_a7fd0c624c6c69095149db64b99d41cb1af70d741c940372f8df2cb9ca7d6c05d6}{GX\+\_\+\+VERTEX\+\_\+\+ATTRIB\+\_\+\+TYPE\+\_\+\+UNSIGNED\+\_\+\+SHORT}} = 0x1403
+, \newline
+\mbox{\hyperlink{gx_8h_a7fd0c624c6c69095149db64b99d41cb1a3aa2abb59defb6e8e617d41f75775711}{GX\+\_\+\+VERTEX\+\_\+\+ATTRIB\+\_\+\+TYPE\+\_\+\+INT}} = 0x1404
+, \mbox{\hyperlink{gx_8h_a7fd0c624c6c69095149db64b99d41cb1a5029f8e0734a5e8c16e85cef5d900620}{GX\+\_\+\+VERTEX\+\_\+\+ATTRIB\+\_\+\+TYPE\+\_\+\+UNSIGNED\+\_\+\+INT}} = 0x1405
+, \mbox{\hyperlink{gx_8h_a7fd0c624c6c69095149db64b99d41cb1a00de28234feddfd1c8b8f034d61fcd12}{GX\+\_\+\+VERTEX\+\_\+\+ATTRIB\+\_\+\+TYPE\+\_\+\+FLOAT}} = 0x1406
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{gx_8h_a6a96a1574c45c3c92db36ae621d1c01b}{gx\+Init}} ()
+\begin{DoxyCompactList}\small\item\em Initializes GX library and dependencies (GLFW). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{gx_8h_a6866c6c7ebec5d428312044ebb69e09f}{gx\+Terminate}} ()
+\begin{DoxyCompactList}\small\item\em Terminates GX library and cleans up resources. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{gx_8h_acd7da62752d00aea8271dc6a5d9ed4e6}{gx\+Add\+Keyboard\+Callback}} (\mbox{\hyperlink{gx_8h_ae21f5494d0a63e4159607dda10f81ef8}{GXKeyboard\+Callback}} cb)
+\begin{DoxyCompactList}\small\item\em Registers a keyboard event callback. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{gx_8h_ae7371bb384d4f1ab2d5f061b294f31ee}{gx\+Clear\+Keyboard\+Callback}} ()
+\begin{DoxyCompactList}\small\item\em Clears all keyboard callbacks. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{gx_8h_a982378df3a58ebc754e238f548f6d947}{gx\+Destroy\+Application}} (\mbox{\hyperlink{struct_g_x_application}{GXApplication}} \texorpdfstring{$\ast$}{*}application)
+\begin{DoxyCompactList}\small\item\em Releases application resources. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_g_x_application}{GXApplication}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{gx_8h_afc7f563785198dd63cec3036190814bf}{gx\+Create\+Application}} (\mbox{\hyperlink{gx_8h_a87d336541f9413db24108524a42c0dfb}{GXApplication\+Options}} options)
+\begin{DoxyCompactList}\small\item\em Creates main application context. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_g_x_application}{GXApplication}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{gx_8h_a6bf81f3c41110e3803cdea7f89de0453}{gx\+Get\+Application}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves current application context. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{gx_8h_a95c749719fb40e460fbcdd12906f3c1f}{gx\+Exec}} ()
+\begin{DoxyCompactList}\small\item\em Executes the current application. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_g_x_object}{GXObject}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{gx_8h_a3cf8cfac8ca8c65bd4acf0cd8c4938a6}{gx\+As\+Object}} (\mbox{\hyperlink{struct_g_x_resource}{GXResource}} \texorpdfstring{$\ast$}{*}res)
+\begin{DoxyCompactList}\small\item\em Returns a memory pointer to \doxylink{struct_g_x_object}{GXObject} from the specified \doxylink{struct_g_x_resource}{GXResource}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_g_x_object}{GXObject}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{gx_8h_ada94df35172028fd2cca0465829485bc}{gx\+Create\+Object}} (uint32\+\_\+t shader\+\_\+program, uint32\+\_\+t vao, uint32\+\_\+t vbo, uint32\+\_\+t ebo, void \texorpdfstring{$\ast$}{*}user\+\_\+data)
+\item 
+\mbox{\hyperlink{struct_g_x_object}{GXObject}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{gx_8h_ae08675b49133574c8a8f53f3fbb1c9a2}{gx\+Create\+Render\+Object\+With\+Elements}} (uint32\+\_\+t shader\+\_\+program, \mbox{\hyperlink{gx_8h_a12b600ff948f2fb55b73974e5bef17e2}{GXBuffer\+Usage\+Type}} vert\+\_\+buffer\+\_\+usage, size\+\_\+t vert\+\_\+size, void \texorpdfstring{$\ast$}{*}vert\+\_\+data, \mbox{\hyperlink{gx_8h_a12b600ff948f2fb55b73974e5bef17e2}{GXBuffer\+Usage\+Type}} elem\+\_\+buffer\+\_\+usage, size\+\_\+t elem\+\_\+size, void \texorpdfstring{$\ast$}{*}elem\+\_\+data, void \texorpdfstring{$\ast$}{*}user\+\_\+data)
+\item 
+\mbox{\hyperlink{struct_g_x_object}{GXObject}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{gx_8h_a64b1f8f3d374118a3ecc4cc3acaf4099}{gx\+Create\+Render\+Object}} (uint32\+\_\+t shader\+\_\+program, \mbox{\hyperlink{gx_8h_a12b600ff948f2fb55b73974e5bef17e2}{GXBuffer\+Usage\+Type}} vert\+\_\+buffer\+\_\+usage, size\+\_\+t vert\+\_\+size, void \texorpdfstring{$\ast$}{*}vert\+\_\+data, void \texorpdfstring{$\ast$}{*}user\+\_\+data)
+\item 
+void \mbox{\hyperlink{gx_8h_a4c68d00acc3d8a9fd725f4c73c59cf65}{gx\+Draw\+Vertices}} (\mbox{\hyperlink{struct_g_x_object}{GXObject}} \texorpdfstring{$\ast$}{*}object, size\+\_\+t offset, size\+\_\+t count)
+\begin{DoxyCompactList}\small\item\em Draws a set of vertices from \doxylink{struct_g_x_object}{GXObject}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{gx_8h_ad8c02b92acb6a924278f35957c0bc010}{gx\+Draw\+Elements}} (\mbox{\hyperlink{struct_g_x_object}{GXObject}} \texorpdfstring{$\ast$}{*}object, size\+\_\+t count, \mbox{\hyperlink{gx_8h_a7fd0c624c6c69095149db64b99d41cb1}{GXVertex\+Attribute\+Type}} type)
+\item 
+void \mbox{\hyperlink{gx_8h_abe7c89be9f2c57abf121e64f359c946f}{gx\+Bind\+Object}} (\mbox{\hyperlink{struct_g_x_object}{GXObject}} \texorpdfstring{$\ast$}{*}object)
+\begin{DoxyCompactList}\small\item\em Binds all data stored in object, effectively making it work. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_g_x_window}{GXWindow}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{gx_8h_a892d1af800d602f6d1231e91792b6599}{gx\+As\+Window}} (\mbox{\hyperlink{struct_g_x_resource}{GXResource}} \texorpdfstring{$\ast$}{*}res)
+\begin{DoxyCompactList}\small\item\em Returns a memory pointer to \doxylink{struct_g_x_window}{GXWindow} from the specified \doxylink{struct_g_x_resource}{GXResource}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_g_x_window}{GXWindow}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{gx_8h_ae6af81c46625a43468bac3d67d7a8aa9}{gx\+Create\+Window}} (bool vsync, bool show, int width, int height, const char \texorpdfstring{$\ast$}{*}title)
+\begin{DoxyCompactList}\small\item\em Creates and initiatlizes an \doxylink{struct_g_x_window}{GXWindow} in memory. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{gx_8h_a3d9d8203ffca6db536ff37c7f3277d87}{gx\+Window\+Set\+Draw\+Callback}} (\mbox{\hyperlink{struct_g_x_window}{GXWindow}} \texorpdfstring{$\ast$}{*}win, \mbox{\hyperlink{gx_8h_a8c1bb3a81f7d02905db77991971f46a0}{GXDraw\+Callback}} cb)
+\begin{DoxyCompactList}\small\item\em Assigns the draw callback for the respective \doxylink{struct_g_x_window}{GXWindow}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{gx_8h_acbe1e81fd4ce60bd48bbcd69586fda46}{gx\+Window\+Close}} (\mbox{\hyperlink{struct_g_x_window}{GXWindow}} \texorpdfstring{$\ast$}{*}win)
+\begin{DoxyCompactList}\small\item\em Inidicates to the libary, that the specified window should close. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{gx_8h_a2d042094acd151bcd40f68313b18c5cc}{gx\+Window\+Should\+Close}} (\mbox{\hyperlink{struct_g_x_window}{GXWindow}} \texorpdfstring{$\ast$}{*}win)
+\begin{DoxyCompactList}\small\item\em Returns whether the status of the specified window indicates it should close. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{gx_8h_ac2bf01e4a94435a96597360172f97edf}{gx\+Destroy\+Resource}} (\mbox{\hyperlink{struct_g_x_resource}{GXResource}} \texorpdfstring{$\ast$}{*}resource)
+\begin{DoxyCompactList}\small\item\em Destroy and free the specified resource. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{gx_8h_a313412ba22eac50e2bff181c07a3882c}{gx\+Update\+Viewport}} (\mbox{\hyperlink{struct_g_x_window}{GXWindow}} \texorpdfstring{$\ast$}{*}win)
+\begin{DoxyCompactList}\small\item\em Updates the viewport for a specific window (equivalent to gx\+Viewport(0, 0, win-\/\texorpdfstring{$>$}{>}width, win-\/\texorpdfstring{$>$}{>}height)). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{gx_8h_a7bc420ab52671bb1267f5adb126fe0b6}{gx\+Set\+Background}} (float r, float g, float b, float a)
+\begin{DoxyCompactList}\small\item\em Sets the background for the respective graphical context. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{gx_8h_a8aecfe1a391495d33781697af5bd7ca6}{gx\+Viewport}} (int x, int y, int w, int h)
+\begin{DoxyCompactList}\small\item\em Sets the viewport for the respective graphical context. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{gx_8h_a549bfcfd0c6ea7c69332aaa51f57bcdf}{gx\+Clear\+Color}} (float r, float g, float b, float a)
+\begin{DoxyCompactList}\small\item\em Sets the clear color for the respective graphical context. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{gx_8h_a934abf23cb4bb4057261fd0d907c64df}{gx\+Clear}} (unsigned int bit)
+\begin{DoxyCompactList}\small\item\em Sets the bitplane area for the respective graphical context. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_g_x_shader_compilation_result}{GXShader\+Compilation\+Result}} \mbox{\hyperlink{gx_8h_a53ae0ebaa74ff8ffc37f5463f447ecac}{gx\+Compile\+GLSLShader}} (const char \texorpdfstring{$\ast$}{*}shader\+\_\+src, \mbox{\hyperlink{gx_8h_a2eb7ea5dfbda0b5ecb3846115c56fe83}{GXShader\+Type}} shader\+\_\+type)
+\begin{DoxyCompactList}\small\item\em Compiles a GLSL shader from source code. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_g_x_program_compilation_result}{GXProgram\+Compilation\+Result}} \mbox{\hyperlink{gx_8h_ad8ce4f450cf4d5c5d0371b1996a204c4}{gx\+Compile\+GLSLProgram}} (const char \texorpdfstring{$\ast$}{*}vertex\+\_\+shader\+\_\+src, const char \texorpdfstring{$\ast$}{*}fragment\+\_\+shader\+\_\+src)
+\begin{DoxyCompactList}\small\item\em Compiles a GLSL vertex and fragment shader from source code. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{gx_8h_a92e3fa245e65a66422dbc2e1aeb3f3ca}{gx\+Gen\+Vertex\+Array\+Object}} ()
+\begin{DoxyCompactList}\small\item\em Generates a new Vertex Array Object (VAO). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{gx_8h_a467d11a0616180af2bd027a45ba1bfe7}{gx\+Bind\+Vertex\+Array\+Object}} (uint32\+\_\+t vao)
+\begin{DoxyCompactList}\small\item\em Binds a Vertex Array Object (VAO) for use. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{gx_8h_a74efe9d59cc0317c77962481d00cb548}{gx\+Gen\+Buffer\+Object}} (\mbox{\hyperlink{gx_8h_acf407c4416240bb057bea98cc48d2a11}{GXBuffer\+Type}} buffer\+\_\+type, \mbox{\hyperlink{gx_8h_a12b600ff948f2fb55b73974e5bef17e2}{GXBuffer\+Usage\+Type}} buffer\+\_\+usage, size\+\_\+t size, void \texorpdfstring{$\ast$}{*}data)
+\begin{DoxyCompactList}\small\item\em Generates a new (Array/\+Element Array) Buffer Object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{gx_8h_a4c53f942aaf94845b7eb170eb166afac}{gx\+Bind\+Buffer\+Object}} (\mbox{\hyperlink{gx_8h_acf407c4416240bb057bea98cc48d2a11}{GXBuffer\+Type}} buffer\+\_\+type, uint32\+\_\+t buffer)
+\begin{DoxyCompactList}\small\item\em Binds a (Array/\+Element Array) Buffer Object for use. \end{DoxyCompactList}\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{gx_8h_aff01850f8640b86e1031bdc63fc04776}{gx\+Map\+Buffer\+Range}} (\mbox{\hyperlink{gx_8h_acf407c4416240bb057bea98cc48d2a11}{GXBuffer\+Type}} buffer\+\_\+type, size\+\_\+t offset, size\+\_\+t length, \mbox{\hyperlink{gx_8h_a0e90335b7087af15a4b53fb23b65faf2}{GXMapping\+Bits}} bits)
+\begin{DoxyCompactList}\small\item\em Maps a range of a (Array/\+Element Array) Buffer Object to CPU memory, allowing access (based of {\ttfamily bits}). \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{gx_8h_a16c58abba3117f7d571ae6c1d15cbc18}{gx\+Unmap\+Buffer}} (\mbox{\hyperlink{gx_8h_acf407c4416240bb057bea98cc48d2a11}{GXBuffer\+Type}} buffer\+\_\+type)
+\begin{DoxyCompactList}\small\item\em Unmaps a previously mapped (Array/\+Element Array) Buffer Object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{gx_8h_a83ee4ca2977257cd74304105ae909dc6}{gx\+Buffer\+Sub\+Data}} (\mbox{\hyperlink{gx_8h_acf407c4416240bb057bea98cc48d2a11}{GXBuffer\+Type}} buffer\+\_\+type, size\+\_\+t offset, size\+\_\+t length, void \texorpdfstring{$\ast$}{*}data)
+\item 
+bool \mbox{\hyperlink{gx_8h_a94e5502c637a126ba77beb45b8b9a713}{gx\+Update\+Vertices}} (\mbox{\hyperlink{struct_g_x_object}{GXObject}} \texorpdfstring{$\ast$}{*}object, size\+\_\+t offset, size\+\_\+t length, void \texorpdfstring{$\ast$}{*}data)
+\begin{DoxyCompactList}\small\item\em Updates the vertex data of a \doxylink{struct_g_x_object}{GXObject}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{gx_8h_ac8eac1b081068eb1ceee1b7704808212}{gx\+Update\+Elements}} (\mbox{\hyperlink{struct_g_x_object}{GXObject}} \texorpdfstring{$\ast$}{*}object, size\+\_\+t offset, size\+\_\+t length, void \texorpdfstring{$\ast$}{*}data)
+\begin{DoxyCompactList}\small\item\em Updates the index data of a \doxylink{struct_g_x_object}{GXObject}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{gx_8h_af827ad56a1afd8f8dc683a37a727023c}{gx\+Set\+Vertex\+Attribute}} (\mbox{\hyperlink{struct_g_x_object}{GXObject}} \texorpdfstring{$\ast$}{*}object, uint32\+\_\+t index, int size, \mbox{\hyperlink{gx_8h_a7fd0c624c6c69095149db64b99d41cb1}{GXVertex\+Attribute\+Type}} type, bool normalize, size\+\_\+t stride, void \texorpdfstring{$\ast$}{*}pointer)
+\begin{DoxyCompactList}\small\item\em Sets a vertex attribute for a \doxylink{struct_g_x_object}{GXObject}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{gx_8h_ac2471172b9f13681c22eec227236ca88}{gx\+Enable\+Vertex\+Attribute}} (\mbox{\hyperlink{struct_g_x_object}{GXObject}} \texorpdfstring{$\ast$}{*}object, uint32\+\_\+t index)
+\begin{DoxyCompactList}\small\item\em Enables a vertex attribute for a \doxylink{struct_g_x_object}{GXObject}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{gx_8h_a786b10a76cfb0f31ec60a137bb84d2c5}{gx\+Disable\+Vertex\+Attribute}} (\mbox{\hyperlink{struct_g_x_object}{GXObject}} \texorpdfstring{$\ast$}{*}object, uint32\+\_\+t index)
+\begin{DoxyCompactList}\small\item\em Disables a vertex attribute for a \doxylink{struct_g_x_object}{GXObject}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{doc-typedef-members}
+\Hypertarget{gx_8h_doc-typedef-members}
+\doxysubsection{Typedef Documentation}
+\Hypertarget{gx_8h_a8c1bb3a81f7d02905db77991971f46a0}\index{gx.h@{gx.h}!GXDrawCallback@{GXDrawCallback}}
+\index{GXDrawCallback@{GXDrawCallback}!gx.h@{gx.h}}
+\doxysubsubsection{\texorpdfstring{GXDrawCallback}{GXDrawCallback}}
+{\footnotesize\ttfamily \label{gx_8h_a8c1bb3a81f7d02905db77991971f46a0} 
+typedef void(\texorpdfstring{$\ast$}{*} GXDraw\+Callback) (\mbox{\hyperlink{struct_g_x_window}{GXWindow}} \texorpdfstring{$\ast$}{*})}
+
+
+
+Window rendering callback type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em win} & Pointer to window being rendered \\
+\hline
+\end{DoxyParams}
+\Hypertarget{gx_8h_ae21f5494d0a63e4159607dda10f81ef8}\index{gx.h@{gx.h}!GXKeyboardCallback@{GXKeyboardCallback}}
+\index{GXKeyboardCallback@{GXKeyboardCallback}!gx.h@{gx.h}}
+\doxysubsubsection{\texorpdfstring{GXKeyboardCallback}{GXKeyboardCallback}}
+{\footnotesize\ttfamily \label{gx_8h_ae21f5494d0a63e4159607dda10f81ef8} 
+typedef void(\texorpdfstring{$\ast$}{*} GXKeyboard\+Callback) (\mbox{\hyperlink{struct_g_x_application}{GXApplication}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{struct_g_x_window}{GXWindow}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2}{GXKey}}, int, int, int)}
+
+
+
+Keyboard event callback. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em app} & Application context \\
+\hline
+{\em win} & Target window \\
+\hline
+{\em key} & Pressed key \\
+\hline
+{\em scancode} & Platform-\/specific scancode \\
+\hline
+{\em action} & Key action (press/release) \\
+\hline
+{\em mods} & Modifier keys (Ctrl/\+Shift/\+Alt) \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-enum-members}
+\Hypertarget{gx_8h_doc-enum-members}
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{gx_8h_a87d336541f9413db24108524a42c0dfb}\index{gx.h@{gx.h}!GXApplicationOptions@{GXApplicationOptions}}
+\index{GXApplicationOptions@{GXApplicationOptions}!gx.h@{gx.h}}
+\doxysubsubsection{\texorpdfstring{GXApplicationOptions}{GXApplicationOptions}}
+{\footnotesize\ttfamily \label{gx_8h_a87d336541f9413db24108524a42c0dfb} 
+enum \mbox{\hyperlink{gx_8h_a87d336541f9413db24108524a42c0dfb}{GXApplication\+Options}}}
+
+
+
+Application configuration flags. 
+
+Values\+:
+\begin{DoxyItemize}
+\item {\ttfamily GX\+\_\+\+APP\+\_\+\+OPTION\+\_\+\+NONE}\+: Default options 
+\end{DoxyItemize}\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_APP\_OPTION\_NONE@{GX\_APP\_OPTION\_NONE}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_APP\_OPTION\_NONE@{GX\_APP\_OPTION\_NONE}}}\Hypertarget{gx_8h_a87d336541f9413db24108524a42c0dfba97a5c8e838a507c6a70e8ee09bd3c2f3}\label{gx_8h_a87d336541f9413db24108524a42c0dfba97a5c8e838a507c6a70e8ee09bd3c2f3} 
+GX\+\_\+\+APP\+\_\+\+OPTION\+\_\+\+NONE&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{gx_8h_a531e89fed7a77bbc53ed923fd8a4f71c}\index{gx.h@{gx.h}!GXBufferBit@{GXBufferBit}}
+\index{GXBufferBit@{GXBufferBit}!gx.h@{gx.h}}
+\doxysubsubsection{\texorpdfstring{GXBufferBit}{GXBufferBit}}
+{\footnotesize\ttfamily \label{gx_8h_a531e89fed7a77bbc53ed923fd8a4f71c} 
+enum \mbox{\hyperlink{gx_8h_a531e89fed7a77bbc53ed923fd8a4f71c}{GXBuffer\+Bit}} \+: unsigned int}
+
+
+
+Buffer bit bindings for glads GL\+\_\+\+DEPTH\+\_\+\+BUFFER\+\_\+\+BIT, GL\+\_\+\+STENCIL\+\_\+\+BUFFER\+\_\+\+BIT, and GX\+\_\+\+COLOR\+\_\+\+BUFFER\+\_\+\+BIT. 
+
+Values\+:
+\begin{DoxyItemize}
+\item {\ttfamily GX\+\_\+\+DEPTH\+\_\+\+BUFFER\+\_\+\+BIT}\+: Indicates the depth buffer
+\item {\ttfamily GX\+\_\+\+STENCIL\+\_\+\+BUFFER\+\_\+\+BIT}\+: Indicates the stencil buffer
+\item {\ttfamily GX\+\_\+\+COLOR\+\_\+\+BUFFER\+\_\+\+BIT}\+: Inidcates the buffers currently enabled for color writing 
+\end{DoxyItemize}\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_DEPTH\_BUFFER\_BIT@{GX\_DEPTH\_BUFFER\_BIT}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_DEPTH\_BUFFER\_BIT@{GX\_DEPTH\_BUFFER\_BIT}}}\Hypertarget{gx_8h_a531e89fed7a77bbc53ed923fd8a4f71ca524bb42b0524ee1e8d496d1e7e248d17}\label{gx_8h_a531e89fed7a77bbc53ed923fd8a4f71ca524bb42b0524ee1e8d496d1e7e248d17} 
+GX\+\_\+\+DEPTH\+\_\+\+BUFFER\+\_\+\+BIT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_STENCIL\_BUFFER\_BIT@{GX\_STENCIL\_BUFFER\_BIT}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_STENCIL\_BUFFER\_BIT@{GX\_STENCIL\_BUFFER\_BIT}}}\Hypertarget{gx_8h_a531e89fed7a77bbc53ed923fd8a4f71ca1a849207f187a27197b18ff721e052d7}\label{gx_8h_a531e89fed7a77bbc53ed923fd8a4f71ca1a849207f187a27197b18ff721e052d7} 
+GX\+\_\+\+STENCIL\+\_\+\+BUFFER\+\_\+\+BIT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_COLOR\_BUFFER\_BIT@{GX\_COLOR\_BUFFER\_BIT}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_COLOR\_BUFFER\_BIT@{GX\_COLOR\_BUFFER\_BIT}}}\Hypertarget{gx_8h_a531e89fed7a77bbc53ed923fd8a4f71caf526503cd1387a1a56f300abf946c044}\label{gx_8h_a531e89fed7a77bbc53ed923fd8a4f71caf526503cd1387a1a56f300abf946c044} 
+GX\+\_\+\+COLOR\+\_\+\+BUFFER\+\_\+\+BIT&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{gx_8h_acf407c4416240bb057bea98cc48d2a11}\index{gx.h@{gx.h}!GXBufferType@{GXBufferType}}
+\index{GXBufferType@{GXBufferType}!gx.h@{gx.h}}
+\doxysubsubsection{\texorpdfstring{GXBufferType}{GXBufferType}}
+{\footnotesize\ttfamily \label{gx_8h_acf407c4416240bb057bea98cc48d2a11} 
+enum \mbox{\hyperlink{gx_8h_acf407c4416240bb057bea98cc48d2a11}{GXBuffer\+Type}}}
+
+
+
+Buffer type identifiers for buffer objects. 
+
+Values\+:
+\begin{DoxyItemize}
+\item {\ttfamily GX\+\_\+\+BUFFER\+\_\+\+TYPE\+\_\+\+ARRAY}\+: Vertex array buffer
+\item {\ttfamily GX\+\_\+\+BUFFER\+\_\+\+TYPE\+\_\+\+ELEMENT\+\_\+\+ARRAY}\+: Element array buffer 
+\end{DoxyItemize}\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_BUFFER\_TYPE\_ARRAY@{GX\_BUFFER\_TYPE\_ARRAY}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_BUFFER\_TYPE\_ARRAY@{GX\_BUFFER\_TYPE\_ARRAY}}}\Hypertarget{gx_8h_acf407c4416240bb057bea98cc48d2a11a87268ae25321cbeebb2727312e10d14a}\label{gx_8h_acf407c4416240bb057bea98cc48d2a11a87268ae25321cbeebb2727312e10d14a} 
+GX\+\_\+\+BUFFER\+\_\+\+TYPE\+\_\+\+ARRAY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_BUFFER\_TYPE\_ELEMENT\_ARRAY@{GX\_BUFFER\_TYPE\_ELEMENT\_ARRAY}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_BUFFER\_TYPE\_ELEMENT\_ARRAY@{GX\_BUFFER\_TYPE\_ELEMENT\_ARRAY}}}\Hypertarget{gx_8h_acf407c4416240bb057bea98cc48d2a11aacfd830268ff17b3c855042a83fa467e}\label{gx_8h_acf407c4416240bb057bea98cc48d2a11aacfd830268ff17b3c855042a83fa467e} 
+GX\+\_\+\+BUFFER\+\_\+\+TYPE\+\_\+\+ELEMENT\+\_\+\+ARRAY&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{gx_8h_a12b600ff948f2fb55b73974e5bef17e2}\index{gx.h@{gx.h}!GXBufferUsageType@{GXBufferUsageType}}
+\index{GXBufferUsageType@{GXBufferUsageType}!gx.h@{gx.h}}
+\doxysubsubsection{\texorpdfstring{GXBufferUsageType}{GXBufferUsageType}}
+{\footnotesize\ttfamily \label{gx_8h_a12b600ff948f2fb55b73974e5bef17e2} 
+enum \mbox{\hyperlink{gx_8h_a12b600ff948f2fb55b73974e5bef17e2}{GXBuffer\+Usage\+Type}}}
+
+
+
+Buffer usage type identifiers for buffer objects. 
+
+Values\+:
+\begin{DoxyItemize}
+\item {\ttfamily GX\+\_\+\+BUFFER\+\_\+\+TYPE\+\_\+\+STATIC}\+: Static buffer, data does not change after creation
+\item {\ttfamily GX\+\_\+\+BUFFER\+\_\+\+TYPE\+\_\+\+DYNAMIC}\+: Dynamic buffer, data may change frequently
+\item {\ttfamily GX\+\_\+\+BUFFER\+\_\+\+TYPE\+\_\+\+STREAM}\+: Stream buffer, data is updated every frame (do not use as a subsitute for dynamic buffers) 
+\end{DoxyItemize}\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_BUFFER\_USAGE\_TYPE\_STATIC@{GX\_BUFFER\_USAGE\_TYPE\_STATIC}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_BUFFER\_USAGE\_TYPE\_STATIC@{GX\_BUFFER\_USAGE\_TYPE\_STATIC}}}\Hypertarget{gx_8h_a12b600ff948f2fb55b73974e5bef17e2aad92ce4a6b781316ba744d6775397443}\label{gx_8h_a12b600ff948f2fb55b73974e5bef17e2aad92ce4a6b781316ba744d6775397443} 
+GX\+\_\+\+BUFFER\+\_\+\+USAGE\+\_\+\+TYPE\+\_\+\+STATIC&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_BUFFER\_USAGE\_TYPE\_DYNAMIC@{GX\_BUFFER\_USAGE\_TYPE\_DYNAMIC}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_BUFFER\_USAGE\_TYPE\_DYNAMIC@{GX\_BUFFER\_USAGE\_TYPE\_DYNAMIC}}}\Hypertarget{gx_8h_a12b600ff948f2fb55b73974e5bef17e2a2238c7f438b8edbb5a36c0021fd0bfb1}\label{gx_8h_a12b600ff948f2fb55b73974e5bef17e2a2238c7f438b8edbb5a36c0021fd0bfb1} 
+GX\+\_\+\+BUFFER\+\_\+\+USAGE\+\_\+\+TYPE\+\_\+\+DYNAMIC&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_BUFFER\_USAGE\_TYPE\_STREAM@{GX\_BUFFER\_USAGE\_TYPE\_STREAM}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_BUFFER\_USAGE\_TYPE\_STREAM@{GX\_BUFFER\_USAGE\_TYPE\_STREAM}}}\Hypertarget{gx_8h_a12b600ff948f2fb55b73974e5bef17e2a38b72106879e537fb2e42a9e06c129ee}\label{gx_8h_a12b600ff948f2fb55b73974e5bef17e2a38b72106879e537fb2e42a9e06c129ee} 
+GX\+\_\+\+BUFFER\+\_\+\+USAGE\+\_\+\+TYPE\+\_\+\+STREAM&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2}\index{gx.h@{gx.h}!GXKey@{GXKey}}
+\index{GXKey@{GXKey}!gx.h@{gx.h}}
+\doxysubsubsection{\texorpdfstring{GXKey}{GXKey}}
+{\footnotesize\ttfamily \label{gx_8h_a747621a460572dd3234c9c30a27378f2} 
+enum \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2}{GXKey}}}
+
+
+
+Keyboard key enumeration (mirrors GLFW key values). 
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_SPACE@{GX\_KEY\_SPACE}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_SPACE@{GX\_KEY\_SPACE}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2a27037cbb7b7f11d4bc2843b8fbfef8d6}\label{gx_8h_a747621a460572dd3234c9c30a27378f2a27037cbb7b7f11d4bc2843b8fbfef8d6} 
+GX\+\_\+\+KEY\+\_\+\+SPACE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_APOSTROPHE@{GX\_KEY\_APOSTROPHE}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_APOSTROPHE@{GX\_KEY\_APOSTROPHE}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2aa3f514cd55b075446036af0b8eef0407}\label{gx_8h_a747621a460572dd3234c9c30a27378f2aa3f514cd55b075446036af0b8eef0407} 
+GX\+\_\+\+KEY\+\_\+\+APOSTROPHE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_COMMA@{GX\_KEY\_COMMA}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_COMMA@{GX\_KEY\_COMMA}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2a5b8e94a6ce08da8f06f129f65999c9cb}\label{gx_8h_a747621a460572dd3234c9c30a27378f2a5b8e94a6ce08da8f06f129f65999c9cb} 
+GX\+\_\+\+KEY\+\_\+\+COMMA&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_MINUS@{GX\_KEY\_MINUS}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_MINUS@{GX\_KEY\_MINUS}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2a5e0aeb8d74e0fc750256d5ead18d8462}\label{gx_8h_a747621a460572dd3234c9c30a27378f2a5e0aeb8d74e0fc750256d5ead18d8462} 
+GX\+\_\+\+KEY\+\_\+\+MINUS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_PERIOD@{GX\_KEY\_PERIOD}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_PERIOD@{GX\_KEY\_PERIOD}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2adfb746800f1c6d203f9aebbb3f418599}\label{gx_8h_a747621a460572dd3234c9c30a27378f2adfb746800f1c6d203f9aebbb3f418599} 
+GX\+\_\+\+KEY\+\_\+\+PERIOD&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_SLASH@{GX\_KEY\_SLASH}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_SLASH@{GX\_KEY\_SLASH}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2aa7ba43b28225964b822ef9473c0614dc}\label{gx_8h_a747621a460572dd3234c9c30a27378f2aa7ba43b28225964b822ef9473c0614dc} 
+GX\+\_\+\+KEY\+\_\+\+SLASH&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_0@{GX\_KEY\_0}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_0@{GX\_KEY\_0}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2ab0dbb2b090ac6273b083c621edb243a6}\label{gx_8h_a747621a460572dd3234c9c30a27378f2ab0dbb2b090ac6273b083c621edb243a6} 
+GX\+\_\+\+KEY\+\_\+0&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_1@{GX\_KEY\_1}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_1@{GX\_KEY\_1}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2addaf74ca383ead29cec2e1291453d4c2}\label{gx_8h_a747621a460572dd3234c9c30a27378f2addaf74ca383ead29cec2e1291453d4c2} 
+GX\+\_\+\+KEY\+\_\+1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_2@{GX\_KEY\_2}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_2@{GX\_KEY\_2}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2a271b66524f10b1aeb6822cce530e94f8}\label{gx_8h_a747621a460572dd3234c9c30a27378f2a271b66524f10b1aeb6822cce530e94f8} 
+GX\+\_\+\+KEY\+\_\+2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_3@{GX\_KEY\_3}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_3@{GX\_KEY\_3}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2af96045b2bceb15d5d412365eb530f3d7}\label{gx_8h_a747621a460572dd3234c9c30a27378f2af96045b2bceb15d5d412365eb530f3d7} 
+GX\+\_\+\+KEY\+\_\+3&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_4@{GX\_KEY\_4}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_4@{GX\_KEY\_4}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2adebf66a876a7353db6717a1536d6bfbd}\label{gx_8h_a747621a460572dd3234c9c30a27378f2adebf66a876a7353db6717a1536d6bfbd} 
+GX\+\_\+\+KEY\+\_\+4&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_5@{GX\_KEY\_5}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_5@{GX\_KEY\_5}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2aa4b32ee851ffc9a1493e4331df614472}\label{gx_8h_a747621a460572dd3234c9c30a27378f2aa4b32ee851ffc9a1493e4331df614472} 
+GX\+\_\+\+KEY\+\_\+5&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_6@{GX\_KEY\_6}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_6@{GX\_KEY\_6}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2a41d8948828057cf676607327587ab5d6}\label{gx_8h_a747621a460572dd3234c9c30a27378f2a41d8948828057cf676607327587ab5d6} 
+GX\+\_\+\+KEY\+\_\+6&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_7@{GX\_KEY\_7}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_7@{GX\_KEY\_7}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2ac1299fd08efd2c6d8126aac1c8ced7fa}\label{gx_8h_a747621a460572dd3234c9c30a27378f2ac1299fd08efd2c6d8126aac1c8ced7fa} 
+GX\+\_\+\+KEY\+\_\+7&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_8@{GX\_KEY\_8}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_8@{GX\_KEY\_8}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2ad2754bbd8e9b06d5245b9f6a8280a9af}\label{gx_8h_a747621a460572dd3234c9c30a27378f2ad2754bbd8e9b06d5245b9f6a8280a9af} 
+GX\+\_\+\+KEY\+\_\+8&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_9@{GX\_KEY\_9}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_9@{GX\_KEY\_9}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2a22ca05f2534ba79a0c3472a3560c6838}\label{gx_8h_a747621a460572dd3234c9c30a27378f2a22ca05f2534ba79a0c3472a3560c6838} 
+GX\+\_\+\+KEY\+\_\+9&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_SEMICOLON@{GX\_KEY\_SEMICOLON}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_SEMICOLON@{GX\_KEY\_SEMICOLON}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2a3330734f38334107a2b73fa79bf164aa}\label{gx_8h_a747621a460572dd3234c9c30a27378f2a3330734f38334107a2b73fa79bf164aa} 
+GX\+\_\+\+KEY\+\_\+\+SEMICOLON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_EQUAL@{GX\_KEY\_EQUAL}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_EQUAL@{GX\_KEY\_EQUAL}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2a29241007b7d46b6025bdacdc86ba8f76}\label{gx_8h_a747621a460572dd3234c9c30a27378f2a29241007b7d46b6025bdacdc86ba8f76} 
+GX\+\_\+\+KEY\+\_\+\+EQUAL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_A@{GX\_KEY\_A}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_A@{GX\_KEY\_A}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2ad4ca84a3458d4ebf64d9739a07aee240}\label{gx_8h_a747621a460572dd3234c9c30a27378f2ad4ca84a3458d4ebf64d9739a07aee240} 
+GX\+\_\+\+KEY\+\_\+A&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_B@{GX\_KEY\_B}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_B@{GX\_KEY\_B}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2a152ae4f837fe39a88a841b8b9ffe7eb2}\label{gx_8h_a747621a460572dd3234c9c30a27378f2a152ae4f837fe39a88a841b8b9ffe7eb2} 
+GX\+\_\+\+KEY\+\_\+B&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_C@{GX\_KEY\_C}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_C@{GX\_KEY\_C}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2ae7d3e093866bce8078fa626ed3fc329e}\label{gx_8h_a747621a460572dd3234c9c30a27378f2ae7d3e093866bce8078fa626ed3fc329e} 
+GX\+\_\+\+KEY\+\_\+C&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_D@{GX\_KEY\_D}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_D@{GX\_KEY\_D}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2aa09ad12b15983afd86bd757efc33e7fa}\label{gx_8h_a747621a460572dd3234c9c30a27378f2aa09ad12b15983afd86bd757efc33e7fa} 
+GX\+\_\+\+KEY\+\_\+D&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_E@{GX\_KEY\_E}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_E@{GX\_KEY\_E}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2ad82c2ef34c5d0d372c4f732725805d04}\label{gx_8h_a747621a460572dd3234c9c30a27378f2ad82c2ef34c5d0d372c4f732725805d04} 
+GX\+\_\+\+KEY\+\_\+E&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_F@{GX\_KEY\_F}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_F@{GX\_KEY\_F}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2a4baddab40326740bf42b066702b43cf5}\label{gx_8h_a747621a460572dd3234c9c30a27378f2a4baddab40326740bf42b066702b43cf5} 
+GX\+\_\+\+KEY\+\_\+F&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_G@{GX\_KEY\_G}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_G@{GX\_KEY\_G}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2a01957dc1c22fe165531cc450032bca7f}\label{gx_8h_a747621a460572dd3234c9c30a27378f2a01957dc1c22fe165531cc450032bca7f} 
+GX\+\_\+\+KEY\+\_\+G&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_H@{GX\_KEY\_H}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_H@{GX\_KEY\_H}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2ab9b1b1baebfbff9e4cdd606e7a81130d}\label{gx_8h_a747621a460572dd3234c9c30a27378f2ab9b1b1baebfbff9e4cdd606e7a81130d} 
+GX\+\_\+\+KEY\+\_\+H&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_I@{GX\_KEY\_I}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_I@{GX\_KEY\_I}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2acbd9c5439bfbebeb556983fc8ea51977}\label{gx_8h_a747621a460572dd3234c9c30a27378f2acbd9c5439bfbebeb556983fc8ea51977} 
+GX\+\_\+\+KEY\+\_\+I&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_J@{GX\_KEY\_J}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_J@{GX\_KEY\_J}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2a2bfafe242c6e6208eda282e594846acf}\label{gx_8h_a747621a460572dd3234c9c30a27378f2a2bfafe242c6e6208eda282e594846acf} 
+GX\+\_\+\+KEY\+\_\+J&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_K@{GX\_KEY\_K}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_K@{GX\_KEY\_K}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2ae66bbf67d465b9edc37540a56c9dd53e}\label{gx_8h_a747621a460572dd3234c9c30a27378f2ae66bbf67d465b9edc37540a56c9dd53e} 
+GX\+\_\+\+KEY\+\_\+K&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_L@{GX\_KEY\_L}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_L@{GX\_KEY\_L}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2a03249f538e7d494711de07650be637b9}\label{gx_8h_a747621a460572dd3234c9c30a27378f2a03249f538e7d494711de07650be637b9} 
+GX\+\_\+\+KEY\+\_\+L&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_M@{GX\_KEY\_M}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_M@{GX\_KEY\_M}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2a1ea7db8e9f3c17647ec4fd2854943a18}\label{gx_8h_a747621a460572dd3234c9c30a27378f2a1ea7db8e9f3c17647ec4fd2854943a18} 
+GX\+\_\+\+KEY\+\_\+M&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_N@{GX\_KEY\_N}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_N@{GX\_KEY\_N}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2a66bc550706b0227f4ffcd782f38edc81}\label{gx_8h_a747621a460572dd3234c9c30a27378f2a66bc550706b0227f4ffcd782f38edc81} 
+GX\+\_\+\+KEY\+\_\+N&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_O@{GX\_KEY\_O}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_O@{GX\_KEY\_O}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2aac11fbe3153a81d6f1fb9d069ffab6da}\label{gx_8h_a747621a460572dd3234c9c30a27378f2aac11fbe3153a81d6f1fb9d069ffab6da} 
+GX\+\_\+\+KEY\+\_\+O&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_P@{GX\_KEY\_P}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_P@{GX\_KEY\_P}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2a69cdd6c776c5ddcb8c68d9b3257679eb}\label{gx_8h_a747621a460572dd3234c9c30a27378f2a69cdd6c776c5ddcb8c68d9b3257679eb} 
+GX\+\_\+\+KEY\+\_\+P&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_Q@{GX\_KEY\_Q}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_Q@{GX\_KEY\_Q}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2ae4ae8389daf333003cb9bd72f017eff1}\label{gx_8h_a747621a460572dd3234c9c30a27378f2ae4ae8389daf333003cb9bd72f017eff1} 
+GX\+\_\+\+KEY\+\_\+Q&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_R@{GX\_KEY\_R}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_R@{GX\_KEY\_R}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2a247fe34c8e764dc0ab1de56a19b60ef9}\label{gx_8h_a747621a460572dd3234c9c30a27378f2a247fe34c8e764dc0ab1de56a19b60ef9} 
+GX\+\_\+\+KEY\+\_\+R&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_S@{GX\_KEY\_S}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_S@{GX\_KEY\_S}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2a9b034d001d06d1c54fc4740c32314b06}\label{gx_8h_a747621a460572dd3234c9c30a27378f2a9b034d001d06d1c54fc4740c32314b06} 
+GX\+\_\+\+KEY\+\_\+S&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_T@{GX\_KEY\_T}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_T@{GX\_KEY\_T}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2a13679470ff6bfc07233cf8c3c3f61516}\label{gx_8h_a747621a460572dd3234c9c30a27378f2a13679470ff6bfc07233cf8c3c3f61516} 
+GX\+\_\+\+KEY\+\_\+T&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_U@{GX\_KEY\_U}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_U@{GX\_KEY\_U}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2aac0dc266adbbe9769859be92b8d3db72}\label{gx_8h_a747621a460572dd3234c9c30a27378f2aac0dc266adbbe9769859be92b8d3db72} 
+GX\+\_\+\+KEY\+\_\+U&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_V@{GX\_KEY\_V}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_V@{GX\_KEY\_V}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2aa1ebbce979a4188f5784400127611226}\label{gx_8h_a747621a460572dd3234c9c30a27378f2aa1ebbce979a4188f5784400127611226} 
+GX\+\_\+\+KEY\+\_\+V&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_W@{GX\_KEY\_W}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_W@{GX\_KEY\_W}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2a8a16dd66045cbc936ba18269f769b600}\label{gx_8h_a747621a460572dd3234c9c30a27378f2a8a16dd66045cbc936ba18269f769b600} 
+GX\+\_\+\+KEY\+\_\+W&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_X@{GX\_KEY\_X}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_X@{GX\_KEY\_X}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2ab62aeb32300a9d634f96f94b41d3ebb6}\label{gx_8h_a747621a460572dd3234c9c30a27378f2ab62aeb32300a9d634f96f94b41d3ebb6} 
+GX\+\_\+\+KEY\+\_\+X&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_Y@{GX\_KEY\_Y}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_Y@{GX\_KEY\_Y}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2a981ff10c20d38856d90205558fc3e16b}\label{gx_8h_a747621a460572dd3234c9c30a27378f2a981ff10c20d38856d90205558fc3e16b} 
+GX\+\_\+\+KEY\+\_\+Y&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_Z@{GX\_KEY\_Z}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_Z@{GX\_KEY\_Z}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2a94e5f7cf80485900a5ca6800a26c1d24}\label{gx_8h_a747621a460572dd3234c9c30a27378f2a94e5f7cf80485900a5ca6800a26c1d24} 
+GX\+\_\+\+KEY\+\_\+Z&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_LEFT\_BRACKET@{GX\_KEY\_LEFT\_BRACKET}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_LEFT\_BRACKET@{GX\_KEY\_LEFT\_BRACKET}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2a45698ed922f0c00d833c0b28c9910c4e}\label{gx_8h_a747621a460572dd3234c9c30a27378f2a45698ed922f0c00d833c0b28c9910c4e} 
+GX\+\_\+\+KEY\+\_\+\+LEFT\+\_\+\+BRACKET&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_BACKSLASH@{GX\_KEY\_BACKSLASH}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_BACKSLASH@{GX\_KEY\_BACKSLASH}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2a993ead194838290cc78daa3759092e5f}\label{gx_8h_a747621a460572dd3234c9c30a27378f2a993ead194838290cc78daa3759092e5f} 
+GX\+\_\+\+KEY\+\_\+\+BACKSLASH&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_RIGHT\_BRACKET@{GX\_KEY\_RIGHT\_BRACKET}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_RIGHT\_BRACKET@{GX\_KEY\_RIGHT\_BRACKET}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2adfb93da2384437b59e0cd7fd66f6c962}\label{gx_8h_a747621a460572dd3234c9c30a27378f2adfb93da2384437b59e0cd7fd66f6c962} 
+GX\+\_\+\+KEY\+\_\+\+RIGHT\+\_\+\+BRACKET&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_GRAVE\_ACCENT@{GX\_KEY\_GRAVE\_ACCENT}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_GRAVE\_ACCENT@{GX\_KEY\_GRAVE\_ACCENT}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2a7b24f8ed4ad057791698a07b7e8247a4}\label{gx_8h_a747621a460572dd3234c9c30a27378f2a7b24f8ed4ad057791698a07b7e8247a4} 
+GX\+\_\+\+KEY\+\_\+\+GRAVE\+\_\+\+ACCENT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_WORLD\_1@{GX\_KEY\_WORLD\_1}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_WORLD\_1@{GX\_KEY\_WORLD\_1}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2a37ee841d4ad08ff859c2ba9630f385be}\label{gx_8h_a747621a460572dd3234c9c30a27378f2a37ee841d4ad08ff859c2ba9630f385be} 
+GX\+\_\+\+KEY\+\_\+\+WORLD\+\_\+1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_WORLD\_2@{GX\_KEY\_WORLD\_2}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_WORLD\_2@{GX\_KEY\_WORLD\_2}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2a5e8c13aef815dea0aea782c7c37a428b}\label{gx_8h_a747621a460572dd3234c9c30a27378f2a5e8c13aef815dea0aea782c7c37a428b} 
+GX\+\_\+\+KEY\+\_\+\+WORLD\+\_\+2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_ESCAPE@{GX\_KEY\_ESCAPE}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_ESCAPE@{GX\_KEY\_ESCAPE}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2a70f36ddf38dcdf6d22effd6e54720478}\label{gx_8h_a747621a460572dd3234c9c30a27378f2a70f36ddf38dcdf6d22effd6e54720478} 
+GX\+\_\+\+KEY\+\_\+\+ESCAPE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_ENTER@{GX\_KEY\_ENTER}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_ENTER@{GX\_KEY\_ENTER}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2a9aaf7eefef9e6e1a0ee2ad01a3d39d24}\label{gx_8h_a747621a460572dd3234c9c30a27378f2a9aaf7eefef9e6e1a0ee2ad01a3d39d24} 
+GX\+\_\+\+KEY\+\_\+\+ENTER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_TAB@{GX\_KEY\_TAB}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_TAB@{GX\_KEY\_TAB}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2a3fe0759638d2ff86e5caa16de6e8f010}\label{gx_8h_a747621a460572dd3234c9c30a27378f2a3fe0759638d2ff86e5caa16de6e8f010} 
+GX\+\_\+\+KEY\+\_\+\+TAB&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_BACKSPACE@{GX\_KEY\_BACKSPACE}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_BACKSPACE@{GX\_KEY\_BACKSPACE}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2ab98cda2d0967e2d38ba439d7ac85c226}\label{gx_8h_a747621a460572dd3234c9c30a27378f2ab98cda2d0967e2d38ba439d7ac85c226} 
+GX\+\_\+\+KEY\+\_\+\+BACKSPACE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_INSERT@{GX\_KEY\_INSERT}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_INSERT@{GX\_KEY\_INSERT}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2affe7ae03c14cb4b2c1a7642db27e6015}\label{gx_8h_a747621a460572dd3234c9c30a27378f2affe7ae03c14cb4b2c1a7642db27e6015} 
+GX\+\_\+\+KEY\+\_\+\+INSERT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_DELETE@{GX\_KEY\_DELETE}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_DELETE@{GX\_KEY\_DELETE}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2a3bdd14b802ae9cadfd96c85530e00098}\label{gx_8h_a747621a460572dd3234c9c30a27378f2a3bdd14b802ae9cadfd96c85530e00098} 
+GX\+\_\+\+KEY\+\_\+\+DELETE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_RIGHT@{GX\_KEY\_RIGHT}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_RIGHT@{GX\_KEY\_RIGHT}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2a7c39b05ade675c988697d2ec7bc9c568}\label{gx_8h_a747621a460572dd3234c9c30a27378f2a7c39b05ade675c988697d2ec7bc9c568} 
+GX\+\_\+\+KEY\+\_\+\+RIGHT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_LEFT@{GX\_KEY\_LEFT}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_LEFT@{GX\_KEY\_LEFT}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2a3986febc58fce23a9de0d97024caed7f}\label{gx_8h_a747621a460572dd3234c9c30a27378f2a3986febc58fce23a9de0d97024caed7f} 
+GX\+\_\+\+KEY\+\_\+\+LEFT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_DOWN@{GX\_KEY\_DOWN}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_DOWN@{GX\_KEY\_DOWN}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2a510164b273034c954454e458b15059c8}\label{gx_8h_a747621a460572dd3234c9c30a27378f2a510164b273034c954454e458b15059c8} 
+GX\+\_\+\+KEY\+\_\+\+DOWN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_UP@{GX\_KEY\_UP}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_UP@{GX\_KEY\_UP}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2a3331e30a2ce522ba3560f74bfb58483b}\label{gx_8h_a747621a460572dd3234c9c30a27378f2a3331e30a2ce522ba3560f74bfb58483b} 
+GX\+\_\+\+KEY\+\_\+\+UP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_PAGE\_UP@{GX\_KEY\_PAGE\_UP}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_PAGE\_UP@{GX\_KEY\_PAGE\_UP}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2a54cd0422399079fc59fa152fbda89e10}\label{gx_8h_a747621a460572dd3234c9c30a27378f2a54cd0422399079fc59fa152fbda89e10} 
+GX\+\_\+\+KEY\+\_\+\+PAGE\+\_\+\+UP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_PAGE\_DOWN@{GX\_KEY\_PAGE\_DOWN}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_PAGE\_DOWN@{GX\_KEY\_PAGE\_DOWN}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2a51975d47be4276c51299757458f66cda}\label{gx_8h_a747621a460572dd3234c9c30a27378f2a51975d47be4276c51299757458f66cda} 
+GX\+\_\+\+KEY\+\_\+\+PAGE\+\_\+\+DOWN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_HOME@{GX\_KEY\_HOME}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_HOME@{GX\_KEY\_HOME}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2a0a629597fb7abd919a6ceb0db8c8a0e6}\label{gx_8h_a747621a460572dd3234c9c30a27378f2a0a629597fb7abd919a6ceb0db8c8a0e6} 
+GX\+\_\+\+KEY\+\_\+\+HOME&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_END@{GX\_KEY\_END}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_END@{GX\_KEY\_END}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2a6d258921ff931f22fef2dd14762940e5}\label{gx_8h_a747621a460572dd3234c9c30a27378f2a6d258921ff931f22fef2dd14762940e5} 
+GX\+\_\+\+KEY\+\_\+\+END&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_CAPS\_LOCK@{GX\_KEY\_CAPS\_LOCK}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_CAPS\_LOCK@{GX\_KEY\_CAPS\_LOCK}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2a62ddb6c2d35d42f5c23f237951f8500b}\label{gx_8h_a747621a460572dd3234c9c30a27378f2a62ddb6c2d35d42f5c23f237951f8500b} 
+GX\+\_\+\+KEY\+\_\+\+CAPS\+\_\+\+LOCK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_SCROLL\_LOCK@{GX\_KEY\_SCROLL\_LOCK}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_SCROLL\_LOCK@{GX\_KEY\_SCROLL\_LOCK}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2afed19db24561813acf5da44fb2f39308}\label{gx_8h_a747621a460572dd3234c9c30a27378f2afed19db24561813acf5da44fb2f39308} 
+GX\+\_\+\+KEY\+\_\+\+SCROLL\+\_\+\+LOCK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_NUM\_LOCK@{GX\_KEY\_NUM\_LOCK}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_NUM\_LOCK@{GX\_KEY\_NUM\_LOCK}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2a5c2e719848e7b40864c36fa70a5aa349}\label{gx_8h_a747621a460572dd3234c9c30a27378f2a5c2e719848e7b40864c36fa70a5aa349} 
+GX\+\_\+\+KEY\+\_\+\+NUM\+\_\+\+LOCK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_PRINT\_SCREEN@{GX\_KEY\_PRINT\_SCREEN}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_PRINT\_SCREEN@{GX\_KEY\_PRINT\_SCREEN}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2a8470f743fbc93b30ac4ad086ce0c2320}\label{gx_8h_a747621a460572dd3234c9c30a27378f2a8470f743fbc93b30ac4ad086ce0c2320} 
+GX\+\_\+\+KEY\+\_\+\+PRINT\+\_\+\+SCREEN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_PAUSE@{GX\_KEY\_PAUSE}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_PAUSE@{GX\_KEY\_PAUSE}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2a044680a68f0df870dc350ffac75b5e70}\label{gx_8h_a747621a460572dd3234c9c30a27378f2a044680a68f0df870dc350ffac75b5e70} 
+GX\+\_\+\+KEY\+\_\+\+PAUSE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_F1@{GX\_KEY\_F1}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_F1@{GX\_KEY\_F1}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2ab286c6cf60a36dfc99c3cab95991015f}\label{gx_8h_a747621a460572dd3234c9c30a27378f2ab286c6cf60a36dfc99c3cab95991015f} 
+GX\+\_\+\+KEY\+\_\+\+F1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_F2@{GX\_KEY\_F2}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_F2@{GX\_KEY\_F2}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2a805ad595f5b1f1b5e7966b6d76321bda}\label{gx_8h_a747621a460572dd3234c9c30a27378f2a805ad595f5b1f1b5e7966b6d76321bda} 
+GX\+\_\+\+KEY\+\_\+\+F2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_F3@{GX\_KEY\_F3}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_F3@{GX\_KEY\_F3}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2a76906798080eb4241f72439cc0b0da56}\label{gx_8h_a747621a460572dd3234c9c30a27378f2a76906798080eb4241f72439cc0b0da56} 
+GX\+\_\+\+KEY\+\_\+\+F3&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_F4@{GX\_KEY\_F4}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_F4@{GX\_KEY\_F4}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2a3d2fbb724541f0210a092241df318e86}\label{gx_8h_a747621a460572dd3234c9c30a27378f2a3d2fbb724541f0210a092241df318e86} 
+GX\+\_\+\+KEY\+\_\+\+F4&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_F5@{GX\_KEY\_F5}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_F5@{GX\_KEY\_F5}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2abd78e61975ea82e381263d11589ca07a}\label{gx_8h_a747621a460572dd3234c9c30a27378f2abd78e61975ea82e381263d11589ca07a} 
+GX\+\_\+\+KEY\+\_\+\+F5&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_F6@{GX\_KEY\_F6}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_F6@{GX\_KEY\_F6}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2a7ce9f941d673d8412b85b102a9b87465}\label{gx_8h_a747621a460572dd3234c9c30a27378f2a7ce9f941d673d8412b85b102a9b87465} 
+GX\+\_\+\+KEY\+\_\+\+F6&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_F7@{GX\_KEY\_F7}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_F7@{GX\_KEY\_F7}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2a65e33065cc701acd0cb92e0bbf7cd413}\label{gx_8h_a747621a460572dd3234c9c30a27378f2a65e33065cc701acd0cb92e0bbf7cd413} 
+GX\+\_\+\+KEY\+\_\+\+F7&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_F8@{GX\_KEY\_F8}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_F8@{GX\_KEY\_F8}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2a5efb14b8b1abc7bfd42ddb6b4c8ae7c8}\label{gx_8h_a747621a460572dd3234c9c30a27378f2a5efb14b8b1abc7bfd42ddb6b4c8ae7c8} 
+GX\+\_\+\+KEY\+\_\+\+F8&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_F9@{GX\_KEY\_F9}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_F9@{GX\_KEY\_F9}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2a73cba4b455e03d230ed601a1479060bc}\label{gx_8h_a747621a460572dd3234c9c30a27378f2a73cba4b455e03d230ed601a1479060bc} 
+GX\+\_\+\+KEY\+\_\+\+F9&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_F10@{GX\_KEY\_F10}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_F10@{GX\_KEY\_F10}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2aec0fc7ee4953a770dc026178a6a2c5f9}\label{gx_8h_a747621a460572dd3234c9c30a27378f2aec0fc7ee4953a770dc026178a6a2c5f9} 
+GX\+\_\+\+KEY\+\_\+\+F10&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_F11@{GX\_KEY\_F11}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_F11@{GX\_KEY\_F11}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2a76da3cee8727a303f231da49006910d6}\label{gx_8h_a747621a460572dd3234c9c30a27378f2a76da3cee8727a303f231da49006910d6} 
+GX\+\_\+\+KEY\+\_\+\+F11&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_F12@{GX\_KEY\_F12}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_F12@{GX\_KEY\_F12}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2a4eb767d8e6885bb68868c4b068829352}\label{gx_8h_a747621a460572dd3234c9c30a27378f2a4eb767d8e6885bb68868c4b068829352} 
+GX\+\_\+\+KEY\+\_\+\+F12&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_F13@{GX\_KEY\_F13}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_F13@{GX\_KEY\_F13}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2a3f08689a863c6ea83ab18465e3a85e6d}\label{gx_8h_a747621a460572dd3234c9c30a27378f2a3f08689a863c6ea83ab18465e3a85e6d} 
+GX\+\_\+\+KEY\+\_\+\+F13&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_F14@{GX\_KEY\_F14}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_F14@{GX\_KEY\_F14}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2a0535cb6177e0cb426383456039a6067f}\label{gx_8h_a747621a460572dd3234c9c30a27378f2a0535cb6177e0cb426383456039a6067f} 
+GX\+\_\+\+KEY\+\_\+\+F14&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_F15@{GX\_KEY\_F15}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_F15@{GX\_KEY\_F15}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2ad75468dad40dd95c183ee63c6e7ad8cc}\label{gx_8h_a747621a460572dd3234c9c30a27378f2ad75468dad40dd95c183ee63c6e7ad8cc} 
+GX\+\_\+\+KEY\+\_\+\+F15&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_F16@{GX\_KEY\_F16}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_F16@{GX\_KEY\_F16}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2a0fec0fed855344cdf22948cce2ad0e0f}\label{gx_8h_a747621a460572dd3234c9c30a27378f2a0fec0fed855344cdf22948cce2ad0e0f} 
+GX\+\_\+\+KEY\+\_\+\+F16&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_F17@{GX\_KEY\_F17}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_F17@{GX\_KEY\_F17}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2ae503b6f441953dc654c8067f8873840b}\label{gx_8h_a747621a460572dd3234c9c30a27378f2ae503b6f441953dc654c8067f8873840b} 
+GX\+\_\+\+KEY\+\_\+\+F17&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_F18@{GX\_KEY\_F18}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_F18@{GX\_KEY\_F18}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2a9ab70ff2ef54cd1d5594335c8fd65cbb}\label{gx_8h_a747621a460572dd3234c9c30a27378f2a9ab70ff2ef54cd1d5594335c8fd65cbb} 
+GX\+\_\+\+KEY\+\_\+\+F18&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_F19@{GX\_KEY\_F19}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_F19@{GX\_KEY\_F19}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2a5c1df06f2d64cbaa7a1163237c585291}\label{gx_8h_a747621a460572dd3234c9c30a27378f2a5c1df06f2d64cbaa7a1163237c585291} 
+GX\+\_\+\+KEY\+\_\+\+F19&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_F20@{GX\_KEY\_F20}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_F20@{GX\_KEY\_F20}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2aa59ad540f36631fb964a3ec189cd527a}\label{gx_8h_a747621a460572dd3234c9c30a27378f2aa59ad540f36631fb964a3ec189cd527a} 
+GX\+\_\+\+KEY\+\_\+\+F20&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_F21@{GX\_KEY\_F21}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_F21@{GX\_KEY\_F21}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2a767f99fbe12a62c203c044d066abf980}\label{gx_8h_a747621a460572dd3234c9c30a27378f2a767f99fbe12a62c203c044d066abf980} 
+GX\+\_\+\+KEY\+\_\+\+F21&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_F22@{GX\_KEY\_F22}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_F22@{GX\_KEY\_F22}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2a2160fe954b33e66bbb41e941f645b9e7}\label{gx_8h_a747621a460572dd3234c9c30a27378f2a2160fe954b33e66bbb41e941f645b9e7} 
+GX\+\_\+\+KEY\+\_\+\+F22&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_F23@{GX\_KEY\_F23}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_F23@{GX\_KEY\_F23}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2a0cc34ceab6dcd6142a2d7e0636e8fa0c}\label{gx_8h_a747621a460572dd3234c9c30a27378f2a0cc34ceab6dcd6142a2d7e0636e8fa0c} 
+GX\+\_\+\+KEY\+\_\+\+F23&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_F24@{GX\_KEY\_F24}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_F24@{GX\_KEY\_F24}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2a2b88b2c88c3bf4d2cb1b0047634be4b6}\label{gx_8h_a747621a460572dd3234c9c30a27378f2a2b88b2c88c3bf4d2cb1b0047634be4b6} 
+GX\+\_\+\+KEY\+\_\+\+F24&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_F25@{GX\_KEY\_F25}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_F25@{GX\_KEY\_F25}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2a0d5cbcf9a1f0c177c400eae0edec896f}\label{gx_8h_a747621a460572dd3234c9c30a27378f2a0d5cbcf9a1f0c177c400eae0edec896f} 
+GX\+\_\+\+KEY\+\_\+\+F25&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_KP\_0@{GX\_KEY\_KP\_0}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_KP\_0@{GX\_KEY\_KP\_0}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2a2b658c2b52734bad986bb61222d9f975}\label{gx_8h_a747621a460572dd3234c9c30a27378f2a2b658c2b52734bad986bb61222d9f975} 
+GX\+\_\+\+KEY\+\_\+\+KP\+\_\+0&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_KP\_1@{GX\_KEY\_KP\_1}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_KP\_1@{GX\_KEY\_KP\_1}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2a823dd1d6de1451b599a2e6cdea537050}\label{gx_8h_a747621a460572dd3234c9c30a27378f2a823dd1d6de1451b599a2e6cdea537050} 
+GX\+\_\+\+KEY\+\_\+\+KP\+\_\+1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_KP\_2@{GX\_KEY\_KP\_2}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_KP\_2@{GX\_KEY\_KP\_2}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2a4e6258ad1686f3b16b35e2bc054c7d53}\label{gx_8h_a747621a460572dd3234c9c30a27378f2a4e6258ad1686f3b16b35e2bc054c7d53} 
+GX\+\_\+\+KEY\+\_\+\+KP\+\_\+2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_KP\_3@{GX\_KEY\_KP\_3}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_KP\_3@{GX\_KEY\_KP\_3}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2a3d16d0ce2419f0ed9b88e20fa532c360}\label{gx_8h_a747621a460572dd3234c9c30a27378f2a3d16d0ce2419f0ed9b88e20fa532c360} 
+GX\+\_\+\+KEY\+\_\+\+KP\+\_\+3&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_KP\_4@{GX\_KEY\_KP\_4}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_KP\_4@{GX\_KEY\_KP\_4}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2a73a589f75f565d811d84db6d8ecc46e3}\label{gx_8h_a747621a460572dd3234c9c30a27378f2a73a589f75f565d811d84db6d8ecc46e3} 
+GX\+\_\+\+KEY\+\_\+\+KP\+\_\+4&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_KP\_5@{GX\_KEY\_KP\_5}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_KP\_5@{GX\_KEY\_KP\_5}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2a1561645be592f9c0a6bfd5f053e3dc0f}\label{gx_8h_a747621a460572dd3234c9c30a27378f2a1561645be592f9c0a6bfd5f053e3dc0f} 
+GX\+\_\+\+KEY\+\_\+\+KP\+\_\+5&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_KP\_6@{GX\_KEY\_KP\_6}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_KP\_6@{GX\_KEY\_KP\_6}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2ac450a3c45ca1c5ca215a2ff194a08b80}\label{gx_8h_a747621a460572dd3234c9c30a27378f2ac450a3c45ca1c5ca215a2ff194a08b80} 
+GX\+\_\+\+KEY\+\_\+\+KP\+\_\+6&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_KP\_7@{GX\_KEY\_KP\_7}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_KP\_7@{GX\_KEY\_KP\_7}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2a392d29d8f15d1f0fb56e8034efa00b62}\label{gx_8h_a747621a460572dd3234c9c30a27378f2a392d29d8f15d1f0fb56e8034efa00b62} 
+GX\+\_\+\+KEY\+\_\+\+KP\+\_\+7&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_KP\_8@{GX\_KEY\_KP\_8}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_KP\_8@{GX\_KEY\_KP\_8}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2ad34052f792721a16448bc23778b37f64}\label{gx_8h_a747621a460572dd3234c9c30a27378f2ad34052f792721a16448bc23778b37f64} 
+GX\+\_\+\+KEY\+\_\+\+KP\+\_\+8&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_KP\_9@{GX\_KEY\_KP\_9}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_KP\_9@{GX\_KEY\_KP\_9}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2a615233a410f79f22562e5c78004050e9}\label{gx_8h_a747621a460572dd3234c9c30a27378f2a615233a410f79f22562e5c78004050e9} 
+GX\+\_\+\+KEY\+\_\+\+KP\+\_\+9&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_KP\_DECIMAL@{GX\_KEY\_KP\_DECIMAL}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_KP\_DECIMAL@{GX\_KEY\_KP\_DECIMAL}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2afd1a492b3ee32a36d6e7b65bf61156d2}\label{gx_8h_a747621a460572dd3234c9c30a27378f2afd1a492b3ee32a36d6e7b65bf61156d2} 
+GX\+\_\+\+KEY\+\_\+\+KP\+\_\+\+DECIMAL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_KP\_DIVIDE@{GX\_KEY\_KP\_DIVIDE}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_KP\_DIVIDE@{GX\_KEY\_KP\_DIVIDE}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2a11fdb06da7c7df06f3a86400a21ce577}\label{gx_8h_a747621a460572dd3234c9c30a27378f2a11fdb06da7c7df06f3a86400a21ce577} 
+GX\+\_\+\+KEY\+\_\+\+KP\+\_\+\+DIVIDE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_KP\_MULTIPLY@{GX\_KEY\_KP\_MULTIPLY}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_KP\_MULTIPLY@{GX\_KEY\_KP\_MULTIPLY}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2afcfef7fd448d897f68e1d8ea8b8fbc7f}\label{gx_8h_a747621a460572dd3234c9c30a27378f2afcfef7fd448d897f68e1d8ea8b8fbc7f} 
+GX\+\_\+\+KEY\+\_\+\+KP\+\_\+\+MULTIPLY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_KP\_SUBTRACT@{GX\_KEY\_KP\_SUBTRACT}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_KP\_SUBTRACT@{GX\_KEY\_KP\_SUBTRACT}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2afb4b846e6619b9fbcdb22a706daea59e}\label{gx_8h_a747621a460572dd3234c9c30a27378f2afb4b846e6619b9fbcdb22a706daea59e} 
+GX\+\_\+\+KEY\+\_\+\+KP\+\_\+\+SUBTRACT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_KP\_ADD@{GX\_KEY\_KP\_ADD}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_KP\_ADD@{GX\_KEY\_KP\_ADD}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2a26dfcd86ea3c4514dcfb1d6fbcc7e9d0}\label{gx_8h_a747621a460572dd3234c9c30a27378f2a26dfcd86ea3c4514dcfb1d6fbcc7e9d0} 
+GX\+\_\+\+KEY\+\_\+\+KP\+\_\+\+ADD&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_KP\_ENTER@{GX\_KEY\_KP\_ENTER}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_KP\_ENTER@{GX\_KEY\_KP\_ENTER}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2aebdbb4f571e3fbd56c2855e3968c8f1d}\label{gx_8h_a747621a460572dd3234c9c30a27378f2aebdbb4f571e3fbd56c2855e3968c8f1d} 
+GX\+\_\+\+KEY\+\_\+\+KP\+\_\+\+ENTER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_KP\_EQUAL@{GX\_KEY\_KP\_EQUAL}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_KP\_EQUAL@{GX\_KEY\_KP\_EQUAL}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2ad4bd43c666791e97e842e369ce7ce703}\label{gx_8h_a747621a460572dd3234c9c30a27378f2ad4bd43c666791e97e842e369ce7ce703} 
+GX\+\_\+\+KEY\+\_\+\+KP\+\_\+\+EQUAL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_LEFT\_SHIFT@{GX\_KEY\_LEFT\_SHIFT}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_LEFT\_SHIFT@{GX\_KEY\_LEFT\_SHIFT}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2aaddfecd7519f60934e1d94f3d49d264c}\label{gx_8h_a747621a460572dd3234c9c30a27378f2aaddfecd7519f60934e1d94f3d49d264c} 
+GX\+\_\+\+KEY\+\_\+\+LEFT\+\_\+\+SHIFT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_LEFT\_CONTROL@{GX\_KEY\_LEFT\_CONTROL}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_LEFT\_CONTROL@{GX\_KEY\_LEFT\_CONTROL}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2afd09090768a33b8764eb9f6a655282fd}\label{gx_8h_a747621a460572dd3234c9c30a27378f2afd09090768a33b8764eb9f6a655282fd} 
+GX\+\_\+\+KEY\+\_\+\+LEFT\+\_\+\+CONTROL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_LEFT\_ALT@{GX\_KEY\_LEFT\_ALT}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_LEFT\_ALT@{GX\_KEY\_LEFT\_ALT}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2a33ea0a3a5d974bea86e3ecc665bd0ca2}\label{gx_8h_a747621a460572dd3234c9c30a27378f2a33ea0a3a5d974bea86e3ecc665bd0ca2} 
+GX\+\_\+\+KEY\+\_\+\+LEFT\+\_\+\+ALT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_LEFT\_SUPER@{GX\_KEY\_LEFT\_SUPER}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_LEFT\_SUPER@{GX\_KEY\_LEFT\_SUPER}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2ab152b6c4395480c25f8127d2c33e5b2d}\label{gx_8h_a747621a460572dd3234c9c30a27378f2ab152b6c4395480c25f8127d2c33e5b2d} 
+GX\+\_\+\+KEY\+\_\+\+LEFT\+\_\+\+SUPER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_RIGHT\_SHIFT@{GX\_KEY\_RIGHT\_SHIFT}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_RIGHT\_SHIFT@{GX\_KEY\_RIGHT\_SHIFT}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2aa36230f7ed9f0c7448eaca433e31036e}\label{gx_8h_a747621a460572dd3234c9c30a27378f2aa36230f7ed9f0c7448eaca433e31036e} 
+GX\+\_\+\+KEY\+\_\+\+RIGHT\+\_\+\+SHIFT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_RIGHT\_CONTROL@{GX\_KEY\_RIGHT\_CONTROL}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_RIGHT\_CONTROL@{GX\_KEY\_RIGHT\_CONTROL}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2a43a6fafb540ccc714fb00c56c83a092e}\label{gx_8h_a747621a460572dd3234c9c30a27378f2a43a6fafb540ccc714fb00c56c83a092e} 
+GX\+\_\+\+KEY\+\_\+\+RIGHT\+\_\+\+CONTROL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_RIGHT\_ALT@{GX\_KEY\_RIGHT\_ALT}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_RIGHT\_ALT@{GX\_KEY\_RIGHT\_ALT}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2ad6cc95426470fe24a4eadcc3c78a4dcf}\label{gx_8h_a747621a460572dd3234c9c30a27378f2ad6cc95426470fe24a4eadcc3c78a4dcf} 
+GX\+\_\+\+KEY\+\_\+\+RIGHT\+\_\+\+ALT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_RIGHT\_SUPER@{GX\_KEY\_RIGHT\_SUPER}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_RIGHT\_SUPER@{GX\_KEY\_RIGHT\_SUPER}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2ad943c11d3334b7f0afa922cf52ddb6f3}\label{gx_8h_a747621a460572dd3234c9c30a27378f2ad943c11d3334b7f0afa922cf52ddb6f3} 
+GX\+\_\+\+KEY\+\_\+\+RIGHT\+\_\+\+SUPER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_MENU@{GX\_KEY\_MENU}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_MENU@{GX\_KEY\_MENU}}}\Hypertarget{gx_8h_a747621a460572dd3234c9c30a27378f2a82a0d059bb243760f5b474149ef2be94}\label{gx_8h_a747621a460572dd3234c9c30a27378f2a82a0d059bb243760f5b474149ef2be94} 
+GX\+\_\+\+KEY\+\_\+\+MENU&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{gx_8h_a0e90335b7087af15a4b53fb23b65faf2}\index{gx.h@{gx.h}!GXMappingBits@{GXMappingBits}}
+\index{GXMappingBits@{GXMappingBits}!gx.h@{gx.h}}
+\doxysubsubsection{\texorpdfstring{GXMappingBits}{GXMappingBits}}
+{\footnotesize\ttfamily \label{gx_8h_a0e90335b7087af15a4b53fb23b65faf2} 
+enum \mbox{\hyperlink{gx_8h_a0e90335b7087af15a4b53fb23b65faf2}{GXMapping\+Bits}}}
+
+
+
+Buffer mapping bits for gl\+Map\+Buffer\+Range/gx\+Map\+Buffer\+Range. 
+
+Values\+:
+\begin{DoxyItemize}
+\item {\ttfamily GX\+\_\+\+MAP\+\_\+\+READ\+\_\+\+BIT}\+: Allows reading from the mapped buffer, needed if you plan to read GPU buffer data from CPU
+\item {\ttfamily GX\+\_\+\+MAP\+\_\+\+WRITE\+\_\+\+BIT}\+: Allows writing to the mapped buffer, needed for writing to GPU buffer from CPU
+\item {\ttfamily GX\+\_\+\+MAP\+\_\+\+INVALIDATE\+\_\+\+RANGE\+\_\+\+BIT}\+: Tells the driver you don’t care about the previous contents of the mapped range, use this to avoid synchronization if you\textquotesingle{}re replacing part of the buffer
+\item {\ttfamily GX\+\_\+\+MAP\+\_\+\+INVALIDATE\+\_\+\+BUFFER\+\_\+\+BIT}\+: Tells the driver you don’t care about the previous contents of the mapped entire buffer, ideal for full rewrites and may trigger buffer reallocation
+\item {\ttfamily GX\+\_\+\+MAP\+\_\+\+UNSYNCHRONIZED\+\_\+\+BIT}\+: Tells the driver not to block even if the buffer is in use, Can avoid sync stalls, but you must be careful not to write to in-\/use regions
+\item {\ttfamily GX\+\_\+\+MAP\+\_\+\+SIMPLE\+\_\+\+WRITE}\+: Used when you’re rewriting the whole buffer and want to avoid a sync
+\item {\ttfamily GX\+\_\+\+MAP\+\_\+\+FREQUENT\+\_\+\+WRITE}\+: Used when you\textquotesingle{}re writing data frequently
+\item {\ttfamily GX\+\_\+\+MAP\+\_\+\+UNSAFE\+\_\+\+HIGH\+\_\+\+PERFORMANCE\+\_\+\+WRITE}\+: Bypasses driver sync, but you must manage synchronization manually 
+\end{DoxyItemize}\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_MAP\_READ\_BIT@{GX\_MAP\_READ\_BIT}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_MAP\_READ\_BIT@{GX\_MAP\_READ\_BIT}}}\Hypertarget{gx_8h_a0e90335b7087af15a4b53fb23b65faf2a96a18be9af738adb20b464f071850ed9}\label{gx_8h_a0e90335b7087af15a4b53fb23b65faf2a96a18be9af738adb20b464f071850ed9} 
+GX\+\_\+\+MAP\+\_\+\+READ\+\_\+\+BIT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_MAP\_WRITE\_BIT@{GX\_MAP\_WRITE\_BIT}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_MAP\_WRITE\_BIT@{GX\_MAP\_WRITE\_BIT}}}\Hypertarget{gx_8h_a0e90335b7087af15a4b53fb23b65faf2a39d81fd3f5b35fb4cd919ac0c457be71}\label{gx_8h_a0e90335b7087af15a4b53fb23b65faf2a39d81fd3f5b35fb4cd919ac0c457be71} 
+GX\+\_\+\+MAP\+\_\+\+WRITE\+\_\+\+BIT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_MAP\_INVALIDATE\_RANGE\_BIT@{GX\_MAP\_INVALIDATE\_RANGE\_BIT}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_MAP\_INVALIDATE\_RANGE\_BIT@{GX\_MAP\_INVALIDATE\_RANGE\_BIT}}}\Hypertarget{gx_8h_a0e90335b7087af15a4b53fb23b65faf2a7db06bebb2d4f8797f7cef45ad9dda7d}\label{gx_8h_a0e90335b7087af15a4b53fb23b65faf2a7db06bebb2d4f8797f7cef45ad9dda7d} 
+GX\+\_\+\+MAP\+\_\+\+INVALIDATE\+\_\+\+RANGE\+\_\+\+BIT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_MAP\_INVALIDATE\_BUFFER\_BIT@{GX\_MAP\_INVALIDATE\_BUFFER\_BIT}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_MAP\_INVALIDATE\_BUFFER\_BIT@{GX\_MAP\_INVALIDATE\_BUFFER\_BIT}}}\Hypertarget{gx_8h_a0e90335b7087af15a4b53fb23b65faf2afe99e4cf2b5db838d3168f92de9a503f}\label{gx_8h_a0e90335b7087af15a4b53fb23b65faf2afe99e4cf2b5db838d3168f92de9a503f} 
+GX\+\_\+\+MAP\+\_\+\+INVALIDATE\+\_\+\+BUFFER\+\_\+\+BIT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_MAP\_UNSYNCHRONIZED\_BIT@{GX\_MAP\_UNSYNCHRONIZED\_BIT}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_MAP\_UNSYNCHRONIZED\_BIT@{GX\_MAP\_UNSYNCHRONIZED\_BIT}}}\Hypertarget{gx_8h_a0e90335b7087af15a4b53fb23b65faf2a83f19d54ee45e5c678a35fc1cb074d91}\label{gx_8h_a0e90335b7087af15a4b53fb23b65faf2a83f19d54ee45e5c678a35fc1cb074d91} 
+GX\+\_\+\+MAP\+\_\+\+UNSYNCHRONIZED\+\_\+\+BIT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_MAP\_SIMPLE\_WRITE@{GX\_MAP\_SIMPLE\_WRITE}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_MAP\_SIMPLE\_WRITE@{GX\_MAP\_SIMPLE\_WRITE}}}\Hypertarget{gx_8h_a0e90335b7087af15a4b53fb23b65faf2abc4e8d19aca1cf36e4c709306fef0309}\label{gx_8h_a0e90335b7087af15a4b53fb23b65faf2abc4e8d19aca1cf36e4c709306fef0309} 
+GX\+\_\+\+MAP\+\_\+\+SIMPLE\+\_\+\+WRITE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_MAP\_FREQUENT\_WRITE@{GX\_MAP\_FREQUENT\_WRITE}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_MAP\_FREQUENT\_WRITE@{GX\_MAP\_FREQUENT\_WRITE}}}\Hypertarget{gx_8h_a0e90335b7087af15a4b53fb23b65faf2aea4c2418edfae28979a2d01131e2adbe}\label{gx_8h_a0e90335b7087af15a4b53fb23b65faf2aea4c2418edfae28979a2d01131e2adbe} 
+GX\+\_\+\+MAP\+\_\+\+FREQUENT\+\_\+\+WRITE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_MAP\_UNSAFE\_HIGH\_PERFORMANCE\_WRITE@{GX\_MAP\_UNSAFE\_HIGH\_PERFORMANCE\_WRITE}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_MAP\_UNSAFE\_HIGH\_PERFORMANCE\_WRITE@{GX\_MAP\_UNSAFE\_HIGH\_PERFORMANCE\_WRITE}}}\Hypertarget{gx_8h_a0e90335b7087af15a4b53fb23b65faf2ad6d3e3e97df0ddf0ca9af3f6705cf257}\label{gx_8h_a0e90335b7087af15a4b53fb23b65faf2ad6d3e3e97df0ddf0ca9af3f6705cf257} 
+GX\+\_\+\+MAP\+\_\+\+UNSAFE\+\_\+\+HIGH\+\_\+\+PERFORMANCE\+\_\+\+WRITE&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{gx_8h_a68763dfc6bb00b662abc7f535ebd08e1}\index{gx.h@{gx.h}!GXResourceStatus@{GXResourceStatus}}
+\index{GXResourceStatus@{GXResourceStatus}!gx.h@{gx.h}}
+\doxysubsubsection{\texorpdfstring{GXResourceStatus}{GXResourceStatus}}
+{\footnotesize\ttfamily \label{gx_8h_a68763dfc6bb00b662abc7f535ebd08e1} 
+enum \mbox{\hyperlink{gx_8h_a68763dfc6bb00b662abc7f535ebd08e1}{GXResource\+Status}}}
+
+
+
+Resource state flags. 
+
+Values\+:
+\begin{DoxyItemize}
+\item {\ttfamily GX\+\_\+\+RESOURCE\+\_\+\+STATUS\+\_\+\+NONE}\+: Initial state
+\item {\ttfamily GX\+\_\+\+RESOURCE\+\_\+\+STATUS\+\_\+\+SHOWING}\+: Window is visible
+\item {\ttfamily GX\+\_\+\+RESOURCE\+\_\+\+STATUS\+\_\+\+INITIATED}\+: Resource initialized
+\item {\ttfamily GX\+\_\+\+RESOURCE\+\_\+\+STATUS\+\_\+\+SHOULD\+\_\+\+CLOSE}\+: Resource marked for closure 
+\end{DoxyItemize}\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_RESOURCE\_STATUS\_NONE@{GX\_RESOURCE\_STATUS\_NONE}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_RESOURCE\_STATUS\_NONE@{GX\_RESOURCE\_STATUS\_NONE}}}\Hypertarget{gx_8h_a68763dfc6bb00b662abc7f535ebd08e1a441a971f556f17d9a313bbc15fb95b79}\label{gx_8h_a68763dfc6bb00b662abc7f535ebd08e1a441a971f556f17d9a313bbc15fb95b79} 
+GX\+\_\+\+RESOURCE\+\_\+\+STATUS\+\_\+\+NONE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_RESOURCE\_STATUS\_SHOWING@{GX\_RESOURCE\_STATUS\_SHOWING}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_RESOURCE\_STATUS\_SHOWING@{GX\_RESOURCE\_STATUS\_SHOWING}}}\Hypertarget{gx_8h_a68763dfc6bb00b662abc7f535ebd08e1ac28973cc7ee78376dc4cfddf9cdd0845}\label{gx_8h_a68763dfc6bb00b662abc7f535ebd08e1ac28973cc7ee78376dc4cfddf9cdd0845} 
+GX\+\_\+\+RESOURCE\+\_\+\+STATUS\+\_\+\+SHOWING&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_RESOURCE\_STATUS\_SHOWING\_MASK@{GX\_RESOURCE\_STATUS\_SHOWING\_MASK}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_RESOURCE\_STATUS\_SHOWING\_MASK@{GX\_RESOURCE\_STATUS\_SHOWING\_MASK}}}\Hypertarget{gx_8h_a68763dfc6bb00b662abc7f535ebd08e1a4f8f5cba59022c9633018ea3217c00f3}\label{gx_8h_a68763dfc6bb00b662abc7f535ebd08e1a4f8f5cba59022c9633018ea3217c00f3} 
+GX\+\_\+\+RESOURCE\+\_\+\+STATUS\+\_\+\+SHOWING\+\_\+\+MASK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_RESOURCE\_STATUS\_INITIATED@{GX\_RESOURCE\_STATUS\_INITIATED}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_RESOURCE\_STATUS\_INITIATED@{GX\_RESOURCE\_STATUS\_INITIATED}}}\Hypertarget{gx_8h_a68763dfc6bb00b662abc7f535ebd08e1aaa02b4bc8e3ab1a2ef51285c39b367b3}\label{gx_8h_a68763dfc6bb00b662abc7f535ebd08e1aaa02b4bc8e3ab1a2ef51285c39b367b3} 
+GX\+\_\+\+RESOURCE\+\_\+\+STATUS\+\_\+\+INITIATED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_RESOURCE\_STATUS\_INITIATED\_MASK@{GX\_RESOURCE\_STATUS\_INITIATED\_MASK}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_RESOURCE\_STATUS\_INITIATED\_MASK@{GX\_RESOURCE\_STATUS\_INITIATED\_MASK}}}\Hypertarget{gx_8h_a68763dfc6bb00b662abc7f535ebd08e1a5fbccd29a02675c55593469b51f5eeca}\label{gx_8h_a68763dfc6bb00b662abc7f535ebd08e1a5fbccd29a02675c55593469b51f5eeca} 
+GX\+\_\+\+RESOURCE\+\_\+\+STATUS\+\_\+\+INITIATED\+\_\+\+MASK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_RESOURCE\_STATUS\_SHOULD\_CLOSE@{GX\_RESOURCE\_STATUS\_SHOULD\_CLOSE}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_RESOURCE\_STATUS\_SHOULD\_CLOSE@{GX\_RESOURCE\_STATUS\_SHOULD\_CLOSE}}}\Hypertarget{gx_8h_a68763dfc6bb00b662abc7f535ebd08e1a1b6d162e07e021628906ec2c92ad4cfc}\label{gx_8h_a68763dfc6bb00b662abc7f535ebd08e1a1b6d162e07e021628906ec2c92ad4cfc} 
+GX\+\_\+\+RESOURCE\+\_\+\+STATUS\+\_\+\+SHOULD\+\_\+\+CLOSE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_RESOURCE\_STATUS\_SHOULD\_CLOSE\_MASK@{GX\_RESOURCE\_STATUS\_SHOULD\_CLOSE\_MASK}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_RESOURCE\_STATUS\_SHOULD\_CLOSE\_MASK@{GX\_RESOURCE\_STATUS\_SHOULD\_CLOSE\_MASK}}}\Hypertarget{gx_8h_a68763dfc6bb00b662abc7f535ebd08e1a6605e85978d1cb0139dad28b396439d7}\label{gx_8h_a68763dfc6bb00b662abc7f535ebd08e1a6605e85978d1cb0139dad28b396439d7} 
+GX\+\_\+\+RESOURCE\+\_\+\+STATUS\+\_\+\+SHOULD\+\_\+\+CLOSE\+\_\+\+MASK&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{gx_8h_a060bcfb6c531edd54e25817f312a2b85}\index{gx.h@{gx.h}!GXResourceType@{GXResourceType}}
+\index{GXResourceType@{GXResourceType}!gx.h@{gx.h}}
+\doxysubsubsection{\texorpdfstring{GXResourceType}{GXResourceType}}
+{\footnotesize\ttfamily \label{gx_8h_a060bcfb6c531edd54e25817f312a2b85} 
+enum \mbox{\hyperlink{gx_8h_a060bcfb6c531edd54e25817f312a2b85}{GXResource\+Type}}}
+
+
+
+Resource type identifiers. 
+
+Values\+:
+\begin{DoxyItemize}
+\item {\ttfamily GX\+\_\+\+RESOURCE\+\_\+\+WINDOW}\+: Window resource
+\item {\ttfamily GX\+\_\+\+RSOURCE\+\_\+\+OBJECT}\+: Renderable object resource 
+\end{DoxyItemize}\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_RESOURCE\_WINDOW@{GX\_RESOURCE\_WINDOW}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_RESOURCE\_WINDOW@{GX\_RESOURCE\_WINDOW}}}\Hypertarget{gx_8h_a060bcfb6c531edd54e25817f312a2b85a8cb89865bb92fd4ebf9fd761c5c8b68e}\label{gx_8h_a060bcfb6c531edd54e25817f312a2b85a8cb89865bb92fd4ebf9fd761c5c8b68e} 
+GX\+\_\+\+RESOURCE\+\_\+\+WINDOW&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_RESOURCE\_OBJECT@{GX\_RESOURCE\_OBJECT}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_RESOURCE\_OBJECT@{GX\_RESOURCE\_OBJECT}}}\Hypertarget{gx_8h_a060bcfb6c531edd54e25817f312a2b85ade79dce00383cc4e07e064860a792782}\label{gx_8h_a060bcfb6c531edd54e25817f312a2b85ade79dce00383cc4e07e064860a792782} 
+GX\+\_\+\+RESOURCE\+\_\+\+OBJECT&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{gx_8h_a2eb7ea5dfbda0b5ecb3846115c56fe83}\index{gx.h@{gx.h}!GXShaderType@{GXShaderType}}
+\index{GXShaderType@{GXShaderType}!gx.h@{gx.h}}
+\doxysubsubsection{\texorpdfstring{GXShaderType}{GXShaderType}}
+{\footnotesize\ttfamily \label{gx_8h_a2eb7ea5dfbda0b5ecb3846115c56fe83} 
+enum \mbox{\hyperlink{gx_8h_a2eb7ea5dfbda0b5ecb3846115c56fe83}{GXShader\+Type}}}
+
+
+
+Shader type bindings for glads GL\+\_\+\+FRAGMENT\+\_\+\+SHADER, and GL\+\_\+\+VERTEX\+\_\+\+SHADER. 
+
+Values\+:
+\begin{DoxyItemize}
+\item {\ttfamily GX\+\_\+\+GLSL\+\_\+\+FRAGMENT\+\_\+\+SHADER}\+: Fragment shader type
+\item {\ttfamily GX\+\_\+\+GLSL\+\_\+\+VERTEX\+\_\+\+SHADER}\+: Vertex shader type 
+\end{DoxyItemize}\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_GLSL\_FRAGMENT\_SHADER@{GX\_GLSL\_FRAGMENT\_SHADER}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_GLSL\_FRAGMENT\_SHADER@{GX\_GLSL\_FRAGMENT\_SHADER}}}\Hypertarget{gx_8h_a2eb7ea5dfbda0b5ecb3846115c56fe83a73a7e0272d9d8cd8b92a01ee565087ee}\label{gx_8h_a2eb7ea5dfbda0b5ecb3846115c56fe83a73a7e0272d9d8cd8b92a01ee565087ee} 
+GX\+\_\+\+GLSL\+\_\+\+FRAGMENT\+\_\+\+SHADER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_GLSL\_VERTEX\_SHADER@{GX\_GLSL\_VERTEX\_SHADER}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_GLSL\_VERTEX\_SHADER@{GX\_GLSL\_VERTEX\_SHADER}}}\Hypertarget{gx_8h_a2eb7ea5dfbda0b5ecb3846115c56fe83aa3307c254f6feef5d1f9505849097f86}\label{gx_8h_a2eb7ea5dfbda0b5ecb3846115c56fe83aa3307c254f6feef5d1f9505849097f86} 
+GX\+\_\+\+GLSL\+\_\+\+VERTEX\+\_\+\+SHADER&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{gx_8h_a7fd0c624c6c69095149db64b99d41cb1}\index{gx.h@{gx.h}!GXVertexAttributeType@{GXVertexAttributeType}}
+\index{GXVertexAttributeType@{GXVertexAttributeType}!gx.h@{gx.h}}
+\doxysubsubsection{\texorpdfstring{GXVertexAttributeType}{GXVertexAttributeType}}
+{\footnotesize\ttfamily \label{gx_8h_a7fd0c624c6c69095149db64b99d41cb1} 
+enum \mbox{\hyperlink{gx_8h_a7fd0c624c6c69095149db64b99d41cb1}{GXVertex\+Attribute\+Type}}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_VERTEX\_ATTRIB\_TYPE\_BYTE@{GX\_VERTEX\_ATTRIB\_TYPE\_BYTE}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_VERTEX\_ATTRIB\_TYPE\_BYTE@{GX\_VERTEX\_ATTRIB\_TYPE\_BYTE}}}\Hypertarget{gx_8h_a7fd0c624c6c69095149db64b99d41cb1a824f905eb761d6a66a66a9bf39f83856}\label{gx_8h_a7fd0c624c6c69095149db64b99d41cb1a824f905eb761d6a66a66a9bf39f83856} 
+GX\+\_\+\+VERTEX\+\_\+\+ATTRIB\+\_\+\+TYPE\+\_\+\+BYTE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_VERTEX\_ATTRIB\_TYPE\_UNSIGNED\_BYTE@{GX\_VERTEX\_ATTRIB\_TYPE\_UNSIGNED\_BYTE}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_VERTEX\_ATTRIB\_TYPE\_UNSIGNED\_BYTE@{GX\_VERTEX\_ATTRIB\_TYPE\_UNSIGNED\_BYTE}}}\Hypertarget{gx_8h_a7fd0c624c6c69095149db64b99d41cb1a27241808a2f2aba8cbd1c008ec2e23b8}\label{gx_8h_a7fd0c624c6c69095149db64b99d41cb1a27241808a2f2aba8cbd1c008ec2e23b8} 
+GX\+\_\+\+VERTEX\+\_\+\+ATTRIB\+\_\+\+TYPE\+\_\+\+UNSIGNED\+\_\+\+BYTE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_VERTEX\_ATTRIB\_TYPE\_SHORT@{GX\_VERTEX\_ATTRIB\_TYPE\_SHORT}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_VERTEX\_ATTRIB\_TYPE\_SHORT@{GX\_VERTEX\_ATTRIB\_TYPE\_SHORT}}}\Hypertarget{gx_8h_a7fd0c624c6c69095149db64b99d41cb1a1acd97b35d5686416405588b98d81950}\label{gx_8h_a7fd0c624c6c69095149db64b99d41cb1a1acd97b35d5686416405588b98d81950} 
+GX\+\_\+\+VERTEX\+\_\+\+ATTRIB\+\_\+\+TYPE\+\_\+\+SHORT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_VERTEX\_ATTRIB\_TYPE\_UNSIGNED\_SHORT@{GX\_VERTEX\_ATTRIB\_TYPE\_UNSIGNED\_SHORT}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_VERTEX\_ATTRIB\_TYPE\_UNSIGNED\_SHORT@{GX\_VERTEX\_ATTRIB\_TYPE\_UNSIGNED\_SHORT}}}\Hypertarget{gx_8h_a7fd0c624c6c69095149db64b99d41cb1af70d741c940372f8df2cb9ca7d6c05d6}\label{gx_8h_a7fd0c624c6c69095149db64b99d41cb1af70d741c940372f8df2cb9ca7d6c05d6} 
+GX\+\_\+\+VERTEX\+\_\+\+ATTRIB\+\_\+\+TYPE\+\_\+\+UNSIGNED\+\_\+\+SHORT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_VERTEX\_ATTRIB\_TYPE\_INT@{GX\_VERTEX\_ATTRIB\_TYPE\_INT}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_VERTEX\_ATTRIB\_TYPE\_INT@{GX\_VERTEX\_ATTRIB\_TYPE\_INT}}}\Hypertarget{gx_8h_a7fd0c624c6c69095149db64b99d41cb1a3aa2abb59defb6e8e617d41f75775711}\label{gx_8h_a7fd0c624c6c69095149db64b99d41cb1a3aa2abb59defb6e8e617d41f75775711} 
+GX\+\_\+\+VERTEX\+\_\+\+ATTRIB\+\_\+\+TYPE\+\_\+\+INT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_VERTEX\_ATTRIB\_TYPE\_UNSIGNED\_INT@{GX\_VERTEX\_ATTRIB\_TYPE\_UNSIGNED\_INT}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_VERTEX\_ATTRIB\_TYPE\_UNSIGNED\_INT@{GX\_VERTEX\_ATTRIB\_TYPE\_UNSIGNED\_INT}}}\Hypertarget{gx_8h_a7fd0c624c6c69095149db64b99d41cb1a5029f8e0734a5e8c16e85cef5d900620}\label{gx_8h_a7fd0c624c6c69095149db64b99d41cb1a5029f8e0734a5e8c16e85cef5d900620} 
+GX\+\_\+\+VERTEX\+\_\+\+ATTRIB\+\_\+\+TYPE\+\_\+\+UNSIGNED\+\_\+\+INT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_VERTEX\_ATTRIB\_TYPE\_FLOAT@{GX\_VERTEX\_ATTRIB\_TYPE\_FLOAT}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_VERTEX\_ATTRIB\_TYPE\_FLOAT@{GX\_VERTEX\_ATTRIB\_TYPE\_FLOAT}}}\Hypertarget{gx_8h_a7fd0c624c6c69095149db64b99d41cb1a00de28234feddfd1c8b8f034d61fcd12}\label{gx_8h_a7fd0c624c6c69095149db64b99d41cb1a00de28234feddfd1c8b8f034d61fcd12} 
+GX\+\_\+\+VERTEX\+\_\+\+ATTRIB\+\_\+\+TYPE\+\_\+\+FLOAT&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\label{doc-func-members}
+\Hypertarget{gx_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{gx_8h_acd7da62752d00aea8271dc6a5d9ed4e6}\index{gx.h@{gx.h}!gxAddKeyboardCallback@{gxAddKeyboardCallback}}
+\index{gxAddKeyboardCallback@{gxAddKeyboardCallback}!gx.h@{gx.h}}
+\doxysubsubsection{\texorpdfstring{gxAddKeyboardCallback()}{gxAddKeyboardCallback()}}
+{\footnotesize\ttfamily \label{gx_8h_acd7da62752d00aea8271dc6a5d9ed4e6} 
+void gx\+Add\+Keyboard\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gx_8h_ae21f5494d0a63e4159607dda10f81ef8}{GXKeyboard\+Callback}}}]{cb}{}\end{DoxyParamCaption})}
+
+
+
+Registers a keyboard event callback. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cb} & Callback function to register \\
+\hline
+\end{DoxyParams}
+\Hypertarget{gx_8h_a3cf8cfac8ca8c65bd4acf0cd8c4938a6}\index{gx.h@{gx.h}!gxAsObject@{gxAsObject}}
+\index{gxAsObject@{gxAsObject}!gx.h@{gx.h}}
+\doxysubsubsection{\texorpdfstring{gxAsObject()}{gxAsObject()}}
+{\footnotesize\ttfamily \label{gx_8h_a3cf8cfac8ca8c65bd4acf0cd8c4938a6} 
+\mbox{\hyperlink{struct_g_x_object}{GXObject}} \texorpdfstring{$\ast$}{*} gx\+As\+Object (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_x_resource}{GXResource}} \texorpdfstring{$\ast$}{*}}]{res}{}\end{DoxyParamCaption})}
+
+
+
+Returns a memory pointer to \doxylink{struct_g_x_object}{GXObject} from the specified \doxylink{struct_g_x_resource}{GXResource}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em res} & Resource memory pointer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Associated object 
+\end{DoxyReturn}
+\Hypertarget{gx_8h_a892d1af800d602f6d1231e91792b6599}\index{gx.h@{gx.h}!gxAsWindow@{gxAsWindow}}
+\index{gxAsWindow@{gxAsWindow}!gx.h@{gx.h}}
+\doxysubsubsection{\texorpdfstring{gxAsWindow()}{gxAsWindow()}}
+{\footnotesize\ttfamily \label{gx_8h_a892d1af800d602f6d1231e91792b6599} 
+\mbox{\hyperlink{struct_g_x_window}{GXWindow}} \texorpdfstring{$\ast$}{*} gx\+As\+Window (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_x_resource}{GXResource}} \texorpdfstring{$\ast$}{*}}]{res}{}\end{DoxyParamCaption})}
+
+
+
+Returns a memory pointer to \doxylink{struct_g_x_window}{GXWindow} from the specified \doxylink{struct_g_x_resource}{GXResource}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em res} & Resource memory pointer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Associated window 
+\end{DoxyReturn}
+\Hypertarget{gx_8h_a4c53f942aaf94845b7eb170eb166afac}\index{gx.h@{gx.h}!gxBindBufferObject@{gxBindBufferObject}}
+\index{gxBindBufferObject@{gxBindBufferObject}!gx.h@{gx.h}}
+\doxysubsubsection{\texorpdfstring{gxBindBufferObject()}{gxBindBufferObject()}}
+{\footnotesize\ttfamily \label{gx_8h_a4c53f942aaf94845b7eb170eb166afac} 
+void gx\+Bind\+Buffer\+Object (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gx_8h_acf407c4416240bb057bea98cc48d2a11}{GXBuffer\+Type}}}]{buffer\+\_\+type}{, }\item[{uint32\+\_\+t}]{buffer}{}\end{DoxyParamCaption})}
+
+
+
+Binds a (Array/\+Element Array) Buffer Object for use. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer\+\_\+type} & Type of buffer \\
+\hline
+{\em buffer} & (Array/\+Element Array) Buffer Object id\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{gx_8h_acf407c4416240bb057bea98cc48d2a11}{GXBuffer\+Type} 
+\end{DoxySeeAlso}
+\Hypertarget{gx_8h_abe7c89be9f2c57abf121e64f359c946f}\index{gx.h@{gx.h}!gxBindObject@{gxBindObject}}
+\index{gxBindObject@{gxBindObject}!gx.h@{gx.h}}
+\doxysubsubsection{\texorpdfstring{gxBindObject()}{gxBindObject()}}
+{\footnotesize\ttfamily \label{gx_8h_abe7c89be9f2c57abf121e64f359c946f} 
+void gx\+Bind\+Object (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_x_object}{GXObject}} \texorpdfstring{$\ast$}{*}}]{object}{}\end{DoxyParamCaption})}
+
+
+
+Binds all data stored in object, effectively making it work. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em object} & Object pointer \\
+\hline
+\end{DoxyParams}
+\Hypertarget{gx_8h_a467d11a0616180af2bd027a45ba1bfe7}\index{gx.h@{gx.h}!gxBindVertexArrayObject@{gxBindVertexArrayObject}}
+\index{gxBindVertexArrayObject@{gxBindVertexArrayObject}!gx.h@{gx.h}}
+\doxysubsubsection{\texorpdfstring{gxBindVertexArrayObject()}{gxBindVertexArrayObject()}}
+{\footnotesize\ttfamily \label{gx_8h_a467d11a0616180af2bd027a45ba1bfe7} 
+void gx\+Bind\+Vertex\+Array\+Object (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{vao}{}\end{DoxyParamCaption})}
+
+
+
+Binds a Vertex Array Object (VAO) for use. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vao} & Vertex array object (VAO) id to bind \\
+\hline
+\end{DoxyParams}
+\Hypertarget{gx_8h_a83ee4ca2977257cd74304105ae909dc6}\index{gx.h@{gx.h}!gxBufferSubData@{gxBufferSubData}}
+\index{gxBufferSubData@{gxBufferSubData}!gx.h@{gx.h}}
+\doxysubsubsection{\texorpdfstring{gxBufferSubData()}{gxBufferSubData()}}
+{\footnotesize\ttfamily \label{gx_8h_a83ee4ca2977257cd74304105ae909dc6} 
+void gx\+Buffer\+Sub\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gx_8h_acf407c4416240bb057bea98cc48d2a11}{GXBuffer\+Type}}}]{buffer\+\_\+type}{, }\item[{size\+\_\+t}]{offset}{, }\item[{size\+\_\+t}]{length}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{data}{}\end{DoxyParamCaption})}
+
+\Hypertarget{gx_8h_a934abf23cb4bb4057261fd0d907c64df}\index{gx.h@{gx.h}!gxClear@{gxClear}}
+\index{gxClear@{gxClear}!gx.h@{gx.h}}
+\doxysubsubsection{\texorpdfstring{gxClear()}{gxClear()}}
+{\footnotesize\ttfamily \label{gx_8h_a934abf23cb4bb4057261fd0d907c64df} 
+void gx\+Clear (\begin{DoxyParamCaption}\item[{unsigned int}]{bit}{}\end{DoxyParamCaption})}
+
+
+
+Sets the bitplane area for the respective graphical context. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bit} & \doxylink{gx_8h_a531e89fed7a77bbc53ed923fd8a4f71c}{GXBuffer\+Bit}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+This is the same as gl\+Clear(...), and simply a wrapper to allow easier binding implementation.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{gx_8h_a531e89fed7a77bbc53ed923fd8a4f71c}{GXBuffer\+Bit} 
+\end{DoxySeeAlso}
+\Hypertarget{gx_8h_a549bfcfd0c6ea7c69332aaa51f57bcdf}\index{gx.h@{gx.h}!gxClearColor@{gxClearColor}}
+\index{gxClearColor@{gxClearColor}!gx.h@{gx.h}}
+\doxysubsubsection{\texorpdfstring{gxClearColor()}{gxClearColor()}}
+{\footnotesize\ttfamily \label{gx_8h_a549bfcfd0c6ea7c69332aaa51f57bcdf} 
+void gx\+Clear\+Color (\begin{DoxyParamCaption}\item[{float}]{r}{, }\item[{float}]{g}{, }\item[{float}]{b}{, }\item[{float}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Sets the clear color for the respective graphical context. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & R/\+RED channel value ranged between 0.\+0 to 1.\+0 \\
+\hline
+{\em g} & G/\+GREEN channel value ranged between 0.\+0 to 1.\+0 \\
+\hline
+{\em b} & B/\+BLUE channel value ranged between 0.\+0 to 1.\+0 \\
+\hline
+{\em a} & A/\+ALPHA channel value ranged between 0.\+0 to 1.\+0\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+This is the same as gl\+Clear\+Color(...), and simply a wrapper to allow easier binding implementation. 
+\end{DoxyNote}
+\Hypertarget{gx_8h_ae7371bb384d4f1ab2d5f061b294f31ee}\index{gx.h@{gx.h}!gxClearKeyboardCallback@{gxClearKeyboardCallback}}
+\index{gxClearKeyboardCallback@{gxClearKeyboardCallback}!gx.h@{gx.h}}
+\doxysubsubsection{\texorpdfstring{gxClearKeyboardCallback()}{gxClearKeyboardCallback()}}
+{\footnotesize\ttfamily \label{gx_8h_ae7371bb384d4f1ab2d5f061b294f31ee} 
+void gx\+Clear\+Keyboard\+Callback (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Clears all keyboard callbacks. 
+
+\Hypertarget{gx_8h_ad8ce4f450cf4d5c5d0371b1996a204c4}\index{gx.h@{gx.h}!gxCompileGLSLProgram@{gxCompileGLSLProgram}}
+\index{gxCompileGLSLProgram@{gxCompileGLSLProgram}!gx.h@{gx.h}}
+\doxysubsubsection{\texorpdfstring{gxCompileGLSLProgram()}{gxCompileGLSLProgram()}}
+{\footnotesize\ttfamily \label{gx_8h_ad8ce4f450cf4d5c5d0371b1996a204c4} 
+\mbox{\hyperlink{struct_g_x_program_compilation_result}{GXProgram\+Compilation\+Result}} gx\+Compile\+GLSLProgram (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{vertex\+\_\+shader\+\_\+src}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{fragment\+\_\+shader\+\_\+src}{}\end{DoxyParamCaption})}
+
+
+
+Compiles a GLSL vertex and fragment shader from source code. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertex\+\_\+shader\+\_\+src} & Source code of the vertex shader \\
+\hline
+{\em fragment\+\_\+shader\+\_\+src} & Source code of the fragment shader \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Compilation result.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{struct_g_x_program_compilation_result}{GXProgram\+Compilation\+Result} 
+\end{DoxySeeAlso}
+\Hypertarget{gx_8h_a53ae0ebaa74ff8ffc37f5463f447ecac}\index{gx.h@{gx.h}!gxCompileGLSLShader@{gxCompileGLSLShader}}
+\index{gxCompileGLSLShader@{gxCompileGLSLShader}!gx.h@{gx.h}}
+\doxysubsubsection{\texorpdfstring{gxCompileGLSLShader()}{gxCompileGLSLShader()}}
+{\footnotesize\ttfamily \label{gx_8h_a53ae0ebaa74ff8ffc37f5463f447ecac} 
+\mbox{\hyperlink{struct_g_x_shader_compilation_result}{GXShader\+Compilation\+Result}} gx\+Compile\+GLSLShader (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{shader\+\_\+src}{, }\item[{\mbox{\hyperlink{gx_8h_a2eb7ea5dfbda0b5ecb3846115c56fe83}{GXShader\+Type}}}]{shader\+\_\+type}{}\end{DoxyParamCaption})}
+
+
+
+Compiles a GLSL shader from source code. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em shader\+\_\+src} & Source code of the shader \\
+\hline
+{\em shader\+\_\+type} & Type of the shader (vertex or fragment) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Compilation result.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{gx_8h_a2eb7ea5dfbda0b5ecb3846115c56fe83}{GXShader\+Type} 
+
+\doxylink{struct_g_x_shader_compilation_result}{GXShader\+Compilation\+Result} 
+\end{DoxySeeAlso}
+\Hypertarget{gx_8h_afc7f563785198dd63cec3036190814bf}\index{gx.h@{gx.h}!gxCreateApplication@{gxCreateApplication}}
+\index{gxCreateApplication@{gxCreateApplication}!gx.h@{gx.h}}
+\doxysubsubsection{\texorpdfstring{gxCreateApplication()}{gxCreateApplication()}}
+{\footnotesize\ttfamily \label{gx_8h_afc7f563785198dd63cec3036190814bf} 
+\mbox{\hyperlink{struct_g_x_application}{GXApplication}} \texorpdfstring{$\ast$}{*} gx\+Create\+Application (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gx_8h_a87d336541f9413db24108524a42c0dfb}{GXApplication\+Options}}}]{options}{}\end{DoxyParamCaption})}
+
+
+
+Creates main application context. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em options} & Configuration flags \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to application context 
+\end{DoxyReturn}
+\Hypertarget{gx_8h_ada94df35172028fd2cca0465829485bc}\index{gx.h@{gx.h}!gxCreateObject@{gxCreateObject}}
+\index{gxCreateObject@{gxCreateObject}!gx.h@{gx.h}}
+\doxysubsubsection{\texorpdfstring{gxCreateObject()}{gxCreateObject()}}
+{\footnotesize\ttfamily \label{gx_8h_ada94df35172028fd2cca0465829485bc} 
+\mbox{\hyperlink{struct_g_x_object}{GXObject}} \texorpdfstring{$\ast$}{*} gx\+Create\+Object (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{shader\+\_\+program}{, }\item[{uint32\+\_\+t}]{vao}{, }\item[{uint32\+\_\+t}]{vbo}{, }\item[{uint32\+\_\+t}]{ebo}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{user\+\_\+data}{}\end{DoxyParamCaption})}
+
+\Hypertarget{gx_8h_a64b1f8f3d374118a3ecc4cc3acaf4099}\index{gx.h@{gx.h}!gxCreateRenderObject@{gxCreateRenderObject}}
+\index{gxCreateRenderObject@{gxCreateRenderObject}!gx.h@{gx.h}}
+\doxysubsubsection{\texorpdfstring{gxCreateRenderObject()}{gxCreateRenderObject()}}
+{\footnotesize\ttfamily \label{gx_8h_a64b1f8f3d374118a3ecc4cc3acaf4099} 
+\mbox{\hyperlink{struct_g_x_object}{GXObject}} \texorpdfstring{$\ast$}{*} gx\+Create\+Render\+Object (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{shader\+\_\+program}{, }\item[{\mbox{\hyperlink{gx_8h_a12b600ff948f2fb55b73974e5bef17e2}{GXBuffer\+Usage\+Type}}}]{vert\+\_\+buffer\+\_\+usage}{, }\item[{size\+\_\+t}]{vert\+\_\+size}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{vert\+\_\+data}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{user\+\_\+data}{}\end{DoxyParamCaption})}
+
+\Hypertarget{gx_8h_ae08675b49133574c8a8f53f3fbb1c9a2}\index{gx.h@{gx.h}!gxCreateRenderObjectWithElements@{gxCreateRenderObjectWithElements}}
+\index{gxCreateRenderObjectWithElements@{gxCreateRenderObjectWithElements}!gx.h@{gx.h}}
+\doxysubsubsection{\texorpdfstring{gxCreateRenderObjectWithElements()}{gxCreateRenderObjectWithElements()}}
+{\footnotesize\ttfamily \label{gx_8h_ae08675b49133574c8a8f53f3fbb1c9a2} 
+\mbox{\hyperlink{struct_g_x_object}{GXObject}} \texorpdfstring{$\ast$}{*} gx\+Create\+Render\+Object\+With\+Elements (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{shader\+\_\+program}{, }\item[{\mbox{\hyperlink{gx_8h_a12b600ff948f2fb55b73974e5bef17e2}{GXBuffer\+Usage\+Type}}}]{vert\+\_\+buffer\+\_\+usage}{, }\item[{size\+\_\+t}]{vert\+\_\+size}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{vert\+\_\+data}{, }\item[{\mbox{\hyperlink{gx_8h_a12b600ff948f2fb55b73974e5bef17e2}{GXBuffer\+Usage\+Type}}}]{elem\+\_\+buffer\+\_\+usage}{, }\item[{size\+\_\+t}]{elem\+\_\+size}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{elem\+\_\+data}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{user\+\_\+data}{}\end{DoxyParamCaption})}
+
+\Hypertarget{gx_8h_ae6af81c46625a43468bac3d67d7a8aa9}\index{gx.h@{gx.h}!gxCreateWindow@{gxCreateWindow}}
+\index{gxCreateWindow@{gxCreateWindow}!gx.h@{gx.h}}
+\doxysubsubsection{\texorpdfstring{gxCreateWindow()}{gxCreateWindow()}}
+{\footnotesize\ttfamily \label{gx_8h_ae6af81c46625a43468bac3d67d7a8aa9} 
+\mbox{\hyperlink{struct_g_x_window}{GXWindow}} \texorpdfstring{$\ast$}{*} gx\+Create\+Window (\begin{DoxyParamCaption}\item[{bool}]{vsync}{, }\item[{bool}]{show}{, }\item[{int}]{width}{, }\item[{int}]{height}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{title}{}\end{DoxyParamCaption})}
+
+
+
+Creates and initiatlizes an \doxylink{struct_g_x_window}{GXWindow} in memory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vsync} & Sync frame rate wuth refresh rate of monitor to prevent "{}screen tearing"{} \\
+\hline
+{\em show} & Should the window be shown or hidden after creation \\
+\hline
+{\em width} & The desired width, in screen coordinates, of the window content area \\
+\hline
+{\em height} & The desired height, in screen coordinates, of the window content area \\
+\hline
+{\em title} & The title of the window \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to window 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+All memory is managed by the libary and does not account for the manual freeing of memory outside of its codebase. Furthermore, events regarding the framebuffer does NOT interrupt drawing, this may be optional in the future. 
+\end{DoxyNote}
+\Hypertarget{gx_8h_a982378df3a58ebc754e238f548f6d947}\index{gx.h@{gx.h}!gxDestroyApplication@{gxDestroyApplication}}
+\index{gxDestroyApplication@{gxDestroyApplication}!gx.h@{gx.h}}
+\doxysubsubsection{\texorpdfstring{gxDestroyApplication()}{gxDestroyApplication()}}
+{\footnotesize\ttfamily \label{gx_8h_a982378df3a58ebc754e238f548f6d947} 
+void gx\+Destroy\+Application (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_x_application}{GXApplication}} \texorpdfstring{$\ast$}{*}}]{application}{}\end{DoxyParamCaption})}
+
+
+
+Releases application resources. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em application} & Application context to destroy \\
+\hline
+\end{DoxyParams}
+\Hypertarget{gx_8h_ac2bf01e4a94435a96597360172f97edf}\index{gx.h@{gx.h}!gxDestroyResource@{gxDestroyResource}}
+\index{gxDestroyResource@{gxDestroyResource}!gx.h@{gx.h}}
+\doxysubsubsection{\texorpdfstring{gxDestroyResource()}{gxDestroyResource()}}
+{\footnotesize\ttfamily \label{gx_8h_ac2bf01e4a94435a96597360172f97edf} 
+bool gx\+Destroy\+Resource (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_x_resource}{GXResource}} \texorpdfstring{$\ast$}{*}}]{resource}{}\end{DoxyParamCaption})}
+
+
+
+Destroy and free the specified resource. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em resource} & The \doxylink{struct_g_x_resource}{GXResource} to destroy \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the resource was successfully destroyed, false if it was not (likely due to memory issues). 
+\end{DoxyReturn}
+\Hypertarget{gx_8h_a786b10a76cfb0f31ec60a137bb84d2c5}\index{gx.h@{gx.h}!gxDisableVertexAttribute@{gxDisableVertexAttribute}}
+\index{gxDisableVertexAttribute@{gxDisableVertexAttribute}!gx.h@{gx.h}}
+\doxysubsubsection{\texorpdfstring{gxDisableVertexAttribute()}{gxDisableVertexAttribute()}}
+{\footnotesize\ttfamily \label{gx_8h_a786b10a76cfb0f31ec60a137bb84d2c5} 
+void gx\+Disable\+Vertex\+Attribute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_x_object}{GXObject}} \texorpdfstring{$\ast$}{*}}]{object}{, }\item[{uint32\+\_\+t}]{index}{}\end{DoxyParamCaption})}
+
+
+
+Disables a vertex attribute for a \doxylink{struct_g_x_object}{GXObject}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em object} & Pointer to the \doxylink{struct_g_x_object}{GXObject} to disable the attribute for \\
+\hline
+{\em index} & Index of the vertex attribute to disable \\
+\hline
+\end{DoxyParams}
+\Hypertarget{gx_8h_ad8c02b92acb6a924278f35957c0bc010}\index{gx.h@{gx.h}!gxDrawElements@{gxDrawElements}}
+\index{gxDrawElements@{gxDrawElements}!gx.h@{gx.h}}
+\doxysubsubsection{\texorpdfstring{gxDrawElements()}{gxDrawElements()}}
+{\footnotesize\ttfamily \label{gx_8h_ad8c02b92acb6a924278f35957c0bc010} 
+void gx\+Draw\+Elements (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_x_object}{GXObject}} \texorpdfstring{$\ast$}{*}}]{object}{, }\item[{size\+\_\+t}]{count}{, }\item[{\mbox{\hyperlink{gx_8h_a7fd0c624c6c69095149db64b99d41cb1}{GXVertex\+Attribute\+Type}}}]{type}{}\end{DoxyParamCaption})}
+
+\Hypertarget{gx_8h_a4c68d00acc3d8a9fd725f4c73c59cf65}\index{gx.h@{gx.h}!gxDrawVertices@{gxDrawVertices}}
+\index{gxDrawVertices@{gxDrawVertices}!gx.h@{gx.h}}
+\doxysubsubsection{\texorpdfstring{gxDrawVertices()}{gxDrawVertices()}}
+{\footnotesize\ttfamily \label{gx_8h_a4c68d00acc3d8a9fd725f4c73c59cf65} 
+void gx\+Draw\+Vertices (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_x_object}{GXObject}} \texorpdfstring{$\ast$}{*}}]{object}{, }\item[{size\+\_\+t}]{offset}{, }\item[{size\+\_\+t}]{count}{}\end{DoxyParamCaption})}
+
+
+
+Draws a set of vertices from \doxylink{struct_g_x_object}{GXObject}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em object} & Object pointer \\
+\hline
+{\em offset} & Vertex offset \\
+\hline
+{\em count} & Vertex count \\
+\hline
+\end{DoxyParams}
+\Hypertarget{gx_8h_ac2471172b9f13681c22eec227236ca88}\index{gx.h@{gx.h}!gxEnableVertexAttribute@{gxEnableVertexAttribute}}
+\index{gxEnableVertexAttribute@{gxEnableVertexAttribute}!gx.h@{gx.h}}
+\doxysubsubsection{\texorpdfstring{gxEnableVertexAttribute()}{gxEnableVertexAttribute()}}
+{\footnotesize\ttfamily \label{gx_8h_ac2471172b9f13681c22eec227236ca88} 
+void gx\+Enable\+Vertex\+Attribute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_x_object}{GXObject}} \texorpdfstring{$\ast$}{*}}]{object}{, }\item[{uint32\+\_\+t}]{index}{}\end{DoxyParamCaption})}
+
+
+
+Enables a vertex attribute for a \doxylink{struct_g_x_object}{GXObject}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em object} & Pointer to the \doxylink{struct_g_x_object}{GXObject} to enable the attribute for \\
+\hline
+{\em index} & Index of the vertex attribute to enable \\
+\hline
+\end{DoxyParams}
+\Hypertarget{gx_8h_a95c749719fb40e460fbcdd12906f3c1f}\index{gx.h@{gx.h}!gxExec@{gxExec}}
+\index{gxExec@{gxExec}!gx.h@{gx.h}}
+\doxysubsubsection{\texorpdfstring{gxExec()}{gxExec()}}
+{\footnotesize\ttfamily \label{gx_8h_a95c749719fb40e460fbcdd12906f3c1f} 
+void gx\+Exec (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Executes the current application. 
+
+\Hypertarget{gx_8h_a74efe9d59cc0317c77962481d00cb548}\index{gx.h@{gx.h}!gxGenBufferObject@{gxGenBufferObject}}
+\index{gxGenBufferObject@{gxGenBufferObject}!gx.h@{gx.h}}
+\doxysubsubsection{\texorpdfstring{gxGenBufferObject()}{gxGenBufferObject()}}
+{\footnotesize\ttfamily \label{gx_8h_a74efe9d59cc0317c77962481d00cb548} 
+uint32\+\_\+t gx\+Gen\+Buffer\+Object (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gx_8h_acf407c4416240bb057bea98cc48d2a11}{GXBuffer\+Type}}}]{buffer\+\_\+type}{, }\item[{\mbox{\hyperlink{gx_8h_a12b600ff948f2fb55b73974e5bef17e2}{GXBuffer\+Usage\+Type}}}]{buffer\+\_\+usage}{, }\item[{size\+\_\+t}]{size}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{data}{}\end{DoxyParamCaption})}
+
+
+
+Generates a new (Array/\+Element Array) Buffer Object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer\+\_\+type} & Type of buffer \\
+\hline
+{\em buffer\+\_\+usage} & Buffer usage type \\
+\hline
+{\em size} & Size of {\ttfamily data} \\
+\hline
+{\em data} & Data to place in buffer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+(Array/\+Element Array) Buffer Object id
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{gx_8h_acf407c4416240bb057bea98cc48d2a11}{GXBuffer\+Type} 
+
+\doxylink{gx_8h_a12b600ff948f2fb55b73974e5bef17e2}{GXBuffer\+Usage\+Type} 
+\end{DoxySeeAlso}
+\Hypertarget{gx_8h_a92e3fa245e65a66422dbc2e1aeb3f3ca}\index{gx.h@{gx.h}!gxGenVertexArrayObject@{gxGenVertexArrayObject}}
+\index{gxGenVertexArrayObject@{gxGenVertexArrayObject}!gx.h@{gx.h}}
+\doxysubsubsection{\texorpdfstring{gxGenVertexArrayObject()}{gxGenVertexArrayObject()}}
+{\footnotesize\ttfamily \label{gx_8h_a92e3fa245e65a66422dbc2e1aeb3f3ca} 
+uint32\+\_\+t gx\+Gen\+Vertex\+Array\+Object (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Generates a new Vertex Array Object (VAO). 
+
+\begin{DoxyReturn}{Returns}
+Vertex Array Object (VAO) id. 
+\end{DoxyReturn}
+\Hypertarget{gx_8h_a6bf81f3c41110e3803cdea7f89de0453}\index{gx.h@{gx.h}!gxGetApplication@{gxGetApplication}}
+\index{gxGetApplication@{gxGetApplication}!gx.h@{gx.h}}
+\doxysubsubsection{\texorpdfstring{gxGetApplication()}{gxGetApplication()}}
+{\footnotesize\ttfamily \label{gx_8h_a6bf81f3c41110e3803cdea7f89de0453} 
+\mbox{\hyperlink{struct_g_x_application}{GXApplication}} \texorpdfstring{$\ast$}{*} gx\+Get\+Application (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves current application context. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to application context (null if not initialized) 
+\end{DoxyReturn}
+\Hypertarget{gx_8h_a6a96a1574c45c3c92db36ae621d1c01b}\index{gx.h@{gx.h}!gxInit@{gxInit}}
+\index{gxInit@{gxInit}!gx.h@{gx.h}}
+\doxysubsubsection{\texorpdfstring{gxInit()}{gxInit()}}
+{\footnotesize\ttfamily \label{gx_8h_a6a96a1574c45c3c92db36ae621d1c01b} 
+const char \texorpdfstring{$\ast$}{*} gx\+Init (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Initializes GX library and dependencies (GLFW). 
+
+\begin{DoxyReturn}{Returns}
+nullptr on success, error message on failure. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{gx_8h_a6866c6c7ebec5d428312044ebb69e09f}{gx\+Terminate()} 
+\end{DoxySeeAlso}
+\Hypertarget{gx_8h_aff01850f8640b86e1031bdc63fc04776}\index{gx.h@{gx.h}!gxMapBufferRange@{gxMapBufferRange}}
+\index{gxMapBufferRange@{gxMapBufferRange}!gx.h@{gx.h}}
+\doxysubsubsection{\texorpdfstring{gxMapBufferRange()}{gxMapBufferRange()}}
+{\footnotesize\ttfamily \label{gx_8h_aff01850f8640b86e1031bdc63fc04776} 
+void \texorpdfstring{$\ast$}{*} gx\+Map\+Buffer\+Range (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gx_8h_acf407c4416240bb057bea98cc48d2a11}{GXBuffer\+Type}}}]{buffer\+\_\+type}{, }\item[{size\+\_\+t}]{offset}{, }\item[{size\+\_\+t}]{length}{, }\item[{\mbox{\hyperlink{gx_8h_a0e90335b7087af15a4b53fb23b65faf2}{GXMapping\+Bits}}}]{bits}{}\end{DoxyParamCaption})}
+
+
+
+Maps a range of a (Array/\+Element Array) Buffer Object to CPU memory, allowing access (based of {\ttfamily bits}). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer\+\_\+type} & Type of buffer to map \\
+\hline
+{\em offset} & Offset in bytes from the start of the buffer \\
+\hline
+{\em length} & Length in bytes of the range to map \\
+\hline
+{\em bits} & Mapping bits that control how the buffer is accessed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the mapped buffer range, or {\ttfamily nullptr} (or its respective alternative) on failure.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+This is equivalent to gl\+Map\+Buffer\+Range, and simply a wrapper to allow easier binding implementation. 
+\end{DoxyNote}
+\Hypertarget{gx_8h_a7bc420ab52671bb1267f5adb126fe0b6}\index{gx.h@{gx.h}!gxSetBackground@{gxSetBackground}}
+\index{gxSetBackground@{gxSetBackground}!gx.h@{gx.h}}
+\doxysubsubsection{\texorpdfstring{gxSetBackground()}{gxSetBackground()}}
+{\footnotesize\ttfamily \label{gx_8h_a7bc420ab52671bb1267f5adb126fe0b6} 
+void gx\+Set\+Background (\begin{DoxyParamCaption}\item[{float}]{r}{, }\item[{float}]{g}{, }\item[{float}]{b}{, }\item[{float}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Sets the background for the respective graphical context. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & R/\+RED channel value ranged between 0.\+0 to 1.\+0 \\
+\hline
+{\em g} & G/\+GREEN channel value ranged between 0.\+0 to 1.\+0 \\
+\hline
+{\em b} & B/\+BLUE channel value ranged between 0.\+0 to 1.\+0 \\
+\hline
+{\em a} & A/\+ALPHA channel value ranged between 0.\+0 to 1.\+0\\
+\hline
+\end{DoxyParams}
+Is the same as doing\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{gx_8h_a549bfcfd0c6ea7c69332aaa51f57bcdf}{gxClearColor}}(r,\ g,\ b,\ a);}
+\DoxyCodeLine{gxClearColorBuffer();}
+
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{gx_8h_a549bfcfd0c6ea7c69332aaa51f57bcdf}{gx\+Clear\+Color()} 
+
+gx\+Clear\+Color\+Buffer() 
+\end{DoxySeeAlso}
+\Hypertarget{gx_8h_af827ad56a1afd8f8dc683a37a727023c}\index{gx.h@{gx.h}!gxSetVertexAttribute@{gxSetVertexAttribute}}
+\index{gxSetVertexAttribute@{gxSetVertexAttribute}!gx.h@{gx.h}}
+\doxysubsubsection{\texorpdfstring{gxSetVertexAttribute()}{gxSetVertexAttribute()}}
+{\footnotesize\ttfamily \label{gx_8h_af827ad56a1afd8f8dc683a37a727023c} 
+void gx\+Set\+Vertex\+Attribute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_x_object}{GXObject}} \texorpdfstring{$\ast$}{*}}]{object}{, }\item[{uint32\+\_\+t}]{index}{, }\item[{int}]{size}{, }\item[{\mbox{\hyperlink{gx_8h_a7fd0c624c6c69095149db64b99d41cb1}{GXVertex\+Attribute\+Type}}}]{type}{, }\item[{bool}]{normalize}{, }\item[{size\+\_\+t}]{stride}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{pointer}{}\end{DoxyParamCaption})}
+
+
+
+Sets a vertex attribute for a \doxylink{struct_g_x_object}{GXObject}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em object} & Pointer to the \doxylink{struct_g_x_object}{GXObject} to set the attribute for \\
+\hline
+{\em index} & Index of the vertex attribute \\
+\hline
+{\em size} & Number of components per vertex attribute (1, 2, 3, or 4) \\
+\hline
+{\em type} & Data type of the vertex attribute (e.\+g., float, int) \\
+\hline
+{\em normalize} & Whether to normalize the vertex attribute data \\
+\hline
+{\em stride} & Byte offset between consecutive vertex attributes \\
+\hline
+{\em pointer} & Pointer to the vertex attribute data in the buffer\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{gx_8h_a7fd0c624c6c69095149db64b99d41cb1}{GXVertex\+Attribute\+Type} 
+\end{DoxySeeAlso}
+\Hypertarget{gx_8h_a6866c6c7ebec5d428312044ebb69e09f}\index{gx.h@{gx.h}!gxTerminate@{gxTerminate}}
+\index{gxTerminate@{gxTerminate}!gx.h@{gx.h}}
+\doxysubsubsection{\texorpdfstring{gxTerminate()}{gxTerminate()}}
+{\footnotesize\ttfamily \label{gx_8h_a6866c6c7ebec5d428312044ebb69e09f} 
+void gx\+Terminate (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Terminates GX library and cleans up resources. 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{gx_8h_a6a96a1574c45c3c92db36ae621d1c01b}{gx\+Init()} 
+\end{DoxySeeAlso}
+\Hypertarget{gx_8h_a16c58abba3117f7d571ae6c1d15cbc18}\index{gx.h@{gx.h}!gxUnmapBuffer@{gxUnmapBuffer}}
+\index{gxUnmapBuffer@{gxUnmapBuffer}!gx.h@{gx.h}}
+\doxysubsubsection{\texorpdfstring{gxUnmapBuffer()}{gxUnmapBuffer()}}
+{\footnotesize\ttfamily \label{gx_8h_a16c58abba3117f7d571ae6c1d15cbc18} 
+bool gx\+Unmap\+Buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gx_8h_acf407c4416240bb057bea98cc48d2a11}{GXBuffer\+Type}}}]{buffer\+\_\+type}{}\end{DoxyParamCaption})}
+
+
+
+Unmaps a previously mapped (Array/\+Element Array) Buffer Object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer\+\_\+type} & Type of buffer to unmap \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the buffer was successfully unmapped, false if it was not (likely due to memory issues).
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+This is equivalent to gl\+Unmap\+Buffer, and simply a wrapper to allow easier binding implementation. 
+\end{DoxyNote}
+\Hypertarget{gx_8h_ac8eac1b081068eb1ceee1b7704808212}\index{gx.h@{gx.h}!gxUpdateElements@{gxUpdateElements}}
+\index{gxUpdateElements@{gxUpdateElements}!gx.h@{gx.h}}
+\doxysubsubsection{\texorpdfstring{gxUpdateElements()}{gxUpdateElements()}}
+{\footnotesize\ttfamily \label{gx_8h_ac8eac1b081068eb1ceee1b7704808212} 
+bool gx\+Update\+Elements (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_x_object}{GXObject}} \texorpdfstring{$\ast$}{*}}]{object}{, }\item[{size\+\_\+t}]{offset}{, }\item[{size\+\_\+t}]{length}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{data}{}\end{DoxyParamCaption})}
+
+
+
+Updates the index data of a \doxylink{struct_g_x_object}{GXObject}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em object} & Pointer to the \doxylink{struct_g_x_object}{GXObject} to update \\
+\hline
+{\em offset} & Offset in bytes from the start of the index buffer \\
+\hline
+{\em length} & Length in bytes of the data to update \\
+\hline
+{\em data} & Pointer to the new index data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the indices were successfully updated, false if it was not (likely due to memory issues). 
+\end{DoxyReturn}
+\Hypertarget{gx_8h_a94e5502c637a126ba77beb45b8b9a713}\index{gx.h@{gx.h}!gxUpdateVertices@{gxUpdateVertices}}
+\index{gxUpdateVertices@{gxUpdateVertices}!gx.h@{gx.h}}
+\doxysubsubsection{\texorpdfstring{gxUpdateVertices()}{gxUpdateVertices()}}
+{\footnotesize\ttfamily \label{gx_8h_a94e5502c637a126ba77beb45b8b9a713} 
+bool gx\+Update\+Vertices (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_x_object}{GXObject}} \texorpdfstring{$\ast$}{*}}]{object}{, }\item[{size\+\_\+t}]{offset}{, }\item[{size\+\_\+t}]{length}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{data}{}\end{DoxyParamCaption})}
+
+
+
+Updates the vertex data of a \doxylink{struct_g_x_object}{GXObject}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em object} & Pointer to the \doxylink{struct_g_x_object}{GXObject} to update \\
+\hline
+{\em offset} & Offset in bytes from the start of the vertex buffer \\
+\hline
+{\em length} & Length in bytes of the data to update \\
+\hline
+{\em data} & Pointer to the new vertex data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the vertices were successfully updated, false if it was not (likely due to memory issues). 
+\end{DoxyReturn}
+\Hypertarget{gx_8h_a313412ba22eac50e2bff181c07a3882c}\index{gx.h@{gx.h}!gxUpdateViewport@{gxUpdateViewport}}
+\index{gxUpdateViewport@{gxUpdateViewport}!gx.h@{gx.h}}
+\doxysubsubsection{\texorpdfstring{gxUpdateViewport()}{gxUpdateViewport()}}
+{\footnotesize\ttfamily \label{gx_8h_a313412ba22eac50e2bff181c07a3882c} 
+void gx\+Update\+Viewport (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_x_window}{GXWindow}} \texorpdfstring{$\ast$}{*}}]{win}{}\end{DoxyParamCaption})}
+
+
+
+Updates the viewport for a specific window (equivalent to gx\+Viewport(0, 0, win-\/\texorpdfstring{$>$}{>}width, win-\/\texorpdfstring{$>$}{>}height)). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em win} & The \doxylink{struct_g_x_window}{GXWindow} to update the viewport for.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+This should only be used in the drawing callback of a window.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{gx_8h_a8aecfe1a391495d33781697af5bd7ca6}{gx\+Viewport()} 
+\end{DoxySeeAlso}
+\Hypertarget{gx_8h_a8aecfe1a391495d33781697af5bd7ca6}\index{gx.h@{gx.h}!gxViewport@{gxViewport}}
+\index{gxViewport@{gxViewport}!gx.h@{gx.h}}
+\doxysubsubsection{\texorpdfstring{gxViewport()}{gxViewport()}}
+{\footnotesize\ttfamily \label{gx_8h_a8aecfe1a391495d33781697af5bd7ca6} 
+void gx\+Viewport (\begin{DoxyParamCaption}\item[{int}]{x}{, }\item[{int}]{y}{, }\item[{int}]{w}{, }\item[{int}]{h}{}\end{DoxyParamCaption})}
+
+
+
+Sets the viewport for the respective graphical context. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Viewport x position \\
+\hline
+{\em y} & Viewport y position \\
+\hline
+{\em w} & Viewport width \\
+\hline
+{\em h} & Viewport height\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+This is the same as gl\+Viewport, and simply a wrapper to allow easier binding implementation. 
+\end{DoxyNote}
+\Hypertarget{gx_8h_acbe1e81fd4ce60bd48bbcd69586fda46}\index{gx.h@{gx.h}!gxWindowClose@{gxWindowClose}}
+\index{gxWindowClose@{gxWindowClose}!gx.h@{gx.h}}
+\doxysubsubsection{\texorpdfstring{gxWindowClose()}{gxWindowClose()}}
+{\footnotesize\ttfamily \label{gx_8h_acbe1e81fd4ce60bd48bbcd69586fda46} 
+void gx\+Window\+Close (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_x_window}{GXWindow}} \texorpdfstring{$\ast$}{*}}]{win}{}\end{DoxyParamCaption})}
+
+
+
+Inidicates to the libary, that the specified window should close. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em win} & \doxylink{struct_g_x_window}{GXWindow} to close \\
+\hline
+\end{DoxyParams}
+\Hypertarget{gx_8h_a3d9d8203ffca6db536ff37c7f3277d87}\index{gx.h@{gx.h}!gxWindowSetDrawCallback@{gxWindowSetDrawCallback}}
+\index{gxWindowSetDrawCallback@{gxWindowSetDrawCallback}!gx.h@{gx.h}}
+\doxysubsubsection{\texorpdfstring{gxWindowSetDrawCallback()}{gxWindowSetDrawCallback()}}
+{\footnotesize\ttfamily \label{gx_8h_a3d9d8203ffca6db536ff37c7f3277d87} 
+void gx\+Window\+Set\+Draw\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_x_window}{GXWindow}} \texorpdfstring{$\ast$}{*}}]{win}{, }\item[{\mbox{\hyperlink{gx_8h_a8c1bb3a81f7d02905db77991971f46a0}{GXDraw\+Callback}}}]{cb}{}\end{DoxyParamCaption})}
+
+
+
+Assigns the draw callback for the respective \doxylink{struct_g_x_window}{GXWindow}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em win} & Pointer to window to assign callback to \\
+\hline
+{\em cb} & Callback (\doxylink{gx_8h_a8c1bb3a81f7d02905db77991971f46a0}{GXDraw\+Callback}) \\
+\hline
+\end{DoxyParams}
+\Hypertarget{gx_8h_a2d042094acd151bcd40f68313b18c5cc}\index{gx.h@{gx.h}!gxWindowShouldClose@{gxWindowShouldClose}}
+\index{gxWindowShouldClose@{gxWindowShouldClose}!gx.h@{gx.h}}
+\doxysubsubsection{\texorpdfstring{gxWindowShouldClose()}{gxWindowShouldClose()}}
+{\footnotesize\ttfamily \label{gx_8h_a2d042094acd151bcd40f68313b18c5cc} 
+bool gx\+Window\+Should\+Close (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_x_window}{GXWindow}} \texorpdfstring{$\ast$}{*}}]{win}{}\end{DoxyParamCaption})}
+
+
+
+Returns whether the status of the specified window indicates it should close. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em win} & The \doxylink{struct_g_x_window}{GXWindow} to query \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the window should close, false if otherwise. 
+\end{DoxyReturn}

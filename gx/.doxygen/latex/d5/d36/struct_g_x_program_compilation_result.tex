@@ -1,0 +1,76 @@
+\doxysection{GXProgram\+Compilation\+Result Struct Reference}
+\hypertarget{struct_g_x_program_compilation_result}{}\label{struct_g_x_program_compilation_result}\index{GXProgramCompilationResult@{GXProgramCompilationResult}}
+
+
+Result of shader program compilation.  
+
+
+
+
+{\ttfamily \#include $<$gx.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_g_x_program_compilation_result_a111b445c0467b974947a6763918b682c}{program}}
+\item 
+int \mbox{\hyperlink{struct_g_x_program_compilation_result_a176252492fcf324a9f2be104c582150f}{success}}
+\item 
+char \mbox{\hyperlink{struct_g_x_program_compilation_result_aac4a3c75184816b4279790ab428530f2}{program\+\_\+log}} \mbox{[}1024\mbox{]}
+\item 
+\mbox{\hyperlink{struct_g_x_shader_compilation_result}{GXShader\+Compilation\+Result}} \mbox{\hyperlink{struct_g_x_program_compilation_result_a54c9cd14bb4a371ea0f9281aee674e91}{vertex\+\_\+result}}
+\item 
+\mbox{\hyperlink{struct_g_x_shader_compilation_result}{GXShader\+Compilation\+Result}} \mbox{\hyperlink{struct_g_x_program_compilation_result_a4fb87bcb9c247bbb572f4730363401a8}{fragment\+\_\+result}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Result of shader program compilation. 
+
+Members\+:
+\begin{DoxyItemize}
+\item {\ttfamily program}\+: Shader program id
+\item {\ttfamily success}\+: Compilation success flag (1 for success, 0 for failure)
+\item {\ttfamily program\+\_\+log}\+: Compilation log message
+\item {\ttfamily vertex\+\_\+result}\+: Vertex shader compilation result
+\item {\ttfamily fragment\+\_\+result}\+: Fragment shader compilation result 
+\end{DoxyItemize}
+
+\label{doc-variable-members}
+\Hypertarget{struct_g_x_program_compilation_result_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct_g_x_program_compilation_result_a4fb87bcb9c247bbb572f4730363401a8}\index{GXProgramCompilationResult@{GXProgramCompilationResult}!fragment\_result@{fragment\_result}}
+\index{fragment\_result@{fragment\_result}!GXProgramCompilationResult@{GXProgramCompilationResult}}
+\doxysubsubsection{\texorpdfstring{fragment\_result}{fragment\_result}}
+{\footnotesize\ttfamily \label{struct_g_x_program_compilation_result_a4fb87bcb9c247bbb572f4730363401a8} 
+\mbox{\hyperlink{struct_g_x_shader_compilation_result}{GXShader\+Compilation\+Result}} GXProgram\+Compilation\+Result\+::fragment\+\_\+result}
+
+\Hypertarget{struct_g_x_program_compilation_result_a111b445c0467b974947a6763918b682c}\index{GXProgramCompilationResult@{GXProgramCompilationResult}!program@{program}}
+\index{program@{program}!GXProgramCompilationResult@{GXProgramCompilationResult}}
+\doxysubsubsection{\texorpdfstring{program}{program}}
+{\footnotesize\ttfamily \label{struct_g_x_program_compilation_result_a111b445c0467b974947a6763918b682c} 
+uint32\+\_\+t GXProgram\+Compilation\+Result\+::program}
+
+\Hypertarget{struct_g_x_program_compilation_result_aac4a3c75184816b4279790ab428530f2}\index{GXProgramCompilationResult@{GXProgramCompilationResult}!program\_log@{program\_log}}
+\index{program\_log@{program\_log}!GXProgramCompilationResult@{GXProgramCompilationResult}}
+\doxysubsubsection{\texorpdfstring{program\_log}{program\_log}}
+{\footnotesize\ttfamily \label{struct_g_x_program_compilation_result_aac4a3c75184816b4279790ab428530f2} 
+char GXProgram\+Compilation\+Result\+::program\+\_\+log\mbox{[}1024\mbox{]}}
+
+\Hypertarget{struct_g_x_program_compilation_result_a176252492fcf324a9f2be104c582150f}\index{GXProgramCompilationResult@{GXProgramCompilationResult}!success@{success}}
+\index{success@{success}!GXProgramCompilationResult@{GXProgramCompilationResult}}
+\doxysubsubsection{\texorpdfstring{success}{success}}
+{\footnotesize\ttfamily \label{struct_g_x_program_compilation_result_a176252492fcf324a9f2be104c582150f} 
+int GXProgram\+Compilation\+Result\+::success}
+
+\Hypertarget{struct_g_x_program_compilation_result_a54c9cd14bb4a371ea0f9281aee674e91}\index{GXProgramCompilationResult@{GXProgramCompilationResult}!vertex\_result@{vertex\_result}}
+\index{vertex\_result@{vertex\_result}!GXProgramCompilationResult@{GXProgramCompilationResult}}
+\doxysubsubsection{\texorpdfstring{vertex\_result}{vertex\_result}}
+{\footnotesize\ttfamily \label{struct_g_x_program_compilation_result_a54c9cd14bb4a371ea0f9281aee674e91} 
+\mbox{\hyperlink{struct_g_x_shader_compilation_result}{GXShader\+Compilation\+Result}} GXProgram\+Compilation\+Result\+::vertex\+\_\+result}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/gx/\mbox{\hyperlink{gx_8h}{gx.\+h}}\end{DoxyCompactItemize}
