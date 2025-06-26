@@ -196,22 +196,12 @@ GXObject* gxCreateRenderObject(uint32_t shader_program, GXBufferUsageType vert_b
 	return gxCreateRenderObjectWithElements(shader_program, vert_buffer_usage, vert_size, vert_data, GX_BUFFER_USAGE_TYPE_STATIC, 0, nullptr, user_data);
 }
 
-static uint32_t m_active_shader_program = 0;
-
 void gxDrawVertices(GXObject* object, size_t offset, size_t count) {
-    if (m_active_shader_program != object->shader_program) {
-		glUseProgram(object->shader_program); 
-		m_active_shader_program = object->shader_program;
-    }
     gxBindVertexArrayObject(object->vao);
     glDrawArrays(GL_TRIANGLES, offset, count);
 }
 
 void gxDrawElements(GXObject* object, size_t count, GXVertexAttributeType type) {
-    if (m_active_shader_program != object->shader_program) {
-        glUseProgram(object->shader_program);
-        m_active_shader_program = object->shader_program;
-    }
     gxBindVertexArrayObject(object->vao);
     glDrawElements(GL_TRIANGLES, count, type, nullptr);
 }
@@ -400,26 +390,29 @@ bool gxUnmapBuffer(GXBufferType buffer_type) { return glUnmapBuffer(buffer_type)
 
 void gxBufferSubData(GXBufferType buffer_type, size_t offset, size_t length, void* data) { glBufferSubData(buffer_type, offset, length, data); }
 
-bool gxUpdateVertices(GXObject* object, size_t offset, size_t length, void* data) {
-    if (!object || !data) return false;
-    gxBindBufferObject(GX_BUFFER_TYPE_ARRAY, object->vbo);
-    auto dest = gxMapBufferRange(GX_BUFFER_TYPE_ARRAY, offset, length, GX_MAP_WRITE_BIT);
+bool gxUpdateBufferObject(GXBufferType type, uint32_t bo, size_t offset, size_t length, void* data) {
+    if (!bo || !data) return false;
+    gxBindBufferObject(type, bo);
+    auto dest = gxMapBufferRange(type, offset, length, GX_MAP_WRITE_BIT);
     if (!dest) return false;
     memcpy(dest, data, length);
-    auto result = gxUnmapBuffer(GX_BUFFER_TYPE_ARRAY);
-	gxBindBufferObject(GX_BUFFER_TYPE_ARRAY, 0);
+    auto result = gxUnmapBuffer(type);
+    gxBindBufferObject(type, 0);
     return result;
 }
 
-bool gxUpdateIndices(GXObject* object, size_t offset, size_t length, void* data) {
-    if (!object || !data) return false;
-    gxBindBufferObject(GX_BUFFER_TYPE_ELEMENT_ARRAY, object->ebo);
-    auto dest = gxMapBufferRange(GX_BUFFER_TYPE_ELEMENT_ARRAY, offset, length, GX_MAP_WRITE_BIT);
-    if (!dest) return false;
-    memcpy(dest, data, length);
-    auto result = gxUnmapBuffer(GX_BUFFER_TYPE_ELEMENT_ARRAY);
-    gxBindBufferObject(GX_BUFFER_TYPE_ELEMENT_ARRAY, 0);
-    return result;
+bool gxUpdateVertices(GXObject* object, size_t offset, size_t length, void* data) {
+    if (!object) return false;
+    return gxUpdateBufferObject(GX_BUFFER_TYPE_ARRAY, object->vbo, offset, length, data);
+}
+
+bool gxUpdateElements(GXObject* object, size_t offset, size_t length, void* data) {
+    if (!object) return false;
+    return gxUpdateBufferObject(GX_BUFFER_TYPE_ELEMENT_ARRAY, object->ebo, offset, length, data);
+}
+
+bool gxUpdateUniformBlock(uint32_t ubo, size_t offset, size_t length, void* data) {
+    return gxUpdateBufferObject(GX_BUFFER_TYPE_UNIFORM, ubo, offset, length, data);
 }
 
 void gxSetVertexAttribute(GXObject* object, uint32_t index, int size, GXVertexAttributeType type, bool normalize, size_t stride, void* pointer) {
@@ -436,4 +429,16 @@ void gxEnableVertexAttribute(GXObject* object, uint32_t index) {
 void gxDisableVertexAttribute(GXObject* object, uint32_t index) { 
     if (!object) return;
     glDisableVertexArrayAttrib(object->vao, index); 
+}
+
+void gxBindBufferBase(GXBufferType type, uint32_t binding_point, uint32_t bo) {
+	glBindBufferBase(type, binding_point, bo);
+}
+
+void gxBindUniformBlock(uint32_t binding_point, uint32_t ubo) {
+    gxBindBufferBase(GX_BUFFER_TYPE_UNIFORM, binding_point, ubo);
+}
+
+void gxUseShader(GXObject* object) {
+    glUseProgram(object->shader_program);
 }
