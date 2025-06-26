@@ -7,7 +7,7 @@ var gx_8h =
     [ "GXShaderCompilationResult", "df/dd1/struct_g_x_shader_compilation_result.html", "df/dd1/struct_g_x_shader_compilation_result" ],
     [ "GXProgramCompilationResult", "d5/d36/struct_g_x_program_compilation_result.html", "d5/d36/struct_g_x_program_compilation_result" ],
     [ "GXDrawCallback", "de/d07/gx_8h.html#a8c1bb3a81f7d02905db77991971f46a0", null ],
-    [ "GXKeyboardCallback", "de/d07/gx_8h.html#ae21f5494d0a63e4159607dda10f81ef8", null ],
+    [ "GXKeyboardCallback", "de/d07/gx_8h.html#aec5702061094a00307085537e0b85b63", null ],
     [ "GXApplicationOptions", "de/d07/gx_8h.html#a87d336541f9413db24108524a42c0dfb", [
       [ "GX_APP_OPTION_NONE", "de/d07/gx_8h.html#a87d336541f9413db24108524a42c0dfba97a5c8e838a507c6a70e8ee09bd3c2f3", null ]
     ] ],
@@ -146,6 +146,11 @@ var gx_8h =
       [ "GX_KEY_RIGHT_ALT", "de/d07/gx_8h.html#a747621a460572dd3234c9c30a27378f2ad6cc95426470fe24a4eadcc3c78a4dcf", null ],
       [ "GX_KEY_RIGHT_SUPER", "de/d07/gx_8h.html#a747621a460572dd3234c9c30a27378f2ad943c11d3334b7f0afa922cf52ddb6f3", null ],
       [ "GX_KEY_MENU", "de/d07/gx_8h.html#a747621a460572dd3234c9c30a27378f2a82a0d059bb243760f5b474149ef2be94", null ]
+    ] ],
+    [ "GXKeyAction", "de/d07/gx_8h.html#ac829f23b5a52fc999a8ad949fe1b24e0", [
+      [ "GX_KEY_ACTION_PRESS", "de/d07/gx_8h.html#ac829f23b5a52fc999a8ad949fe1b24e0ac233ec7fe3e01c9e8d7d9b68391f6529", null ],
+      [ "GX_KEY_ACTION_RELEASE", "de/d07/gx_8h.html#ac829f23b5a52fc999a8ad949fe1b24e0ab265d27fd397f97e9027e233b3dd712c", null ],
+      [ "GX_KEY_ACTION_REPEAT", "de/d07/gx_8h.html#ac829f23b5a52fc999a8ad949fe1b24e0aa8d0182837ed36f31276b7b3106b91fe", null ]
     ] ],
     [ "GXMappingBits", "de/d07/gx_8h.html#a0e90335b7087af15a4b53fb23b65faf2", [
       [ "GX_MAP_READ_BIT", "de/d07/gx_8h.html#a0e90335b7087af15a4b53fb23b65faf2a96a18be9af738adb20b464f071850ed9", null ],

@@ -1,1 +1,1 @@
-# graphicx
+# GraphicX

@@ -1,8 +1,6 @@
 \doxysection{include/gx/gx.h File Reference}
 \hypertarget{gx_8h}{}\label{gx_8h}\index{include/gx/gx.h@{include/gx/gx.h}}
 {\ttfamily \#include $<$cstdint$>$}\newline
-{\ttfamily \#include $<$glad/glad.\+h$>$}\newline
-{\ttfamily \#include $<$GLFW/glfw3.\+h$>$}\newline
 \doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
@@ -23,7 +21,7 @@ struct \mbox{\hyperlink{struct_g_x_program_compilation_result}{GXProgram\+Compil
 \item 
 typedef void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{gx_8h_a8c1bb3a81f7d02905db77991971f46a0}{GXDraw\+Callback}}) (\mbox{\hyperlink{struct_g_x_window}{GXWindow}} \texorpdfstring{$\ast$}{*})
 \begin{DoxyCompactList}\small\item\em Window rendering callback type. \end{DoxyCompactList}\item 
-typedef void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{gx_8h_ae21f5494d0a63e4159607dda10f81ef8}{GXKeyboard\+Callback}}) (\mbox{\hyperlink{struct_g_x_application}{GXApplication}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{struct_g_x_window}{GXWindow}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2}{GXKey}}, int, int, int)
+typedef void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{gx_8h_aec5702061094a00307085537e0b85b63}{GXKeyboard\+Callback}}) (\mbox{\hyperlink{struct_g_x_application}{GXApplication}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{struct_g_x_window}{GXWindow}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2}{GXKey}}, int, \mbox{\hyperlink{gx_8h_ac829f23b5a52fc999a8ad949fe1b24e0}{GXKey\+Action}}, int)
 \begin{DoxyCompactList}\small\item\em Keyboard event callback. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Enumerations}
 \begin{DoxyCompactItemize}
@@ -183,6 +181,11 @@ enum \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2}{GXKey}} \{ \newli
 enum \mbox{\hyperlink{gx_8h_a87d336541f9413db24108524a42c0dfb}{GXApplication\+Options}} \{ \mbox{\hyperlink{gx_8h_a87d336541f9413db24108524a42c0dfba97a5c8e838a507c6a70e8ee09bd3c2f3}{GX\+\_\+\+APP\+\_\+\+OPTION\+\_\+\+NONE}} = 0
  \}
 \begin{DoxyCompactList}\small\item\em Application configuration flags. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{gx_8h_ac829f23b5a52fc999a8ad949fe1b24e0}{GXKey\+Action}} \{ \mbox{\hyperlink{gx_8h_ac829f23b5a52fc999a8ad949fe1b24e0ac233ec7fe3e01c9e8d7d9b68391f6529}{GX\+\_\+\+KEY\+\_\+\+ACTION\+\_\+\+PRESS}} = 1
+, \mbox{\hyperlink{gx_8h_ac829f23b5a52fc999a8ad949fe1b24e0ab265d27fd397f97e9027e233b3dd712c}{GX\+\_\+\+KEY\+\_\+\+ACTION\+\_\+\+RELEASE}} = 0
+, \mbox{\hyperlink{gx_8h_ac829f23b5a52fc999a8ad949fe1b24e0aa8d0182837ed36f31276b7b3106b91fe}{GX\+\_\+\+KEY\+\_\+\+ACTION\+\_\+\+REPEAT}} = 2
+ \}
+\begin{DoxyCompactList}\small\item\em Key action identifiers (mirrors GLFW key actions). \end{DoxyCompactList}\item 
 enum \mbox{\hyperlink{gx_8h_a060bcfb6c531edd54e25817f312a2b85}{GXResource\+Type}} \{ \mbox{\hyperlink{gx_8h_a060bcfb6c531edd54e25817f312a2b85a8cb89865bb92fd4ebf9fd761c5c8b68e}{GX\+\_\+\+RESOURCE\+\_\+\+WINDOW}}
 , \mbox{\hyperlink{gx_8h_a060bcfb6c531edd54e25817f312a2b85ade79dce00383cc4e07e064860a792782}{GX\+\_\+\+RESOURCE\+\_\+\+OBJECT}}
  \}
@@ -238,7 +241,7 @@ enum \mbox{\hyperlink{gx_8h_a7fd0c624c6c69095149db64b99d41cb1}{GXVertex\+Attribu
 , \mbox{\hyperlink{gx_8h_a7fd0c624c6c69095149db64b99d41cb1a5029f8e0734a5e8c16e85cef5d900620}{GX\+\_\+\+VERTEX\+\_\+\+ATTRIB\+\_\+\+TYPE\+\_\+\+UNSIGNED\+\_\+\+INT}} = 0x1405
 , \mbox{\hyperlink{gx_8h_a7fd0c624c6c69095149db64b99d41cb1a00de28234feddfd1c8b8f034d61fcd12}{GX\+\_\+\+VERTEX\+\_\+\+ATTRIB\+\_\+\+TYPE\+\_\+\+FLOAT}} = 0x1406
  \}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Data type identifiers. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -246,7 +249,7 @@ const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{gx_8h_a6a96a1574c45c3c92d
 \begin{DoxyCompactList}\small\item\em Initializes GX library and dependencies (GLFW). \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{gx_8h_a6866c6c7ebec5d428312044ebb69e09f}{gx\+Terminate}} ()
 \begin{DoxyCompactList}\small\item\em Terminates GX library and cleans up resources. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{gx_8h_acd7da62752d00aea8271dc6a5d9ed4e6}{gx\+Add\+Keyboard\+Callback}} (\mbox{\hyperlink{gx_8h_ae21f5494d0a63e4159607dda10f81ef8}{GXKeyboard\+Callback}} cb)
+void \mbox{\hyperlink{gx_8h_acd7da62752d00aea8271dc6a5d9ed4e6}{gx\+Add\+Keyboard\+Callback}} (\mbox{\hyperlink{gx_8h_aec5702061094a00307085537e0b85b63}{GXKeyboard\+Callback}} cb)
 \begin{DoxyCompactList}\small\item\em Registers a keyboard event callback. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{gx_8h_ae7371bb384d4f1ab2d5f061b294f31ee}{gx\+Clear\+Keyboard\+Callback}} ()
 \begin{DoxyCompactList}\small\item\em Clears all keyboard callbacks. \end{DoxyCompactList}\item 
@@ -342,11 +345,11 @@ Window rendering callback type.
 {\em win} & Pointer to window being rendered \\
 \hline
 \end{DoxyParams}
-\Hypertarget{gx_8h_ae21f5494d0a63e4159607dda10f81ef8}\index{gx.h@{gx.h}!GXKeyboardCallback@{GXKeyboardCallback}}
+\Hypertarget{gx_8h_aec5702061094a00307085537e0b85b63}\index{gx.h@{gx.h}!GXKeyboardCallback@{GXKeyboardCallback}}
 \index{GXKeyboardCallback@{GXKeyboardCallback}!gx.h@{gx.h}}
 \doxysubsubsection{\texorpdfstring{GXKeyboardCallback}{GXKeyboardCallback}}
-{\footnotesize\ttfamily \label{gx_8h_ae21f5494d0a63e4159607dda10f81ef8} 
-typedef void(\texorpdfstring{$\ast$}{*} GXKeyboard\+Callback) (\mbox{\hyperlink{struct_g_x_application}{GXApplication}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{struct_g_x_window}{GXWindow}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2}{GXKey}}, int, int, int)}
+{\footnotesize\ttfamily \label{gx_8h_aec5702061094a00307085537e0b85b63} 
+typedef void(\texorpdfstring{$\ast$}{*} GXKeyboard\+Callback) (\mbox{\hyperlink{struct_g_x_application}{GXApplication}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{struct_g_x_window}{GXWindow}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2}{GXKey}}, int, \mbox{\hyperlink{gx_8h_ac829f23b5a52fc999a8ad949fe1b24e0}{GXKey\+Action}}, int)}
 
 
 
@@ -362,7 +365,7 @@ Keyboard event callback.
 \hline
 {\em scancode} & Platform-\/specific scancode \\
 \hline
-{\em action} & Key action (press/release) \\
+{\em action} & Key action (press/release/repeat) \\
 \hline
 {\em mods} & Modifier keys (Ctrl/\+Shift/\+Alt) \\
 \hline
@@ -965,6 +968,35 @@ GX\+\_\+\+KEY\+\_\+\+MENU&\\
 \hline
 
 \end{DoxyEnumFields}
+\Hypertarget{gx_8h_ac829f23b5a52fc999a8ad949fe1b24e0}\index{gx.h@{gx.h}!GXKeyAction@{GXKeyAction}}
+\index{GXKeyAction@{GXKeyAction}!gx.h@{gx.h}}
+\doxysubsubsection{\texorpdfstring{GXKeyAction}{GXKeyAction}}
+{\footnotesize\ttfamily \label{gx_8h_ac829f23b5a52fc999a8ad949fe1b24e0} 
+enum \mbox{\hyperlink{gx_8h_ac829f23b5a52fc999a8ad949fe1b24e0}{GXKey\+Action}}}
+
+
+
+Key action identifiers (mirrors GLFW key actions). 
+
+Values\+:
+\begin{DoxyItemize}
+\item {\ttfamily GX\+\_\+\+KEY\+\_\+\+ACTION\+\_\+\+PRESS}\+: The key was pressed
+\item {\ttfamily GX\+\_\+\+KEY\+\_\+\+ACTION\+\_\+\+RELEASE}\+: The key was released
+\item {\ttfamily GX\+\_\+\+KEY\+\_\+\+ACTION\+\_\+\+REPEAT}\+: The key is being held down (repeated) 
+\end{DoxyItemize}\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_ACTION\_PRESS@{GX\_KEY\_ACTION\_PRESS}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_ACTION\_PRESS@{GX\_KEY\_ACTION\_PRESS}}}\Hypertarget{gx_8h_ac829f23b5a52fc999a8ad949fe1b24e0ac233ec7fe3e01c9e8d7d9b68391f6529}\label{gx_8h_ac829f23b5a52fc999a8ad949fe1b24e0ac233ec7fe3e01c9e8d7d9b68391f6529} 
+GX\+\_\+\+KEY\+\_\+\+ACTION\+\_\+\+PRESS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_ACTION\_RELEASE@{GX\_KEY\_ACTION\_RELEASE}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_ACTION\_RELEASE@{GX\_KEY\_ACTION\_RELEASE}}}\Hypertarget{gx_8h_ac829f23b5a52fc999a8ad949fe1b24e0ab265d27fd397f97e9027e233b3dd712c}\label{gx_8h_ac829f23b5a52fc999a8ad949fe1b24e0ab265d27fd397f97e9027e233b3dd712c} 
+GX\+\_\+\+KEY\+\_\+\+ACTION\+\_\+\+RELEASE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_KEY\_ACTION\_REPEAT@{GX\_KEY\_ACTION\_REPEAT}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_KEY\_ACTION\_REPEAT@{GX\_KEY\_ACTION\_REPEAT}}}\Hypertarget{gx_8h_ac829f23b5a52fc999a8ad949fe1b24e0aa8d0182837ed36f31276b7b3106b91fe}\label{gx_8h_ac829f23b5a52fc999a8ad949fe1b24e0aa8d0182837ed36f31276b7b3106b91fe} 
+GX\+\_\+\+KEY\+\_\+\+ACTION\+\_\+\+REPEAT&\\
+\hline
+
+\end{DoxyEnumFields}
 \Hypertarget{gx_8h_a0e90335b7087af15a4b53fb23b65faf2}\index{gx.h@{gx.h}!GXMappingBits@{GXMappingBits}}
 \index{GXMappingBits@{GXMappingBits}!gx.h@{gx.h}}
 \doxysubsubsection{\texorpdfstring{GXMappingBits}{GXMappingBits}}
@@ -1119,7 +1151,20 @@ GX\+\_\+\+GLSL\+\_\+\+VERTEX\+\_\+\+SHADER&\\
 {\footnotesize\ttfamily \label{gx_8h_a7fd0c624c6c69095149db64b99d41cb1} 
 enum \mbox{\hyperlink{gx_8h_a7fd0c624c6c69095149db64b99d41cb1}{GXVertex\+Attribute\+Type}}}
 
-\begin{DoxyEnumFields}[2]{Enumerator}
+
+
+Data type identifiers. 
+
+Values\+:
+\begin{DoxyItemize}
+\item {\ttfamily GX\+\_\+\+VERTEX\+\_\+\+ATTRIB\+\_\+\+TYPE\+\_\+\+BYTE}\+: 8-\/bit signed integer
+\item {\ttfamily GX\+\_\+\+VERTEX\+\_\+\+ATTRIB\+\_\+\+TYPE\+\_\+\+UNSIGNED\+\_\+\+BYTE}\+: 8-\/bit unsigned integer
+\item {\ttfamily GX\+\_\+\+VERTEX\+\_\+\+ATTRIB\+\_\+\+TYPE\+\_\+\+SHORT}\+: 16-\/bit signed integer
+\item {\ttfamily GX\+\_\+\+VERTEX\+\_\+\+ATTRIB\+\_\+\+TYPE\+\_\+\+UNSIGNED\+\_\+\+SHORT}\+: 16-\/bit unsigned integer
+\item {\ttfamily GX\+\_\+\+VERTEX\+\_\+\+ATTRIB\+\_\+\+TYPE\+\_\+\+INT}\+: 32-\/bit signed integer
+\item {\ttfamily GX\+\_\+\+VERTEX\+\_\+\+ATTRIB\+\_\+\+TYPE\+\_\+\+UNSIGNED\+\_\+\+INT}\+: 32-\/bit unsigned integer
+\item {\ttfamily GX\+\_\+\+VERTEX\+\_\+\+ATTRIB\+\_\+\+TYPE\+\_\+\+FLOAT}\+: 32-\/bit floating point 
+\end{DoxyItemize}\begin{DoxyEnumFields}[2]{Enumerator}
 \raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_VERTEX\_ATTRIB\_TYPE\_BYTE@{GX\_VERTEX\_ATTRIB\_TYPE\_BYTE}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_VERTEX\_ATTRIB\_TYPE\_BYTE@{GX\_VERTEX\_ATTRIB\_TYPE\_BYTE}}}\Hypertarget{gx_8h_a7fd0c624c6c69095149db64b99d41cb1a824f905eb761d6a66a66a9bf39f83856}\label{gx_8h_a7fd0c624c6c69095149db64b99d41cb1a824f905eb761d6a66a66a9bf39f83856} 
 GX\+\_\+\+VERTEX\+\_\+\+ATTRIB\+\_\+\+TYPE\+\_\+\+BYTE&\\
 \hline
@@ -1158,7 +1203,7 @@ GX\+\_\+\+VERTEX\+\_\+\+ATTRIB\+\_\+\+TYPE\+\_\+\+FLOAT&\\
 \index{gxAddKeyboardCallback@{gxAddKeyboardCallback}!gx.h@{gx.h}}
 \doxysubsubsection{\texorpdfstring{gxAddKeyboardCallback()}{gxAddKeyboardCallback()}}
 {\footnotesize\ttfamily \label{gx_8h_acd7da62752d00aea8271dc6a5d9ed4e6} 
-void gx\+Add\+Keyboard\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gx_8h_ae21f5494d0a63e4159607dda10f81ef8}{GXKeyboard\+Callback}}}]{cb}{}\end{DoxyParamCaption})}
+void gx\+Add\+Keyboard\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gx_8h_aec5702061094a00307085537e0b85b63}{GXKeyboard\+Callback}}}]{cb}{}\end{DoxyParamCaption})}
 
 
 
