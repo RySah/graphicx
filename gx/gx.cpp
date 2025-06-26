@@ -75,8 +75,10 @@ void gxDestroyApplication(GXApplication* application) {
     for (GXResource* res : resource_collection_clone) {
         if (res) gxDestroyResource(res);
 	}
-    delete application->keyboard_cb_collection_vec_ptr;
-    delete application->resource_collection_vec_ptr;
+    _app_keyboard_callback_collection_t* kcb = (_app_keyboard_callback_collection_t*)application->keyboard_cb_collection_vec_ptr;
+    _app_resource_collection_t* rs = (_app_resource_collection_t*)application->resource_collection_vec_ptr;
+	delete kcb;
+    delete rs;
     delete application;
 }
 
