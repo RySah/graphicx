@@ -8,6 +8,24 @@
 #include <GLFW/glfw3.h>
 #endif // defined(GX_CMAKE_GL) || defined(GX_GL)
 
+#if defined(_WIN32)
+#if defined(GX_SHARED)
+#ifdef GX_BUILD
+#define GX_API __declspec(dllexport)
+#else
+#define GX_API __declspec(dllimport)
+#endif
+#else
+#define GX_API
+#endif
+#else
+#if defined(GX_SHARED)
+#define GX_API __attribute__((visibility("default")))
+#else
+#define GX_API
+#endif
+#endif
+
 #ifdef __cplusplus
 extern "C" {
 #endif // __cplusplus
@@ -49,13 +67,13 @@ extern "C" {
 	 *  \return nullptr on success, error message on failure.
 	 *  \see gxTerminate()
 	 */
-	const char* gxInit();
+	GX_API const char* gxInit();
 
 	/** \fn void gxTerminate()
 	 *  \brief Terminates GX library and cleans up resources.
 	 *  \see gxInit()
 	 */
-	void gxTerminate();
+	GX_API void gxTerminate();
 
 	/*! \enum GXKey
 	 *  \brief Keyboard key enumeration (mirrors GLFW key values).
@@ -463,12 +481,12 @@ extern "C" {
 	 *  \brief Registers a keyboard event callback.
 	 *  \param cb Callback function to register
 	 */
-	void gxAddKeyboardCallback(GXKeyboardCallback cb);
+	GX_API void gxAddKeyboardCallback(GXKeyboardCallback cb);
 
 	/** \fn bool gxClearKeyboardCallback()
 	 *  \brief Clears all keyboard callbacks.
 	 */
-	void gxClearKeyboardCallback();
+	GX_API void gxClearKeyboardCallback();
 
 	// ==============================================
 	// Application API
@@ -478,32 +496,32 @@ extern "C" {
 	 *  \brief Releases application resources.
 	 *  \param application Application context to destroy
 	 */
-	void gxDestroyApplication(GXApplication* application);
+	GX_API void gxDestroyApplication(GXApplication* application);
 
 	/** \fn GXApplication* gxCreateApplication(GXApplicationOptions options)
 	 *  \brief Creates main application context.
 	 *  \param options Configuration flags
 	 *  \return Pointer to application context
 	 */
-	GXApplication* gxCreateApplication(GXApplicationOptions options);
+	GX_API GXApplication* gxCreateApplication(GXApplicationOptions options);
 
 	/** \fn GXApplication* gxGetApplication()
 	 *  \brief Retrieves current application context.
 	 *  \return Pointer to application context (null if not initialized)
 	 */
-	GXApplication* gxGetApplication();
+	GX_API GXApplication* gxGetApplication();
 
 	/** \fn void gxExec()
 	 *	\brief Executes the current application.
 	 */
-	void gxExec();
+	GX_API void gxExec();
 
 	/** \fn GXObject* gxAsObject(GXResource* res)
 	 *  \brief Returns a memory pointer to GXObject from the specified GXResource.
 	 *  \param res Resource memory pointer
 	 *  \return Associated object
 	 */
-	GXObject* gxAsObject(GXResource* res);
+	GX_API GXObject* gxAsObject(GXResource* res);
 
 	/** \fn GXObject* gxCreateStaticObject(uint32_t shader_program, uint32_t vao, uint32_t vbo, uint32_t ebo, void* user_data)
 	 *  \brief Creates and initiatlizes an static GXObject in memory.
@@ -515,7 +533,7 @@ extern "C" {
 	 *  \return Pointer to object
 	 *  \note All memory is managed by the libary and does not account for the manual freeing of memory outside of its codebase.
 	 */
-	GXObject* gxCreateObject(uint32_t shader_program, uint32_t vao, uint32_t vbo, uint32_t ebo, void* user_data);
+	GX_API GXObject* gxCreateObject(uint32_t shader_program, uint32_t vao, uint32_t vbo, uint32_t ebo, void* user_data);
 
 	/** \fn GXObject* gxCreateRenderObject(uint32_t shader_program, GXBufferUsageType vert_buffer_usage, size_t vert_size, void* vert_data, GXBufferUsageType elem_buffer_usage, size_t elem_size, void* elem_data, void* user_data)
 	 *  \brief Creates and initializes a renderable GXObject in memory.
@@ -531,7 +549,7 @@ extern "C" {
 	 * 
 	 *  \note Requires gxBindObject(...) to be called to ensure it works.
 	 */
-	GXObject* gxCreateRenderObjectWithElements(uint32_t shader_program, GXBufferUsageType vert_buffer_usage, size_t vert_size, void* vert_data, GXBufferUsageType elem_buffer_usage, size_t elem_size, void* elem_data, void* user_data);
+	GX_API GXObject* gxCreateRenderObjectWithElements(uint32_t shader_program, GXBufferUsageType vert_buffer_usage, size_t vert_size, void* vert_data, GXBufferUsageType elem_buffer_usage, size_t elem_size, void* elem_data, void* user_data);
 
 	/** \fn GXObject* gxCreateRenderObject(uint32_t shader_program, GXBufferUsageType vert_buffer_usage, size_t vert_size, void* vert_data)
 	 *  \brief Creates and initializes a renderable GXObject in memory without an element buffer.
@@ -544,7 +562,7 @@ extern "C" {
 	 * 
 	 *  \note Requires gxBindObject(...) to be called to ensure it works.
 	 */
-	GXObject* gxCreateRenderObject(uint32_t shader_program, GXBufferUsageType vert_buffer_usage, size_t vert_size, void* vert_data, void* user_data);
+	GX_API GXObject* gxCreateRenderObject(uint32_t shader_program, GXBufferUsageType vert_buffer_usage, size_t vert_size, void* vert_data, void* user_data);
 
 	/** \fn void gxDrawVertices(GXObject* object, size_t offset, size_t count)
 	 *  \brief Draws a set of vertices from GXObject.
@@ -552,7 +570,7 @@ extern "C" {
 	 *  \param offset Vertex offset
 	 *  \param count Vertex count
 	 */
-	void gxDrawVertices(GXObject* object, size_t offset, size_t count);
+	GX_API void gxDrawVertices(GXObject* object, size_t offset, size_t count);
 
 	/** \fn void gxDrawElements(GXObject* object, size_t offset, size_t count)
 	 *  \brief Draws a set of elements from GXObject.
@@ -560,20 +578,20 @@ extern "C" {
 	 *  \param count Element count
 	 *  \param type Element type
 	 */
-	void gxDrawElements(GXObject* object, size_t count, GXVertexAttributeType type);
+	GX_API void gxDrawElements(GXObject* object, size_t count, GXVertexAttributeType type);
 
 	/** \fn void gxBindObject(GXObject* object)
 	 *  \brief Binds all data stored in object, effectively making it work
 	 *  \param object Object pointer
 	 */
-	void gxBindObject(GXObject* object);
+	GX_API void gxBindObject(GXObject* object);
 
 	/** \fn GXWindow* gxAsWindow(GXResource* res)
 	 *  \brief Returns a memory pointer to GXWindow from the specified GXResource.
 	 *  \param res Resource memory pointer
 	 *  \return Associated window
 	 */
-	GXWindow* gxAsWindow(GXResource* res);
+	GX_API GXWindow* gxAsWindow(GXResource* res);
 
 	/** \fn GXWindow* gxCreateWindow(bool vsync, bool show, int width, int height, const char* title)
 	 *  \brief Creates and initiatlizes an GXWindow in memory.
@@ -585,34 +603,34 @@ extern "C" {
 	 *  \return Pointer to window
 	 *  \note All memory is managed by the libary and does not account for the manual freeing of memory outside of its codebase. Furthermore, events regarding the framebuffer does NOT interrupt drawing, this may be optional in the future.
 	 */
-	GXWindow* gxCreateWindow(bool vsync, bool show, int width, int height, const char* title);
+	GX_API GXWindow* gxCreateWindow(bool vsync, bool show, int width, int height, const char* title);
 
 	/** \fn void gxWindowSetDrawCallback(GXWindow* win, GXDrawCallback cb)
 	 *  \brief Assigns the draw callback for the respective GXWindow.
 	 *  \param win Pointer to window to assign callback to
 	 *  \param cb Callback (GXDrawCallback)
 	 */
-	void gxWindowSetDrawCallback(GXWindow* win, GXDrawCallback cb);
+	GX_API void gxWindowSetDrawCallback(GXWindow* win, GXDrawCallback cb);
 
 	/** \fn void gxWindowClose(GXWindow* win)
 	 *  \brief Inidicates to the libary, that the specified window should close.
 	 *  \param win GXWindow to close
 	 */
-	void gxWindowClose(GXWindow* win);
+	GX_API void gxWindowClose(GXWindow* win);
 
 	/** \fn bool gxWindowShouldClose(GXWindow* win)
 	 *  \brief Returns whether the status of the specified window indicates it should close.
 	 *  \param win The GXWindow to query
 	 *  \return true if the window should close, false if otherwise.
 	 */
-	bool gxWindowShouldClose(GXWindow* win);
+	GX_API bool gxWindowShouldClose(GXWindow* win);
 
 	/** \fn bool gxDestroyResource(GXResource* resource)
 	 *  \brief Destroy and free the specified resource.
 	 *  \param resource The GXResource to destroy
 	 *  \return true if the resource was successfully destroyed, false if it was not (likely due to memory issues).
 	 */
-	bool gxDestroyResource(GXResource* resource);
+	GX_API bool gxDestroyResource(GXResource* resource);
 
 	/** \fn void gxUpdateViewport(GXWindow* win)
 	 *  \brief Updates the viewport for a specific window (equivalent to gxViewport(0, 0, win->width, win->height)).
@@ -622,7 +640,7 @@ extern "C" {
 	 *  
 	 *  \see gxViewport()
 	 */
-	void gxUpdateViewport(GXWindow* win);
+	GX_API void gxUpdateViewport(GXWindow* win);
 
 	/** \fn void gxSetBackground(float r, float g, float b, float a)
 	 *  \brief Sets the background for the respective graphical context.
@@ -640,7 +658,7 @@ extern "C" {
 	 * \see gxClearColor()
 	 * \see gxClearColorBuffer()
 	 */
-	void gxSetBackground(float r, float g, float b, float a);
+	GX_API void gxSetBackground(float r, float g, float b, float a);
 
 	/** \fn void gxViewport(int x, int y, int w, int h)
 	 *  \brief Sets the viewport for the respective graphical context.
@@ -651,7 +669,7 @@ extern "C" {
 	 *
 	 *  \note This is the same as glViewport, and simply a wrapper to allow easier binding implementation.
 	 */
-	void gxViewport(int x, int y, int w, int h);
+	GX_API void gxViewport(int x, int y, int w, int h);
 
 	/** \fn void gxClearColor(float r, float g, float b, float a)
 	 *  \brief Sets the clear color for the respective graphical context.
@@ -662,7 +680,7 @@ extern "C" {
 	 *
 	 *  \note This is the same as glClearColor(...), and simply a wrapper to allow easier binding implementation.
 	 */
-	void gxClearColor(float r, float g, float b, float a);
+	GX_API void gxClearColor(float r, float g, float b, float a);
 
 	/** \fn void gxClear(unsigned int bit)
 	 *  \brief Sets the bitplane area for the respective graphical context.
@@ -672,7 +690,7 @@ extern "C" {
 	 *
 	 *  \see GXBufferBit
 	 */
-	void gxClear(unsigned int bit);
+	GX_API void gxClear(unsigned int bit);
 
 	/** \fn GXShaderCompilationResult gxCompileGLSLShader(const char* shader_src, GXShaderType shader_type)
 	 *  \brief Compiles a GLSL shader from source code.
@@ -683,7 +701,7 @@ extern "C" {
 	 *  \see GXShaderType
 	 *  \see GXShaderCompilationResult
 	 */
-	GXShaderCompilationResult gxCompileGLSLShader(const char* shader_src, GXShaderType shader_type);
+	GX_API GXShaderCompilationResult gxCompileGLSLShader(const char* shader_src, GXShaderType shader_type);
 	
 	/** \fn GXProgramCompilationResult gxCompileGLSLProgram(const char* vertex_shader_src, const char* fragment_shader_src)
 	 *  \brief Compiles a GLSL vertex and fragment shader from source code.
@@ -693,19 +711,19 @@ extern "C" {
 	 * 
 	 *  \see GXProgramCompilationResult
 	 */
-	GXProgramCompilationResult gxCompileGLSLProgram(const char* vertex_shader_src, const char* fragment_shader_src);
+	GX_API GXProgramCompilationResult gxCompileGLSLProgram(const char* vertex_shader_src, const char* fragment_shader_src);
 
 	/** \fn uint32_t gxGenVertexArrayObject()
 	 *  \brief Generates a new Vertex Array Object (VAO).
 	 *  \return Vertex Array Object (VAO) id.
 	 */
-	uint32_t gxGenVertexArrayObject();
+	GX_API uint32_t gxGenVertexArrayObject();
 
 	/** \fn void gxBindVertexArrayObject(uint32_t vao)
 	 *  \brief Binds a Vertex Array Object (VAO) for use.
 	 *  \param vao Vertex array object (VAO) id to bind
 	 */
-	void gxBindVertexArrayObject(uint32_t vao);
+	GX_API void gxBindVertexArrayObject(uint32_t vao);
 
 	/** \fn uint32_t gxGenBufferObject(GXBufferType buffer_type, GXBufferUsageType buffer_usage, size_t size, void* data)
 	 *  \brief Generates a new (Array/Element Array) Buffer Object.
@@ -718,7 +736,7 @@ extern "C" {
 	 *  \see GXBufferType
 	 *  \see GXBufferUsageType
 	 */
-	uint32_t gxGenBufferObject(GXBufferType buffer_type, GXBufferUsageType buffer_usage, size_t size, void* data);
+	GX_API uint32_t gxGenBufferObject(GXBufferType buffer_type, GXBufferUsageType buffer_usage, size_t size, void* data);
 
 	/** \fn void gxBindBufferObject(GXBufferType buffer_type, uint32_t buffer)
 	 *  \brief Binds a (Array/Element Array) Buffer Object for use.
@@ -727,7 +745,7 @@ extern "C" {
 	 * 
 	 *  \see GXBufferType
 	 */
-	void gxBindBufferObject(GXBufferType buffer_type, uint32_t buffer);
+	GX_API void gxBindBufferObject(GXBufferType buffer_type, uint32_t buffer);
 
 	/** \fn void* gxMapBufferRange(GXBufferType buffer_type, size_t offset, size_t length, GXMappingBits bits)
 	 *  \brief Maps a range of a (Array/Element Array) Buffer Object to CPU memory, allowing access (based of `bits`).
@@ -739,7 +757,7 @@ extern "C" {
 	 * 
 	 *  \note This is equivalent to glMapBufferRange, and simply a wrapper to allow easier binding implementation.
 	 */
-	void* gxMapBufferRange(GXBufferType buffer_type, size_t offset, size_t length, GXMappingBits bits);
+	GX_API void* gxMapBufferRange(GXBufferType buffer_type, size_t offset, size_t length, GXMappingBits bits);
 
 	/** \fn void gxUnmapBuffer(GXBufferType buffer_type)
 	 *  \brief Unmaps a previously mapped (Array/Element Array) Buffer Object.
@@ -748,7 +766,7 @@ extern "C" {
 	 *
 	 *  \note This is equivalent to glUnmapBuffer, and simply a wrapper to allow easier binding implementation.
 	 */
-	bool gxUnmapBuffer(GXBufferType buffer_type);
+	GX_API bool gxUnmapBuffer(GXBufferType buffer_type);
 
 	/** \fn void gxBufferData(GXBufferType buffer_type, size_t size, void* data, GXBufferUsageType usage)
 	 *  \brief Allocates and initializes a (Array/Element Array) Buffer Object with data.
@@ -759,7 +777,7 @@ extern "C" {
 	 *
 	 *  \note This is equivalent to glBufferSubData, and simply a wrapper to allow easier binding implementation.
 	 */
-	void gxBufferSubData(GXBufferType buffer_type, size_t offset, size_t length, void* data);
+	GX_API void gxBufferSubData(GXBufferType buffer_type, size_t offset, size_t length, void* data);
 
 	/** \fn bool gxUpdateBufferObject(GXBufferType type, uint32_t bo, size_t offset, size_t length, void* data)
 	 *  \brief Updates data in a (Array/Element Array/Uniform) Buffer Object.
@@ -770,7 +788,7 @@ extern "C" {
 	 *  \param data Pointer to the new data
 	 *  \return true if the buffer was successfully updated, false if it was not (likely due to memory issues).
 	 */
-	bool gxUpdateBufferObject(GXBufferType type, uint32_t bo, size_t offset, size_t length, void* data);
+	GX_API bool gxUpdateBufferObject(GXBufferType type, uint32_t bo, size_t offset, size_t length, void* data);
 
 	/** \fn void gxUpdateVertices(GXObject* object, size_t offset, size_t length, void* data)
 	 *  \brief Updates the vertex data of a GXObject.
@@ -781,7 +799,7 @@ extern "C" {
 	 *  \return true if the vertices were successfully updated, false if it was not (likely due to memory issues).
 	 *
 	 */
-	bool gxUpdateVertices(GXObject* object, size_t offset, size_t length, void* data);
+	GX_API bool gxUpdateVertices(GXObject* object, size_t offset, size_t length, void* data);
 
 	/** \fn bool gxUpdateElements(GXObject* object, size_t offset, size_t length, void* data)
 	 *  \brief Updates the index data of a GXObject.
@@ -792,7 +810,7 @@ extern "C" {
 	 *  \return true if the elements were successfully updated, false if it was not (likely due to memory issues).
 	 * 
 	 */
-	bool gxUpdateElements(GXObject* object, size_t offset, size_t length, void* data);
+	GX_API bool gxUpdateElements(GXObject* object, size_t offset, size_t length, void* data);
 
 	/** \fn bool gxUpdateUniformBlock(uint32_t ubo, size_t offset, size_t length, void* data)
 	 *  \brief Updates the index data of a GXObject.
@@ -803,7 +821,7 @@ extern "C" {
 	 *  \return true if the uniforms were successfully updated, false if it was not (likely due to memory issues).
 	 *
 	 */
-	bool gxUpdateUniformBlock(uint32_t ubo, size_t offset, size_t length, void* data);
+	GX_API bool gxUpdateUniformBlock(uint32_t ubo, size_t offset, size_t length, void* data);
 
 	/** \fn void gxSetVertexAttribute(GXObject* object, uint32_t index, int size, GXVertexAttributeType type, bool normalize, size_t stride, void* pointer)
 	 *  \brief Sets a vertex attribute for a GXObject.
@@ -817,21 +835,21 @@ extern "C" {
 	 *  
 	 *  \see GXVertexAttributeType
 	 */
-	void gxSetVertexAttribute(GXObject* object, uint32_t index, int size, GXVertexAttributeType type, bool normalize, size_t stride, void* pointer);
+	GX_API void gxSetVertexAttribute(GXObject* object, uint32_t index, int size, GXVertexAttributeType type, bool normalize, size_t stride, void* pointer);
 
 	/** \fn void gxEnableVertexAttribute(GXObject* object, uint32_t index)
 	 *  \brief Enables a vertex attribute for a GXObject.
 	 *  \param object Pointer to the GXObject to enable the attribute for
 	 *  \param index Index of the vertex attribute to enable
 	 */
-	void gxEnableVertexAttribute(GXObject* object, uint32_t index);
+	GX_API void gxEnableVertexAttribute(GXObject* object, uint32_t index);
 
 	/** \fn void gxDisableVertexAttribute(GXObject* object, uint32_t index)
 	 *  \brief Disables a vertex attribute for a GXObject.
 	 *  \param object Pointer to the GXObject to disable the attribute for
 	 *  \param index Index of the vertex attribute to disable
 	 */
-	void gxDisableVertexAttribute(GXObject* object, uint32_t index);
+	GX_API void gxDisableVertexAttribute(GXObject* object, uint32_t index);
 
 	/** \fn void gxBindBufferBase(GXBufferType type, uint32_t binding_point, uint32_t bo)
 	 *  \brief Binds a Buffer Object to a specific binding point.
@@ -839,20 +857,20 @@ extern "C" {
 	 *  \param binding_point Binding point index to bind the buffer to
 	 *  \param bo Buffer Object id to bind
 	 */
-	void gxBindBufferBase(GXBufferType type, uint32_t binding_point, uint32_t bo);
+	GX_API void gxBindBufferBase(GXBufferType type, uint32_t binding_point, uint32_t bo);
 
 	/** \fn void gxBindUniformBlock(uint32_t binding_point, uint32_t ubo)
 	 *  \brief Binds a Uniform Block to a specific binding point for a shader.
 	 *  \param binding_point Binding point index to bind the buffer to
 	 *  \param ubo Uniform Buffer Object id to bind
 	 */
-	void gxBindUniformBlock(uint32_t binding_point, uint32_t ubo);
+	GX_API void gxBindUniformBlock(uint32_t binding_point, uint32_t ubo);
 
 	/** \fn void gxUseShader(GXObject* object)
 	 *  \brief Tells the program to use the shader associated with the object.
 	 *  \param object Pointer to GXObject and therefore its shader
 	 */
-	void gxUseShader(GXObject* object);
+	GX_API void gxUseShader(GXObject* object);
 
 #ifdef __cplusplus
 }

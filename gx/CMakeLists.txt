@@ -1,9 +1,15 @@
 
-add_library(gx STATIC 
+set (LIB_FILES 
     "include/gx/gx.h"
     "gx.cpp"
     "glad/src/glad.c"
 )
+
+if (BUILD_SHARED_LIBS)
+    add_library(gx SHARED ${LIB_FILES})
+else()
+    add_library(gx STATIC ${LIB_FILES})
+endif()
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET gx PROPERTY CXX_STANDARD 20)
