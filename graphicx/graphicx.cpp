@@ -18,14 +18,17 @@ void handleKeyPress(GXApplication* app, GXWindow* win, GXKey key, int scancode, 
 }
 
 GXObject* triangleObject;
+GXObject* squareObject;
 
 void drawScene(GXWindow* window) {
 	gxUpdateViewport(window);
 	gxSetBackground(0.2f, 0.3f, 0.8f, 1.0f); // Blue background
 	
-	gxUseShader(triangleObject);
+	//gxUseShader(triangleObject);
+	//gxDrawVertices(triangleObject, 0, 3);
 
-	gxDrawVertices(triangleObject, 0, 3);
+	gxUseShader(squareObject);
+	gxDrawElements(squareObject, 6, GX_VERTEX_ATTRIB_TYPE_UNSIGNED_SHORT);
 }
 
 int main() {
@@ -82,19 +85,41 @@ void main() {
 #define RGBA_DISTRIBUTOR(r8, g8, b8, a8) \
 	((float)(r8) / 255.0f), ((float)(g8) / 255.0f), ((float)(b8) / 255.0f), ((float)(a8) / 255.0f)
 
-	float vertices[] = {
+	float triangle_vertices[] = {
 		-0.5f, -0.5f, 0.0f, RGBA_DISTRIBUTOR(255, 0, 0, 255),
 		 0.0f,  0.5f, 0.0f, RGBA_DISTRIBUTOR(0, 0, 255, 255),
 		 0.5f, -0.5f, 0.0f, RGBA_DISTRIBUTOR(0, 255, 0, 255)
 	};
 
-	triangleObject = gxCreateRenderObject(shader_program, GX_BUFFER_USAGE_TYPE_STATIC, sizeof(float) * (3 * 7), vertices, nullptr);
+	triangleObject = gxCreateRenderObject(shader_program, GX_BUFFER_USAGE_TYPE_STATIC, sizeof(float) * (3 * 7), triangle_vertices, nullptr);
 	gxBindObject(triangleObject);
 
 	gxEnableVertexAttribute(triangleObject, 0);
 	gxSetVertexAttribute(triangleObject, 0, 3, GX_VERTEX_ATTRIB_TYPE_FLOAT, false, 7 * sizeof(float), (void*)0);
 	gxEnableVertexAttribute(triangleObject, 1);
 	gxSetVertexAttribute(triangleObject, 1, 4, GX_VERTEX_ATTRIB_TYPE_FLOAT, false, 7 * sizeof(float), (void*)(3 * sizeof(float)));
+
+	float square_vertices[] = {
+		-0.5f, -0.5f, 0.0f, RGBA_DISTRIBUTOR(255, 0, 0, 255), // bottom-left
+		0.5f,  -0.5f, 0.0f, RGBA_DISTRIBUTOR(127, 127, 0, 255),  // bottom-right
+		0.5f,  0.5f, 0.0f, RGBA_DISTRIBUTOR(127, 127, 127, 255),  // top-right
+		-0.5f,  0.5f, 0.0f, RGBA_DISTRIBUTOR(127, 127, 255, 255) // top-left
+	};
+	uint16_t square_indices[] = {
+		0, 1, 2, // First triangle
+		2, 3, 0  // Second triangle
+	};
+
+	squareObject = gxCreateRenderObjectWithElements(shader_program, 
+		GX_BUFFER_USAGE_TYPE_STATIC, sizeof(float) * (4 * 7), square_vertices,
+		GX_BUFFER_USAGE_TYPE_STATIC, sizeof(uint16_t) * 6, square_indices,
+		nullptr);
+	gxBindObject(squareObject);
+
+	gxEnableVertexAttribute(squareObject, 0);
+	gxSetVertexAttribute(squareObject, 0, 3, GX_VERTEX_ATTRIB_TYPE_FLOAT, false, 7 * sizeof(float), (void*)0);
+	gxEnableVertexAttribute(squareObject, 1);
+	gxSetVertexAttribute(squareObject, 1, 4, GX_VERTEX_ATTRIB_TYPE_FLOAT, false, 7 * sizeof(float), (void*)(3 * sizeof(float)));
 
 	gxAddKeyboardCallback(handleKeyPress);
 	gxWindowSetDrawCallback(window, drawScene);
