@@ -3,10 +3,10 @@
 
 #include <cstdint>
 
-#ifdef GX_GL
+#if defined(GX_CMAKE_GL) || defined(GX_GL)
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
-#endif // GX_GL
+#endif // defined(GX_CMAKE_GL) || defined(GX_GL)
 
 #ifdef __cplusplus
 extern "C" {
@@ -314,10 +314,12 @@ extern "C" {
 	 *  Values:
 	 *  - `GX_BUFFER_TYPE_ARRAY`: Vertex array buffer
 	 *  - `GX_BUFFER_TYPE_ELEMENT_ARRAY`: Element array buffer
+	 *  - `GX_BUFFER_TYPE_UNIFORM`: Uniform buffer
 	 */
 	typedef enum {
 		GX_BUFFER_TYPE_ARRAY = 0x8892,
-		GX_BUFFER_TYPE_ELEMENT_ARRAY = 0x8893
+		GX_BUFFER_TYPE_ELEMENT_ARRAY = 0x8893,
+		GX_BUFFER_TYPE_UNIFORM = 0x8A11
 	} GXBufferType;
 
 	/*! \enum GXBufferBit

@@ -1,4 +1,4 @@
-#define GX_GL
+#define GX_CMAKE_GL
 
 #include "gx/gx.h"
 
@@ -384,12 +384,12 @@ uint32_t gxGenVertexArrayObject() {
 void gxBindVertexArrayObject(uint32_t vao) { glBindVertexArray(vao); }
 
 uint32_t gxGenBufferObject(GXBufferType buffer_type, GXBufferUsageType buffer_usage, size_t size, void* data) {
-    GLuint vboId;
-    glGenBuffers(1, &vboId);
-    gxBindBufferObject(buffer_type, vboId);
+    GLuint xboId;
+    glGenBuffers(1, &xboId);
+    gxBindBufferObject(buffer_type, xboId);
     glBufferData(buffer_type, size, data, buffer_usage);  // Fixed: using buffer_usage instead of buffer_type
     gxBindBufferObject(buffer_type, 0);
-    return vboId;
+    return xboId;
 }
 
 void gxBindBufferObject(GXBufferType buffer_type, uint32_t buffer) { glBindBuffer(buffer_type, buffer); }

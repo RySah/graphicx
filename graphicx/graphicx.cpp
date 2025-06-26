@@ -3,7 +3,7 @@
 
 // Triangle example using GraphicX library
 
-#define GX_GL
+#define GX_CMAKE_GL
 
 #include "graphicx.h"
 
