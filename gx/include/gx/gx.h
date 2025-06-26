@@ -761,6 +761,17 @@ extern "C" {
 	 */
 	void gxBufferSubData(GXBufferType buffer_type, size_t offset, size_t length, void* data);
 
+	/** \fn bool gxUpdateBufferObject(GXBufferType type, uint32_t bo, size_t offset, size_t length, void* data)
+	 *  \brief Updates data in a (Array/Element Array/Uniform) Buffer Object.
+	 *  \param type Type of buffer to update
+	 *  \param bo Buffer Object id to update
+	 *  \param offset Offset in bytes from the start of the buffer
+	 *  \param length Length in bytes of the data to update
+	 *  \param data Pointer to the new data
+	 *  \return true if the buffer was successfully updated, false if it was not (likely due to memory issues).
+	 */
+	bool gxUpdateBufferObject(GXBufferType type, uint32_t bo, size_t offset, size_t length, void* data);
+
 	/** \fn void gxUpdateVertices(GXObject* object, size_t offset, size_t length, void* data)
 	 *  \brief Updates the vertex data of a GXObject.
 	 *  \param object Pointer to the GXObject to update
@@ -775,13 +786,24 @@ extern "C" {
 	/** \fn bool gxUpdateElements(GXObject* object, size_t offset, size_t length, void* data)
 	 *  \brief Updates the index data of a GXObject.
 	 *  \param object Pointer to the GXObject to update
-	 *  \param offset Offset in bytes from the start of the index buffer
+	 *  \param offset Offset in bytes from the start of the element buffer
 	 *  \param length Length in bytes of the data to update
 	 *  \param data Pointer to the new index data
-	 *  \return true if the indices were successfully updated, false if it was not (likely due to memory issues).
+	 *  \return true if the elements were successfully updated, false if it was not (likely due to memory issues).
 	 * 
 	 */
 	bool gxUpdateElements(GXObject* object, size_t offset, size_t length, void* data);
+
+	/** \fn bool gxUpdateUniformBlock(uint32_t ubo, size_t offset, size_t length, void* data)
+	 *  \brief Updates the index data of a GXObject.
+	 *  \param ubo Uniform Buffer Object id to update
+	 *  \param offset Offset in bytes from the start of the uniform buffer
+	 *  \param length Length in bytes of the data to update
+	 *  \param data Pointer to the new index data
+	 *  \return true if the uniforms were successfully updated, false if it was not (likely due to memory issues).
+	 *
+	 */
+	bool gxUpdateUniformBlock(uint32_t ubo, size_t offset, size_t length, void* data);
 
 	/** \fn void gxSetVertexAttribute(GXObject* object, uint32_t index, int size, GXVertexAttributeType type, bool normalize, size_t stride, void* pointer)
 	 *  \brief Sets a vertex attribute for a GXObject.
@@ -810,6 +832,27 @@ extern "C" {
 	 *  \param index Index of the vertex attribute to disable
 	 */
 	void gxDisableVertexAttribute(GXObject* object, uint32_t index);
+
+	/** \fn void gxBindBufferBase(GXBufferType type, uint32_t binding_point, uint32_t bo)
+	 *  \brief Binds a Buffer Object to a specific binding point.
+	 *  \param type Type of buffer to bind (e.g., uniform, array)
+	 *  \param binding_point Binding point index to bind the buffer to
+	 *  \param bo Buffer Object id to bind
+	 */
+	void gxBindBufferBase(GXBufferType type, uint32_t binding_point, uint32_t bo);
+
+	/** \fn void gxBindUniformBlock(uint32_t binding_point, uint32_t ubo)
+	 *  \brief Binds a Uniform Block to a specific binding point for a shader.
+	 *  \param binding_point Binding point index to bind the buffer to
+	 *  \param ubo Uniform Buffer Object id to bind
+	 */
+	void gxBindUniformBlock(uint32_t binding_point, uint32_t ubo);
+
+	/** \fn void gxUseShader(GXObject* object)
+	 *  \brief Tells the program to use the shader associated with the object.
+	 *  \param object Pointer to GXObject and therefore its shader
+	 */
+	void gxUseShader(GXObject* object);
 
 #ifdef __cplusplus
 }

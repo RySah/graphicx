@@ -23,6 +23,7 @@ void drawScene(GXWindow* window) {
 	gxUpdateViewport(window);
 	gxSetBackground(0.2f, 0.3f, 0.8f, 1.0f); // Blue background
 	
+	gxUseShader(triangleObject);
 	gxDrawVertices(triangleObject, 0, 3);
 }
 
