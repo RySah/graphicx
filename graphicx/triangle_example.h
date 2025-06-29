@@ -7,11 +7,11 @@ using namespace std;
 
 namespace TriangleExample {
 
-	void handleKeyPress(GXApplication* app, GXWindow* win, GXKey key, int scancode, GXKeyAction action, int mods) {
+	void handleKeyPress(GXApplication* app, GXWindow* window, GXKey key, int scancode, GXKeyAction action, int mods) {
 		// Close window when ESC key is pressed
 		if (key == GX_KEY_ESCAPE && action == GX_KEY_ACTION_PRESS) {
 			printf("ESC pressed - closing window\n");
-			gxWindowClose(win);
+			gxWindowClose(window);
 		}
 	}
 
@@ -43,7 +43,7 @@ namespace TriangleExample {
 
 		uint32_t shader_program = 0;
 		{
-			auto result = gxCompileGLSLProgram(
+			GXProgramCompilationResult result = gxCompileGLSLProgram(
 				R"glsl(
 #version 460 core
 layout(location = 0) in vec3 aPos;

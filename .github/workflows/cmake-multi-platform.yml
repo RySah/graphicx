@@ -51,13 +51,13 @@ jobs:
       run: |
         echo "build-output-dir=${{ github.workspace }}/build" >> "$GITHUB_OUTPUT"
 
-    - name: Making pre-CMake setup script executable (Unix only)
+    - name: Making pre-CMake setup script executable (Linux only)
       if: runner.os == 'Linux'
-      run: chmod +x install_dep_unix.sh
+      run: chmod +x install_dep_linux.sh
 
-    - name: Run pre-CMake setup (Unix only)
+    - name: Run pre-CMake setup (Linux only)
       if: runner.os == 'Linux'
-      run: ./install_dep_unix.sh
+      run: ./install_dep_linux.sh
 
     - name: Configure CMake (static)
       # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.

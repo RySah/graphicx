@@ -496,10 +496,6 @@ extern "C" {
 	 */
 	GX_API void gxClearKeyboardCallback();
 
-	// ==============================================
-	// Application API
-	// ==============================================
-
 	/** \fn void gxDestroyApplication(GXApplication* application)
 	 *  \brief Releases application resources.
 	 *  \param application Application context to destroy
