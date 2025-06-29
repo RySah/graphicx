@@ -63,8 +63,8 @@ cmake -B [OUTPUT-DIR]
 ```
 In our [workflow](../.github/workflows/cmake-multi-platform.yml), what typically works is:
 - OUTPUT-DIR = build (This can be any name)
-- CPP-COMPILER = cl (This might work with other compilers)
-- C-COMPILER = cl (This might work with other compilers)
+- CPP-COMPILER = g++ (This might work with other compilers)
+- C-COMPILER = gcc (This might work with other compilers)
 - BUILD-TYPE = Release (For fastest and most optimized version of the libary)
 - BUILD-SHARED-LIB = OFF (If ON, all libaries will be built as shared libaries otherwise static libaries)
 - SOURCE-DIR = . (Should the be project directory "graphicx")
