@@ -79,7 +79,7 @@ extern "C" {
 	 *  \brief Keyboard key enumeration (mirrors GLFW key values).
 	 *
 	 */
-	enum GXKey {
+	typedef enum {
 		GX_KEY_SPACE = 32,
 		GX_KEY_APOSTROPHE = 39,
 		GX_KEY_COMMA = 44,
@@ -200,7 +200,7 @@ extern "C" {
 		GX_KEY_RIGHT_ALT = 346,
 		GX_KEY_RIGHT_SUPER = 347,
 		GX_KEY_MENU = 348
-	};
+	} GXKey ;
 
 	/*! \enum GXApplicationOptions
 	 *  \brief Application configuration flags.
@@ -208,9 +208,9 @@ extern "C" {
 	 *  Values:
 	 *  - `GX_APP_OPTION_NONE`: Default options
 	 */
-	enum GXApplicationOptions {
+	typedef enum  {
 		GX_APP_OPTION_NONE = 0,
-	};
+	} GXApplicationOptions;
 
 	/*! \struct GXApplication
 	 *  \brief Main application context.
