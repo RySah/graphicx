@@ -39,8 +39,15 @@ extern "C" {
 	 *  \section sec_enums Enumerations
 	 *  - \ref GXKey
 	 *  - \ref GXApplicationOptions
+	 *  - \ref GXKeyAction
 	 *  - \ref GXResourceType
 	 *  - \ref GXResourceStatus
+	 *  - \ref GXBufferUsageType
+	 *  - \ref GXBufferType
+	 *  - \ref GXBufferBit
+	 *  - \ref GXShaderType
+	 *  - \ref GXMappingBits
+	 *  - \ref GXVertexAttributeType
 	 */
 
 	/** \page Basics Core Library Initialization
@@ -476,6 +483,7 @@ extern "C" {
 		GX_VERTEX_ATTRIB_TYPE_UNSIGNED_INT = 0x1405,
 		GX_VERTEX_ATTRIB_TYPE_FLOAT = 0x1406
 	} GXVertexAttributeType;
+
 
 	/** \fn bool gxAddKeyboardCallback(GXKeyboardCallback cb)
 	 *  \brief Registers a keyboard event callback.

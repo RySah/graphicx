@@ -16,6 +16,11 @@ struct \mbox{\hyperlink{struct_g_x_shader_compilation_result}{GXShader\+Compilat
 \begin{DoxyCompactList}\small\item\em Result of shader compilation. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{struct_g_x_program_compilation_result}{GXProgram\+Compilation\+Result}}
 \begin{DoxyCompactList}\small\item\em Result of shader program compilation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}}
+\end{DoxyCompactItemize}
 \doxysubsubsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
@@ -208,6 +213,7 @@ enum \mbox{\hyperlink{gx_8h_a12b600ff948f2fb55b73974e5bef17e2}{GXBuffer\+Usage\+
 \begin{DoxyCompactList}\small\item\em Buffer usage type identifiers for buffer objects. \end{DoxyCompactList}\item 
 enum \mbox{\hyperlink{gx_8h_acf407c4416240bb057bea98cc48d2a11}{GXBuffer\+Type}} \{ \mbox{\hyperlink{gx_8h_acf407c4416240bb057bea98cc48d2a11a87268ae25321cbeebb2727312e10d14a}{GX\+\_\+\+BUFFER\+\_\+\+TYPE\+\_\+\+ARRAY}} = 0x8892
 , \mbox{\hyperlink{gx_8h_acf407c4416240bb057bea98cc48d2a11aacfd830268ff17b3c855042a83fa467e}{GX\+\_\+\+BUFFER\+\_\+\+TYPE\+\_\+\+ELEMENT\+\_\+\+ARRAY}} = 0x8893
+, \mbox{\hyperlink{gx_8h_acf407c4416240bb057bea98cc48d2a11aee4b120b7ca83583d7d9391d7d4032e2}{GX\+\_\+\+BUFFER\+\_\+\+TYPE\+\_\+\+UNIFORM}} = 0x8\+A11
  \}
 \begin{DoxyCompactList}\small\item\em Buffer type identifiers for buffer objects. \end{DoxyCompactList}\item 
 enum \mbox{\hyperlink{gx_8h_a531e89fed7a77bbc53ed923fd8a4f71c}{GXBuffer\+Bit}} \+: unsigned int \{ \mbox{\hyperlink{gx_8h_a531e89fed7a77bbc53ed923fd8a4f71ca524bb42b0524ee1e8d496d1e7e248d17}{GX\+\_\+\+DEPTH\+\_\+\+BUFFER\+\_\+\+BIT}} = UINT32\+\_\+C(0x00000100)
@@ -245,86 +251,107 @@ enum \mbox{\hyperlink{gx_8h_a7fd0c624c6c69095149db64b99d41cb1}{GXVertex\+Attribu
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{gx_8h_a6a96a1574c45c3c92db36ae621d1c01b}{gx\+Init}} ()
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{gx_8h_af25b169e44f9a95721cb2410847a8b30}{gx\+Init}} ()
 \begin{DoxyCompactList}\small\item\em Initializes GX library and dependencies (GLFW). \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{gx_8h_a6866c6c7ebec5d428312044ebb69e09f}{gx\+Terminate}} ()
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} void \mbox{\hyperlink{gx_8h_a3543a26b16bbfd71c7904d205dc1d56c}{gx\+Terminate}} ()
 \begin{DoxyCompactList}\small\item\em Terminates GX library and cleans up resources. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{gx_8h_acd7da62752d00aea8271dc6a5d9ed4e6}{gx\+Add\+Keyboard\+Callback}} (\mbox{\hyperlink{gx_8h_aec5702061094a00307085537e0b85b63}{GXKeyboard\+Callback}} cb)
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} void \mbox{\hyperlink{gx_8h_ae8b62907f612eec575d2903981fdc5ba}{gx\+Add\+Keyboard\+Callback}} (\mbox{\hyperlink{gx_8h_aec5702061094a00307085537e0b85b63}{GXKeyboard\+Callback}} cb)
 \begin{DoxyCompactList}\small\item\em Registers a keyboard event callback. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{gx_8h_ae7371bb384d4f1ab2d5f061b294f31ee}{gx\+Clear\+Keyboard\+Callback}} ()
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} void \mbox{\hyperlink{gx_8h_aa3de5e031aef1fdc48e12b0d192d68d1}{gx\+Clear\+Keyboard\+Callback}} ()
 \begin{DoxyCompactList}\small\item\em Clears all keyboard callbacks. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{gx_8h_a982378df3a58ebc754e238f548f6d947}{gx\+Destroy\+Application}} (\mbox{\hyperlink{struct_g_x_application}{GXApplication}} \texorpdfstring{$\ast$}{*}application)
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} void \mbox{\hyperlink{gx_8h_a949114288b82e9dd1af242c4afc87a7b}{gx\+Destroy\+Application}} (\mbox{\hyperlink{struct_g_x_application}{GXApplication}} \texorpdfstring{$\ast$}{*}application)
 \begin{DoxyCompactList}\small\item\em Releases application resources. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{struct_g_x_application}{GXApplication}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{gx_8h_afc7f563785198dd63cec3036190814bf}{gx\+Create\+Application}} (\mbox{\hyperlink{gx_8h_a87d336541f9413db24108524a42c0dfb}{GXApplication\+Options}} options)
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} \mbox{\hyperlink{struct_g_x_application}{GXApplication}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{gx_8h_a0db1db6340964d3e4a375e94448830b1}{gx\+Create\+Application}} (\mbox{\hyperlink{gx_8h_a87d336541f9413db24108524a42c0dfb}{GXApplication\+Options}} options)
 \begin{DoxyCompactList}\small\item\em Creates main application context. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{struct_g_x_application}{GXApplication}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{gx_8h_a6bf81f3c41110e3803cdea7f89de0453}{gx\+Get\+Application}} ()
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} \mbox{\hyperlink{struct_g_x_application}{GXApplication}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{gx_8h_ae795a9c885bbb088fe3f8c95e51ec03a}{gx\+Get\+Application}} ()
 \begin{DoxyCompactList}\small\item\em Retrieves current application context. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{gx_8h_a95c749719fb40e460fbcdd12906f3c1f}{gx\+Exec}} ()
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} void \mbox{\hyperlink{gx_8h_a8ae33d876e1541f89553a5f5f2db25a5}{gx\+Exec}} ()
 \begin{DoxyCompactList}\small\item\em Executes the current application. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{struct_g_x_object}{GXObject}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{gx_8h_a3cf8cfac8ca8c65bd4acf0cd8c4938a6}{gx\+As\+Object}} (\mbox{\hyperlink{struct_g_x_resource}{GXResource}} \texorpdfstring{$\ast$}{*}res)
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} \mbox{\hyperlink{struct_g_x_object}{GXObject}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{gx_8h_a2abaf067aa03362d739017a0402e907d}{gx\+As\+Object}} (\mbox{\hyperlink{struct_g_x_resource}{GXResource}} \texorpdfstring{$\ast$}{*}res)
 \begin{DoxyCompactList}\small\item\em Returns a memory pointer to \doxylink{struct_g_x_object}{GXObject} from the specified \doxylink{struct_g_x_resource}{GXResource}. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{struct_g_x_object}{GXObject}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{gx_8h_ada94df35172028fd2cca0465829485bc}{gx\+Create\+Object}} (uint32\+\_\+t shader\+\_\+program, uint32\+\_\+t vao, uint32\+\_\+t vbo, uint32\+\_\+t ebo, void \texorpdfstring{$\ast$}{*}user\+\_\+data)
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} \mbox{\hyperlink{struct_g_x_object}{GXObject}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{gx_8h_a7e40738b1284e5dbcde6eb5b784a7dce}{gx\+Create\+Object}} (uint32\+\_\+t shader\+\_\+program, uint32\+\_\+t vao, uint32\+\_\+t vbo, uint32\+\_\+t ebo, void \texorpdfstring{$\ast$}{*}user\+\_\+data)
 \item 
-\mbox{\hyperlink{struct_g_x_object}{GXObject}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{gx_8h_ae08675b49133574c8a8f53f3fbb1c9a2}{gx\+Create\+Render\+Object\+With\+Elements}} (uint32\+\_\+t shader\+\_\+program, \mbox{\hyperlink{gx_8h_a12b600ff948f2fb55b73974e5bef17e2}{GXBuffer\+Usage\+Type}} vert\+\_\+buffer\+\_\+usage, size\+\_\+t vert\+\_\+size, void \texorpdfstring{$\ast$}{*}vert\+\_\+data, \mbox{\hyperlink{gx_8h_a12b600ff948f2fb55b73974e5bef17e2}{GXBuffer\+Usage\+Type}} elem\+\_\+buffer\+\_\+usage, size\+\_\+t elem\+\_\+size, void \texorpdfstring{$\ast$}{*}elem\+\_\+data, void \texorpdfstring{$\ast$}{*}user\+\_\+data)
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} \mbox{\hyperlink{struct_g_x_object}{GXObject}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{gx_8h_a659db3ee86251b34c1559d2e0d4b5fc2}{gx\+Create\+Render\+Object\+With\+Elements}} (uint32\+\_\+t shader\+\_\+program, \mbox{\hyperlink{gx_8h_a12b600ff948f2fb55b73974e5bef17e2}{GXBuffer\+Usage\+Type}} vert\+\_\+buffer\+\_\+usage, size\+\_\+t vert\+\_\+size, void \texorpdfstring{$\ast$}{*}vert\+\_\+data, \mbox{\hyperlink{gx_8h_a12b600ff948f2fb55b73974e5bef17e2}{GXBuffer\+Usage\+Type}} elem\+\_\+buffer\+\_\+usage, size\+\_\+t elem\+\_\+size, void \texorpdfstring{$\ast$}{*}elem\+\_\+data, void \texorpdfstring{$\ast$}{*}user\+\_\+data)
 \item 
-\mbox{\hyperlink{struct_g_x_object}{GXObject}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{gx_8h_a64b1f8f3d374118a3ecc4cc3acaf4099}{gx\+Create\+Render\+Object}} (uint32\+\_\+t shader\+\_\+program, \mbox{\hyperlink{gx_8h_a12b600ff948f2fb55b73974e5bef17e2}{GXBuffer\+Usage\+Type}} vert\+\_\+buffer\+\_\+usage, size\+\_\+t vert\+\_\+size, void \texorpdfstring{$\ast$}{*}vert\+\_\+data, void \texorpdfstring{$\ast$}{*}user\+\_\+data)
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} \mbox{\hyperlink{struct_g_x_object}{GXObject}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{gx_8h_aab2628b36e323bf90bc243f63f0866be}{gx\+Create\+Render\+Object}} (uint32\+\_\+t shader\+\_\+program, \mbox{\hyperlink{gx_8h_a12b600ff948f2fb55b73974e5bef17e2}{GXBuffer\+Usage\+Type}} vert\+\_\+buffer\+\_\+usage, size\+\_\+t vert\+\_\+size, void \texorpdfstring{$\ast$}{*}vert\+\_\+data, void \texorpdfstring{$\ast$}{*}user\+\_\+data)
 \item 
-void \mbox{\hyperlink{gx_8h_a4c68d00acc3d8a9fd725f4c73c59cf65}{gx\+Draw\+Vertices}} (\mbox{\hyperlink{struct_g_x_object}{GXObject}} \texorpdfstring{$\ast$}{*}object, size\+\_\+t offset, size\+\_\+t count)
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} void \mbox{\hyperlink{gx_8h_abc5436d6460eafc32bb19140035d5ae5}{gx\+Draw\+Vertices}} (\mbox{\hyperlink{struct_g_x_object}{GXObject}} \texorpdfstring{$\ast$}{*}object, size\+\_\+t offset, size\+\_\+t count)
 \begin{DoxyCompactList}\small\item\em Draws a set of vertices from \doxylink{struct_g_x_object}{GXObject}. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{gx_8h_ad8c02b92acb6a924278f35957c0bc010}{gx\+Draw\+Elements}} (\mbox{\hyperlink{struct_g_x_object}{GXObject}} \texorpdfstring{$\ast$}{*}object, size\+\_\+t count, \mbox{\hyperlink{gx_8h_a7fd0c624c6c69095149db64b99d41cb1}{GXVertex\+Attribute\+Type}} type)
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} void \mbox{\hyperlink{gx_8h_a15a9367529c06d0a350aaa5ba55c007a}{gx\+Draw\+Elements}} (\mbox{\hyperlink{struct_g_x_object}{GXObject}} \texorpdfstring{$\ast$}{*}object, size\+\_\+t count, \mbox{\hyperlink{gx_8h_a7fd0c624c6c69095149db64b99d41cb1}{GXVertex\+Attribute\+Type}} type)
 \item 
-void \mbox{\hyperlink{gx_8h_abe7c89be9f2c57abf121e64f359c946f}{gx\+Bind\+Object}} (\mbox{\hyperlink{struct_g_x_object}{GXObject}} \texorpdfstring{$\ast$}{*}object)
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} void \mbox{\hyperlink{gx_8h_a657878bae99a8e40421757d908a1b58b}{gx\+Bind\+Object}} (\mbox{\hyperlink{struct_g_x_object}{GXObject}} \texorpdfstring{$\ast$}{*}object)
 \begin{DoxyCompactList}\small\item\em Binds all data stored in object, effectively making it work. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{struct_g_x_window}{GXWindow}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{gx_8h_a892d1af800d602f6d1231e91792b6599}{gx\+As\+Window}} (\mbox{\hyperlink{struct_g_x_resource}{GXResource}} \texorpdfstring{$\ast$}{*}res)
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} \mbox{\hyperlink{struct_g_x_window}{GXWindow}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{gx_8h_a2fb5f743a655bf57af683374f45fb0bd}{gx\+As\+Window}} (\mbox{\hyperlink{struct_g_x_resource}{GXResource}} \texorpdfstring{$\ast$}{*}res)
 \begin{DoxyCompactList}\small\item\em Returns a memory pointer to \doxylink{struct_g_x_window}{GXWindow} from the specified \doxylink{struct_g_x_resource}{GXResource}. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{struct_g_x_window}{GXWindow}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{gx_8h_ae6af81c46625a43468bac3d67d7a8aa9}{gx\+Create\+Window}} (bool vsync, bool show, int width, int height, const char \texorpdfstring{$\ast$}{*}title)
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} \mbox{\hyperlink{struct_g_x_window}{GXWindow}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{gx_8h_a3d9a47311f9680f1273c3558dff5bc9a}{gx\+Create\+Window}} (bool vsync, bool show, int width, int height, const char \texorpdfstring{$\ast$}{*}title)
 \begin{DoxyCompactList}\small\item\em Creates and initiatlizes an \doxylink{struct_g_x_window}{GXWindow} in memory. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{gx_8h_a3d9d8203ffca6db536ff37c7f3277d87}{gx\+Window\+Set\+Draw\+Callback}} (\mbox{\hyperlink{struct_g_x_window}{GXWindow}} \texorpdfstring{$\ast$}{*}win, \mbox{\hyperlink{gx_8h_a8c1bb3a81f7d02905db77991971f46a0}{GXDraw\+Callback}} cb)
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} void \mbox{\hyperlink{gx_8h_adf339476dbd2cf9cb7490ff0f72b3385}{gx\+Window\+Set\+Draw\+Callback}} (\mbox{\hyperlink{struct_g_x_window}{GXWindow}} \texorpdfstring{$\ast$}{*}win, \mbox{\hyperlink{gx_8h_a8c1bb3a81f7d02905db77991971f46a0}{GXDraw\+Callback}} cb)
 \begin{DoxyCompactList}\small\item\em Assigns the draw callback for the respective \doxylink{struct_g_x_window}{GXWindow}. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{gx_8h_acbe1e81fd4ce60bd48bbcd69586fda46}{gx\+Window\+Close}} (\mbox{\hyperlink{struct_g_x_window}{GXWindow}} \texorpdfstring{$\ast$}{*}win)
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} void \mbox{\hyperlink{gx_8h_adeb3443038f5fb76f848907dd8be331c}{gx\+Window\+Close}} (\mbox{\hyperlink{struct_g_x_window}{GXWindow}} \texorpdfstring{$\ast$}{*}win)
 \begin{DoxyCompactList}\small\item\em Inidicates to the libary, that the specified window should close. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{gx_8h_a2d042094acd151bcd40f68313b18c5cc}{gx\+Window\+Should\+Close}} (\mbox{\hyperlink{struct_g_x_window}{GXWindow}} \texorpdfstring{$\ast$}{*}win)
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} bool \mbox{\hyperlink{gx_8h_a6cfdb3d6d0f2b2e6b3eca571697bf55a}{gx\+Window\+Should\+Close}} (\mbox{\hyperlink{struct_g_x_window}{GXWindow}} \texorpdfstring{$\ast$}{*}win)
 \begin{DoxyCompactList}\small\item\em Returns whether the status of the specified window indicates it should close. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{gx_8h_ac2bf01e4a94435a96597360172f97edf}{gx\+Destroy\+Resource}} (\mbox{\hyperlink{struct_g_x_resource}{GXResource}} \texorpdfstring{$\ast$}{*}resource)
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} bool \mbox{\hyperlink{gx_8h_a1aa46ccbe54658f7a4caf0dc29eb5fad}{gx\+Destroy\+Resource}} (\mbox{\hyperlink{struct_g_x_resource}{GXResource}} \texorpdfstring{$\ast$}{*}resource)
 \begin{DoxyCompactList}\small\item\em Destroy and free the specified resource. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{gx_8h_a313412ba22eac50e2bff181c07a3882c}{gx\+Update\+Viewport}} (\mbox{\hyperlink{struct_g_x_window}{GXWindow}} \texorpdfstring{$\ast$}{*}win)
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} void \mbox{\hyperlink{gx_8h_ace04bba04a3ecdf099920b3e37893a37}{gx\+Update\+Viewport}} (\mbox{\hyperlink{struct_g_x_window}{GXWindow}} \texorpdfstring{$\ast$}{*}win)
 \begin{DoxyCompactList}\small\item\em Updates the viewport for a specific window (equivalent to gx\+Viewport(0, 0, win-\/\texorpdfstring{$>$}{>}width, win-\/\texorpdfstring{$>$}{>}height)). \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{gx_8h_a7bc420ab52671bb1267f5adb126fe0b6}{gx\+Set\+Background}} (float r, float g, float b, float a)
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} void \mbox{\hyperlink{gx_8h_ae7c6f35b4ea08f256436cac499d28a32}{gx\+Set\+Background}} (float r, float g, float b, float a)
 \begin{DoxyCompactList}\small\item\em Sets the background for the respective graphical context. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{gx_8h_a8aecfe1a391495d33781697af5bd7ca6}{gx\+Viewport}} (int x, int y, int w, int h)
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} void \mbox{\hyperlink{gx_8h_a159d6fac47e0dbd05a6501b16b3d1734}{gx\+Viewport}} (int x, int y, int w, int h)
 \begin{DoxyCompactList}\small\item\em Sets the viewport for the respective graphical context. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{gx_8h_a549bfcfd0c6ea7c69332aaa51f57bcdf}{gx\+Clear\+Color}} (float r, float g, float b, float a)
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} void \mbox{\hyperlink{gx_8h_a97a09bae4620344e1d4fe442054a0936}{gx\+Clear\+Color}} (float r, float g, float b, float a)
 \begin{DoxyCompactList}\small\item\em Sets the clear color for the respective graphical context. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{gx_8h_a934abf23cb4bb4057261fd0d907c64df}{gx\+Clear}} (unsigned int bit)
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} void \mbox{\hyperlink{gx_8h_a821eaada652d3f7053a97370ab89c4a9}{gx\+Clear}} (unsigned int bit)
 \begin{DoxyCompactList}\small\item\em Sets the bitplane area for the respective graphical context. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{struct_g_x_shader_compilation_result}{GXShader\+Compilation\+Result}} \mbox{\hyperlink{gx_8h_a53ae0ebaa74ff8ffc37f5463f447ecac}{gx\+Compile\+GLSLShader}} (const char \texorpdfstring{$\ast$}{*}shader\+\_\+src, \mbox{\hyperlink{gx_8h_a2eb7ea5dfbda0b5ecb3846115c56fe83}{GXShader\+Type}} shader\+\_\+type)
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} \mbox{\hyperlink{struct_g_x_shader_compilation_result}{GXShader\+Compilation\+Result}} \mbox{\hyperlink{gx_8h_a8fbc037f643fccb0c757f314f8663004}{gx\+Compile\+GLSLShader}} (const char \texorpdfstring{$\ast$}{*}shader\+\_\+src, \mbox{\hyperlink{gx_8h_a2eb7ea5dfbda0b5ecb3846115c56fe83}{GXShader\+Type}} shader\+\_\+type)
 \begin{DoxyCompactList}\small\item\em Compiles a GLSL shader from source code. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{struct_g_x_program_compilation_result}{GXProgram\+Compilation\+Result}} \mbox{\hyperlink{gx_8h_ad8ce4f450cf4d5c5d0371b1996a204c4}{gx\+Compile\+GLSLProgram}} (const char \texorpdfstring{$\ast$}{*}vertex\+\_\+shader\+\_\+src, const char \texorpdfstring{$\ast$}{*}fragment\+\_\+shader\+\_\+src)
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} \mbox{\hyperlink{struct_g_x_program_compilation_result}{GXProgram\+Compilation\+Result}} \mbox{\hyperlink{gx_8h_a1ce3bf2a82c71f3058b4e098ba5813eb}{gx\+Compile\+GLSLProgram}} (const char \texorpdfstring{$\ast$}{*}vertex\+\_\+shader\+\_\+src, const char \texorpdfstring{$\ast$}{*}fragment\+\_\+shader\+\_\+src)
 \begin{DoxyCompactList}\small\item\em Compiles a GLSL vertex and fragment shader from source code. \end{DoxyCompactList}\item 
-uint32\+\_\+t \mbox{\hyperlink{gx_8h_a92e3fa245e65a66422dbc2e1aeb3f3ca}{gx\+Gen\+Vertex\+Array\+Object}} ()
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} uint32\+\_\+t \mbox{\hyperlink{gx_8h_a3077b46d9f9c55c4b2f704595238013e}{gx\+Gen\+Vertex\+Array\+Object}} ()
 \begin{DoxyCompactList}\small\item\em Generates a new Vertex Array Object (VAO). \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{gx_8h_a467d11a0616180af2bd027a45ba1bfe7}{gx\+Bind\+Vertex\+Array\+Object}} (uint32\+\_\+t vao)
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} void \mbox{\hyperlink{gx_8h_aad3aebf38b4a149f7ad2643023ce40a2}{gx\+Bind\+Vertex\+Array\+Object}} (uint32\+\_\+t vao)
 \begin{DoxyCompactList}\small\item\em Binds a Vertex Array Object (VAO) for use. \end{DoxyCompactList}\item 
-uint32\+\_\+t \mbox{\hyperlink{gx_8h_a74efe9d59cc0317c77962481d00cb548}{gx\+Gen\+Buffer\+Object}} (\mbox{\hyperlink{gx_8h_acf407c4416240bb057bea98cc48d2a11}{GXBuffer\+Type}} buffer\+\_\+type, \mbox{\hyperlink{gx_8h_a12b600ff948f2fb55b73974e5bef17e2}{GXBuffer\+Usage\+Type}} buffer\+\_\+usage, size\+\_\+t size, void \texorpdfstring{$\ast$}{*}data)
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} uint32\+\_\+t \mbox{\hyperlink{gx_8h_aba955665e39560b0ab57de8cbcf3be70}{gx\+Gen\+Buffer\+Object}} (\mbox{\hyperlink{gx_8h_acf407c4416240bb057bea98cc48d2a11}{GXBuffer\+Type}} buffer\+\_\+type, \mbox{\hyperlink{gx_8h_a12b600ff948f2fb55b73974e5bef17e2}{GXBuffer\+Usage\+Type}} buffer\+\_\+usage, size\+\_\+t size, void \texorpdfstring{$\ast$}{*}data)
 \begin{DoxyCompactList}\small\item\em Generates a new (Array/\+Element Array) Buffer Object. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{gx_8h_a4c53f942aaf94845b7eb170eb166afac}{gx\+Bind\+Buffer\+Object}} (\mbox{\hyperlink{gx_8h_acf407c4416240bb057bea98cc48d2a11}{GXBuffer\+Type}} buffer\+\_\+type, uint32\+\_\+t buffer)
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} void \mbox{\hyperlink{gx_8h_ac956a9305c60a9933b6962a31ea88d76}{gx\+Bind\+Buffer\+Object}} (\mbox{\hyperlink{gx_8h_acf407c4416240bb057bea98cc48d2a11}{GXBuffer\+Type}} buffer\+\_\+type, uint32\+\_\+t buffer)
 \begin{DoxyCompactList}\small\item\em Binds a (Array/\+Element Array) Buffer Object for use. \end{DoxyCompactList}\item 
-void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{gx_8h_aff01850f8640b86e1031bdc63fc04776}{gx\+Map\+Buffer\+Range}} (\mbox{\hyperlink{gx_8h_acf407c4416240bb057bea98cc48d2a11}{GXBuffer\+Type}} buffer\+\_\+type, size\+\_\+t offset, size\+\_\+t length, \mbox{\hyperlink{gx_8h_a0e90335b7087af15a4b53fb23b65faf2}{GXMapping\+Bits}} bits)
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{gx_8h_afcb576077abbd128ce2dcfb65ac39b25}{gx\+Map\+Buffer\+Range}} (\mbox{\hyperlink{gx_8h_acf407c4416240bb057bea98cc48d2a11}{GXBuffer\+Type}} buffer\+\_\+type, size\+\_\+t offset, size\+\_\+t length, \mbox{\hyperlink{gx_8h_a0e90335b7087af15a4b53fb23b65faf2}{GXMapping\+Bits}} bits)
 \begin{DoxyCompactList}\small\item\em Maps a range of a (Array/\+Element Array) Buffer Object to CPU memory, allowing access (based of {\ttfamily bits}). \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{gx_8h_a16c58abba3117f7d571ae6c1d15cbc18}{gx\+Unmap\+Buffer}} (\mbox{\hyperlink{gx_8h_acf407c4416240bb057bea98cc48d2a11}{GXBuffer\+Type}} buffer\+\_\+type)
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} bool \mbox{\hyperlink{gx_8h_a07c176d000a71ce121d312c23c6a2897}{gx\+Unmap\+Buffer}} (\mbox{\hyperlink{gx_8h_acf407c4416240bb057bea98cc48d2a11}{GXBuffer\+Type}} buffer\+\_\+type)
 \begin{DoxyCompactList}\small\item\em Unmaps a previously mapped (Array/\+Element Array) Buffer Object. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{gx_8h_a83ee4ca2977257cd74304105ae909dc6}{gx\+Buffer\+Sub\+Data}} (\mbox{\hyperlink{gx_8h_acf407c4416240bb057bea98cc48d2a11}{GXBuffer\+Type}} buffer\+\_\+type, size\+\_\+t offset, size\+\_\+t length, void \texorpdfstring{$\ast$}{*}data)
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} void \mbox{\hyperlink{gx_8h_a50db3fa3fa56eed3630e3dae906cfcef}{gx\+Buffer\+Sub\+Data}} (\mbox{\hyperlink{gx_8h_acf407c4416240bb057bea98cc48d2a11}{GXBuffer\+Type}} buffer\+\_\+type, size\+\_\+t offset, size\+\_\+t length, void \texorpdfstring{$\ast$}{*}data)
 \item 
-bool \mbox{\hyperlink{gx_8h_a94e5502c637a126ba77beb45b8b9a713}{gx\+Update\+Vertices}} (\mbox{\hyperlink{struct_g_x_object}{GXObject}} \texorpdfstring{$\ast$}{*}object, size\+\_\+t offset, size\+\_\+t length, void \texorpdfstring{$\ast$}{*}data)
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} bool \mbox{\hyperlink{gx_8h_aa31c71a84050bf15b7b8f5cbde86f83f}{gx\+Update\+Buffer\+Object}} (\mbox{\hyperlink{gx_8h_acf407c4416240bb057bea98cc48d2a11}{GXBuffer\+Type}} type, uint32\+\_\+t bo, size\+\_\+t offset, size\+\_\+t length, void \texorpdfstring{$\ast$}{*}data)
+\begin{DoxyCompactList}\small\item\em Updates data in a (Array/\+Element Array/\+Uniform) Buffer Object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} bool \mbox{\hyperlink{gx_8h_ad459959e53737a55eafb3ba4113b1531}{gx\+Update\+Vertices}} (\mbox{\hyperlink{struct_g_x_object}{GXObject}} \texorpdfstring{$\ast$}{*}object, size\+\_\+t offset, size\+\_\+t length, void \texorpdfstring{$\ast$}{*}data)
 \begin{DoxyCompactList}\small\item\em Updates the vertex data of a \doxylink{struct_g_x_object}{GXObject}. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{gx_8h_ac8eac1b081068eb1ceee1b7704808212}{gx\+Update\+Elements}} (\mbox{\hyperlink{struct_g_x_object}{GXObject}} \texorpdfstring{$\ast$}{*}object, size\+\_\+t offset, size\+\_\+t length, void \texorpdfstring{$\ast$}{*}data)
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} bool \mbox{\hyperlink{gx_8h_a633b58b8bd875b5ca34a45cc35b7bc59}{gx\+Update\+Elements}} (\mbox{\hyperlink{struct_g_x_object}{GXObject}} \texorpdfstring{$\ast$}{*}object, size\+\_\+t offset, size\+\_\+t length, void \texorpdfstring{$\ast$}{*}data)
 \begin{DoxyCompactList}\small\item\em Updates the index data of a \doxylink{struct_g_x_object}{GXObject}. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{gx_8h_af827ad56a1afd8f8dc683a37a727023c}{gx\+Set\+Vertex\+Attribute}} (\mbox{\hyperlink{struct_g_x_object}{GXObject}} \texorpdfstring{$\ast$}{*}object, uint32\+\_\+t index, int size, \mbox{\hyperlink{gx_8h_a7fd0c624c6c69095149db64b99d41cb1}{GXVertex\+Attribute\+Type}} type, bool normalize, size\+\_\+t stride, void \texorpdfstring{$\ast$}{*}pointer)
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} bool \mbox{\hyperlink{gx_8h_ac753b19d674c69b830367d1d8f999450}{gx\+Update\+Uniform\+Block}} (uint32\+\_\+t ubo, size\+\_\+t offset, size\+\_\+t length, void \texorpdfstring{$\ast$}{*}data)
+\begin{DoxyCompactList}\small\item\em Updates the index data of a \doxylink{struct_g_x_object}{GXObject}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} void \mbox{\hyperlink{gx_8h_aaa112062f45611a613b934fd0f67595c}{gx\+Set\+Vertex\+Attribute}} (\mbox{\hyperlink{struct_g_x_object}{GXObject}} \texorpdfstring{$\ast$}{*}object, uint32\+\_\+t index, int size, \mbox{\hyperlink{gx_8h_a7fd0c624c6c69095149db64b99d41cb1}{GXVertex\+Attribute\+Type}} type, bool normalize, size\+\_\+t stride, void \texorpdfstring{$\ast$}{*}pointer)
 \begin{DoxyCompactList}\small\item\em Sets a vertex attribute for a \doxylink{struct_g_x_object}{GXObject}. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{gx_8h_ac2471172b9f13681c22eec227236ca88}{gx\+Enable\+Vertex\+Attribute}} (\mbox{\hyperlink{struct_g_x_object}{GXObject}} \texorpdfstring{$\ast$}{*}object, uint32\+\_\+t index)
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} void \mbox{\hyperlink{gx_8h_a3654268f57a624504f3b68f76c69bc7e}{gx\+Enable\+Vertex\+Attribute}} (\mbox{\hyperlink{struct_g_x_object}{GXObject}} \texorpdfstring{$\ast$}{*}object, uint32\+\_\+t index)
 \begin{DoxyCompactList}\small\item\em Enables a vertex attribute for a \doxylink{struct_g_x_object}{GXObject}. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{gx_8h_a786b10a76cfb0f31ec60a137bb84d2c5}{gx\+Disable\+Vertex\+Attribute}} (\mbox{\hyperlink{struct_g_x_object}{GXObject}} \texorpdfstring{$\ast$}{*}object, uint32\+\_\+t index)
-\begin{DoxyCompactList}\small\item\em Disables a vertex attribute for a \doxylink{struct_g_x_object}{GXObject}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} void \mbox{\hyperlink{gx_8h_acf40ebe71405cda868c8e45436506ecd}{gx\+Disable\+Vertex\+Attribute}} (\mbox{\hyperlink{struct_g_x_object}{GXObject}} \texorpdfstring{$\ast$}{*}object, uint32\+\_\+t index)
+\begin{DoxyCompactList}\small\item\em Disables a vertex attribute for a \doxylink{struct_g_x_object}{GXObject}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} void \mbox{\hyperlink{gx_8h_ac571d1787fc1f3dd62fa0b5263ffb52d}{gx\+Bind\+Buffer\+Base}} (\mbox{\hyperlink{gx_8h_acf407c4416240bb057bea98cc48d2a11}{GXBuffer\+Type}} type, uint32\+\_\+t binding\+\_\+point, uint32\+\_\+t bo)
+\begin{DoxyCompactList}\small\item\em Binds a Buffer Object to a specific binding point. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} void \mbox{\hyperlink{gx_8h_ad2751a198e9e8a580f2e0b91573f8380}{gx\+Bind\+Uniform\+Block}} (uint32\+\_\+t binding\+\_\+point, uint32\+\_\+t ubo)
+\begin{DoxyCompactList}\small\item\em Binds a Uniform Block to a specific binding point for a shader. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} void \mbox{\hyperlink{gx_8h_ae292414c966d829a560ea8a52d680206}{gx\+Use\+Shader}} (\mbox{\hyperlink{struct_g_x_object}{GXObject}} \texorpdfstring{$\ast$}{*}object)
+\begin{DoxyCompactList}\small\item\em Tells the program to use the shader associated with the object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{doc-define-members}
+\Hypertarget{gx_8h_doc-define-members}
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}\index{gx.h@{gx.h}!GX\_API@{GX\_API}}
+\index{GX\_API@{GX\_API}!gx.h@{gx.h}}
+\doxysubsubsection{\texorpdfstring{GX\_API}{GX\_API}}
+{\footnotesize\ttfamily \label{gx_8h_ad02930e4573c489f8c5703aaf4d3425b} 
+\#define GX\+\_\+\+API}
+
 
 
 \label{doc-typedef-members}
@@ -436,7 +463,8 @@ Buffer type identifiers for buffer objects.
 Values\+:
 \begin{DoxyItemize}
 \item {\ttfamily GX\+\_\+\+BUFFER\+\_\+\+TYPE\+\_\+\+ARRAY}\+: Vertex array buffer
-\item {\ttfamily GX\+\_\+\+BUFFER\+\_\+\+TYPE\+\_\+\+ELEMENT\+\_\+\+ARRAY}\+: Element array buffer 
+\item {\ttfamily GX\+\_\+\+BUFFER\+\_\+\+TYPE\+\_\+\+ELEMENT\+\_\+\+ARRAY}\+: Element array buffer
+\item {\ttfamily GX\+\_\+\+BUFFER\+\_\+\+TYPE\+\_\+\+UNIFORM}\+: Uniform buffer 
 \end{DoxyItemize}\begin{DoxyEnumFields}[2]{Enumerator}
 \raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_BUFFER\_TYPE\_ARRAY@{GX\_BUFFER\_TYPE\_ARRAY}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_BUFFER\_TYPE\_ARRAY@{GX\_BUFFER\_TYPE\_ARRAY}}}\Hypertarget{gx_8h_acf407c4416240bb057bea98cc48d2a11a87268ae25321cbeebb2727312e10d14a}\label{gx_8h_acf407c4416240bb057bea98cc48d2a11a87268ae25321cbeebb2727312e10d14a} 
 GX\+\_\+\+BUFFER\+\_\+\+TYPE\+\_\+\+ARRAY&\\
@@ -444,6 +472,10 @@ GX\+\_\+\+BUFFER\+\_\+\+TYPE\+\_\+\+ARRAY&\\
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_BUFFER\_TYPE\_ELEMENT\_ARRAY@{GX\_BUFFER\_TYPE\_ELEMENT\_ARRAY}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_BUFFER\_TYPE\_ELEMENT\_ARRAY@{GX\_BUFFER\_TYPE\_ELEMENT\_ARRAY}}}\Hypertarget{gx_8h_acf407c4416240bb057bea98cc48d2a11aacfd830268ff17b3c855042a83fa467e}\label{gx_8h_acf407c4416240bb057bea98cc48d2a11aacfd830268ff17b3c855042a83fa467e} 
 GX\+\_\+\+BUFFER\+\_\+\+TYPE\+\_\+\+ELEMENT\+\_\+\+ARRAY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GX\_BUFFER\_TYPE\_UNIFORM@{GX\_BUFFER\_TYPE\_UNIFORM}!gx.h@{gx.h}}\index{gx.h@{gx.h}!GX\_BUFFER\_TYPE\_UNIFORM@{GX\_BUFFER\_TYPE\_UNIFORM}}}\Hypertarget{gx_8h_acf407c4416240bb057bea98cc48d2a11aee4b120b7ca83583d7d9391d7d4032e2}\label{gx_8h_acf407c4416240bb057bea98cc48d2a11aee4b120b7ca83583d7d9391d7d4032e2} 
+GX\+\_\+\+BUFFER\+\_\+\+TYPE\+\_\+\+UNIFORM&\\
 \hline
 
 \end{DoxyEnumFields}
@@ -1199,11 +1231,11 @@ GX\+\_\+\+VERTEX\+\_\+\+ATTRIB\+\_\+\+TYPE\+\_\+\+FLOAT&\\
 \label{doc-func-members}
 \Hypertarget{gx_8h_doc-func-members}
 \doxysubsection{Function Documentation}
-\Hypertarget{gx_8h_acd7da62752d00aea8271dc6a5d9ed4e6}\index{gx.h@{gx.h}!gxAddKeyboardCallback@{gxAddKeyboardCallback}}
+\Hypertarget{gx_8h_ae8b62907f612eec575d2903981fdc5ba}\index{gx.h@{gx.h}!gxAddKeyboardCallback@{gxAddKeyboardCallback}}
 \index{gxAddKeyboardCallback@{gxAddKeyboardCallback}!gx.h@{gx.h}}
 \doxysubsubsection{\texorpdfstring{gxAddKeyboardCallback()}{gxAddKeyboardCallback()}}
-{\footnotesize\ttfamily \label{gx_8h_acd7da62752d00aea8271dc6a5d9ed4e6} 
-void gx\+Add\+Keyboard\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gx_8h_aec5702061094a00307085537e0b85b63}{GXKeyboard\+Callback}}}]{cb}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{gx_8h_ae8b62907f612eec575d2903981fdc5ba} 
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} void gx\+Add\+Keyboard\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gx_8h_aec5702061094a00307085537e0b85b63}{GXKeyboard\+Callback}}}]{cb}{}\end{DoxyParamCaption})}
 
 
 
@@ -1214,11 +1246,11 @@ Registers a keyboard event callback.
 {\em cb} & Callback function to register \\
 \hline
 \end{DoxyParams}
-\Hypertarget{gx_8h_a3cf8cfac8ca8c65bd4acf0cd8c4938a6}\index{gx.h@{gx.h}!gxAsObject@{gxAsObject}}
+\Hypertarget{gx_8h_a2abaf067aa03362d739017a0402e907d}\index{gx.h@{gx.h}!gxAsObject@{gxAsObject}}
 \index{gxAsObject@{gxAsObject}!gx.h@{gx.h}}
 \doxysubsubsection{\texorpdfstring{gxAsObject()}{gxAsObject()}}
-{\footnotesize\ttfamily \label{gx_8h_a3cf8cfac8ca8c65bd4acf0cd8c4938a6} 
-\mbox{\hyperlink{struct_g_x_object}{GXObject}} \texorpdfstring{$\ast$}{*} gx\+As\+Object (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_x_resource}{GXResource}} \texorpdfstring{$\ast$}{*}}]{res}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{gx_8h_a2abaf067aa03362d739017a0402e907d} 
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} \mbox{\hyperlink{struct_g_x_object}{GXObject}} \texorpdfstring{$\ast$}{*} gx\+As\+Object (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_x_resource}{GXResource}} \texorpdfstring{$\ast$}{*}}]{res}{}\end{DoxyParamCaption})}
 
 
 
@@ -1232,11 +1264,11 @@ Returns a memory pointer to \doxylink{struct_g_x_object}{GXObject} from the spec
 \begin{DoxyReturn}{Returns}
 Associated object 
 \end{DoxyReturn}
-\Hypertarget{gx_8h_a892d1af800d602f6d1231e91792b6599}\index{gx.h@{gx.h}!gxAsWindow@{gxAsWindow}}
+\Hypertarget{gx_8h_a2fb5f743a655bf57af683374f45fb0bd}\index{gx.h@{gx.h}!gxAsWindow@{gxAsWindow}}
 \index{gxAsWindow@{gxAsWindow}!gx.h@{gx.h}}
 \doxysubsubsection{\texorpdfstring{gxAsWindow()}{gxAsWindow()}}
-{\footnotesize\ttfamily \label{gx_8h_a892d1af800d602f6d1231e91792b6599} 
-\mbox{\hyperlink{struct_g_x_window}{GXWindow}} \texorpdfstring{$\ast$}{*} gx\+As\+Window (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_x_resource}{GXResource}} \texorpdfstring{$\ast$}{*}}]{res}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{gx_8h_a2fb5f743a655bf57af683374f45fb0bd} 
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} \mbox{\hyperlink{struct_g_x_window}{GXWindow}} \texorpdfstring{$\ast$}{*} gx\+As\+Window (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_x_resource}{GXResource}} \texorpdfstring{$\ast$}{*}}]{res}{}\end{DoxyParamCaption})}
 
 
 
@@ -1250,11 +1282,30 @@ Returns a memory pointer to \doxylink{struct_g_x_window}{GXWindow} from the spec
 \begin{DoxyReturn}{Returns}
 Associated window 
 \end{DoxyReturn}
-\Hypertarget{gx_8h_a4c53f942aaf94845b7eb170eb166afac}\index{gx.h@{gx.h}!gxBindBufferObject@{gxBindBufferObject}}
+\Hypertarget{gx_8h_ac571d1787fc1f3dd62fa0b5263ffb52d}\index{gx.h@{gx.h}!gxBindBufferBase@{gxBindBufferBase}}
+\index{gxBindBufferBase@{gxBindBufferBase}!gx.h@{gx.h}}
+\doxysubsubsection{\texorpdfstring{gxBindBufferBase()}{gxBindBufferBase()}}
+{\footnotesize\ttfamily \label{gx_8h_ac571d1787fc1f3dd62fa0b5263ffb52d} 
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} void gx\+Bind\+Buffer\+Base (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gx_8h_acf407c4416240bb057bea98cc48d2a11}{GXBuffer\+Type}}}]{type}{, }\item[{uint32\+\_\+t}]{binding\+\_\+point}{, }\item[{uint32\+\_\+t}]{bo}{}\end{DoxyParamCaption})}
+
+
+
+Binds a Buffer Object to a specific binding point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & Type of buffer to bind (e.\+g., uniform, array) \\
+\hline
+{\em binding\+\_\+point} & Binding point index to bind the buffer to \\
+\hline
+{\em bo} & Buffer Object id to bind \\
+\hline
+\end{DoxyParams}
+\Hypertarget{gx_8h_ac956a9305c60a9933b6962a31ea88d76}\index{gx.h@{gx.h}!gxBindBufferObject@{gxBindBufferObject}}
 \index{gxBindBufferObject@{gxBindBufferObject}!gx.h@{gx.h}}
 \doxysubsubsection{\texorpdfstring{gxBindBufferObject()}{gxBindBufferObject()}}
-{\footnotesize\ttfamily \label{gx_8h_a4c53f942aaf94845b7eb170eb166afac} 
-void gx\+Bind\+Buffer\+Object (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gx_8h_acf407c4416240bb057bea98cc48d2a11}{GXBuffer\+Type}}}]{buffer\+\_\+type}{, }\item[{uint32\+\_\+t}]{buffer}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{gx_8h_ac956a9305c60a9933b6962a31ea88d76} 
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} void gx\+Bind\+Buffer\+Object (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gx_8h_acf407c4416240bb057bea98cc48d2a11}{GXBuffer\+Type}}}]{buffer\+\_\+type}{, }\item[{uint32\+\_\+t}]{buffer}{}\end{DoxyParamCaption})}
 
 
 
@@ -1270,11 +1321,11 @@ Binds a (Array/\+Element Array) Buffer Object for use.
 \begin{DoxySeeAlso}{See also}
 \doxylink{gx_8h_acf407c4416240bb057bea98cc48d2a11}{GXBuffer\+Type} 
 \end{DoxySeeAlso}
-\Hypertarget{gx_8h_abe7c89be9f2c57abf121e64f359c946f}\index{gx.h@{gx.h}!gxBindObject@{gxBindObject}}
+\Hypertarget{gx_8h_a657878bae99a8e40421757d908a1b58b}\index{gx.h@{gx.h}!gxBindObject@{gxBindObject}}
 \index{gxBindObject@{gxBindObject}!gx.h@{gx.h}}
 \doxysubsubsection{\texorpdfstring{gxBindObject()}{gxBindObject()}}
-{\footnotesize\ttfamily \label{gx_8h_abe7c89be9f2c57abf121e64f359c946f} 
-void gx\+Bind\+Object (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_x_object}{GXObject}} \texorpdfstring{$\ast$}{*}}]{object}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{gx_8h_a657878bae99a8e40421757d908a1b58b} 
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} void gx\+Bind\+Object (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_x_object}{GXObject}} \texorpdfstring{$\ast$}{*}}]{object}{}\end{DoxyParamCaption})}
 
 
 
@@ -1285,11 +1336,28 @@ Binds all data stored in object, effectively making it work.
 {\em object} & Object pointer \\
 \hline
 \end{DoxyParams}
-\Hypertarget{gx_8h_a467d11a0616180af2bd027a45ba1bfe7}\index{gx.h@{gx.h}!gxBindVertexArrayObject@{gxBindVertexArrayObject}}
+\Hypertarget{gx_8h_ad2751a198e9e8a580f2e0b91573f8380}\index{gx.h@{gx.h}!gxBindUniformBlock@{gxBindUniformBlock}}
+\index{gxBindUniformBlock@{gxBindUniformBlock}!gx.h@{gx.h}}
+\doxysubsubsection{\texorpdfstring{gxBindUniformBlock()}{gxBindUniformBlock()}}
+{\footnotesize\ttfamily \label{gx_8h_ad2751a198e9e8a580f2e0b91573f8380} 
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} void gx\+Bind\+Uniform\+Block (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{binding\+\_\+point}{, }\item[{uint32\+\_\+t}]{ubo}{}\end{DoxyParamCaption})}
+
+
+
+Binds a Uniform Block to a specific binding point for a shader. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em binding\+\_\+point} & Binding point index to bind the buffer to \\
+\hline
+{\em ubo} & Uniform Buffer Object id to bind \\
+\hline
+\end{DoxyParams}
+\Hypertarget{gx_8h_aad3aebf38b4a149f7ad2643023ce40a2}\index{gx.h@{gx.h}!gxBindVertexArrayObject@{gxBindVertexArrayObject}}
 \index{gxBindVertexArrayObject@{gxBindVertexArrayObject}!gx.h@{gx.h}}
 \doxysubsubsection{\texorpdfstring{gxBindVertexArrayObject()}{gxBindVertexArrayObject()}}
-{\footnotesize\ttfamily \label{gx_8h_a467d11a0616180af2bd027a45ba1bfe7} 
-void gx\+Bind\+Vertex\+Array\+Object (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{vao}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{gx_8h_aad3aebf38b4a149f7ad2643023ce40a2} 
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} void gx\+Bind\+Vertex\+Array\+Object (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{vao}{}\end{DoxyParamCaption})}
 
 
 
@@ -1300,17 +1368,17 @@ Binds a Vertex Array Object (VAO) for use.
 {\em vao} & Vertex array object (VAO) id to bind \\
 \hline
 \end{DoxyParams}
-\Hypertarget{gx_8h_a83ee4ca2977257cd74304105ae909dc6}\index{gx.h@{gx.h}!gxBufferSubData@{gxBufferSubData}}
+\Hypertarget{gx_8h_a50db3fa3fa56eed3630e3dae906cfcef}\index{gx.h@{gx.h}!gxBufferSubData@{gxBufferSubData}}
 \index{gxBufferSubData@{gxBufferSubData}!gx.h@{gx.h}}
 \doxysubsubsection{\texorpdfstring{gxBufferSubData()}{gxBufferSubData()}}
-{\footnotesize\ttfamily \label{gx_8h_a83ee4ca2977257cd74304105ae909dc6} 
-void gx\+Buffer\+Sub\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gx_8h_acf407c4416240bb057bea98cc48d2a11}{GXBuffer\+Type}}}]{buffer\+\_\+type}{, }\item[{size\+\_\+t}]{offset}{, }\item[{size\+\_\+t}]{length}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{data}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{gx_8h_a50db3fa3fa56eed3630e3dae906cfcef} 
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} void gx\+Buffer\+Sub\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gx_8h_acf407c4416240bb057bea98cc48d2a11}{GXBuffer\+Type}}}]{buffer\+\_\+type}{, }\item[{size\+\_\+t}]{offset}{, }\item[{size\+\_\+t}]{length}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{data}{}\end{DoxyParamCaption})}
 
-\Hypertarget{gx_8h_a934abf23cb4bb4057261fd0d907c64df}\index{gx.h@{gx.h}!gxClear@{gxClear}}
+\Hypertarget{gx_8h_a821eaada652d3f7053a97370ab89c4a9}\index{gx.h@{gx.h}!gxClear@{gxClear}}
 \index{gxClear@{gxClear}!gx.h@{gx.h}}
 \doxysubsubsection{\texorpdfstring{gxClear()}{gxClear()}}
-{\footnotesize\ttfamily \label{gx_8h_a934abf23cb4bb4057261fd0d907c64df} 
-void gx\+Clear (\begin{DoxyParamCaption}\item[{unsigned int}]{bit}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{gx_8h_a821eaada652d3f7053a97370ab89c4a9} 
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} void gx\+Clear (\begin{DoxyParamCaption}\item[{unsigned int}]{bit}{}\end{DoxyParamCaption})}
 
 
 
@@ -1327,11 +1395,11 @@ This is the same as gl\+Clear(...), and simply a wrapper to allow easier binding
 \begin{DoxySeeAlso}{See also}
 \doxylink{gx_8h_a531e89fed7a77bbc53ed923fd8a4f71c}{GXBuffer\+Bit} 
 \end{DoxySeeAlso}
-\Hypertarget{gx_8h_a549bfcfd0c6ea7c69332aaa51f57bcdf}\index{gx.h@{gx.h}!gxClearColor@{gxClearColor}}
+\Hypertarget{gx_8h_a97a09bae4620344e1d4fe442054a0936}\index{gx.h@{gx.h}!gxClearColor@{gxClearColor}}
 \index{gxClearColor@{gxClearColor}!gx.h@{gx.h}}
 \doxysubsubsection{\texorpdfstring{gxClearColor()}{gxClearColor()}}
-{\footnotesize\ttfamily \label{gx_8h_a549bfcfd0c6ea7c69332aaa51f57bcdf} 
-void gx\+Clear\+Color (\begin{DoxyParamCaption}\item[{float}]{r}{, }\item[{float}]{g}{, }\item[{float}]{b}{, }\item[{float}]{a}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{gx_8h_a97a09bae4620344e1d4fe442054a0936} 
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} void gx\+Clear\+Color (\begin{DoxyParamCaption}\item[{float}]{r}{, }\item[{float}]{g}{, }\item[{float}]{b}{, }\item[{float}]{a}{}\end{DoxyParamCaption})}
 
 
 
@@ -1351,21 +1419,21 @@ Sets the clear color for the respective graphical context.
 \begin{DoxyNote}{Note}
 This is the same as gl\+Clear\+Color(...), and simply a wrapper to allow easier binding implementation. 
 \end{DoxyNote}
-\Hypertarget{gx_8h_ae7371bb384d4f1ab2d5f061b294f31ee}\index{gx.h@{gx.h}!gxClearKeyboardCallback@{gxClearKeyboardCallback}}
+\Hypertarget{gx_8h_aa3de5e031aef1fdc48e12b0d192d68d1}\index{gx.h@{gx.h}!gxClearKeyboardCallback@{gxClearKeyboardCallback}}
 \index{gxClearKeyboardCallback@{gxClearKeyboardCallback}!gx.h@{gx.h}}
 \doxysubsubsection{\texorpdfstring{gxClearKeyboardCallback()}{gxClearKeyboardCallback()}}
-{\footnotesize\ttfamily \label{gx_8h_ae7371bb384d4f1ab2d5f061b294f31ee} 
-void gx\+Clear\+Keyboard\+Callback (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{gx_8h_aa3de5e031aef1fdc48e12b0d192d68d1} 
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} void gx\+Clear\+Keyboard\+Callback (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
 
 
 Clears all keyboard callbacks. 
 
-\Hypertarget{gx_8h_ad8ce4f450cf4d5c5d0371b1996a204c4}\index{gx.h@{gx.h}!gxCompileGLSLProgram@{gxCompileGLSLProgram}}
+\Hypertarget{gx_8h_a1ce3bf2a82c71f3058b4e098ba5813eb}\index{gx.h@{gx.h}!gxCompileGLSLProgram@{gxCompileGLSLProgram}}
 \index{gxCompileGLSLProgram@{gxCompileGLSLProgram}!gx.h@{gx.h}}
 \doxysubsubsection{\texorpdfstring{gxCompileGLSLProgram()}{gxCompileGLSLProgram()}}
-{\footnotesize\ttfamily \label{gx_8h_ad8ce4f450cf4d5c5d0371b1996a204c4} 
-\mbox{\hyperlink{struct_g_x_program_compilation_result}{GXProgram\+Compilation\+Result}} gx\+Compile\+GLSLProgram (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{vertex\+\_\+shader\+\_\+src}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{fragment\+\_\+shader\+\_\+src}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{gx_8h_a1ce3bf2a82c71f3058b4e098ba5813eb} 
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} \mbox{\hyperlink{struct_g_x_program_compilation_result}{GXProgram\+Compilation\+Result}} gx\+Compile\+GLSLProgram (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{vertex\+\_\+shader\+\_\+src}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{fragment\+\_\+shader\+\_\+src}{}\end{DoxyParamCaption})}
 
 
 
@@ -1384,11 +1452,11 @@ Compilation result.
 \begin{DoxySeeAlso}{See also}
 \doxylink{struct_g_x_program_compilation_result}{GXProgram\+Compilation\+Result} 
 \end{DoxySeeAlso}
-\Hypertarget{gx_8h_a53ae0ebaa74ff8ffc37f5463f447ecac}\index{gx.h@{gx.h}!gxCompileGLSLShader@{gxCompileGLSLShader}}
+\Hypertarget{gx_8h_a8fbc037f643fccb0c757f314f8663004}\index{gx.h@{gx.h}!gxCompileGLSLShader@{gxCompileGLSLShader}}
 \index{gxCompileGLSLShader@{gxCompileGLSLShader}!gx.h@{gx.h}}
 \doxysubsubsection{\texorpdfstring{gxCompileGLSLShader()}{gxCompileGLSLShader()}}
-{\footnotesize\ttfamily \label{gx_8h_a53ae0ebaa74ff8ffc37f5463f447ecac} 
-\mbox{\hyperlink{struct_g_x_shader_compilation_result}{GXShader\+Compilation\+Result}} gx\+Compile\+GLSLShader (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{shader\+\_\+src}{, }\item[{\mbox{\hyperlink{gx_8h_a2eb7ea5dfbda0b5ecb3846115c56fe83}{GXShader\+Type}}}]{shader\+\_\+type}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{gx_8h_a8fbc037f643fccb0c757f314f8663004} 
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} \mbox{\hyperlink{struct_g_x_shader_compilation_result}{GXShader\+Compilation\+Result}} gx\+Compile\+GLSLShader (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{shader\+\_\+src}{, }\item[{\mbox{\hyperlink{gx_8h_a2eb7ea5dfbda0b5ecb3846115c56fe83}{GXShader\+Type}}}]{shader\+\_\+type}{}\end{DoxyParamCaption})}
 
 
 
@@ -1409,11 +1477,11 @@ Compilation result.
 
 \doxylink{struct_g_x_shader_compilation_result}{GXShader\+Compilation\+Result} 
 \end{DoxySeeAlso}
-\Hypertarget{gx_8h_afc7f563785198dd63cec3036190814bf}\index{gx.h@{gx.h}!gxCreateApplication@{gxCreateApplication}}
+\Hypertarget{gx_8h_a0db1db6340964d3e4a375e94448830b1}\index{gx.h@{gx.h}!gxCreateApplication@{gxCreateApplication}}
 \index{gxCreateApplication@{gxCreateApplication}!gx.h@{gx.h}}
 \doxysubsubsection{\texorpdfstring{gxCreateApplication()}{gxCreateApplication()}}
-{\footnotesize\ttfamily \label{gx_8h_afc7f563785198dd63cec3036190814bf} 
-\mbox{\hyperlink{struct_g_x_application}{GXApplication}} \texorpdfstring{$\ast$}{*} gx\+Create\+Application (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gx_8h_a87d336541f9413db24108524a42c0dfb}{GXApplication\+Options}}}]{options}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{gx_8h_a0db1db6340964d3e4a375e94448830b1} 
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} \mbox{\hyperlink{struct_g_x_application}{GXApplication}} \texorpdfstring{$\ast$}{*} gx\+Create\+Application (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gx_8h_a87d336541f9413db24108524a42c0dfb}{GXApplication\+Options}}}]{options}{}\end{DoxyParamCaption})}
 
 
 
@@ -1427,29 +1495,29 @@ Creates main application context.
 \begin{DoxyReturn}{Returns}
 Pointer to application context 
 \end{DoxyReturn}
-\Hypertarget{gx_8h_ada94df35172028fd2cca0465829485bc}\index{gx.h@{gx.h}!gxCreateObject@{gxCreateObject}}
+\Hypertarget{gx_8h_a7e40738b1284e5dbcde6eb5b784a7dce}\index{gx.h@{gx.h}!gxCreateObject@{gxCreateObject}}
 \index{gxCreateObject@{gxCreateObject}!gx.h@{gx.h}}
 \doxysubsubsection{\texorpdfstring{gxCreateObject()}{gxCreateObject()}}
-{\footnotesize\ttfamily \label{gx_8h_ada94df35172028fd2cca0465829485bc} 
-\mbox{\hyperlink{struct_g_x_object}{GXObject}} \texorpdfstring{$\ast$}{*} gx\+Create\+Object (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{shader\+\_\+program}{, }\item[{uint32\+\_\+t}]{vao}{, }\item[{uint32\+\_\+t}]{vbo}{, }\item[{uint32\+\_\+t}]{ebo}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{user\+\_\+data}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{gx_8h_a7e40738b1284e5dbcde6eb5b784a7dce} 
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} \mbox{\hyperlink{struct_g_x_object}{GXObject}} \texorpdfstring{$\ast$}{*} gx\+Create\+Object (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{shader\+\_\+program}{, }\item[{uint32\+\_\+t}]{vao}{, }\item[{uint32\+\_\+t}]{vbo}{, }\item[{uint32\+\_\+t}]{ebo}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{user\+\_\+data}{}\end{DoxyParamCaption})}
 
-\Hypertarget{gx_8h_a64b1f8f3d374118a3ecc4cc3acaf4099}\index{gx.h@{gx.h}!gxCreateRenderObject@{gxCreateRenderObject}}
+\Hypertarget{gx_8h_aab2628b36e323bf90bc243f63f0866be}\index{gx.h@{gx.h}!gxCreateRenderObject@{gxCreateRenderObject}}
 \index{gxCreateRenderObject@{gxCreateRenderObject}!gx.h@{gx.h}}
 \doxysubsubsection{\texorpdfstring{gxCreateRenderObject()}{gxCreateRenderObject()}}
-{\footnotesize\ttfamily \label{gx_8h_a64b1f8f3d374118a3ecc4cc3acaf4099} 
-\mbox{\hyperlink{struct_g_x_object}{GXObject}} \texorpdfstring{$\ast$}{*} gx\+Create\+Render\+Object (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{shader\+\_\+program}{, }\item[{\mbox{\hyperlink{gx_8h_a12b600ff948f2fb55b73974e5bef17e2}{GXBuffer\+Usage\+Type}}}]{vert\+\_\+buffer\+\_\+usage}{, }\item[{size\+\_\+t}]{vert\+\_\+size}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{vert\+\_\+data}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{user\+\_\+data}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{gx_8h_aab2628b36e323bf90bc243f63f0866be} 
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} \mbox{\hyperlink{struct_g_x_object}{GXObject}} \texorpdfstring{$\ast$}{*} gx\+Create\+Render\+Object (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{shader\+\_\+program}{, }\item[{\mbox{\hyperlink{gx_8h_a12b600ff948f2fb55b73974e5bef17e2}{GXBuffer\+Usage\+Type}}}]{vert\+\_\+buffer\+\_\+usage}{, }\item[{size\+\_\+t}]{vert\+\_\+size}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{vert\+\_\+data}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{user\+\_\+data}{}\end{DoxyParamCaption})}
 
-\Hypertarget{gx_8h_ae08675b49133574c8a8f53f3fbb1c9a2}\index{gx.h@{gx.h}!gxCreateRenderObjectWithElements@{gxCreateRenderObjectWithElements}}
+\Hypertarget{gx_8h_a659db3ee86251b34c1559d2e0d4b5fc2}\index{gx.h@{gx.h}!gxCreateRenderObjectWithElements@{gxCreateRenderObjectWithElements}}
 \index{gxCreateRenderObjectWithElements@{gxCreateRenderObjectWithElements}!gx.h@{gx.h}}
 \doxysubsubsection{\texorpdfstring{gxCreateRenderObjectWithElements()}{gxCreateRenderObjectWithElements()}}
-{\footnotesize\ttfamily \label{gx_8h_ae08675b49133574c8a8f53f3fbb1c9a2} 
-\mbox{\hyperlink{struct_g_x_object}{GXObject}} \texorpdfstring{$\ast$}{*} gx\+Create\+Render\+Object\+With\+Elements (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{shader\+\_\+program}{, }\item[{\mbox{\hyperlink{gx_8h_a12b600ff948f2fb55b73974e5bef17e2}{GXBuffer\+Usage\+Type}}}]{vert\+\_\+buffer\+\_\+usage}{, }\item[{size\+\_\+t}]{vert\+\_\+size}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{vert\+\_\+data}{, }\item[{\mbox{\hyperlink{gx_8h_a12b600ff948f2fb55b73974e5bef17e2}{GXBuffer\+Usage\+Type}}}]{elem\+\_\+buffer\+\_\+usage}{, }\item[{size\+\_\+t}]{elem\+\_\+size}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{elem\+\_\+data}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{user\+\_\+data}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{gx_8h_a659db3ee86251b34c1559d2e0d4b5fc2} 
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} \mbox{\hyperlink{struct_g_x_object}{GXObject}} \texorpdfstring{$\ast$}{*} gx\+Create\+Render\+Object\+With\+Elements (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{shader\+\_\+program}{, }\item[{\mbox{\hyperlink{gx_8h_a12b600ff948f2fb55b73974e5bef17e2}{GXBuffer\+Usage\+Type}}}]{vert\+\_\+buffer\+\_\+usage}{, }\item[{size\+\_\+t}]{vert\+\_\+size}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{vert\+\_\+data}{, }\item[{\mbox{\hyperlink{gx_8h_a12b600ff948f2fb55b73974e5bef17e2}{GXBuffer\+Usage\+Type}}}]{elem\+\_\+buffer\+\_\+usage}{, }\item[{size\+\_\+t}]{elem\+\_\+size}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{elem\+\_\+data}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{user\+\_\+data}{}\end{DoxyParamCaption})}
 
-\Hypertarget{gx_8h_ae6af81c46625a43468bac3d67d7a8aa9}\index{gx.h@{gx.h}!gxCreateWindow@{gxCreateWindow}}
+\Hypertarget{gx_8h_a3d9a47311f9680f1273c3558dff5bc9a}\index{gx.h@{gx.h}!gxCreateWindow@{gxCreateWindow}}
 \index{gxCreateWindow@{gxCreateWindow}!gx.h@{gx.h}}
 \doxysubsubsection{\texorpdfstring{gxCreateWindow()}{gxCreateWindow()}}
-{\footnotesize\ttfamily \label{gx_8h_ae6af81c46625a43468bac3d67d7a8aa9} 
-\mbox{\hyperlink{struct_g_x_window}{GXWindow}} \texorpdfstring{$\ast$}{*} gx\+Create\+Window (\begin{DoxyParamCaption}\item[{bool}]{vsync}{, }\item[{bool}]{show}{, }\item[{int}]{width}{, }\item[{int}]{height}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{title}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{gx_8h_a3d9a47311f9680f1273c3558dff5bc9a} 
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} \mbox{\hyperlink{struct_g_x_window}{GXWindow}} \texorpdfstring{$\ast$}{*} gx\+Create\+Window (\begin{DoxyParamCaption}\item[{bool}]{vsync}{, }\item[{bool}]{show}{, }\item[{int}]{width}{, }\item[{int}]{height}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{title}{}\end{DoxyParamCaption})}
 
 
 
@@ -1474,11 +1542,11 @@ Pointer to window
 \begin{DoxyNote}{Note}
 All memory is managed by the libary and does not account for the manual freeing of memory outside of its codebase. Furthermore, events regarding the framebuffer does NOT interrupt drawing, this may be optional in the future. 
 \end{DoxyNote}
-\Hypertarget{gx_8h_a982378df3a58ebc754e238f548f6d947}\index{gx.h@{gx.h}!gxDestroyApplication@{gxDestroyApplication}}
+\Hypertarget{gx_8h_a949114288b82e9dd1af242c4afc87a7b}\index{gx.h@{gx.h}!gxDestroyApplication@{gxDestroyApplication}}
 \index{gxDestroyApplication@{gxDestroyApplication}!gx.h@{gx.h}}
 \doxysubsubsection{\texorpdfstring{gxDestroyApplication()}{gxDestroyApplication()}}
-{\footnotesize\ttfamily \label{gx_8h_a982378df3a58ebc754e238f548f6d947} 
-void gx\+Destroy\+Application (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_x_application}{GXApplication}} \texorpdfstring{$\ast$}{*}}]{application}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{gx_8h_a949114288b82e9dd1af242c4afc87a7b} 
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} void gx\+Destroy\+Application (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_x_application}{GXApplication}} \texorpdfstring{$\ast$}{*}}]{application}{}\end{DoxyParamCaption})}
 
 
 
@@ -1489,11 +1557,11 @@ Releases application resources.
 {\em application} & Application context to destroy \\
 \hline
 \end{DoxyParams}
-\Hypertarget{gx_8h_ac2bf01e4a94435a96597360172f97edf}\index{gx.h@{gx.h}!gxDestroyResource@{gxDestroyResource}}
+\Hypertarget{gx_8h_a1aa46ccbe54658f7a4caf0dc29eb5fad}\index{gx.h@{gx.h}!gxDestroyResource@{gxDestroyResource}}
 \index{gxDestroyResource@{gxDestroyResource}!gx.h@{gx.h}}
 \doxysubsubsection{\texorpdfstring{gxDestroyResource()}{gxDestroyResource()}}
-{\footnotesize\ttfamily \label{gx_8h_ac2bf01e4a94435a96597360172f97edf} 
-bool gx\+Destroy\+Resource (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_x_resource}{GXResource}} \texorpdfstring{$\ast$}{*}}]{resource}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{gx_8h_a1aa46ccbe54658f7a4caf0dc29eb5fad} 
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} bool gx\+Destroy\+Resource (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_x_resource}{GXResource}} \texorpdfstring{$\ast$}{*}}]{resource}{}\end{DoxyParamCaption})}
 
 
 
@@ -1507,11 +1575,11 @@ Destroy and free the specified resource.
 \begin{DoxyReturn}{Returns}
 true if the resource was successfully destroyed, false if it was not (likely due to memory issues). 
 \end{DoxyReturn}
-\Hypertarget{gx_8h_a786b10a76cfb0f31ec60a137bb84d2c5}\index{gx.h@{gx.h}!gxDisableVertexAttribute@{gxDisableVertexAttribute}}
+\Hypertarget{gx_8h_acf40ebe71405cda868c8e45436506ecd}\index{gx.h@{gx.h}!gxDisableVertexAttribute@{gxDisableVertexAttribute}}
 \index{gxDisableVertexAttribute@{gxDisableVertexAttribute}!gx.h@{gx.h}}
 \doxysubsubsection{\texorpdfstring{gxDisableVertexAttribute()}{gxDisableVertexAttribute()}}
-{\footnotesize\ttfamily \label{gx_8h_a786b10a76cfb0f31ec60a137bb84d2c5} 
-void gx\+Disable\+Vertex\+Attribute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_x_object}{GXObject}} \texorpdfstring{$\ast$}{*}}]{object}{, }\item[{uint32\+\_\+t}]{index}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{gx_8h_acf40ebe71405cda868c8e45436506ecd} 
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} void gx\+Disable\+Vertex\+Attribute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_x_object}{GXObject}} \texorpdfstring{$\ast$}{*}}]{object}{, }\item[{uint32\+\_\+t}]{index}{}\end{DoxyParamCaption})}
 
 
 
@@ -1524,17 +1592,17 @@ Disables a vertex attribute for a \doxylink{struct_g_x_object}{GXObject}.
 {\em index} & Index of the vertex attribute to disable \\
 \hline
 \end{DoxyParams}
-\Hypertarget{gx_8h_ad8c02b92acb6a924278f35957c0bc010}\index{gx.h@{gx.h}!gxDrawElements@{gxDrawElements}}
+\Hypertarget{gx_8h_a15a9367529c06d0a350aaa5ba55c007a}\index{gx.h@{gx.h}!gxDrawElements@{gxDrawElements}}
 \index{gxDrawElements@{gxDrawElements}!gx.h@{gx.h}}
 \doxysubsubsection{\texorpdfstring{gxDrawElements()}{gxDrawElements()}}
-{\footnotesize\ttfamily \label{gx_8h_ad8c02b92acb6a924278f35957c0bc010} 
-void gx\+Draw\+Elements (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_x_object}{GXObject}} \texorpdfstring{$\ast$}{*}}]{object}{, }\item[{size\+\_\+t}]{count}{, }\item[{\mbox{\hyperlink{gx_8h_a7fd0c624c6c69095149db64b99d41cb1}{GXVertex\+Attribute\+Type}}}]{type}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{gx_8h_a15a9367529c06d0a350aaa5ba55c007a} 
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} void gx\+Draw\+Elements (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_x_object}{GXObject}} \texorpdfstring{$\ast$}{*}}]{object}{, }\item[{size\+\_\+t}]{count}{, }\item[{\mbox{\hyperlink{gx_8h_a7fd0c624c6c69095149db64b99d41cb1}{GXVertex\+Attribute\+Type}}}]{type}{}\end{DoxyParamCaption})}
 
-\Hypertarget{gx_8h_a4c68d00acc3d8a9fd725f4c73c59cf65}\index{gx.h@{gx.h}!gxDrawVertices@{gxDrawVertices}}
+\Hypertarget{gx_8h_abc5436d6460eafc32bb19140035d5ae5}\index{gx.h@{gx.h}!gxDrawVertices@{gxDrawVertices}}
 \index{gxDrawVertices@{gxDrawVertices}!gx.h@{gx.h}}
 \doxysubsubsection{\texorpdfstring{gxDrawVertices()}{gxDrawVertices()}}
-{\footnotesize\ttfamily \label{gx_8h_a4c68d00acc3d8a9fd725f4c73c59cf65} 
-void gx\+Draw\+Vertices (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_x_object}{GXObject}} \texorpdfstring{$\ast$}{*}}]{object}{, }\item[{size\+\_\+t}]{offset}{, }\item[{size\+\_\+t}]{count}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{gx_8h_abc5436d6460eafc32bb19140035d5ae5} 
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} void gx\+Draw\+Vertices (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_x_object}{GXObject}} \texorpdfstring{$\ast$}{*}}]{object}{, }\item[{size\+\_\+t}]{offset}{, }\item[{size\+\_\+t}]{count}{}\end{DoxyParamCaption})}
 
 
 
@@ -1549,11 +1617,11 @@ Draws a set of vertices from \doxylink{struct_g_x_object}{GXObject}.
 {\em count} & Vertex count \\
 \hline
 \end{DoxyParams}
-\Hypertarget{gx_8h_ac2471172b9f13681c22eec227236ca88}\index{gx.h@{gx.h}!gxEnableVertexAttribute@{gxEnableVertexAttribute}}
+\Hypertarget{gx_8h_a3654268f57a624504f3b68f76c69bc7e}\index{gx.h@{gx.h}!gxEnableVertexAttribute@{gxEnableVertexAttribute}}
 \index{gxEnableVertexAttribute@{gxEnableVertexAttribute}!gx.h@{gx.h}}
 \doxysubsubsection{\texorpdfstring{gxEnableVertexAttribute()}{gxEnableVertexAttribute()}}
-{\footnotesize\ttfamily \label{gx_8h_ac2471172b9f13681c22eec227236ca88} 
-void gx\+Enable\+Vertex\+Attribute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_x_object}{GXObject}} \texorpdfstring{$\ast$}{*}}]{object}{, }\item[{uint32\+\_\+t}]{index}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{gx_8h_a3654268f57a624504f3b68f76c69bc7e} 
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} void gx\+Enable\+Vertex\+Attribute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_x_object}{GXObject}} \texorpdfstring{$\ast$}{*}}]{object}{, }\item[{uint32\+\_\+t}]{index}{}\end{DoxyParamCaption})}
 
 
 
@@ -1566,21 +1634,21 @@ Enables a vertex attribute for a \doxylink{struct_g_x_object}{GXObject}.
 {\em index} & Index of the vertex attribute to enable \\
 \hline
 \end{DoxyParams}
-\Hypertarget{gx_8h_a95c749719fb40e460fbcdd12906f3c1f}\index{gx.h@{gx.h}!gxExec@{gxExec}}
+\Hypertarget{gx_8h_a8ae33d876e1541f89553a5f5f2db25a5}\index{gx.h@{gx.h}!gxExec@{gxExec}}
 \index{gxExec@{gxExec}!gx.h@{gx.h}}
 \doxysubsubsection{\texorpdfstring{gxExec()}{gxExec()}}
-{\footnotesize\ttfamily \label{gx_8h_a95c749719fb40e460fbcdd12906f3c1f} 
-void gx\+Exec (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{gx_8h_a8ae33d876e1541f89553a5f5f2db25a5} 
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} void gx\+Exec (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
 
 
 Executes the current application. 
 
-\Hypertarget{gx_8h_a74efe9d59cc0317c77962481d00cb548}\index{gx.h@{gx.h}!gxGenBufferObject@{gxGenBufferObject}}
+\Hypertarget{gx_8h_aba955665e39560b0ab57de8cbcf3be70}\index{gx.h@{gx.h}!gxGenBufferObject@{gxGenBufferObject}}
 \index{gxGenBufferObject@{gxGenBufferObject}!gx.h@{gx.h}}
 \doxysubsubsection{\texorpdfstring{gxGenBufferObject()}{gxGenBufferObject()}}
-{\footnotesize\ttfamily \label{gx_8h_a74efe9d59cc0317c77962481d00cb548} 
-uint32\+\_\+t gx\+Gen\+Buffer\+Object (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gx_8h_acf407c4416240bb057bea98cc48d2a11}{GXBuffer\+Type}}}]{buffer\+\_\+type}{, }\item[{\mbox{\hyperlink{gx_8h_a12b600ff948f2fb55b73974e5bef17e2}{GXBuffer\+Usage\+Type}}}]{buffer\+\_\+usage}{, }\item[{size\+\_\+t}]{size}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{data}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{gx_8h_aba955665e39560b0ab57de8cbcf3be70} 
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} uint32\+\_\+t gx\+Gen\+Buffer\+Object (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gx_8h_acf407c4416240bb057bea98cc48d2a11}{GXBuffer\+Type}}}]{buffer\+\_\+type}{, }\item[{\mbox{\hyperlink{gx_8h_a12b600ff948f2fb55b73974e5bef17e2}{GXBuffer\+Usage\+Type}}}]{buffer\+\_\+usage}{, }\item[{size\+\_\+t}]{size}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{data}{}\end{DoxyParamCaption})}
 
 
 
@@ -1605,11 +1673,11 @@ Generates a new (Array/\+Element Array) Buffer Object.
 
 \doxylink{gx_8h_a12b600ff948f2fb55b73974e5bef17e2}{GXBuffer\+Usage\+Type} 
 \end{DoxySeeAlso}
-\Hypertarget{gx_8h_a92e3fa245e65a66422dbc2e1aeb3f3ca}\index{gx.h@{gx.h}!gxGenVertexArrayObject@{gxGenVertexArrayObject}}
+\Hypertarget{gx_8h_a3077b46d9f9c55c4b2f704595238013e}\index{gx.h@{gx.h}!gxGenVertexArrayObject@{gxGenVertexArrayObject}}
 \index{gxGenVertexArrayObject@{gxGenVertexArrayObject}!gx.h@{gx.h}}
 \doxysubsubsection{\texorpdfstring{gxGenVertexArrayObject()}{gxGenVertexArrayObject()}}
-{\footnotesize\ttfamily \label{gx_8h_a92e3fa245e65a66422dbc2e1aeb3f3ca} 
-uint32\+\_\+t gx\+Gen\+Vertex\+Array\+Object (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{gx_8h_a3077b46d9f9c55c4b2f704595238013e} 
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} uint32\+\_\+t gx\+Gen\+Vertex\+Array\+Object (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
 
 
@@ -1618,11 +1686,11 @@ Generates a new Vertex Array Object (VAO).
 \begin{DoxyReturn}{Returns}
 Vertex Array Object (VAO) id. 
 \end{DoxyReturn}
-\Hypertarget{gx_8h_a6bf81f3c41110e3803cdea7f89de0453}\index{gx.h@{gx.h}!gxGetApplication@{gxGetApplication}}
+\Hypertarget{gx_8h_ae795a9c885bbb088fe3f8c95e51ec03a}\index{gx.h@{gx.h}!gxGetApplication@{gxGetApplication}}
 \index{gxGetApplication@{gxGetApplication}!gx.h@{gx.h}}
 \doxysubsubsection{\texorpdfstring{gxGetApplication()}{gxGetApplication()}}
-{\footnotesize\ttfamily \label{gx_8h_a6bf81f3c41110e3803cdea7f89de0453} 
-\mbox{\hyperlink{struct_g_x_application}{GXApplication}} \texorpdfstring{$\ast$}{*} gx\+Get\+Application (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{gx_8h_ae795a9c885bbb088fe3f8c95e51ec03a} 
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} \mbox{\hyperlink{struct_g_x_application}{GXApplication}} \texorpdfstring{$\ast$}{*} gx\+Get\+Application (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
 
 
@@ -1631,11 +1699,11 @@ Retrieves current application context.
 \begin{DoxyReturn}{Returns}
 Pointer to application context (null if not initialized) 
 \end{DoxyReturn}
-\Hypertarget{gx_8h_a6a96a1574c45c3c92db36ae621d1c01b}\index{gx.h@{gx.h}!gxInit@{gxInit}}
+\Hypertarget{gx_8h_af25b169e44f9a95721cb2410847a8b30}\index{gx.h@{gx.h}!gxInit@{gxInit}}
 \index{gxInit@{gxInit}!gx.h@{gx.h}}
 \doxysubsubsection{\texorpdfstring{gxInit()}{gxInit()}}
-{\footnotesize\ttfamily \label{gx_8h_a6a96a1574c45c3c92db36ae621d1c01b} 
-const char \texorpdfstring{$\ast$}{*} gx\+Init (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{gx_8h_af25b169e44f9a95721cb2410847a8b30} 
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} const char \texorpdfstring{$\ast$}{*} gx\+Init (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
 
 
@@ -1645,13 +1713,13 @@ Initializes GX library and dependencies (GLFW).
 nullptr on success, error message on failure. 
 \end{DoxyReturn}
 \begin{DoxySeeAlso}{See also}
-\doxylink{gx_8h_a6866c6c7ebec5d428312044ebb69e09f}{gx\+Terminate()} 
+\doxylink{gx_8h_a3543a26b16bbfd71c7904d205dc1d56c}{gx\+Terminate()} 
 \end{DoxySeeAlso}
-\Hypertarget{gx_8h_aff01850f8640b86e1031bdc63fc04776}\index{gx.h@{gx.h}!gxMapBufferRange@{gxMapBufferRange}}
+\Hypertarget{gx_8h_afcb576077abbd128ce2dcfb65ac39b25}\index{gx.h@{gx.h}!gxMapBufferRange@{gxMapBufferRange}}
 \index{gxMapBufferRange@{gxMapBufferRange}!gx.h@{gx.h}}
 \doxysubsubsection{\texorpdfstring{gxMapBufferRange()}{gxMapBufferRange()}}
-{\footnotesize\ttfamily \label{gx_8h_aff01850f8640b86e1031bdc63fc04776} 
-void \texorpdfstring{$\ast$}{*} gx\+Map\+Buffer\+Range (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gx_8h_acf407c4416240bb057bea98cc48d2a11}{GXBuffer\+Type}}}]{buffer\+\_\+type}{, }\item[{size\+\_\+t}]{offset}{, }\item[{size\+\_\+t}]{length}{, }\item[{\mbox{\hyperlink{gx_8h_a0e90335b7087af15a4b53fb23b65faf2}{GXMapping\+Bits}}}]{bits}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{gx_8h_afcb576077abbd128ce2dcfb65ac39b25} 
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} void \texorpdfstring{$\ast$}{*} gx\+Map\+Buffer\+Range (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gx_8h_acf407c4416240bb057bea98cc48d2a11}{GXBuffer\+Type}}}]{buffer\+\_\+type}{, }\item[{size\+\_\+t}]{offset}{, }\item[{size\+\_\+t}]{length}{, }\item[{\mbox{\hyperlink{gx_8h_a0e90335b7087af15a4b53fb23b65faf2}{GXMapping\+Bits}}}]{bits}{}\end{DoxyParamCaption})}
 
 
 
@@ -1674,11 +1742,11 @@ Pointer to the mapped buffer range, or {\ttfamily nullptr} (or its respective al
 \begin{DoxyNote}{Note}
 This is equivalent to gl\+Map\+Buffer\+Range, and simply a wrapper to allow easier binding implementation. 
 \end{DoxyNote}
-\Hypertarget{gx_8h_a7bc420ab52671bb1267f5adb126fe0b6}\index{gx.h@{gx.h}!gxSetBackground@{gxSetBackground}}
+\Hypertarget{gx_8h_ae7c6f35b4ea08f256436cac499d28a32}\index{gx.h@{gx.h}!gxSetBackground@{gxSetBackground}}
 \index{gxSetBackground@{gxSetBackground}!gx.h@{gx.h}}
 \doxysubsubsection{\texorpdfstring{gxSetBackground()}{gxSetBackground()}}
-{\footnotesize\ttfamily \label{gx_8h_a7bc420ab52671bb1267f5adb126fe0b6} 
-void gx\+Set\+Background (\begin{DoxyParamCaption}\item[{float}]{r}{, }\item[{float}]{g}{, }\item[{float}]{b}{, }\item[{float}]{a}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{gx_8h_ae7c6f35b4ea08f256436cac499d28a32} 
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} void gx\+Set\+Background (\begin{DoxyParamCaption}\item[{float}]{r}{, }\item[{float}]{g}{, }\item[{float}]{b}{, }\item[{float}]{a}{}\end{DoxyParamCaption})}
 
 
 
@@ -1697,22 +1765,22 @@ Sets the background for the respective graphical context.
 \end{DoxyParams}
 Is the same as doing\+: 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{gx_8h_a549bfcfd0c6ea7c69332aaa51f57bcdf}{gxClearColor}}(r,\ g,\ b,\ a);}
+\DoxyCodeLine{\mbox{\hyperlink{gx_8h_a97a09bae4620344e1d4fe442054a0936}{gxClearColor}}(r,\ g,\ b,\ a);}
 \DoxyCodeLine{gxClearColorBuffer();}
 
 \end{DoxyCode}
 
 
 \begin{DoxySeeAlso}{See also}
-\doxylink{gx_8h_a549bfcfd0c6ea7c69332aaa51f57bcdf}{gx\+Clear\+Color()} 
+\doxylink{gx_8h_a97a09bae4620344e1d4fe442054a0936}{gx\+Clear\+Color()} 
 
 gx\+Clear\+Color\+Buffer() 
 \end{DoxySeeAlso}
-\Hypertarget{gx_8h_af827ad56a1afd8f8dc683a37a727023c}\index{gx.h@{gx.h}!gxSetVertexAttribute@{gxSetVertexAttribute}}
+\Hypertarget{gx_8h_aaa112062f45611a613b934fd0f67595c}\index{gx.h@{gx.h}!gxSetVertexAttribute@{gxSetVertexAttribute}}
 \index{gxSetVertexAttribute@{gxSetVertexAttribute}!gx.h@{gx.h}}
 \doxysubsubsection{\texorpdfstring{gxSetVertexAttribute()}{gxSetVertexAttribute()}}
-{\footnotesize\ttfamily \label{gx_8h_af827ad56a1afd8f8dc683a37a727023c} 
-void gx\+Set\+Vertex\+Attribute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_x_object}{GXObject}} \texorpdfstring{$\ast$}{*}}]{object}{, }\item[{uint32\+\_\+t}]{index}{, }\item[{int}]{size}{, }\item[{\mbox{\hyperlink{gx_8h_a7fd0c624c6c69095149db64b99d41cb1}{GXVertex\+Attribute\+Type}}}]{type}{, }\item[{bool}]{normalize}{, }\item[{size\+\_\+t}]{stride}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{pointer}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{gx_8h_aaa112062f45611a613b934fd0f67595c} 
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} void gx\+Set\+Vertex\+Attribute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_x_object}{GXObject}} \texorpdfstring{$\ast$}{*}}]{object}{, }\item[{uint32\+\_\+t}]{index}{, }\item[{int}]{size}{, }\item[{\mbox{\hyperlink{gx_8h_a7fd0c624c6c69095149db64b99d41cb1}{GXVertex\+Attribute\+Type}}}]{type}{, }\item[{bool}]{normalize}{, }\item[{size\+\_\+t}]{stride}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{pointer}{}\end{DoxyParamCaption})}
 
 
 
@@ -1738,24 +1806,24 @@ Sets a vertex attribute for a \doxylink{struct_g_x_object}{GXObject}.
 \begin{DoxySeeAlso}{See also}
 \doxylink{gx_8h_a7fd0c624c6c69095149db64b99d41cb1}{GXVertex\+Attribute\+Type} 
 \end{DoxySeeAlso}
-\Hypertarget{gx_8h_a6866c6c7ebec5d428312044ebb69e09f}\index{gx.h@{gx.h}!gxTerminate@{gxTerminate}}
+\Hypertarget{gx_8h_a3543a26b16bbfd71c7904d205dc1d56c}\index{gx.h@{gx.h}!gxTerminate@{gxTerminate}}
 \index{gxTerminate@{gxTerminate}!gx.h@{gx.h}}
 \doxysubsubsection{\texorpdfstring{gxTerminate()}{gxTerminate()}}
-{\footnotesize\ttfamily \label{gx_8h_a6866c6c7ebec5d428312044ebb69e09f} 
-void gx\+Terminate (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{gx_8h_a3543a26b16bbfd71c7904d205dc1d56c} 
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} void gx\+Terminate (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
 
 
 Terminates GX library and cleans up resources. 
 
 \begin{DoxySeeAlso}{See also}
-\doxylink{gx_8h_a6a96a1574c45c3c92db36ae621d1c01b}{gx\+Init()} 
+\doxylink{gx_8h_af25b169e44f9a95721cb2410847a8b30}{gx\+Init()} 
 \end{DoxySeeAlso}
-\Hypertarget{gx_8h_a16c58abba3117f7d571ae6c1d15cbc18}\index{gx.h@{gx.h}!gxUnmapBuffer@{gxUnmapBuffer}}
+\Hypertarget{gx_8h_a07c176d000a71ce121d312c23c6a2897}\index{gx.h@{gx.h}!gxUnmapBuffer@{gxUnmapBuffer}}
 \index{gxUnmapBuffer@{gxUnmapBuffer}!gx.h@{gx.h}}
 \doxysubsubsection{\texorpdfstring{gxUnmapBuffer()}{gxUnmapBuffer()}}
-{\footnotesize\ttfamily \label{gx_8h_a16c58abba3117f7d571ae6c1d15cbc18} 
-bool gx\+Unmap\+Buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gx_8h_acf407c4416240bb057bea98cc48d2a11}{GXBuffer\+Type}}}]{buffer\+\_\+type}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{gx_8h_a07c176d000a71ce121d312c23c6a2897} 
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} bool gx\+Unmap\+Buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gx_8h_acf407c4416240bb057bea98cc48d2a11}{GXBuffer\+Type}}}]{buffer\+\_\+type}{}\end{DoxyParamCaption})}
 
 
 
@@ -1772,11 +1840,37 @@ true if the buffer was successfully unmapped, false if it was not (likely due to
 \begin{DoxyNote}{Note}
 This is equivalent to gl\+Unmap\+Buffer, and simply a wrapper to allow easier binding implementation. 
 \end{DoxyNote}
-\Hypertarget{gx_8h_ac8eac1b081068eb1ceee1b7704808212}\index{gx.h@{gx.h}!gxUpdateElements@{gxUpdateElements}}
+\Hypertarget{gx_8h_aa31c71a84050bf15b7b8f5cbde86f83f}\index{gx.h@{gx.h}!gxUpdateBufferObject@{gxUpdateBufferObject}}
+\index{gxUpdateBufferObject@{gxUpdateBufferObject}!gx.h@{gx.h}}
+\doxysubsubsection{\texorpdfstring{gxUpdateBufferObject()}{gxUpdateBufferObject()}}
+{\footnotesize\ttfamily \label{gx_8h_aa31c71a84050bf15b7b8f5cbde86f83f} 
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} bool gx\+Update\+Buffer\+Object (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gx_8h_acf407c4416240bb057bea98cc48d2a11}{GXBuffer\+Type}}}]{type}{, }\item[{uint32\+\_\+t}]{bo}{, }\item[{size\+\_\+t}]{offset}{, }\item[{size\+\_\+t}]{length}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{data}{}\end{DoxyParamCaption})}
+
+
+
+Updates data in a (Array/\+Element Array/\+Uniform) Buffer Object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & Type of buffer to update \\
+\hline
+{\em bo} & Buffer Object id to update \\
+\hline
+{\em offset} & Offset in bytes from the start of the buffer \\
+\hline
+{\em length} & Length in bytes of the data to update \\
+\hline
+{\em data} & Pointer to the new data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the buffer was successfully updated, false if it was not (likely due to memory issues). 
+\end{DoxyReturn}
+\Hypertarget{gx_8h_a633b58b8bd875b5ca34a45cc35b7bc59}\index{gx.h@{gx.h}!gxUpdateElements@{gxUpdateElements}}
 \index{gxUpdateElements@{gxUpdateElements}!gx.h@{gx.h}}
 \doxysubsubsection{\texorpdfstring{gxUpdateElements()}{gxUpdateElements()}}
-{\footnotesize\ttfamily \label{gx_8h_ac8eac1b081068eb1ceee1b7704808212} 
-bool gx\+Update\+Elements (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_x_object}{GXObject}} \texorpdfstring{$\ast$}{*}}]{object}{, }\item[{size\+\_\+t}]{offset}{, }\item[{size\+\_\+t}]{length}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{data}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{gx_8h_a633b58b8bd875b5ca34a45cc35b7bc59} 
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} bool gx\+Update\+Elements (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_x_object}{GXObject}} \texorpdfstring{$\ast$}{*}}]{object}{, }\item[{size\+\_\+t}]{offset}{, }\item[{size\+\_\+t}]{length}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{data}{}\end{DoxyParamCaption})}
 
 
 
@@ -1786,7 +1880,7 @@ Updates the index data of a \doxylink{struct_g_x_object}{GXObject}.
 \begin{DoxyParams}{Parameters}
 {\em object} & Pointer to the \doxylink{struct_g_x_object}{GXObject} to update \\
 \hline
-{\em offset} & Offset in bytes from the start of the index buffer \\
+{\em offset} & Offset in bytes from the start of the element buffer \\
 \hline
 {\em length} & Length in bytes of the data to update \\
 \hline
@@ -1794,13 +1888,37 @@ Updates the index data of a \doxylink{struct_g_x_object}{GXObject}.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-true if the indices were successfully updated, false if it was not (likely due to memory issues). 
+true if the elements were successfully updated, false if it was not (likely due to memory issues). 
 \end{DoxyReturn}
-\Hypertarget{gx_8h_a94e5502c637a126ba77beb45b8b9a713}\index{gx.h@{gx.h}!gxUpdateVertices@{gxUpdateVertices}}
+\Hypertarget{gx_8h_ac753b19d674c69b830367d1d8f999450}\index{gx.h@{gx.h}!gxUpdateUniformBlock@{gxUpdateUniformBlock}}
+\index{gxUpdateUniformBlock@{gxUpdateUniformBlock}!gx.h@{gx.h}}
+\doxysubsubsection{\texorpdfstring{gxUpdateUniformBlock()}{gxUpdateUniformBlock()}}
+{\footnotesize\ttfamily \label{gx_8h_ac753b19d674c69b830367d1d8f999450} 
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} bool gx\+Update\+Uniform\+Block (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{ubo}{, }\item[{size\+\_\+t}]{offset}{, }\item[{size\+\_\+t}]{length}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{data}{}\end{DoxyParamCaption})}
+
+
+
+Updates the index data of a \doxylink{struct_g_x_object}{GXObject}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ubo} & Uniform Buffer Object id to update \\
+\hline
+{\em offset} & Offset in bytes from the start of the uniform buffer \\
+\hline
+{\em length} & Length in bytes of the data to update \\
+\hline
+{\em data} & Pointer to the new index data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the uniforms were successfully updated, false if it was not (likely due to memory issues). 
+\end{DoxyReturn}
+\Hypertarget{gx_8h_ad459959e53737a55eafb3ba4113b1531}\index{gx.h@{gx.h}!gxUpdateVertices@{gxUpdateVertices}}
 \index{gxUpdateVertices@{gxUpdateVertices}!gx.h@{gx.h}}
 \doxysubsubsection{\texorpdfstring{gxUpdateVertices()}{gxUpdateVertices()}}
-{\footnotesize\ttfamily \label{gx_8h_a94e5502c637a126ba77beb45b8b9a713} 
-bool gx\+Update\+Vertices (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_x_object}{GXObject}} \texorpdfstring{$\ast$}{*}}]{object}{, }\item[{size\+\_\+t}]{offset}{, }\item[{size\+\_\+t}]{length}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{data}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{gx_8h_ad459959e53737a55eafb3ba4113b1531} 
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} bool gx\+Update\+Vertices (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_x_object}{GXObject}} \texorpdfstring{$\ast$}{*}}]{object}{, }\item[{size\+\_\+t}]{offset}{, }\item[{size\+\_\+t}]{length}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{data}{}\end{DoxyParamCaption})}
 
 
 
@@ -1820,11 +1938,11 @@ Updates the vertex data of a \doxylink{struct_g_x_object}{GXObject}.
 \begin{DoxyReturn}{Returns}
 true if the vertices were successfully updated, false if it was not (likely due to memory issues). 
 \end{DoxyReturn}
-\Hypertarget{gx_8h_a313412ba22eac50e2bff181c07a3882c}\index{gx.h@{gx.h}!gxUpdateViewport@{gxUpdateViewport}}
+\Hypertarget{gx_8h_ace04bba04a3ecdf099920b3e37893a37}\index{gx.h@{gx.h}!gxUpdateViewport@{gxUpdateViewport}}
 \index{gxUpdateViewport@{gxUpdateViewport}!gx.h@{gx.h}}
 \doxysubsubsection{\texorpdfstring{gxUpdateViewport()}{gxUpdateViewport()}}
-{\footnotesize\ttfamily \label{gx_8h_a313412ba22eac50e2bff181c07a3882c} 
-void gx\+Update\+Viewport (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_x_window}{GXWindow}} \texorpdfstring{$\ast$}{*}}]{win}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{gx_8h_ace04bba04a3ecdf099920b3e37893a37} 
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} void gx\+Update\+Viewport (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_x_window}{GXWindow}} \texorpdfstring{$\ast$}{*}}]{win}{}\end{DoxyParamCaption})}
 
 
 
@@ -1839,13 +1957,28 @@ Updates the viewport for a specific window (equivalent to gx\+Viewport(0, 0, win
 This should only be used in the drawing callback of a window.
 \end{DoxyNote}
 \begin{DoxySeeAlso}{See also}
-\doxylink{gx_8h_a8aecfe1a391495d33781697af5bd7ca6}{gx\+Viewport()} 
+\doxylink{gx_8h_a159d6fac47e0dbd05a6501b16b3d1734}{gx\+Viewport()} 
 \end{DoxySeeAlso}
-\Hypertarget{gx_8h_a8aecfe1a391495d33781697af5bd7ca6}\index{gx.h@{gx.h}!gxViewport@{gxViewport}}
+\Hypertarget{gx_8h_ae292414c966d829a560ea8a52d680206}\index{gx.h@{gx.h}!gxUseShader@{gxUseShader}}
+\index{gxUseShader@{gxUseShader}!gx.h@{gx.h}}
+\doxysubsubsection{\texorpdfstring{gxUseShader()}{gxUseShader()}}
+{\footnotesize\ttfamily \label{gx_8h_ae292414c966d829a560ea8a52d680206} 
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} void gx\+Use\+Shader (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_x_object}{GXObject}} \texorpdfstring{$\ast$}{*}}]{object}{}\end{DoxyParamCaption})}
+
+
+
+Tells the program to use the shader associated with the object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em object} & Pointer to \doxylink{struct_g_x_object}{GXObject} and therefore its shader \\
+\hline
+\end{DoxyParams}
+\Hypertarget{gx_8h_a159d6fac47e0dbd05a6501b16b3d1734}\index{gx.h@{gx.h}!gxViewport@{gxViewport}}
 \index{gxViewport@{gxViewport}!gx.h@{gx.h}}
 \doxysubsubsection{\texorpdfstring{gxViewport()}{gxViewport()}}
-{\footnotesize\ttfamily \label{gx_8h_a8aecfe1a391495d33781697af5bd7ca6} 
-void gx\+Viewport (\begin{DoxyParamCaption}\item[{int}]{x}{, }\item[{int}]{y}{, }\item[{int}]{w}{, }\item[{int}]{h}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{gx_8h_a159d6fac47e0dbd05a6501b16b3d1734} 
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} void gx\+Viewport (\begin{DoxyParamCaption}\item[{int}]{x}{, }\item[{int}]{y}{, }\item[{int}]{w}{, }\item[{int}]{h}{}\end{DoxyParamCaption})}
 
 
 
@@ -1865,11 +1998,11 @@ Sets the viewport for the respective graphical context.
 \begin{DoxyNote}{Note}
 This is the same as gl\+Viewport, and simply a wrapper to allow easier binding implementation. 
 \end{DoxyNote}
-\Hypertarget{gx_8h_acbe1e81fd4ce60bd48bbcd69586fda46}\index{gx.h@{gx.h}!gxWindowClose@{gxWindowClose}}
+\Hypertarget{gx_8h_adeb3443038f5fb76f848907dd8be331c}\index{gx.h@{gx.h}!gxWindowClose@{gxWindowClose}}
 \index{gxWindowClose@{gxWindowClose}!gx.h@{gx.h}}
 \doxysubsubsection{\texorpdfstring{gxWindowClose()}{gxWindowClose()}}
-{\footnotesize\ttfamily \label{gx_8h_acbe1e81fd4ce60bd48bbcd69586fda46} 
-void gx\+Window\+Close (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_x_window}{GXWindow}} \texorpdfstring{$\ast$}{*}}]{win}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{gx_8h_adeb3443038f5fb76f848907dd8be331c} 
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} void gx\+Window\+Close (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_x_window}{GXWindow}} \texorpdfstring{$\ast$}{*}}]{win}{}\end{DoxyParamCaption})}
 
 
 
@@ -1880,11 +2013,11 @@ Inidicates to the libary, that the specified window should close.
 {\em win} & \doxylink{struct_g_x_window}{GXWindow} to close \\
 \hline
 \end{DoxyParams}
-\Hypertarget{gx_8h_a3d9d8203ffca6db536ff37c7f3277d87}\index{gx.h@{gx.h}!gxWindowSetDrawCallback@{gxWindowSetDrawCallback}}
+\Hypertarget{gx_8h_adf339476dbd2cf9cb7490ff0f72b3385}\index{gx.h@{gx.h}!gxWindowSetDrawCallback@{gxWindowSetDrawCallback}}
 \index{gxWindowSetDrawCallback@{gxWindowSetDrawCallback}!gx.h@{gx.h}}
 \doxysubsubsection{\texorpdfstring{gxWindowSetDrawCallback()}{gxWindowSetDrawCallback()}}
-{\footnotesize\ttfamily \label{gx_8h_a3d9d8203ffca6db536ff37c7f3277d87} 
-void gx\+Window\+Set\+Draw\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_x_window}{GXWindow}} \texorpdfstring{$\ast$}{*}}]{win}{, }\item[{\mbox{\hyperlink{gx_8h_a8c1bb3a81f7d02905db77991971f46a0}{GXDraw\+Callback}}}]{cb}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{gx_8h_adf339476dbd2cf9cb7490ff0f72b3385} 
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} void gx\+Window\+Set\+Draw\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_x_window}{GXWindow}} \texorpdfstring{$\ast$}{*}}]{win}{, }\item[{\mbox{\hyperlink{gx_8h_a8c1bb3a81f7d02905db77991971f46a0}{GXDraw\+Callback}}}]{cb}{}\end{DoxyParamCaption})}
 
 
 
@@ -1897,11 +2030,11 @@ Assigns the draw callback for the respective \doxylink{struct_g_x_window}{GXWind
 {\em cb} & Callback (\doxylink{gx_8h_a8c1bb3a81f7d02905db77991971f46a0}{GXDraw\+Callback}) \\
 \hline
 \end{DoxyParams}
-\Hypertarget{gx_8h_a2d042094acd151bcd40f68313b18c5cc}\index{gx.h@{gx.h}!gxWindowShouldClose@{gxWindowShouldClose}}
+\Hypertarget{gx_8h_a6cfdb3d6d0f2b2e6b3eca571697bf55a}\index{gx.h@{gx.h}!gxWindowShouldClose@{gxWindowShouldClose}}
 \index{gxWindowShouldClose@{gxWindowShouldClose}!gx.h@{gx.h}}
 \doxysubsubsection{\texorpdfstring{gxWindowShouldClose()}{gxWindowShouldClose()}}
-{\footnotesize\ttfamily \label{gx_8h_a2d042094acd151bcd40f68313b18c5cc} 
-bool gx\+Window\+Should\+Close (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_x_window}{GXWindow}} \texorpdfstring{$\ast$}{*}}]{win}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{gx_8h_a6cfdb3d6d0f2b2e6b3eca571697bf55a} 
+\mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\+\_\+\+API}} bool gx\+Window\+Should\+Close (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_x_window}{GXWindow}} \texorpdfstring{$\ast$}{*}}]{win}{}\end{DoxyParamCaption})}
 
 
 

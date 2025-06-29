@@ -7,345 +7,375 @@
 \DoxyCodeLine{00003\ }
 \DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <cstdint>}}
 \DoxyCodeLine{00005\ }
-\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifdef\ GX\_GL}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#if\ defined(GX\_CMAKE\_GL)\ ||\ defined(GX\_GL)}}
 \DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <glad/glad.h>}}
 \DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <GLFW/glfw3.h>}}
-\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ GX\_GL}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ defined(GX\_CMAKE\_GL)\ ||\ defined(GX\_GL)}}
 \DoxyCodeLine{00010\ }
-\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
-\DoxyCodeLine{00012\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
-\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \_\_cplusplus}}
-\DoxyCodeLine{00014\ }
-\DoxyCodeLine{00027\ }
-\DoxyCodeLine{00045\ }
-\DoxyCodeLine{00046\ }
-\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{gx_8h_a6a96a1574c45c3c92db36ae621d1c01b}{gxInit}}();}
-\DoxyCodeLine{00053\ }
-\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gx_8h_a6866c6c7ebec5d428312044ebb69e09f}{gxTerminate}}();}
-\DoxyCodeLine{00059\ }
-\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2}{GXKey}}\ \{}
-\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a27037cbb7b7f11d4bc2843b8fbfef8d6}{GX\_KEY\_SPACE}}\ =\ 32,}
-\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2aa3f514cd55b075446036af0b8eef0407}{GX\_KEY\_APOSTROPHE}}\ =\ 39,}
-\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a5b8e94a6ce08da8f06f129f65999c9cb}{GX\_KEY\_COMMA}}\ =\ 44,}
-\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a5e0aeb8d74e0fc750256d5ead18d8462}{GX\_KEY\_MINUS}}\ =\ 45,}
-\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2adfb746800f1c6d203f9aebbb3f418599}{GX\_KEY\_PERIOD}}\ =\ 46,}
-\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2aa7ba43b28225964b822ef9473c0614dc}{GX\_KEY\_SLASH}}\ =\ 47,}
-\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2ab0dbb2b090ac6273b083c621edb243a6}{GX\_KEY\_0}}\ =\ 48,}
-\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2addaf74ca383ead29cec2e1291453d4c2}{GX\_KEY\_1}}\ =\ 49,}
-\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a271b66524f10b1aeb6822cce530e94f8}{GX\_KEY\_2}}\ =\ 50,}
-\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2af96045b2bceb15d5d412365eb530f3d7}{GX\_KEY\_3}}\ =\ 51,}
-\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2adebf66a876a7353db6717a1536d6bfbd}{GX\_KEY\_4}}\ =\ 52,}
-\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2aa4b32ee851ffc9a1493e4331df614472}{GX\_KEY\_5}}\ =\ 53,}
-\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a41d8948828057cf676607327587ab5d6}{GX\_KEY\_6}}\ =\ 54,}
-\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2ac1299fd08efd2c6d8126aac1c8ced7fa}{GX\_KEY\_7}}\ =\ 55,}
-\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2ad2754bbd8e9b06d5245b9f6a8280a9af}{GX\_KEY\_8}}\ =\ 56,}
-\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a22ca05f2534ba79a0c3472a3560c6838}{GX\_KEY\_9}}\ =\ 57,}
-\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a3330734f38334107a2b73fa79bf164aa}{GX\_KEY\_SEMICOLON}}\ =\ 59,}
-\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a29241007b7d46b6025bdacdc86ba8f76}{GX\_KEY\_EQUAL}}\ =\ 61,}
-\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2ad4ca84a3458d4ebf64d9739a07aee240}{GX\_KEY\_A}}\ =\ 65,}
-\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a152ae4f837fe39a88a841b8b9ffe7eb2}{GX\_KEY\_B}}\ =\ 66,}
-\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2ae7d3e093866bce8078fa626ed3fc329e}{GX\_KEY\_C}}\ =\ 67,}
-\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2aa09ad12b15983afd86bd757efc33e7fa}{GX\_KEY\_D}}\ =\ 68,}
-\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2ad82c2ef34c5d0d372c4f732725805d04}{GX\_KEY\_E}}\ =\ 69,}
-\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a4baddab40326740bf42b066702b43cf5}{GX\_KEY\_F}}\ =\ 70,}
-\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a01957dc1c22fe165531cc450032bca7f}{GX\_KEY\_G}}\ =\ 71,}
-\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2ab9b1b1baebfbff9e4cdd606e7a81130d}{GX\_KEY\_H}}\ =\ 72,}
-\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2acbd9c5439bfbebeb556983fc8ea51977}{GX\_KEY\_I}}\ =\ 73,}
-\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a2bfafe242c6e6208eda282e594846acf}{GX\_KEY\_J}}\ =\ 74,}
-\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2ae66bbf67d465b9edc37540a56c9dd53e}{GX\_KEY\_K}}\ =\ 75,}
-\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a03249f538e7d494711de07650be637b9}{GX\_KEY\_L}}\ =\ 76,}
-\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a1ea7db8e9f3c17647ec4fd2854943a18}{GX\_KEY\_M}}\ =\ 77,}
-\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a66bc550706b0227f4ffcd782f38edc81}{GX\_KEY\_N}}\ =\ 78,}
-\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2aac11fbe3153a81d6f1fb9d069ffab6da}{GX\_KEY\_O}}\ =\ 79,}
-\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a69cdd6c776c5ddcb8c68d9b3257679eb}{GX\_KEY\_P}}\ =\ 80,}
-\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2ae4ae8389daf333003cb9bd72f017eff1}{GX\_KEY\_Q}}\ =\ 81,}
-\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a247fe34c8e764dc0ab1de56a19b60ef9}{GX\_KEY\_R}}\ =\ 82,}
-\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a9b034d001d06d1c54fc4740c32314b06}{GX\_KEY\_S}}\ =\ 83,}
-\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a13679470ff6bfc07233cf8c3c3f61516}{GX\_KEY\_T}}\ =\ 84,}
-\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2aac0dc266adbbe9769859be92b8d3db72}{GX\_KEY\_U}}\ =\ 85,}
-\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2aa1ebbce979a4188f5784400127611226}{GX\_KEY\_V}}\ =\ 86,}
-\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a8a16dd66045cbc936ba18269f769b600}{GX\_KEY\_W}}\ =\ 87,}
-\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2ab62aeb32300a9d634f96f94b41d3ebb6}{GX\_KEY\_X}}\ =\ 88,}
-\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a981ff10c20d38856d90205558fc3e16b}{GX\_KEY\_Y}}\ =\ 89,}
-\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a94e5f7cf80485900a5ca6800a26c1d24}{GX\_KEY\_Z}}\ =\ 90,}
-\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a45698ed922f0c00d833c0b28c9910c4e}{GX\_KEY\_LEFT\_BRACKET}}\ =\ 91,}
-\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a993ead194838290cc78daa3759092e5f}{GX\_KEY\_BACKSLASH}}\ =\ 92,}
-\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2adfb93da2384437b59e0cd7fd66f6c962}{GX\_KEY\_RIGHT\_BRACKET}}\ =\ 93,}
-\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a7b24f8ed4ad057791698a07b7e8247a4}{GX\_KEY\_GRAVE\_ACCENT}}\ =\ 96,}
-\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a37ee841d4ad08ff859c2ba9630f385be}{GX\_KEY\_WORLD\_1}}\ =\ 161,}
-\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a5e8c13aef815dea0aea782c7c37a428b}{GX\_KEY\_WORLD\_2}}\ =\ 162,}
-\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a70f36ddf38dcdf6d22effd6e54720478}{GX\_KEY\_ESCAPE}}\ =\ 256,}
-\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a9aaf7eefef9e6e1a0ee2ad01a3d39d24}{GX\_KEY\_ENTER}}\ =\ 257,}
-\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a3fe0759638d2ff86e5caa16de6e8f010}{GX\_KEY\_TAB}}\ =\ 258,}
-\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2ab98cda2d0967e2d38ba439d7ac85c226}{GX\_KEY\_BACKSPACE}}\ =\ 259,}
-\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2affe7ae03c14cb4b2c1a7642db27e6015}{GX\_KEY\_INSERT}}\ =\ 260,}
-\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a3bdd14b802ae9cadfd96c85530e00098}{GX\_KEY\_DELETE}}\ =\ 261,}
-\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a7c39b05ade675c988697d2ec7bc9c568}{GX\_KEY\_RIGHT}}\ =\ 262,}
-\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a3986febc58fce23a9de0d97024caed7f}{GX\_KEY\_LEFT}}\ =\ 263,}
-\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a510164b273034c954454e458b15059c8}{GX\_KEY\_DOWN}}\ =\ 264,}
-\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a3331e30a2ce522ba3560f74bfb58483b}{GX\_KEY\_UP}}\ =\ 265,}
-\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a54cd0422399079fc59fa152fbda89e10}{GX\_KEY\_PAGE\_UP}}\ =\ 266,}
-\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a51975d47be4276c51299757458f66cda}{GX\_KEY\_PAGE\_DOWN}}\ =\ 267,}
-\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a0a629597fb7abd919a6ceb0db8c8a0e6}{GX\_KEY\_HOME}}\ =\ 268,}
-\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a6d258921ff931f22fef2dd14762940e5}{GX\_KEY\_END}}\ =\ 269,}
-\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a62ddb6c2d35d42f5c23f237951f8500b}{GX\_KEY\_CAPS\_LOCK}}\ =\ 280,}
-\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2afed19db24561813acf5da44fb2f39308}{GX\_KEY\_SCROLL\_LOCK}}\ =\ 281,}
-\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a5c2e719848e7b40864c36fa70a5aa349}{GX\_KEY\_NUM\_LOCK}}\ =\ 282,}
-\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a8470f743fbc93b30ac4ad086ce0c2320}{GX\_KEY\_PRINT\_SCREEN}}\ =\ 283,}
-\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a044680a68f0df870dc350ffac75b5e70}{GX\_KEY\_PAUSE}}\ =\ 284,}
-\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2ab286c6cf60a36dfc99c3cab95991015f}{GX\_KEY\_F1}}\ =\ 290,}
-\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a805ad595f5b1f1b5e7966b6d76321bda}{GX\_KEY\_F2}}\ =\ 291,}
-\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a76906798080eb4241f72439cc0b0da56}{GX\_KEY\_F3}}\ =\ 292,}
-\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a3d2fbb724541f0210a092241df318e86}{GX\_KEY\_F4}}\ =\ 293,}
-\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2abd78e61975ea82e381263d11589ca07a}{GX\_KEY\_F5}}\ =\ 294,}
-\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a7ce9f941d673d8412b85b102a9b87465}{GX\_KEY\_F6}}\ =\ 295,}
-\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a65e33065cc701acd0cb92e0bbf7cd413}{GX\_KEY\_F7}}\ =\ 296,}
-\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a5efb14b8b1abc7bfd42ddb6b4c8ae7c8}{GX\_KEY\_F8}}\ =\ 297,}
-\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a73cba4b455e03d230ed601a1479060bc}{GX\_KEY\_F9}}\ =\ 298,}
-\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2aec0fc7ee4953a770dc026178a6a2c5f9}{GX\_KEY\_F10}}\ =\ 299,}
-\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a76da3cee8727a303f231da49006910d6}{GX\_KEY\_F11}}\ =\ 300,}
-\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a4eb767d8e6885bb68868c4b068829352}{GX\_KEY\_F12}}\ =\ 301,}
-\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a3f08689a863c6ea83ab18465e3a85e6d}{GX\_KEY\_F13}}\ =\ 302,}
-\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a0535cb6177e0cb426383456039a6067f}{GX\_KEY\_F14}}\ =\ 303,}
-\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2ad75468dad40dd95c183ee63c6e7ad8cc}{GX\_KEY\_F15}}\ =\ 304,}
-\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a0fec0fed855344cdf22948cce2ad0e0f}{GX\_KEY\_F16}}\ =\ 305,}
-\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2ae503b6f441953dc654c8067f8873840b}{GX\_KEY\_F17}}\ =\ 306,}
-\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a9ab70ff2ef54cd1d5594335c8fd65cbb}{GX\_KEY\_F18}}\ =\ 307,}
-\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a5c1df06f2d64cbaa7a1163237c585291}{GX\_KEY\_F19}}\ =\ 308,}
-\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2aa59ad540f36631fb964a3ec189cd527a}{GX\_KEY\_F20}}\ =\ 309,}
-\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a767f99fbe12a62c203c044d066abf980}{GX\_KEY\_F21}}\ =\ 310,}
-\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a2160fe954b33e66bbb41e941f645b9e7}{GX\_KEY\_F22}}\ =\ 311,}
-\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a0cc34ceab6dcd6142a2d7e0636e8fa0c}{GX\_KEY\_F23}}\ =\ 312,}
-\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a2b88b2c88c3bf4d2cb1b0047634be4b6}{GX\_KEY\_F24}}\ =\ 313,}
-\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a0d5cbcf9a1f0c177c400eae0edec896f}{GX\_KEY\_F25}}\ =\ 314,}
-\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a2b658c2b52734bad986bb61222d9f975}{GX\_KEY\_KP\_0}}\ =\ 320,}
-\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a823dd1d6de1451b599a2e6cdea537050}{GX\_KEY\_KP\_1}}\ =\ 321,}
-\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a4e6258ad1686f3b16b35e2bc054c7d53}{GX\_KEY\_KP\_2}}\ =\ 322,}
-\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a3d16d0ce2419f0ed9b88e20fa532c360}{GX\_KEY\_KP\_3}}\ =\ 323,}
-\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a73a589f75f565d811d84db6d8ecc46e3}{GX\_KEY\_KP\_4}}\ =\ 324,}
-\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a1561645be592f9c0a6bfd5f053e3dc0f}{GX\_KEY\_KP\_5}}\ =\ 325,}
-\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2ac450a3c45ca1c5ca215a2ff194a08b80}{GX\_KEY\_KP\_6}}\ =\ 326,}
-\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a392d29d8f15d1f0fb56e8034efa00b62}{GX\_KEY\_KP\_7}}\ =\ 327,}
-\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2ad34052f792721a16448bc23778b37f64}{GX\_KEY\_KP\_8}}\ =\ 328,}
-\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a615233a410f79f22562e5c78004050e9}{GX\_KEY\_KP\_9}}\ =\ 329,}
-\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2afd1a492b3ee32a36d6e7b65bf61156d2}{GX\_KEY\_KP\_DECIMAL}}\ =\ 330,}
-\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a11fdb06da7c7df06f3a86400a21ce577}{GX\_KEY\_KP\_DIVIDE}}\ =\ 331,}
-\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2afcfef7fd448d897f68e1d8ea8b8fbc7f}{GX\_KEY\_KP\_MULTIPLY}}\ =\ 332,}
-\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2afb4b846e6619b9fbcdb22a706daea59e}{GX\_KEY\_KP\_SUBTRACT}}\ =\ 333,}
-\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a26dfcd86ea3c4514dcfb1d6fbcc7e9d0}{GX\_KEY\_KP\_ADD}}\ =\ 334,}
-\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2aebdbb4f571e3fbd56c2855e3968c8f1d}{GX\_KEY\_KP\_ENTER}}\ =\ 335,}
-\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2ad4bd43c666791e97e842e369ce7ce703}{GX\_KEY\_KP\_EQUAL}}\ =\ 336,}
-\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2aaddfecd7519f60934e1d94f3d49d264c}{GX\_KEY\_LEFT\_SHIFT}}\ =\ 340,}
-\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2afd09090768a33b8764eb9f6a655282fd}{GX\_KEY\_LEFT\_CONTROL}}\ =\ 341,}
-\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a33ea0a3a5d974bea86e3ecc665bd0ca2}{GX\_KEY\_LEFT\_ALT}}\ =\ 342,}
-\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2ab152b6c4395480c25f8127d2c33e5b2d}{GX\_KEY\_LEFT\_SUPER}}\ =\ 343,}
-\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2aa36230f7ed9f0c7448eaca433e31036e}{GX\_KEY\_RIGHT\_SHIFT}}\ =\ 344,}
-\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a43a6fafb540ccc714fb00c56c83a092e}{GX\_KEY\_RIGHT\_CONTROL}}\ =\ 345,}
-\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2ad6cc95426470fe24a4eadcc3c78a4dcf}{GX\_KEY\_RIGHT\_ALT}}\ =\ 346,}
-\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2ad943c11d3334b7f0afa922cf52ddb6f3}{GX\_KEY\_RIGHT\_SUPER}}\ =\ 347,}
-\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a82a0d059bb243760f5b474149ef2be94}{GX\_KEY\_MENU}}\ =\ 348}
-\DoxyCodeLine{00185\ \ \ \ \ \};}
-\DoxyCodeLine{00186\ }
-\DoxyCodeLine{00193\ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{gx_8h_a87d336541f9413db24108524a42c0dfb}{GXApplicationOptions}}\ \{}
-\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a87d336541f9413db24108524a42c0dfba97a5c8e838a507c6a70e8ee09bd3c2f3}{GX\_APP\_OPTION\_NONE}}\ =\ 0,}
-\DoxyCodeLine{00195\ \ \ \ \ \};}
-\DoxyCodeLine{00196\ }
-\DoxyCodeLine{00205\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_g_x_application}{GXApplication}}\ \{}
-\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a87d336541f9413db24108524a42c0dfb}{GXApplicationOptions}}\ \mbox{\hyperlink{struct_g_x_application_a3b2d3eefc9682525c0af44819e92ba39}{options}};}
-\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{struct_g_x_application_a6271347065f411fca25258d44647f481}{resource\_collection\_vec\_ptr}};}
-\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{struct_g_x_application_af129b2ca1bb75f013328574342ef3ef3}{keyboard\_cb\_collection\_vec\_ptr}};}
-\DoxyCodeLine{00209\ \ \ \ \ \};}
-\DoxyCodeLine{00210\ }
-\DoxyCodeLine{00211\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_g_x_window}{GXWindow}};}
-\DoxyCodeLine{00212\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_g_x_resource}{GXResource}};}
-\DoxyCodeLine{00213\ }
-\DoxyCodeLine{00218\ \ \ \ \ \textcolor{keyword}{typedef}\ void\ (*\mbox{\hyperlink{gx_8h_a8c1bb3a81f7d02905db77991971f46a0}{GXDrawCallback}})(\mbox{\hyperlink{struct_g_x_window}{GXWindow}}*);}
-\DoxyCodeLine{00219\ }
-\DoxyCodeLine{00232\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_g_x_window}{GXWindow}}\ \{}
-\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_g_x_resource}{GXResource}}*\ \mbox{\hyperlink{struct_g_x_window_a68462c2bb794bf599052010ccf3dfdde}{resource}};}
-\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_g_x_window_af2a367f8a47cc2b5c618dae5f136cc45}{width}},\ \mbox{\hyperlink{struct_g_x_window_a6a0d1ebadf70f0e48201201c1af0243e}{height}};}
-\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{struct_g_x_window_a1b86dc320de94ede09fbf0edcd350293}{title}};}
-\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_g_x_window_afceb3d8aee08beb8b057280a49f26636}{show}};}
-\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{struct_g_x_window_abef1f6d20f56e0e839e2c34aff6d922d}{internal}};}
-\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a8c1bb3a81f7d02905db77991971f46a0}{GXDrawCallback}}\ \mbox{\hyperlink{struct_g_x_window_a046945fc082ae7bf955116e755fb873f}{draw\_callback}};}
-\DoxyCodeLine{00239\ \ \ \ \ \};}
-\DoxyCodeLine{00240\ }
-\DoxyCodeLine{00249\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
-\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_ac829f23b5a52fc999a8ad949fe1b24e0ac233ec7fe3e01c9e8d7d9b68391f6529}{GX\_KEY\_ACTION\_PRESS}}\ =\ 1,}
-\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_ac829f23b5a52fc999a8ad949fe1b24e0ab265d27fd397f97e9027e233b3dd712c}{GX\_KEY\_ACTION\_RELEASE}}\ =\ 0,}
-\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_ac829f23b5a52fc999a8ad949fe1b24e0aa8d0182837ed36f31276b7b3106b91fe}{GX\_KEY\_ACTION\_REPEAT}}\ =\ 2}
-\DoxyCodeLine{00253\ \ \ \ \ \}\ \mbox{\hyperlink{gx_8h_ac829f23b5a52fc999a8ad949fe1b24e0}{GXKeyAction}};}
-\DoxyCodeLine{00254\ }
-\DoxyCodeLine{00264\ \ \ \ \ \textcolor{keyword}{typedef}\ void\ (*\mbox{\hyperlink{gx_8h_aec5702061094a00307085537e0b85b63}{GXKeyboardCallback}})(\mbox{\hyperlink{struct_g_x_application}{GXApplication}}*,\ \mbox{\hyperlink{struct_g_x_window}{GXWindow}}*,\ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2}{GXKey}},\ int,\ \mbox{\hyperlink{gx_8h_ac829f23b5a52fc999a8ad949fe1b24e0}{GXKeyAction}},\ int);}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#if\ defined(\_WIN32)}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#if\ defined(GX\_SHARED)}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#ifdef\ GX\_BUILD}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ GX\_API\ \_\_declspec(dllexport)}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ GX\_API\ \_\_declspec(dllimport)}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ GX\_API}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#if\ defined(GX\_SHARED)}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ GX\_API\ \_\_attribute\_\_((visibility("{}default"{})))}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ GX\_API}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00030\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \_\_cplusplus}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00077\ \ \ \ \ \mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\_API}}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{gx_8h_af25b169e44f9a95721cb2410847a8b30}{gxInit}}();}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00083\ \ \ \ \ \mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\_API}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gx_8h_a3543a26b16bbfd71c7904d205dc1d56c}{gxTerminate}}();}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a27037cbb7b7f11d4bc2843b8fbfef8d6}{GX\_KEY\_SPACE}}\ =\ 32,}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2aa3f514cd55b075446036af0b8eef0407}{GX\_KEY\_APOSTROPHE}}\ =\ 39,}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a5b8e94a6ce08da8f06f129f65999c9cb}{GX\_KEY\_COMMA}}\ =\ 44,}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a5e0aeb8d74e0fc750256d5ead18d8462}{GX\_KEY\_MINUS}}\ =\ 45,}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2adfb746800f1c6d203f9aebbb3f418599}{GX\_KEY\_PERIOD}}\ =\ 46,}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2aa7ba43b28225964b822ef9473c0614dc}{GX\_KEY\_SLASH}}\ =\ 47,}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2ab0dbb2b090ac6273b083c621edb243a6}{GX\_KEY\_0}}\ =\ 48,}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2addaf74ca383ead29cec2e1291453d4c2}{GX\_KEY\_1}}\ =\ 49,}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a271b66524f10b1aeb6822cce530e94f8}{GX\_KEY\_2}}\ =\ 50,}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2af96045b2bceb15d5d412365eb530f3d7}{GX\_KEY\_3}}\ =\ 51,}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2adebf66a876a7353db6717a1536d6bfbd}{GX\_KEY\_4}}\ =\ 52,}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2aa4b32ee851ffc9a1493e4331df614472}{GX\_KEY\_5}}\ =\ 53,}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a41d8948828057cf676607327587ab5d6}{GX\_KEY\_6}}\ =\ 54,}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2ac1299fd08efd2c6d8126aac1c8ced7fa}{GX\_KEY\_7}}\ =\ 55,}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2ad2754bbd8e9b06d5245b9f6a8280a9af}{GX\_KEY\_8}}\ =\ 56,}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a22ca05f2534ba79a0c3472a3560c6838}{GX\_KEY\_9}}\ =\ 57,}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a3330734f38334107a2b73fa79bf164aa}{GX\_KEY\_SEMICOLON}}\ =\ 59,}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a29241007b7d46b6025bdacdc86ba8f76}{GX\_KEY\_EQUAL}}\ =\ 61,}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2ad4ca84a3458d4ebf64d9739a07aee240}{GX\_KEY\_A}}\ =\ 65,}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a152ae4f837fe39a88a841b8b9ffe7eb2}{GX\_KEY\_B}}\ =\ 66,}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2ae7d3e093866bce8078fa626ed3fc329e}{GX\_KEY\_C}}\ =\ 67,}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2aa09ad12b15983afd86bd757efc33e7fa}{GX\_KEY\_D}}\ =\ 68,}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2ad82c2ef34c5d0d372c4f732725805d04}{GX\_KEY\_E}}\ =\ 69,}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a4baddab40326740bf42b066702b43cf5}{GX\_KEY\_F}}\ =\ 70,}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a01957dc1c22fe165531cc450032bca7f}{GX\_KEY\_G}}\ =\ 71,}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2ab9b1b1baebfbff9e4cdd606e7a81130d}{GX\_KEY\_H}}\ =\ 72,}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2acbd9c5439bfbebeb556983fc8ea51977}{GX\_KEY\_I}}\ =\ 73,}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a2bfafe242c6e6208eda282e594846acf}{GX\_KEY\_J}}\ =\ 74,}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2ae66bbf67d465b9edc37540a56c9dd53e}{GX\_KEY\_K}}\ =\ 75,}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a03249f538e7d494711de07650be637b9}{GX\_KEY\_L}}\ =\ 76,}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a1ea7db8e9f3c17647ec4fd2854943a18}{GX\_KEY\_M}}\ =\ 77,}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a66bc550706b0227f4ffcd782f38edc81}{GX\_KEY\_N}}\ =\ 78,}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2aac11fbe3153a81d6f1fb9d069ffab6da}{GX\_KEY\_O}}\ =\ 79,}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a69cdd6c776c5ddcb8c68d9b3257679eb}{GX\_KEY\_P}}\ =\ 80,}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2ae4ae8389daf333003cb9bd72f017eff1}{GX\_KEY\_Q}}\ =\ 81,}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a247fe34c8e764dc0ab1de56a19b60ef9}{GX\_KEY\_R}}\ =\ 82,}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a9b034d001d06d1c54fc4740c32314b06}{GX\_KEY\_S}}\ =\ 83,}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a13679470ff6bfc07233cf8c3c3f61516}{GX\_KEY\_T}}\ =\ 84,}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2aac0dc266adbbe9769859be92b8d3db72}{GX\_KEY\_U}}\ =\ 85,}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2aa1ebbce979a4188f5784400127611226}{GX\_KEY\_V}}\ =\ 86,}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a8a16dd66045cbc936ba18269f769b600}{GX\_KEY\_W}}\ =\ 87,}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2ab62aeb32300a9d634f96f94b41d3ebb6}{GX\_KEY\_X}}\ =\ 88,}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a981ff10c20d38856d90205558fc3e16b}{GX\_KEY\_Y}}\ =\ 89,}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a94e5f7cf80485900a5ca6800a26c1d24}{GX\_KEY\_Z}}\ =\ 90,}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a45698ed922f0c00d833c0b28c9910c4e}{GX\_KEY\_LEFT\_BRACKET}}\ =\ 91,}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a993ead194838290cc78daa3759092e5f}{GX\_KEY\_BACKSLASH}}\ =\ 92,}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2adfb93da2384437b59e0cd7fd66f6c962}{GX\_KEY\_RIGHT\_BRACKET}}\ =\ 93,}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a7b24f8ed4ad057791698a07b7e8247a4}{GX\_KEY\_GRAVE\_ACCENT}}\ =\ 96,}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a37ee841d4ad08ff859c2ba9630f385be}{GX\_KEY\_WORLD\_1}}\ =\ 161,}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a5e8c13aef815dea0aea782c7c37a428b}{GX\_KEY\_WORLD\_2}}\ =\ 162,}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a70f36ddf38dcdf6d22effd6e54720478}{GX\_KEY\_ESCAPE}}\ =\ 256,}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a9aaf7eefef9e6e1a0ee2ad01a3d39d24}{GX\_KEY\_ENTER}}\ =\ 257,}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a3fe0759638d2ff86e5caa16de6e8f010}{GX\_KEY\_TAB}}\ =\ 258,}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2ab98cda2d0967e2d38ba439d7ac85c226}{GX\_KEY\_BACKSPACE}}\ =\ 259,}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2affe7ae03c14cb4b2c1a7642db27e6015}{GX\_KEY\_INSERT}}\ =\ 260,}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a3bdd14b802ae9cadfd96c85530e00098}{GX\_KEY\_DELETE}}\ =\ 261,}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a7c39b05ade675c988697d2ec7bc9c568}{GX\_KEY\_RIGHT}}\ =\ 262,}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a3986febc58fce23a9de0d97024caed7f}{GX\_KEY\_LEFT}}\ =\ 263,}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a510164b273034c954454e458b15059c8}{GX\_KEY\_DOWN}}\ =\ 264,}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a3331e30a2ce522ba3560f74bfb58483b}{GX\_KEY\_UP}}\ =\ 265,}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a54cd0422399079fc59fa152fbda89e10}{GX\_KEY\_PAGE\_UP}}\ =\ 266,}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a51975d47be4276c51299757458f66cda}{GX\_KEY\_PAGE\_DOWN}}\ =\ 267,}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a0a629597fb7abd919a6ceb0db8c8a0e6}{GX\_KEY\_HOME}}\ =\ 268,}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a6d258921ff931f22fef2dd14762940e5}{GX\_KEY\_END}}\ =\ 269,}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a62ddb6c2d35d42f5c23f237951f8500b}{GX\_KEY\_CAPS\_LOCK}}\ =\ 280,}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2afed19db24561813acf5da44fb2f39308}{GX\_KEY\_SCROLL\_LOCK}}\ =\ 281,}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a5c2e719848e7b40864c36fa70a5aa349}{GX\_KEY\_NUM\_LOCK}}\ =\ 282,}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a8470f743fbc93b30ac4ad086ce0c2320}{GX\_KEY\_PRINT\_SCREEN}}\ =\ 283,}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a044680a68f0df870dc350ffac75b5e70}{GX\_KEY\_PAUSE}}\ =\ 284,}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2ab286c6cf60a36dfc99c3cab95991015f}{GX\_KEY\_F1}}\ =\ 290,}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a805ad595f5b1f1b5e7966b6d76321bda}{GX\_KEY\_F2}}\ =\ 291,}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a76906798080eb4241f72439cc0b0da56}{GX\_KEY\_F3}}\ =\ 292,}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a3d2fbb724541f0210a092241df318e86}{GX\_KEY\_F4}}\ =\ 293,}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2abd78e61975ea82e381263d11589ca07a}{GX\_KEY\_F5}}\ =\ 294,}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a7ce9f941d673d8412b85b102a9b87465}{GX\_KEY\_F6}}\ =\ 295,}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a65e33065cc701acd0cb92e0bbf7cd413}{GX\_KEY\_F7}}\ =\ 296,}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a5efb14b8b1abc7bfd42ddb6b4c8ae7c8}{GX\_KEY\_F8}}\ =\ 297,}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a73cba4b455e03d230ed601a1479060bc}{GX\_KEY\_F9}}\ =\ 298,}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2aec0fc7ee4953a770dc026178a6a2c5f9}{GX\_KEY\_F10}}\ =\ 299,}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a76da3cee8727a303f231da49006910d6}{GX\_KEY\_F11}}\ =\ 300,}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a4eb767d8e6885bb68868c4b068829352}{GX\_KEY\_F12}}\ =\ 301,}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a3f08689a863c6ea83ab18465e3a85e6d}{GX\_KEY\_F13}}\ =\ 302,}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a0535cb6177e0cb426383456039a6067f}{GX\_KEY\_F14}}\ =\ 303,}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2ad75468dad40dd95c183ee63c6e7ad8cc}{GX\_KEY\_F15}}\ =\ 304,}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a0fec0fed855344cdf22948cce2ad0e0f}{GX\_KEY\_F16}}\ =\ 305,}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2ae503b6f441953dc654c8067f8873840b}{GX\_KEY\_F17}}\ =\ 306,}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a9ab70ff2ef54cd1d5594335c8fd65cbb}{GX\_KEY\_F18}}\ =\ 307,}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a5c1df06f2d64cbaa7a1163237c585291}{GX\_KEY\_F19}}\ =\ 308,}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2aa59ad540f36631fb964a3ec189cd527a}{GX\_KEY\_F20}}\ =\ 309,}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a767f99fbe12a62c203c044d066abf980}{GX\_KEY\_F21}}\ =\ 310,}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a2160fe954b33e66bbb41e941f645b9e7}{GX\_KEY\_F22}}\ =\ 311,}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a0cc34ceab6dcd6142a2d7e0636e8fa0c}{GX\_KEY\_F23}}\ =\ 312,}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a2b88b2c88c3bf4d2cb1b0047634be4b6}{GX\_KEY\_F24}}\ =\ 313,}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a0d5cbcf9a1f0c177c400eae0edec896f}{GX\_KEY\_F25}}\ =\ 314,}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a2b658c2b52734bad986bb61222d9f975}{GX\_KEY\_KP\_0}}\ =\ 320,}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a823dd1d6de1451b599a2e6cdea537050}{GX\_KEY\_KP\_1}}\ =\ 321,}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a4e6258ad1686f3b16b35e2bc054c7d53}{GX\_KEY\_KP\_2}}\ =\ 322,}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a3d16d0ce2419f0ed9b88e20fa532c360}{GX\_KEY\_KP\_3}}\ =\ 323,}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a73a589f75f565d811d84db6d8ecc46e3}{GX\_KEY\_KP\_4}}\ =\ 324,}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a1561645be592f9c0a6bfd5f053e3dc0f}{GX\_KEY\_KP\_5}}\ =\ 325,}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2ac450a3c45ca1c5ca215a2ff194a08b80}{GX\_KEY\_KP\_6}}\ =\ 326,}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a392d29d8f15d1f0fb56e8034efa00b62}{GX\_KEY\_KP\_7}}\ =\ 327,}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2ad34052f792721a16448bc23778b37f64}{GX\_KEY\_KP\_8}}\ =\ 328,}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a615233a410f79f22562e5c78004050e9}{GX\_KEY\_KP\_9}}\ =\ 329,}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2afd1a492b3ee32a36d6e7b65bf61156d2}{GX\_KEY\_KP\_DECIMAL}}\ =\ 330,}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a11fdb06da7c7df06f3a86400a21ce577}{GX\_KEY\_KP\_DIVIDE}}\ =\ 331,}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2afcfef7fd448d897f68e1d8ea8b8fbc7f}{GX\_KEY\_KP\_MULTIPLY}}\ =\ 332,}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2afb4b846e6619b9fbcdb22a706daea59e}{GX\_KEY\_KP\_SUBTRACT}}\ =\ 333,}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a26dfcd86ea3c4514dcfb1d6fbcc7e9d0}{GX\_KEY\_KP\_ADD}}\ =\ 334,}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2aebdbb4f571e3fbd56c2855e3968c8f1d}{GX\_KEY\_KP\_ENTER}}\ =\ 335,}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2ad4bd43c666791e97e842e369ce7ce703}{GX\_KEY\_KP\_EQUAL}}\ =\ 336,}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2aaddfecd7519f60934e1d94f3d49d264c}{GX\_KEY\_LEFT\_SHIFT}}\ =\ 340,}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2afd09090768a33b8764eb9f6a655282fd}{GX\_KEY\_LEFT\_CONTROL}}\ =\ 341,}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a33ea0a3a5d974bea86e3ecc665bd0ca2}{GX\_KEY\_LEFT\_ALT}}\ =\ 342,}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2ab152b6c4395480c25f8127d2c33e5b2d}{GX\_KEY\_LEFT\_SUPER}}\ =\ 343,}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2aa36230f7ed9f0c7448eaca433e31036e}{GX\_KEY\_RIGHT\_SHIFT}}\ =\ 344,}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a43a6fafb540ccc714fb00c56c83a092e}{GX\_KEY\_RIGHT\_CONTROL}}\ =\ 345,}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2ad6cc95426470fe24a4eadcc3c78a4dcf}{GX\_KEY\_RIGHT\_ALT}}\ =\ 346,}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2ad943c11d3334b7f0afa922cf52ddb6f3}{GX\_KEY\_RIGHT\_SUPER}}\ =\ 347,}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2a82a0d059bb243760f5b474149ef2be94}{GX\_KEY\_MENU}}\ =\ 348}
+\DoxyCodeLine{00210\ \ \ \ \ \}\ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2}{GXKey}}\ ;}
+\DoxyCodeLine{00211\ }
+\DoxyCodeLine{00218\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \ \{}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a87d336541f9413db24108524a42c0dfba97a5c8e838a507c6a70e8ee09bd3c2f3}{GX\_APP\_OPTION\_NONE}}\ =\ 0,}
+\DoxyCodeLine{00220\ \ \ \ \ \}\ \mbox{\hyperlink{gx_8h_a87d336541f9413db24108524a42c0dfb}{GXApplicationOptions}};}
+\DoxyCodeLine{00221\ }
+\DoxyCodeLine{00230\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_g_x_application}{GXApplication}}\ \{}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a87d336541f9413db24108524a42c0dfb}{GXApplicationOptions}}\ \mbox{\hyperlink{struct_g_x_application_a3b2d3eefc9682525c0af44819e92ba39}{options}};}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{struct_g_x_application_a6271347065f411fca25258d44647f481}{resource\_collection\_vec\_ptr}};}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{struct_g_x_application_af129b2ca1bb75f013328574342ef3ef3}{keyboard\_cb\_collection\_vec\_ptr}};}
+\DoxyCodeLine{00234\ \ \ \ \ \};}
+\DoxyCodeLine{00235\ }
+\DoxyCodeLine{00236\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_g_x_window}{GXWindow}};}
+\DoxyCodeLine{00237\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_g_x_resource}{GXResource}};}
+\DoxyCodeLine{00238\ }
+\DoxyCodeLine{00243\ \ \ \ \ \textcolor{keyword}{typedef}\ void\ (*\mbox{\hyperlink{gx_8h_a8c1bb3a81f7d02905db77991971f46a0}{GXDrawCallback}})(\mbox{\hyperlink{struct_g_x_window}{GXWindow}}*);}
+\DoxyCodeLine{00244\ }
+\DoxyCodeLine{00257\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_g_x_window}{GXWindow}}\ \{}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_g_x_resource}{GXResource}}*\ \mbox{\hyperlink{struct_g_x_window_a68462c2bb794bf599052010ccf3dfdde}{resource}};}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_g_x_window_af2a367f8a47cc2b5c618dae5f136cc45}{width}},\ \mbox{\hyperlink{struct_g_x_window_a6a0d1ebadf70f0e48201201c1af0243e}{height}};}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{struct_g_x_window_a1b86dc320de94ede09fbf0edcd350293}{title}};}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_g_x_window_afceb3d8aee08beb8b057280a49f26636}{show}};}
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{struct_g_x_window_abef1f6d20f56e0e839e2c34aff6d922d}{internal}};}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a8c1bb3a81f7d02905db77991971f46a0}{GXDrawCallback}}\ \mbox{\hyperlink{struct_g_x_window_a046945fc082ae7bf955116e755fb873f}{draw\_callback}};}
+\DoxyCodeLine{00264\ \ \ \ \ \};}
 \DoxyCodeLine{00265\ }
-\DoxyCodeLine{00273\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
-\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a060bcfb6c531edd54e25817f312a2b85a8cb89865bb92fd4ebf9fd761c5c8b68e}{GX\_RESOURCE\_WINDOW}},}
-\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a060bcfb6c531edd54e25817f312a2b85ade79dce00383cc4e07e064860a792782}{GX\_RESOURCE\_OBJECT}}}
-\DoxyCodeLine{00276\ \ \ \ \ \}\ \mbox{\hyperlink{gx_8h_a060bcfb6c531edd54e25817f312a2b85}{GXResourceType}};}
-\DoxyCodeLine{00277\ }
-\DoxyCodeLine{00287\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
-\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a68763dfc6bb00b662abc7f535ebd08e1a441a971f556f17d9a313bbc15fb95b79}{GX\_RESOURCE\_STATUS\_NONE}}\ =\ 0,}
-\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a68763dfc6bb00b662abc7f535ebd08e1ac28973cc7ee78376dc4cfddf9cdd0845}{GX\_RESOURCE\_STATUS\_SHOWING}}\ =\ 1,}
-\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a68763dfc6bb00b662abc7f535ebd08e1a4f8f5cba59022c9633018ea3217c00f3}{GX\_RESOURCE\_STATUS\_SHOWING\_MASK}}\ =\ \mbox{\hyperlink{gx_8h_a68763dfc6bb00b662abc7f535ebd08e1ac28973cc7ee78376dc4cfddf9cdd0845}{\string~GX\_RESOURCE\_STATUS\_SHOWING}},}
-\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a68763dfc6bb00b662abc7f535ebd08e1aaa02b4bc8e3ab1a2ef51285c39b367b3}{GX\_RESOURCE\_STATUS\_INITIATED}}\ =\ 2,}
-\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a68763dfc6bb00b662abc7f535ebd08e1a5fbccd29a02675c55593469b51f5eeca}{GX\_RESOURCE\_STATUS\_INITIATED\_MASK}}\ =\ \mbox{\hyperlink{gx_8h_a68763dfc6bb00b662abc7f535ebd08e1aaa02b4bc8e3ab1a2ef51285c39b367b3}{\string~GX\_RESOURCE\_STATUS\_INITIATED}},}
-\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a68763dfc6bb00b662abc7f535ebd08e1a1b6d162e07e021628906ec2c92ad4cfc}{GX\_RESOURCE\_STATUS\_SHOULD\_CLOSE}}\ =\ 4,}
-\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a68763dfc6bb00b662abc7f535ebd08e1a6605e85978d1cb0139dad28b396439d7}{GX\_RESOURCE\_STATUS\_SHOULD\_CLOSE\_MASK}}\ =\ \mbox{\hyperlink{gx_8h_a68763dfc6bb00b662abc7f535ebd08e1a1b6d162e07e021628906ec2c92ad4cfc}{\string~GX\_RESOURCE\_STATUS\_SHOULD\_CLOSE}}}
-\DoxyCodeLine{00295\ \ \ \ \ \}\ \mbox{\hyperlink{gx_8h_a68763dfc6bb00b662abc7f535ebd08e1}{GXResourceStatus}};}
-\DoxyCodeLine{00296\ }
-\DoxyCodeLine{00305\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
-\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a12b600ff948f2fb55b73974e5bef17e2aad92ce4a6b781316ba744d6775397443}{GX\_BUFFER\_USAGE\_TYPE\_STATIC}}\ =\ 0x88E4,}
-\DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a12b600ff948f2fb55b73974e5bef17e2a2238c7f438b8edbb5a36c0021fd0bfb1}{GX\_BUFFER\_USAGE\_TYPE\_DYNAMIC}}\ =\ 0x88E8,}
-\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a12b600ff948f2fb55b73974e5bef17e2a38b72106879e537fb2e42a9e06c129ee}{GX\_BUFFER\_USAGE\_TYPE\_STREAM}}\ =\ 0x88E0}
-\DoxyCodeLine{00309\ \ \ \ \ \}\ \mbox{\hyperlink{gx_8h_a12b600ff948f2fb55b73974e5bef17e2}{GXBufferUsageType}};}
-\DoxyCodeLine{00310\ }
-\DoxyCodeLine{00318\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
-\DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_acf407c4416240bb057bea98cc48d2a11a87268ae25321cbeebb2727312e10d14a}{GX\_BUFFER\_TYPE\_ARRAY}}\ =\ 0x8892,}
-\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_acf407c4416240bb057bea98cc48d2a11aacfd830268ff17b3c855042a83fa467e}{GX\_BUFFER\_TYPE\_ELEMENT\_ARRAY}}\ =\ 0x8893}
-\DoxyCodeLine{00321\ \ \ \ \ \}\ \mbox{\hyperlink{gx_8h_acf407c4416240bb057bea98cc48d2a11}{GXBufferType}};}
-\DoxyCodeLine{00322\ }
-\DoxyCodeLine{00331\ \ \ \ \ \textcolor{keyword}{typedef}\ enum\ :\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \{}
-\DoxyCodeLine{00332\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a531e89fed7a77bbc53ed923fd8a4f71ca524bb42b0524ee1e8d496d1e7e248d17}{GX\_DEPTH\_BUFFER\_BIT}}\ =\ UINT32\_C(0x00000100),}
-\DoxyCodeLine{00333\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a531e89fed7a77bbc53ed923fd8a4f71ca1a849207f187a27197b18ff721e052d7}{GX\_STENCIL\_BUFFER\_BIT}}\ =\ UINT32\_C(0x00000400),}
-\DoxyCodeLine{00334\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a531e89fed7a77bbc53ed923fd8a4f71caf526503cd1387a1a56f300abf946c044}{GX\_COLOR\_BUFFER\_BIT}}\ =\ UINT32\_C(0x00004000),}
-\DoxyCodeLine{00335\ \ \ \ \ \}\ \mbox{\hyperlink{gx_8h_a531e89fed7a77bbc53ed923fd8a4f71c}{GXBufferBit}};}
-\DoxyCodeLine{00336\ }
-\DoxyCodeLine{00348\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_g_x_object}{GXObject}}\ \{}
-\DoxyCodeLine{00349\ \ \ \ \ \ \ \ \ uint32\_t\ \mbox{\hyperlink{struct_g_x_object_a38480d594307d73ce30a3b9f7d941895}{shader\_program}},\ \mbox{\hyperlink{struct_g_x_object_ae85a9630bc50bdff3701f9dcb1532db8}{vao}},\ \mbox{\hyperlink{struct_g_x_object_abcbc7a45fcd718fd7524883663ce840c}{vbo}},\ \mbox{\hyperlink{struct_g_x_object_af90e80e77fdaccdc4c2a7d9ccf824bf4}{ebo}};}
-\DoxyCodeLine{00350\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_g_x_resource}{GXResource}}*\ \mbox{\hyperlink{struct_g_x_object_a463ad3fdb9b661875a673ae2720a37e8}{resource}};}
-\DoxyCodeLine{00351\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{struct_g_x_object_a8fcf1f21c9738d2de020049e0c6d777a}{user\_data}};}
-\DoxyCodeLine{00352\ \ \ \ \ \};}
-\DoxyCodeLine{00353\ }
-\DoxyCodeLine{00364\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_g_x_resource}{GXResource}}\ \{}
-\DoxyCodeLine{00365\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a68763dfc6bb00b662abc7f535ebd08e1}{GXResourceStatus}}\ \mbox{\hyperlink{struct_g_x_resource_a5e6064869895e698e8fcc7383662b365}{status}};}
-\DoxyCodeLine{00366\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a060bcfb6c531edd54e25817f312a2b85}{GXResourceType}}\ \mbox{\hyperlink{struct_g_x_resource_ab2d6744948462f40576ab0e10e74ea4c}{type}};}
-\DoxyCodeLine{00367\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{struct_g_x_resource_a4de1d2282b0763966a61b992ef76b314}{resource}};}
-\DoxyCodeLine{00368\ \ \ \ \ \};}
-\DoxyCodeLine{00369\ }
-\DoxyCodeLine{00378\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_g_x_shader_compilation_result}{GXShaderCompilationResult}}\ \{}
-\DoxyCodeLine{00379\ \ \ \ \ \ \ \ \ uint32\_t\ \mbox{\hyperlink{struct_g_x_shader_compilation_result_a863e22ddfd9b48681a100f3569ac9d4b}{handle}};}
-\DoxyCodeLine{00380\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_g_x_shader_compilation_result_ace183457b68c212560d22e0547c78fa2}{success}};}
-\DoxyCodeLine{00381\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{struct_g_x_shader_compilation_result_a08fbe8cf8ae06c11919693a55a62ef1e}{info\_log}}[512];}
-\DoxyCodeLine{00382\ \ \ \ \ \};}
-\DoxyCodeLine{00383\ }
-\DoxyCodeLine{00394\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_g_x_program_compilation_result}{GXProgramCompilationResult}}\ \{}
-\DoxyCodeLine{00395\ \ \ \ \ \ \ \ \ uint32\_t\ \mbox{\hyperlink{struct_g_x_program_compilation_result_a111b445c0467b974947a6763918b682c}{program}};}
-\DoxyCodeLine{00396\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_g_x_program_compilation_result_a176252492fcf324a9f2be104c582150f}{success}};}
-\DoxyCodeLine{00397\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{struct_g_x_program_compilation_result_aac4a3c75184816b4279790ab428530f2}{program\_log}}[1024];}
-\DoxyCodeLine{00398\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_g_x_shader_compilation_result}{GXShaderCompilationResult}}\ \mbox{\hyperlink{struct_g_x_program_compilation_result_a54c9cd14bb4a371ea0f9281aee674e91}{vertex\_result}},\ \mbox{\hyperlink{struct_g_x_program_compilation_result_a4fb87bcb9c247bbb572f4730363401a8}{fragment\_result}};}
-\DoxyCodeLine{00399\ \ \ \ \ \};}
-\DoxyCodeLine{00400\ }
-\DoxyCodeLine{00408\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
-\DoxyCodeLine{00409\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a2eb7ea5dfbda0b5ecb3846115c56fe83a73a7e0272d9d8cd8b92a01ee565087ee}{GX\_GLSL\_FRAGMENT\_SHADER}}\ =\ 0x8B30,}
-\DoxyCodeLine{00410\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a2eb7ea5dfbda0b5ecb3846115c56fe83aa3307c254f6feef5d1f9505849097f86}{GX\_GLSL\_VERTEX\_SHADER}}\ =\ 0x8B31}
-\DoxyCodeLine{00411\ \ \ \ \ \}\ \mbox{\hyperlink{gx_8h_a2eb7ea5dfbda0b5ecb3846115c56fe83}{GXShaderType}};}
-\DoxyCodeLine{00412\ }
-\DoxyCodeLine{00426\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
-\DoxyCodeLine{00427\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a0e90335b7087af15a4b53fb23b65faf2a96a18be9af738adb20b464f071850ed9}{GX\_MAP\_READ\_BIT}}\ =\ 0x0001,}
-\DoxyCodeLine{00428\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a0e90335b7087af15a4b53fb23b65faf2a39d81fd3f5b35fb4cd919ac0c457be71}{GX\_MAP\_WRITE\_BIT}}\ =\ 0x0002,}
-\DoxyCodeLine{00429\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a0e90335b7087af15a4b53fb23b65faf2a7db06bebb2d4f8797f7cef45ad9dda7d}{GX\_MAP\_INVALIDATE\_RANGE\_BIT}}\ =\ 0x0004,}
-\DoxyCodeLine{00430\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a0e90335b7087af15a4b53fb23b65faf2afe99e4cf2b5db838d3168f92de9a503f}{GX\_MAP\_INVALIDATE\_BUFFER\_BIT}}\ =\ 0x0008,}
-\DoxyCodeLine{00431\ \ \ \ \ \ \ \ \ \textcolor{comment}{//GX\_MAP\_FLUSH\_EXPLICIT\_BIT\ =\ 0x0010,}}
-\DoxyCodeLine{00432\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a0e90335b7087af15a4b53fb23b65faf2a83f19d54ee45e5c678a35fc1cb074d91}{GX\_MAP\_UNSYNCHRONIZED\_BIT}}\ =\ 0x0020,}
-\DoxyCodeLine{00433\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a0e90335b7087af15a4b53fb23b65faf2abc4e8d19aca1cf36e4c709306fef0309}{GX\_MAP\_SIMPLE\_WRITE}}\ =\ \mbox{\hyperlink{gx_8h_a0e90335b7087af15a4b53fb23b65faf2a39d81fd3f5b35fb4cd919ac0c457be71}{GX\_MAP\_WRITE\_BIT}}\ |\ \mbox{\hyperlink{gx_8h_a0e90335b7087af15a4b53fb23b65faf2afe99e4cf2b5db838d3168f92de9a503f}{GX\_MAP\_INVALIDATE\_BUFFER\_BIT}},}
-\DoxyCodeLine{00434\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a0e90335b7087af15a4b53fb23b65faf2aea4c2418edfae28979a2d01131e2adbe}{GX\_MAP\_FREQUENT\_WRITE}}\ =\ \mbox{\hyperlink{gx_8h_a0e90335b7087af15a4b53fb23b65faf2abc4e8d19aca1cf36e4c709306fef0309}{GX\_MAP\_SIMPLE\_WRITE}},}
-\DoxyCodeLine{00435\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a0e90335b7087af15a4b53fb23b65faf2ad6d3e3e97df0ddf0ca9af3f6705cf257}{GX\_MAP\_UNSAFE\_HIGH\_PERFORMANCE\_WRITE}}\ =\ \mbox{\hyperlink{gx_8h_a0e90335b7087af15a4b53fb23b65faf2a39d81fd3f5b35fb4cd919ac0c457be71}{GX\_MAP\_WRITE\_BIT}}\ |\ \mbox{\hyperlink{gx_8h_a0e90335b7087af15a4b53fb23b65faf2a83f19d54ee45e5c678a35fc1cb074d91}{GX\_MAP\_UNSYNCHRONIZED\_BIT}}}
-\DoxyCodeLine{00436\ \ \ \ \ \}\ \mbox{\hyperlink{gx_8h_a0e90335b7087af15a4b53fb23b65faf2}{GXMappingBits}};}
-\DoxyCodeLine{00437\ }
-\DoxyCodeLine{00450\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
-\DoxyCodeLine{00451\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a7fd0c624c6c69095149db64b99d41cb1a824f905eb761d6a66a66a9bf39f83856}{GX\_VERTEX\_ATTRIB\_TYPE\_BYTE}}\ =\ 0x1400,}
-\DoxyCodeLine{00452\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a7fd0c624c6c69095149db64b99d41cb1a27241808a2f2aba8cbd1c008ec2e23b8}{GX\_VERTEX\_ATTRIB\_TYPE\_UNSIGNED\_BYTE}}\ =\ 0x1401,}
-\DoxyCodeLine{00453\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a7fd0c624c6c69095149db64b99d41cb1a1acd97b35d5686416405588b98d81950}{GX\_VERTEX\_ATTRIB\_TYPE\_SHORT}}\ =\ 0x1402,}
-\DoxyCodeLine{00454\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a7fd0c624c6c69095149db64b99d41cb1af70d741c940372f8df2cb9ca7d6c05d6}{GX\_VERTEX\_ATTRIB\_TYPE\_UNSIGNED\_SHORT}}\ =\ 0x1403,}
-\DoxyCodeLine{00455\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a7fd0c624c6c69095149db64b99d41cb1a3aa2abb59defb6e8e617d41f75775711}{GX\_VERTEX\_ATTRIB\_TYPE\_INT}}\ =\ 0x1404,}
-\DoxyCodeLine{00456\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a7fd0c624c6c69095149db64b99d41cb1a5029f8e0734a5e8c16e85cef5d900620}{GX\_VERTEX\_ATTRIB\_TYPE\_UNSIGNED\_INT}}\ =\ 0x1405,}
-\DoxyCodeLine{00457\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a7fd0c624c6c69095149db64b99d41cb1a00de28234feddfd1c8b8f034d61fcd12}{GX\_VERTEX\_ATTRIB\_TYPE\_FLOAT}}\ =\ 0x1406}
-\DoxyCodeLine{00458\ \ \ \ \ \}\ \mbox{\hyperlink{gx_8h_a7fd0c624c6c69095149db64b99d41cb1}{GXVertexAttributeType}};}
-\DoxyCodeLine{00459\ }
-\DoxyCodeLine{00464\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gx_8h_acd7da62752d00aea8271dc6a5d9ed4e6}{gxAddKeyboardCallback}}(\mbox{\hyperlink{gx_8h_aec5702061094a00307085537e0b85b63}{GXKeyboardCallback}}\ cb);}
-\DoxyCodeLine{00465\ }
-\DoxyCodeLine{00469\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gx_8h_ae7371bb384d4f1ab2d5f061b294f31ee}{gxClearKeyboardCallback}}();}
-\DoxyCodeLine{00470\ }
-\DoxyCodeLine{00471\ \ \ \ \ \textcolor{comment}{//\ ==============================================}}
-\DoxyCodeLine{00472\ \ \ \ \ \textcolor{comment}{//\ Application\ API}}
-\DoxyCodeLine{00473\ \ \ \ \ \textcolor{comment}{//\ ==============================================}}
-\DoxyCodeLine{00474\ }
-\DoxyCodeLine{00479\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gx_8h_a982378df3a58ebc754e238f548f6d947}{gxDestroyApplication}}(\mbox{\hyperlink{struct_g_x_application}{GXApplication}}*\ application);}
-\DoxyCodeLine{00480\ }
-\DoxyCodeLine{00486\ \ \ \ \ \mbox{\hyperlink{struct_g_x_application}{GXApplication}}*\ \mbox{\hyperlink{gx_8h_afc7f563785198dd63cec3036190814bf}{gxCreateApplication}}(\mbox{\hyperlink{gx_8h_a87d336541f9413db24108524a42c0dfb}{GXApplicationOptions}}\ options);}
+\DoxyCodeLine{00274\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_ac829f23b5a52fc999a8ad949fe1b24e0ac233ec7fe3e01c9e8d7d9b68391f6529}{GX\_KEY\_ACTION\_PRESS}}\ =\ 1,}
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_ac829f23b5a52fc999a8ad949fe1b24e0ab265d27fd397f97e9027e233b3dd712c}{GX\_KEY\_ACTION\_RELEASE}}\ =\ 0,}
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_ac829f23b5a52fc999a8ad949fe1b24e0aa8d0182837ed36f31276b7b3106b91fe}{GX\_KEY\_ACTION\_REPEAT}}\ =\ 2}
+\DoxyCodeLine{00278\ \ \ \ \ \}\ \mbox{\hyperlink{gx_8h_ac829f23b5a52fc999a8ad949fe1b24e0}{GXKeyAction}};}
+\DoxyCodeLine{00279\ }
+\DoxyCodeLine{00289\ \ \ \ \ \textcolor{keyword}{typedef}\ void\ (*\mbox{\hyperlink{gx_8h_aec5702061094a00307085537e0b85b63}{GXKeyboardCallback}})(\mbox{\hyperlink{struct_g_x_application}{GXApplication}}*,\ \mbox{\hyperlink{struct_g_x_window}{GXWindow}}*,\ \mbox{\hyperlink{gx_8h_a747621a460572dd3234c9c30a27378f2}{GXKey}},\ int,\ \mbox{\hyperlink{gx_8h_ac829f23b5a52fc999a8ad949fe1b24e0}{GXKeyAction}},\ int);}
+\DoxyCodeLine{00290\ }
+\DoxyCodeLine{00298\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00299\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a060bcfb6c531edd54e25817f312a2b85a8cb89865bb92fd4ebf9fd761c5c8b68e}{GX\_RESOURCE\_WINDOW}},}
+\DoxyCodeLine{00300\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a060bcfb6c531edd54e25817f312a2b85ade79dce00383cc4e07e064860a792782}{GX\_RESOURCE\_OBJECT}}}
+\DoxyCodeLine{00301\ \ \ \ \ \}\ \mbox{\hyperlink{gx_8h_a060bcfb6c531edd54e25817f312a2b85}{GXResourceType}};}
+\DoxyCodeLine{00302\ }
+\DoxyCodeLine{00312\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a68763dfc6bb00b662abc7f535ebd08e1a441a971f556f17d9a313bbc15fb95b79}{GX\_RESOURCE\_STATUS\_NONE}}\ =\ 0,}
+\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a68763dfc6bb00b662abc7f535ebd08e1ac28973cc7ee78376dc4cfddf9cdd0845}{GX\_RESOURCE\_STATUS\_SHOWING}}\ =\ 1,}
+\DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a68763dfc6bb00b662abc7f535ebd08e1a4f8f5cba59022c9633018ea3217c00f3}{GX\_RESOURCE\_STATUS\_SHOWING\_MASK}}\ =\ \mbox{\hyperlink{gx_8h_a68763dfc6bb00b662abc7f535ebd08e1ac28973cc7ee78376dc4cfddf9cdd0845}{\string~GX\_RESOURCE\_STATUS\_SHOWING}},}
+\DoxyCodeLine{00316\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a68763dfc6bb00b662abc7f535ebd08e1aaa02b4bc8e3ab1a2ef51285c39b367b3}{GX\_RESOURCE\_STATUS\_INITIATED}}\ =\ 2,}
+\DoxyCodeLine{00317\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a68763dfc6bb00b662abc7f535ebd08e1a5fbccd29a02675c55593469b51f5eeca}{GX\_RESOURCE\_STATUS\_INITIATED\_MASK}}\ =\ \mbox{\hyperlink{gx_8h_a68763dfc6bb00b662abc7f535ebd08e1aaa02b4bc8e3ab1a2ef51285c39b367b3}{\string~GX\_RESOURCE\_STATUS\_INITIATED}},}
+\DoxyCodeLine{00318\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a68763dfc6bb00b662abc7f535ebd08e1a1b6d162e07e021628906ec2c92ad4cfc}{GX\_RESOURCE\_STATUS\_SHOULD\_CLOSE}}\ =\ 4,}
+\DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a68763dfc6bb00b662abc7f535ebd08e1a6605e85978d1cb0139dad28b396439d7}{GX\_RESOURCE\_STATUS\_SHOULD\_CLOSE\_MASK}}\ =\ \mbox{\hyperlink{gx_8h_a68763dfc6bb00b662abc7f535ebd08e1a1b6d162e07e021628906ec2c92ad4cfc}{\string~GX\_RESOURCE\_STATUS\_SHOULD\_CLOSE}}}
+\DoxyCodeLine{00320\ \ \ \ \ \}\ \mbox{\hyperlink{gx_8h_a68763dfc6bb00b662abc7f535ebd08e1}{GXResourceStatus}};}
+\DoxyCodeLine{00321\ }
+\DoxyCodeLine{00330\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00331\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a12b600ff948f2fb55b73974e5bef17e2aad92ce4a6b781316ba744d6775397443}{GX\_BUFFER\_USAGE\_TYPE\_STATIC}}\ =\ 0x88E4,}
+\DoxyCodeLine{00332\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a12b600ff948f2fb55b73974e5bef17e2a2238c7f438b8edbb5a36c0021fd0bfb1}{GX\_BUFFER\_USAGE\_TYPE\_DYNAMIC}}\ =\ 0x88E8,}
+\DoxyCodeLine{00333\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a12b600ff948f2fb55b73974e5bef17e2a38b72106879e537fb2e42a9e06c129ee}{GX\_BUFFER\_USAGE\_TYPE\_STREAM}}\ =\ 0x88E0}
+\DoxyCodeLine{00334\ \ \ \ \ \}\ \mbox{\hyperlink{gx_8h_a12b600ff948f2fb55b73974e5bef17e2}{GXBufferUsageType}};}
+\DoxyCodeLine{00335\ }
+\DoxyCodeLine{00344\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00345\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_acf407c4416240bb057bea98cc48d2a11a87268ae25321cbeebb2727312e10d14a}{GX\_BUFFER\_TYPE\_ARRAY}}\ =\ 0x8892,}
+\DoxyCodeLine{00346\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_acf407c4416240bb057bea98cc48d2a11aacfd830268ff17b3c855042a83fa467e}{GX\_BUFFER\_TYPE\_ELEMENT\_ARRAY}}\ =\ 0x8893,}
+\DoxyCodeLine{00347\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_acf407c4416240bb057bea98cc48d2a11aee4b120b7ca83583d7d9391d7d4032e2}{GX\_BUFFER\_TYPE\_UNIFORM}}\ =\ 0x8A11}
+\DoxyCodeLine{00348\ \ \ \ \ \}\ \mbox{\hyperlink{gx_8h_acf407c4416240bb057bea98cc48d2a11}{GXBufferType}};}
+\DoxyCodeLine{00349\ }
+\DoxyCodeLine{00358\ \ \ \ \ \textcolor{keyword}{typedef}\ enum\ :\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \{}
+\DoxyCodeLine{00359\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a531e89fed7a77bbc53ed923fd8a4f71ca524bb42b0524ee1e8d496d1e7e248d17}{GX\_DEPTH\_BUFFER\_BIT}}\ =\ UINT32\_C(0x00000100),}
+\DoxyCodeLine{00360\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a531e89fed7a77bbc53ed923fd8a4f71ca1a849207f187a27197b18ff721e052d7}{GX\_STENCIL\_BUFFER\_BIT}}\ =\ UINT32\_C(0x00000400),}
+\DoxyCodeLine{00361\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a531e89fed7a77bbc53ed923fd8a4f71caf526503cd1387a1a56f300abf946c044}{GX\_COLOR\_BUFFER\_BIT}}\ =\ UINT32\_C(0x00004000),}
+\DoxyCodeLine{00362\ \ \ \ \ \}\ \mbox{\hyperlink{gx_8h_a531e89fed7a77bbc53ed923fd8a4f71c}{GXBufferBit}};}
+\DoxyCodeLine{00363\ }
+\DoxyCodeLine{00375\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_g_x_object}{GXObject}}\ \{}
+\DoxyCodeLine{00376\ \ \ \ \ \ \ \ \ uint32\_t\ \mbox{\hyperlink{struct_g_x_object_a38480d594307d73ce30a3b9f7d941895}{shader\_program}},\ \mbox{\hyperlink{struct_g_x_object_ae85a9630bc50bdff3701f9dcb1532db8}{vao}},\ \mbox{\hyperlink{struct_g_x_object_abcbc7a45fcd718fd7524883663ce840c}{vbo}},\ \mbox{\hyperlink{struct_g_x_object_af90e80e77fdaccdc4c2a7d9ccf824bf4}{ebo}};}
+\DoxyCodeLine{00377\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_g_x_resource}{GXResource}}*\ \mbox{\hyperlink{struct_g_x_object_a463ad3fdb9b661875a673ae2720a37e8}{resource}};}
+\DoxyCodeLine{00378\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{struct_g_x_object_a8fcf1f21c9738d2de020049e0c6d777a}{user\_data}};}
+\DoxyCodeLine{00379\ \ \ \ \ \};}
+\DoxyCodeLine{00380\ }
+\DoxyCodeLine{00391\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_g_x_resource}{GXResource}}\ \{}
+\DoxyCodeLine{00392\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a68763dfc6bb00b662abc7f535ebd08e1}{GXResourceStatus}}\ \mbox{\hyperlink{struct_g_x_resource_a5e6064869895e698e8fcc7383662b365}{status}};}
+\DoxyCodeLine{00393\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a060bcfb6c531edd54e25817f312a2b85}{GXResourceType}}\ \mbox{\hyperlink{struct_g_x_resource_ab2d6744948462f40576ab0e10e74ea4c}{type}};}
+\DoxyCodeLine{00394\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{struct_g_x_resource_a4de1d2282b0763966a61b992ef76b314}{resource}};}
+\DoxyCodeLine{00395\ \ \ \ \ \};}
+\DoxyCodeLine{00396\ }
+\DoxyCodeLine{00405\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_g_x_shader_compilation_result}{GXShaderCompilationResult}}\ \{}
+\DoxyCodeLine{00406\ \ \ \ \ \ \ \ \ uint32\_t\ \mbox{\hyperlink{struct_g_x_shader_compilation_result_a863e22ddfd9b48681a100f3569ac9d4b}{handle}};}
+\DoxyCodeLine{00407\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_g_x_shader_compilation_result_ace183457b68c212560d22e0547c78fa2}{success}};}
+\DoxyCodeLine{00408\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{struct_g_x_shader_compilation_result_a08fbe8cf8ae06c11919693a55a62ef1e}{info\_log}}[512];}
+\DoxyCodeLine{00409\ \ \ \ \ \};}
+\DoxyCodeLine{00410\ }
+\DoxyCodeLine{00421\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_g_x_program_compilation_result}{GXProgramCompilationResult}}\ \{}
+\DoxyCodeLine{00422\ \ \ \ \ \ \ \ \ uint32\_t\ \mbox{\hyperlink{struct_g_x_program_compilation_result_a111b445c0467b974947a6763918b682c}{program}};}
+\DoxyCodeLine{00423\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_g_x_program_compilation_result_a176252492fcf324a9f2be104c582150f}{success}};}
+\DoxyCodeLine{00424\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{struct_g_x_program_compilation_result_aac4a3c75184816b4279790ab428530f2}{program\_log}}[1024];}
+\DoxyCodeLine{00425\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_g_x_shader_compilation_result}{GXShaderCompilationResult}}\ \mbox{\hyperlink{struct_g_x_program_compilation_result_a54c9cd14bb4a371ea0f9281aee674e91}{vertex\_result}},\ \mbox{\hyperlink{struct_g_x_program_compilation_result_a4fb87bcb9c247bbb572f4730363401a8}{fragment\_result}};}
+\DoxyCodeLine{00426\ \ \ \ \ \};}
+\DoxyCodeLine{00427\ }
+\DoxyCodeLine{00435\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00436\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a2eb7ea5dfbda0b5ecb3846115c56fe83a73a7e0272d9d8cd8b92a01ee565087ee}{GX\_GLSL\_FRAGMENT\_SHADER}}\ =\ 0x8B30,}
+\DoxyCodeLine{00437\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a2eb7ea5dfbda0b5ecb3846115c56fe83aa3307c254f6feef5d1f9505849097f86}{GX\_GLSL\_VERTEX\_SHADER}}\ =\ 0x8B31}
+\DoxyCodeLine{00438\ \ \ \ \ \}\ \mbox{\hyperlink{gx_8h_a2eb7ea5dfbda0b5ecb3846115c56fe83}{GXShaderType}};}
+\DoxyCodeLine{00439\ }
+\DoxyCodeLine{00453\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00454\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a0e90335b7087af15a4b53fb23b65faf2a96a18be9af738adb20b464f071850ed9}{GX\_MAP\_READ\_BIT}}\ =\ 0x0001,}
+\DoxyCodeLine{00455\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a0e90335b7087af15a4b53fb23b65faf2a39d81fd3f5b35fb4cd919ac0c457be71}{GX\_MAP\_WRITE\_BIT}}\ =\ 0x0002,}
+\DoxyCodeLine{00456\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a0e90335b7087af15a4b53fb23b65faf2a7db06bebb2d4f8797f7cef45ad9dda7d}{GX\_MAP\_INVALIDATE\_RANGE\_BIT}}\ =\ 0x0004,}
+\DoxyCodeLine{00457\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a0e90335b7087af15a4b53fb23b65faf2afe99e4cf2b5db838d3168f92de9a503f}{GX\_MAP\_INVALIDATE\_BUFFER\_BIT}}\ =\ 0x0008,}
+\DoxyCodeLine{00458\ \ \ \ \ \ \ \ \ \textcolor{comment}{//GX\_MAP\_FLUSH\_EXPLICIT\_BIT\ =\ 0x0010,}}
+\DoxyCodeLine{00459\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a0e90335b7087af15a4b53fb23b65faf2a83f19d54ee45e5c678a35fc1cb074d91}{GX\_MAP\_UNSYNCHRONIZED\_BIT}}\ =\ 0x0020,}
+\DoxyCodeLine{00460\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a0e90335b7087af15a4b53fb23b65faf2abc4e8d19aca1cf36e4c709306fef0309}{GX\_MAP\_SIMPLE\_WRITE}}\ =\ \mbox{\hyperlink{gx_8h_a0e90335b7087af15a4b53fb23b65faf2a39d81fd3f5b35fb4cd919ac0c457be71}{GX\_MAP\_WRITE\_BIT}}\ |\ \mbox{\hyperlink{gx_8h_a0e90335b7087af15a4b53fb23b65faf2afe99e4cf2b5db838d3168f92de9a503f}{GX\_MAP\_INVALIDATE\_BUFFER\_BIT}},}
+\DoxyCodeLine{00461\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a0e90335b7087af15a4b53fb23b65faf2aea4c2418edfae28979a2d01131e2adbe}{GX\_MAP\_FREQUENT\_WRITE}}\ =\ \mbox{\hyperlink{gx_8h_a0e90335b7087af15a4b53fb23b65faf2abc4e8d19aca1cf36e4c709306fef0309}{GX\_MAP\_SIMPLE\_WRITE}},}
+\DoxyCodeLine{00462\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a0e90335b7087af15a4b53fb23b65faf2ad6d3e3e97df0ddf0ca9af3f6705cf257}{GX\_MAP\_UNSAFE\_HIGH\_PERFORMANCE\_WRITE}}\ =\ \mbox{\hyperlink{gx_8h_a0e90335b7087af15a4b53fb23b65faf2a39d81fd3f5b35fb4cd919ac0c457be71}{GX\_MAP\_WRITE\_BIT}}\ |\ \mbox{\hyperlink{gx_8h_a0e90335b7087af15a4b53fb23b65faf2a83f19d54ee45e5c678a35fc1cb074d91}{GX\_MAP\_UNSYNCHRONIZED\_BIT}}}
+\DoxyCodeLine{00463\ \ \ \ \ \}\ \mbox{\hyperlink{gx_8h_a0e90335b7087af15a4b53fb23b65faf2}{GXMappingBits}};}
+\DoxyCodeLine{00464\ }
+\DoxyCodeLine{00477\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00478\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a7fd0c624c6c69095149db64b99d41cb1a824f905eb761d6a66a66a9bf39f83856}{GX\_VERTEX\_ATTRIB\_TYPE\_BYTE}}\ =\ 0x1400,}
+\DoxyCodeLine{00479\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a7fd0c624c6c69095149db64b99d41cb1a27241808a2f2aba8cbd1c008ec2e23b8}{GX\_VERTEX\_ATTRIB\_TYPE\_UNSIGNED\_BYTE}}\ =\ 0x1401,}
+\DoxyCodeLine{00480\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a7fd0c624c6c69095149db64b99d41cb1a1acd97b35d5686416405588b98d81950}{GX\_VERTEX\_ATTRIB\_TYPE\_SHORT}}\ =\ 0x1402,}
+\DoxyCodeLine{00481\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a7fd0c624c6c69095149db64b99d41cb1af70d741c940372f8df2cb9ca7d6c05d6}{GX\_VERTEX\_ATTRIB\_TYPE\_UNSIGNED\_SHORT}}\ =\ 0x1403,}
+\DoxyCodeLine{00482\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a7fd0c624c6c69095149db64b99d41cb1a3aa2abb59defb6e8e617d41f75775711}{GX\_VERTEX\_ATTRIB\_TYPE\_INT}}\ =\ 0x1404,}
+\DoxyCodeLine{00483\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a7fd0c624c6c69095149db64b99d41cb1a5029f8e0734a5e8c16e85cef5d900620}{GX\_VERTEX\_ATTRIB\_TYPE\_UNSIGNED\_INT}}\ =\ 0x1405,}
+\DoxyCodeLine{00484\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gx_8h_a7fd0c624c6c69095149db64b99d41cb1a00de28234feddfd1c8b8f034d61fcd12}{GX\_VERTEX\_ATTRIB\_TYPE\_FLOAT}}\ =\ 0x1406}
+\DoxyCodeLine{00485\ \ \ \ \ \}\ \mbox{\hyperlink{gx_8h_a7fd0c624c6c69095149db64b99d41cb1}{GXVertexAttributeType}};}
+\DoxyCodeLine{00486\ }
 \DoxyCodeLine{00487\ }
-\DoxyCodeLine{00492\ \ \ \ \ \mbox{\hyperlink{struct_g_x_application}{GXApplication}}*\ \mbox{\hyperlink{gx_8h_a6bf81f3c41110e3803cdea7f89de0453}{gxGetApplication}}();}
+\DoxyCodeLine{00492\ \ \ \ \ \mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\_API}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gx_8h_ae8b62907f612eec575d2903981fdc5ba}{gxAddKeyboardCallback}}(\mbox{\hyperlink{gx_8h_aec5702061094a00307085537e0b85b63}{GXKeyboardCallback}}\ cb);}
 \DoxyCodeLine{00493\ }
-\DoxyCodeLine{00497\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gx_8h_a95c749719fb40e460fbcdd12906f3c1f}{gxExec}}();}
+\DoxyCodeLine{00497\ \ \ \ \ \mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\_API}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gx_8h_aa3de5e031aef1fdc48e12b0d192d68d1}{gxClearKeyboardCallback}}();}
 \DoxyCodeLine{00498\ }
-\DoxyCodeLine{00504\ \ \ \ \ \mbox{\hyperlink{struct_g_x_object}{GXObject}}*\ \mbox{\hyperlink{gx_8h_a3cf8cfac8ca8c65bd4acf0cd8c4938a6}{gxAsObject}}(\mbox{\hyperlink{struct_g_x_resource}{GXResource}}*\ res);}
-\DoxyCodeLine{00505\ }
-\DoxyCodeLine{00516\ \ \ \ \ \mbox{\hyperlink{struct_g_x_object}{GXObject}}*\ \mbox{\hyperlink{gx_8h_ada94df35172028fd2cca0465829485bc}{gxCreateObject}}(uint32\_t\ shader\_program,\ uint32\_t\ vao,\ uint32\_t\ vbo,\ uint32\_t\ ebo,\ \textcolor{keywordtype}{void}*\ user\_data);}
-\DoxyCodeLine{00517\ }
-\DoxyCodeLine{00532\ \ \ \ \ \mbox{\hyperlink{struct_g_x_object}{GXObject}}*\ \mbox{\hyperlink{gx_8h_ae08675b49133574c8a8f53f3fbb1c9a2}{gxCreateRenderObjectWithElements}}(uint32\_t\ shader\_program,\ \mbox{\hyperlink{gx_8h_a12b600ff948f2fb55b73974e5bef17e2}{GXBufferUsageType}}\ vert\_buffer\_usage,\ \textcolor{keywordtype}{size\_t}\ vert\_size,\ \textcolor{keywordtype}{void}*\ vert\_data,\ \mbox{\hyperlink{gx_8h_a12b600ff948f2fb55b73974e5bef17e2}{GXBufferUsageType}}\ elem\_buffer\_usage,\ \textcolor{keywordtype}{size\_t}\ elem\_size,\ \textcolor{keywordtype}{void}*\ elem\_data,\ \textcolor{keywordtype}{void}*\ user\_data);}
+\DoxyCodeLine{00499\ \ \ \ \ \textcolor{comment}{//\ ==============================================}}
+\DoxyCodeLine{00500\ \ \ \ \ \textcolor{comment}{//\ Application\ API}}
+\DoxyCodeLine{00501\ \ \ \ \ \textcolor{comment}{//\ ==============================================}}
+\DoxyCodeLine{00502\ }
+\DoxyCodeLine{00507\ \ \ \ \ \mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\_API}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gx_8h_a949114288b82e9dd1af242c4afc87a7b}{gxDestroyApplication}}(\mbox{\hyperlink{struct_g_x_application}{GXApplication}}*\ application);}
+\DoxyCodeLine{00508\ }
+\DoxyCodeLine{00514\ \ \ \ \ \mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\_API}}\ \mbox{\hyperlink{struct_g_x_application}{GXApplication}}*\ \mbox{\hyperlink{gx_8h_a0db1db6340964d3e4a375e94448830b1}{gxCreateApplication}}(\mbox{\hyperlink{gx_8h_a87d336541f9413db24108524a42c0dfb}{GXApplicationOptions}}\ options);}
+\DoxyCodeLine{00515\ }
+\DoxyCodeLine{00520\ \ \ \ \ \mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\_API}}\ \mbox{\hyperlink{struct_g_x_application}{GXApplication}}*\ \mbox{\hyperlink{gx_8h_ae795a9c885bbb088fe3f8c95e51ec03a}{gxGetApplication}}();}
+\DoxyCodeLine{00521\ }
+\DoxyCodeLine{00525\ \ \ \ \ \mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\_API}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gx_8h_a8ae33d876e1541f89553a5f5f2db25a5}{gxExec}}();}
+\DoxyCodeLine{00526\ }
+\DoxyCodeLine{00532\ \ \ \ \ \mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\_API}}\ \mbox{\hyperlink{struct_g_x_object}{GXObject}}*\ \mbox{\hyperlink{gx_8h_a2abaf067aa03362d739017a0402e907d}{gxAsObject}}(\mbox{\hyperlink{struct_g_x_resource}{GXResource}}*\ res);}
 \DoxyCodeLine{00533\ }
-\DoxyCodeLine{00545\ \ \ \ \ \mbox{\hyperlink{struct_g_x_object}{GXObject}}*\ \mbox{\hyperlink{gx_8h_a64b1f8f3d374118a3ecc4cc3acaf4099}{gxCreateRenderObject}}(uint32\_t\ shader\_program,\ \mbox{\hyperlink{gx_8h_a12b600ff948f2fb55b73974e5bef17e2}{GXBufferUsageType}}\ vert\_buffer\_usage,\ \textcolor{keywordtype}{size\_t}\ vert\_size,\ \textcolor{keywordtype}{void}*\ vert\_data,\ \textcolor{keywordtype}{void}*\ user\_data);}
-\DoxyCodeLine{00546\ }
-\DoxyCodeLine{00553\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gx_8h_a4c68d00acc3d8a9fd725f4c73c59cf65}{gxDrawVertices}}(\mbox{\hyperlink{struct_g_x_object}{GXObject}}*\ \textcolor{keywordtype}{object},\ \textcolor{keywordtype}{size\_t}\ offset,\ \textcolor{keywordtype}{size\_t}\ count);}
-\DoxyCodeLine{00554\ }
-\DoxyCodeLine{00561\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gx_8h_ad8c02b92acb6a924278f35957c0bc010}{gxDrawElements}}(\mbox{\hyperlink{struct_g_x_object}{GXObject}}*\ \textcolor{keywordtype}{object},\ \textcolor{keywordtype}{size\_t}\ count,\ \mbox{\hyperlink{gx_8h_a7fd0c624c6c69095149db64b99d41cb1}{GXVertexAttributeType}}\ type);}
-\DoxyCodeLine{00562\ }
-\DoxyCodeLine{00567\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gx_8h_abe7c89be9f2c57abf121e64f359c946f}{gxBindObject}}(\mbox{\hyperlink{struct_g_x_object}{GXObject}}*\ \textcolor{keywordtype}{object});}
-\DoxyCodeLine{00568\ }
-\DoxyCodeLine{00574\ \ \ \ \ \mbox{\hyperlink{struct_g_x_window}{GXWindow}}*\ \mbox{\hyperlink{gx_8h_a892d1af800d602f6d1231e91792b6599}{gxAsWindow}}(\mbox{\hyperlink{struct_g_x_resource}{GXResource}}*\ res);}
-\DoxyCodeLine{00575\ }
-\DoxyCodeLine{00586\ \ \ \ \ \mbox{\hyperlink{struct_g_x_window}{GXWindow}}*\ \mbox{\hyperlink{gx_8h_ae6af81c46625a43468bac3d67d7a8aa9}{gxCreateWindow}}(\textcolor{keywordtype}{bool}\ vsync,\ \textcolor{keywordtype}{bool}\ show,\ \textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ title);}
-\DoxyCodeLine{00587\ }
-\DoxyCodeLine{00593\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gx_8h_a3d9d8203ffca6db536ff37c7f3277d87}{gxWindowSetDrawCallback}}(\mbox{\hyperlink{struct_g_x_window}{GXWindow}}*\ win,\ \mbox{\hyperlink{gx_8h_a8c1bb3a81f7d02905db77991971f46a0}{GXDrawCallback}}\ cb);}
-\DoxyCodeLine{00594\ }
-\DoxyCodeLine{00599\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gx_8h_acbe1e81fd4ce60bd48bbcd69586fda46}{gxWindowClose}}(\mbox{\hyperlink{struct_g_x_window}{GXWindow}}*\ win);}
-\DoxyCodeLine{00600\ }
-\DoxyCodeLine{00606\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{gx_8h_a2d042094acd151bcd40f68313b18c5cc}{gxWindowShouldClose}}(\mbox{\hyperlink{struct_g_x_window}{GXWindow}}*\ win);}
-\DoxyCodeLine{00607\ }
-\DoxyCodeLine{00613\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{gx_8h_ac2bf01e4a94435a96597360172f97edf}{gxDestroyResource}}(\mbox{\hyperlink{struct_g_x_resource}{GXResource}}*\ resource);}
-\DoxyCodeLine{00614\ }
-\DoxyCodeLine{00623\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gx_8h_a313412ba22eac50e2bff181c07a3882c}{gxUpdateViewport}}(\mbox{\hyperlink{struct_g_x_window}{GXWindow}}*\ win);}
-\DoxyCodeLine{00624\ }
-\DoxyCodeLine{00641\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gx_8h_a7bc420ab52671bb1267f5adb126fe0b6}{gxSetBackground}}(\textcolor{keywordtype}{float}\ r,\ \textcolor{keywordtype}{float}\ g,\ \textcolor{keywordtype}{float}\ b,\ \textcolor{keywordtype}{float}\ a);}
+\DoxyCodeLine{00544\ \ \ \ \ \mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\_API}}\ \mbox{\hyperlink{struct_g_x_object}{GXObject}}*\ \mbox{\hyperlink{gx_8h_a7e40738b1284e5dbcde6eb5b784a7dce}{gxCreateObject}}(uint32\_t\ shader\_program,\ uint32\_t\ vao,\ uint32\_t\ vbo,\ uint32\_t\ ebo,\ \textcolor{keywordtype}{void}*\ user\_data);}
+\DoxyCodeLine{00545\ }
+\DoxyCodeLine{00560\ \ \ \ \ \mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\_API}}\ \mbox{\hyperlink{struct_g_x_object}{GXObject}}*\ \mbox{\hyperlink{gx_8h_a659db3ee86251b34c1559d2e0d4b5fc2}{gxCreateRenderObjectWithElements}}(uint32\_t\ shader\_program,\ \mbox{\hyperlink{gx_8h_a12b600ff948f2fb55b73974e5bef17e2}{GXBufferUsageType}}\ vert\_buffer\_usage,\ \textcolor{keywordtype}{size\_t}\ vert\_size,\ \textcolor{keywordtype}{void}*\ vert\_data,\ \mbox{\hyperlink{gx_8h_a12b600ff948f2fb55b73974e5bef17e2}{GXBufferUsageType}}\ elem\_buffer\_usage,\ \textcolor{keywordtype}{size\_t}\ elem\_size,\ \textcolor{keywordtype}{void}*\ elem\_data,\ \textcolor{keywordtype}{void}*\ user\_data);}
+\DoxyCodeLine{00561\ }
+\DoxyCodeLine{00573\ \ \ \ \ \mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\_API}}\ \mbox{\hyperlink{struct_g_x_object}{GXObject}}*\ \mbox{\hyperlink{gx_8h_aab2628b36e323bf90bc243f63f0866be}{gxCreateRenderObject}}(uint32\_t\ shader\_program,\ \mbox{\hyperlink{gx_8h_a12b600ff948f2fb55b73974e5bef17e2}{GXBufferUsageType}}\ vert\_buffer\_usage,\ \textcolor{keywordtype}{size\_t}\ vert\_size,\ \textcolor{keywordtype}{void}*\ vert\_data,\ \textcolor{keywordtype}{void}*\ user\_data);}
+\DoxyCodeLine{00574\ }
+\DoxyCodeLine{00581\ \ \ \ \ \mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\_API}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gx_8h_abc5436d6460eafc32bb19140035d5ae5}{gxDrawVertices}}(\mbox{\hyperlink{struct_g_x_object}{GXObject}}*\ \textcolor{keywordtype}{object},\ \textcolor{keywordtype}{size\_t}\ offset,\ \textcolor{keywordtype}{size\_t}\ count);}
+\DoxyCodeLine{00582\ }
+\DoxyCodeLine{00589\ \ \ \ \ \mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\_API}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gx_8h_a15a9367529c06d0a350aaa5ba55c007a}{gxDrawElements}}(\mbox{\hyperlink{struct_g_x_object}{GXObject}}*\ \textcolor{keywordtype}{object},\ \textcolor{keywordtype}{size\_t}\ count,\ \mbox{\hyperlink{gx_8h_a7fd0c624c6c69095149db64b99d41cb1}{GXVertexAttributeType}}\ type);}
+\DoxyCodeLine{00590\ }
+\DoxyCodeLine{00595\ \ \ \ \ \mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\_API}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gx_8h_a657878bae99a8e40421757d908a1b58b}{gxBindObject}}(\mbox{\hyperlink{struct_g_x_object}{GXObject}}*\ \textcolor{keywordtype}{object});}
+\DoxyCodeLine{00596\ }
+\DoxyCodeLine{00602\ \ \ \ \ \mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\_API}}\ \mbox{\hyperlink{struct_g_x_window}{GXWindow}}*\ \mbox{\hyperlink{gx_8h_a2fb5f743a655bf57af683374f45fb0bd}{gxAsWindow}}(\mbox{\hyperlink{struct_g_x_resource}{GXResource}}*\ res);}
+\DoxyCodeLine{00603\ }
+\DoxyCodeLine{00614\ \ \ \ \ \mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\_API}}\ \mbox{\hyperlink{struct_g_x_window}{GXWindow}}*\ \mbox{\hyperlink{gx_8h_a3d9a47311f9680f1273c3558dff5bc9a}{gxCreateWindow}}(\textcolor{keywordtype}{bool}\ vsync,\ \textcolor{keywordtype}{bool}\ show,\ \textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ title);}
+\DoxyCodeLine{00615\ }
+\DoxyCodeLine{00621\ \ \ \ \ \mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\_API}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gx_8h_adf339476dbd2cf9cb7490ff0f72b3385}{gxWindowSetDrawCallback}}(\mbox{\hyperlink{struct_g_x_window}{GXWindow}}*\ win,\ \mbox{\hyperlink{gx_8h_a8c1bb3a81f7d02905db77991971f46a0}{GXDrawCallback}}\ cb);}
+\DoxyCodeLine{00622\ }
+\DoxyCodeLine{00627\ \ \ \ \ \mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\_API}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gx_8h_adeb3443038f5fb76f848907dd8be331c}{gxWindowClose}}(\mbox{\hyperlink{struct_g_x_window}{GXWindow}}*\ win);}
+\DoxyCodeLine{00628\ }
+\DoxyCodeLine{00634\ \ \ \ \ \mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\_API}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{gx_8h_a6cfdb3d6d0f2b2e6b3eca571697bf55a}{gxWindowShouldClose}}(\mbox{\hyperlink{struct_g_x_window}{GXWindow}}*\ win);}
+\DoxyCodeLine{00635\ }
+\DoxyCodeLine{00641\ \ \ \ \ \mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\_API}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{gx_8h_a1aa46ccbe54658f7a4caf0dc29eb5fad}{gxDestroyResource}}(\mbox{\hyperlink{struct_g_x_resource}{GXResource}}*\ resource);}
 \DoxyCodeLine{00642\ }
-\DoxyCodeLine{00652\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gx_8h_a8aecfe1a391495d33781697af5bd7ca6}{gxViewport}}(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y,\ \textcolor{keywordtype}{int}\ w,\ \textcolor{keywordtype}{int}\ h);}
-\DoxyCodeLine{00653\ }
-\DoxyCodeLine{00663\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gx_8h_a549bfcfd0c6ea7c69332aaa51f57bcdf}{gxClearColor}}(\textcolor{keywordtype}{float}\ r,\ \textcolor{keywordtype}{float}\ g,\ \textcolor{keywordtype}{float}\ b,\ \textcolor{keywordtype}{float}\ a);}
-\DoxyCodeLine{00664\ }
-\DoxyCodeLine{00673\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gx_8h_a934abf23cb4bb4057261fd0d907c64df}{gxClear}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ bit);}
-\DoxyCodeLine{00674\ }
-\DoxyCodeLine{00684\ \ \ \ \ \mbox{\hyperlink{struct_g_x_shader_compilation_result}{GXShaderCompilationResult}}\ \mbox{\hyperlink{gx_8h_a53ae0ebaa74ff8ffc37f5463f447ecac}{gxCompileGLSLShader}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ shader\_src,\ \mbox{\hyperlink{gx_8h_a2eb7ea5dfbda0b5ecb3846115c56fe83}{GXShaderType}}\ shader\_type);}
-\DoxyCodeLine{00685\ \ \ \ \ }
-\DoxyCodeLine{00694\ \ \ \ \ \mbox{\hyperlink{struct_g_x_program_compilation_result}{GXProgramCompilationResult}}\ \mbox{\hyperlink{gx_8h_ad8ce4f450cf4d5c5d0371b1996a204c4}{gxCompileGLSLProgram}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ vertex\_shader\_src,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ fragment\_shader\_src);}
-\DoxyCodeLine{00695\ }
-\DoxyCodeLine{00700\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{gx_8h_a92e3fa245e65a66422dbc2e1aeb3f3ca}{gxGenVertexArrayObject}}();}
-\DoxyCodeLine{00701\ }
-\DoxyCodeLine{00706\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gx_8h_a467d11a0616180af2bd027a45ba1bfe7}{gxBindVertexArrayObject}}(uint32\_t\ vao);}
-\DoxyCodeLine{00707\ }
-\DoxyCodeLine{00719\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{gx_8h_a74efe9d59cc0317c77962481d00cb548}{gxGenBufferObject}}(\mbox{\hyperlink{gx_8h_acf407c4416240bb057bea98cc48d2a11}{GXBufferType}}\ buffer\_type,\ \mbox{\hyperlink{gx_8h_a12b600ff948f2fb55b73974e5bef17e2}{GXBufferUsageType}}\ buffer\_usage,\ \textcolor{keywordtype}{size\_t}\ size,\ \textcolor{keywordtype}{void}*\ data);}
-\DoxyCodeLine{00720\ }
-\DoxyCodeLine{00728\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gx_8h_a4c53f942aaf94845b7eb170eb166afac}{gxBindBufferObject}}(\mbox{\hyperlink{gx_8h_acf407c4416240bb057bea98cc48d2a11}{GXBufferType}}\ buffer\_type,\ uint32\_t\ buffer);}
+\DoxyCodeLine{00651\ \ \ \ \ \mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\_API}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gx_8h_ace04bba04a3ecdf099920b3e37893a37}{gxUpdateViewport}}(\mbox{\hyperlink{struct_g_x_window}{GXWindow}}*\ win);}
+\DoxyCodeLine{00652\ }
+\DoxyCodeLine{00669\ \ \ \ \ \mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\_API}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gx_8h_ae7c6f35b4ea08f256436cac499d28a32}{gxSetBackground}}(\textcolor{keywordtype}{float}\ r,\ \textcolor{keywordtype}{float}\ g,\ \textcolor{keywordtype}{float}\ b,\ \textcolor{keywordtype}{float}\ a);}
+\DoxyCodeLine{00670\ }
+\DoxyCodeLine{00680\ \ \ \ \ \mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\_API}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gx_8h_a159d6fac47e0dbd05a6501b16b3d1734}{gxViewport}}(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y,\ \textcolor{keywordtype}{int}\ w,\ \textcolor{keywordtype}{int}\ h);}
+\DoxyCodeLine{00681\ }
+\DoxyCodeLine{00691\ \ \ \ \ \mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\_API}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gx_8h_a97a09bae4620344e1d4fe442054a0936}{gxClearColor}}(\textcolor{keywordtype}{float}\ r,\ \textcolor{keywordtype}{float}\ g,\ \textcolor{keywordtype}{float}\ b,\ \textcolor{keywordtype}{float}\ a);}
+\DoxyCodeLine{00692\ }
+\DoxyCodeLine{00701\ \ \ \ \ \mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\_API}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gx_8h_a821eaada652d3f7053a97370ab89c4a9}{gxClear}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ bit);}
+\DoxyCodeLine{00702\ }
+\DoxyCodeLine{00712\ \ \ \ \ \mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\_API}}\ \mbox{\hyperlink{struct_g_x_shader_compilation_result}{GXShaderCompilationResult}}\ \mbox{\hyperlink{gx_8h_a8fbc037f643fccb0c757f314f8663004}{gxCompileGLSLShader}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ shader\_src,\ \mbox{\hyperlink{gx_8h_a2eb7ea5dfbda0b5ecb3846115c56fe83}{GXShaderType}}\ shader\_type);}
+\DoxyCodeLine{00713\ \ \ \ \ }
+\DoxyCodeLine{00722\ \ \ \ \ \mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\_API}}\ \mbox{\hyperlink{struct_g_x_program_compilation_result}{GXProgramCompilationResult}}\ \mbox{\hyperlink{gx_8h_a1ce3bf2a82c71f3058b4e098ba5813eb}{gxCompileGLSLProgram}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ vertex\_shader\_src,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ fragment\_shader\_src);}
+\DoxyCodeLine{00723\ }
+\DoxyCodeLine{00728\ \ \ \ \ \mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\_API}}\ uint32\_t\ \mbox{\hyperlink{gx_8h_a3077b46d9f9c55c4b2f704595238013e}{gxGenVertexArrayObject}}();}
 \DoxyCodeLine{00729\ }
-\DoxyCodeLine{00740\ \ \ \ \ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{gx_8h_aff01850f8640b86e1031bdc63fc04776}{gxMapBufferRange}}(\mbox{\hyperlink{gx_8h_acf407c4416240bb057bea98cc48d2a11}{GXBufferType}}\ buffer\_type,\ \textcolor{keywordtype}{size\_t}\ offset,\ \textcolor{keywordtype}{size\_t}\ length,\ \mbox{\hyperlink{gx_8h_a0e90335b7087af15a4b53fb23b65faf2}{GXMappingBits}}\ bits);}
-\DoxyCodeLine{00741\ }
-\DoxyCodeLine{00749\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{gx_8h_a16c58abba3117f7d571ae6c1d15cbc18}{gxUnmapBuffer}}(\mbox{\hyperlink{gx_8h_acf407c4416240bb057bea98cc48d2a11}{GXBufferType}}\ buffer\_type);}
-\DoxyCodeLine{00750\ }
-\DoxyCodeLine{00760\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gx_8h_a83ee4ca2977257cd74304105ae909dc6}{gxBufferSubData}}(\mbox{\hyperlink{gx_8h_acf407c4416240bb057bea98cc48d2a11}{GXBufferType}}\ buffer\_type,\ \textcolor{keywordtype}{size\_t}\ offset,\ \textcolor{keywordtype}{size\_t}\ length,\ \textcolor{keywordtype}{void}*\ data);}
-\DoxyCodeLine{00761\ }
-\DoxyCodeLine{00771\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{gx_8h_a94e5502c637a126ba77beb45b8b9a713}{gxUpdateVertices}}(\mbox{\hyperlink{struct_g_x_object}{GXObject}}*\ \textcolor{keywordtype}{object},\ \textcolor{keywordtype}{size\_t}\ offset,\ \textcolor{keywordtype}{size\_t}\ length,\ \textcolor{keywordtype}{void}*\ data);}
-\DoxyCodeLine{00772\ }
-\DoxyCodeLine{00782\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{gx_8h_ac8eac1b081068eb1ceee1b7704808212}{gxUpdateElements}}(\mbox{\hyperlink{struct_g_x_object}{GXObject}}*\ \textcolor{keywordtype}{object},\ \textcolor{keywordtype}{size\_t}\ offset,\ \textcolor{keywordtype}{size\_t}\ length,\ \textcolor{keywordtype}{void}*\ data);}
-\DoxyCodeLine{00783\ }
-\DoxyCodeLine{00796\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gx_8h_af827ad56a1afd8f8dc683a37a727023c}{gxSetVertexAttribute}}(\mbox{\hyperlink{struct_g_x_object}{GXObject}}*\ \textcolor{keywordtype}{object},\ uint32\_t\ index,\ \textcolor{keywordtype}{int}\ size,\ \mbox{\hyperlink{gx_8h_a7fd0c624c6c69095149db64b99d41cb1}{GXVertexAttributeType}}\ type,\ \textcolor{keywordtype}{bool}\ normalize,\ \textcolor{keywordtype}{size\_t}\ stride,\ \textcolor{keywordtype}{void}*\ pointer);}
-\DoxyCodeLine{00797\ }
-\DoxyCodeLine{00803\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gx_8h_ac2471172b9f13681c22eec227236ca88}{gxEnableVertexAttribute}}(\mbox{\hyperlink{struct_g_x_object}{GXObject}}*\ \textcolor{keywordtype}{object},\ uint32\_t\ index);}
-\DoxyCodeLine{00804\ }
-\DoxyCodeLine{00810\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gx_8h_a786b10a76cfb0f31ec60a137bb84d2c5}{gxDisableVertexAttribute}}(\mbox{\hyperlink{struct_g_x_object}{GXObject}}*\ \textcolor{keywordtype}{object},\ uint32\_t\ index);}
+\DoxyCodeLine{00734\ \ \ \ \ \mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\_API}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gx_8h_aad3aebf38b4a149f7ad2643023ce40a2}{gxBindVertexArrayObject}}(uint32\_t\ vao);}
+\DoxyCodeLine{00735\ }
+\DoxyCodeLine{00747\ \ \ \ \ \mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\_API}}\ uint32\_t\ \mbox{\hyperlink{gx_8h_aba955665e39560b0ab57de8cbcf3be70}{gxGenBufferObject}}(\mbox{\hyperlink{gx_8h_acf407c4416240bb057bea98cc48d2a11}{GXBufferType}}\ buffer\_type,\ \mbox{\hyperlink{gx_8h_a12b600ff948f2fb55b73974e5bef17e2}{GXBufferUsageType}}\ buffer\_usage,\ \textcolor{keywordtype}{size\_t}\ size,\ \textcolor{keywordtype}{void}*\ data);}
+\DoxyCodeLine{00748\ }
+\DoxyCodeLine{00756\ \ \ \ \ \mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\_API}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gx_8h_ac956a9305c60a9933b6962a31ea88d76}{gxBindBufferObject}}(\mbox{\hyperlink{gx_8h_acf407c4416240bb057bea98cc48d2a11}{GXBufferType}}\ buffer\_type,\ uint32\_t\ buffer);}
+\DoxyCodeLine{00757\ }
+\DoxyCodeLine{00768\ \ \ \ \ \mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\_API}}\ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{gx_8h_afcb576077abbd128ce2dcfb65ac39b25}{gxMapBufferRange}}(\mbox{\hyperlink{gx_8h_acf407c4416240bb057bea98cc48d2a11}{GXBufferType}}\ buffer\_type,\ \textcolor{keywordtype}{size\_t}\ offset,\ \textcolor{keywordtype}{size\_t}\ length,\ \mbox{\hyperlink{gx_8h_a0e90335b7087af15a4b53fb23b65faf2}{GXMappingBits}}\ bits);}
+\DoxyCodeLine{00769\ }
+\DoxyCodeLine{00777\ \ \ \ \ \mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\_API}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{gx_8h_a07c176d000a71ce121d312c23c6a2897}{gxUnmapBuffer}}(\mbox{\hyperlink{gx_8h_acf407c4416240bb057bea98cc48d2a11}{GXBufferType}}\ buffer\_type);}
+\DoxyCodeLine{00778\ }
+\DoxyCodeLine{00788\ \ \ \ \ \mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\_API}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gx_8h_a50db3fa3fa56eed3630e3dae906cfcef}{gxBufferSubData}}(\mbox{\hyperlink{gx_8h_acf407c4416240bb057bea98cc48d2a11}{GXBufferType}}\ buffer\_type,\ \textcolor{keywordtype}{size\_t}\ offset,\ \textcolor{keywordtype}{size\_t}\ length,\ \textcolor{keywordtype}{void}*\ data);}
+\DoxyCodeLine{00789\ }
+\DoxyCodeLine{00799\ \ \ \ \ \mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\_API}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{gx_8h_aa31c71a84050bf15b7b8f5cbde86f83f}{gxUpdateBufferObject}}(\mbox{\hyperlink{gx_8h_acf407c4416240bb057bea98cc48d2a11}{GXBufferType}}\ type,\ uint32\_t\ bo,\ \textcolor{keywordtype}{size\_t}\ offset,\ \textcolor{keywordtype}{size\_t}\ length,\ \textcolor{keywordtype}{void}*\ data);}
+\DoxyCodeLine{00800\ }
+\DoxyCodeLine{00810\ \ \ \ \ \mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\_API}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{gx_8h_ad459959e53737a55eafb3ba4113b1531}{gxUpdateVertices}}(\mbox{\hyperlink{struct_g_x_object}{GXObject}}*\ \textcolor{keywordtype}{object},\ \textcolor{keywordtype}{size\_t}\ offset,\ \textcolor{keywordtype}{size\_t}\ length,\ \textcolor{keywordtype}{void}*\ data);}
 \DoxyCodeLine{00811\ }
-\DoxyCodeLine{00812\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
-\DoxyCodeLine{00813\ \}}
-\DoxyCodeLine{00814\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \_\_cplusplus}}
-\DoxyCodeLine{00815\ }
-\DoxyCodeLine{00816\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \_\_GX\_INCLUDE\_GX\_H\_\_}}
+\DoxyCodeLine{00821\ \ \ \ \ \mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\_API}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{gx_8h_a633b58b8bd875b5ca34a45cc35b7bc59}{gxUpdateElements}}(\mbox{\hyperlink{struct_g_x_object}{GXObject}}*\ \textcolor{keywordtype}{object},\ \textcolor{keywordtype}{size\_t}\ offset,\ \textcolor{keywordtype}{size\_t}\ length,\ \textcolor{keywordtype}{void}*\ data);}
+\DoxyCodeLine{00822\ }
+\DoxyCodeLine{00832\ \ \ \ \ \mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\_API}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{gx_8h_ac753b19d674c69b830367d1d8f999450}{gxUpdateUniformBlock}}(uint32\_t\ ubo,\ \textcolor{keywordtype}{size\_t}\ offset,\ \textcolor{keywordtype}{size\_t}\ length,\ \textcolor{keywordtype}{void}*\ data);}
+\DoxyCodeLine{00833\ }
+\DoxyCodeLine{00846\ \ \ \ \ \mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\_API}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gx_8h_aaa112062f45611a613b934fd0f67595c}{gxSetVertexAttribute}}(\mbox{\hyperlink{struct_g_x_object}{GXObject}}*\ \textcolor{keywordtype}{object},\ uint32\_t\ index,\ \textcolor{keywordtype}{int}\ size,\ \mbox{\hyperlink{gx_8h_a7fd0c624c6c69095149db64b99d41cb1}{GXVertexAttributeType}}\ type,\ \textcolor{keywordtype}{bool}\ normalize,\ \textcolor{keywordtype}{size\_t}\ stride,\ \textcolor{keywordtype}{void}*\ pointer);}
+\DoxyCodeLine{00847\ }
+\DoxyCodeLine{00853\ \ \ \ \ \mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\_API}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gx_8h_a3654268f57a624504f3b68f76c69bc7e}{gxEnableVertexAttribute}}(\mbox{\hyperlink{struct_g_x_object}{GXObject}}*\ \textcolor{keywordtype}{object},\ uint32\_t\ index);}
+\DoxyCodeLine{00854\ }
+\DoxyCodeLine{00860\ \ \ \ \ \mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\_API}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gx_8h_acf40ebe71405cda868c8e45436506ecd}{gxDisableVertexAttribute}}(\mbox{\hyperlink{struct_g_x_object}{GXObject}}*\ \textcolor{keywordtype}{object},\ uint32\_t\ index);}
+\DoxyCodeLine{00861\ }
+\DoxyCodeLine{00868\ \ \ \ \ \mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\_API}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gx_8h_ac571d1787fc1f3dd62fa0b5263ffb52d}{gxBindBufferBase}}(\mbox{\hyperlink{gx_8h_acf407c4416240bb057bea98cc48d2a11}{GXBufferType}}\ type,\ uint32\_t\ binding\_point,\ uint32\_t\ bo);}
+\DoxyCodeLine{00869\ }
+\DoxyCodeLine{00875\ \ \ \ \ \mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\_API}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gx_8h_ad2751a198e9e8a580f2e0b91573f8380}{gxBindUniformBlock}}(uint32\_t\ binding\_point,\ uint32\_t\ ubo);}
+\DoxyCodeLine{00876\ }
+\DoxyCodeLine{00881\ \ \ \ \ \mbox{\hyperlink{gx_8h_ad02930e4573c489f8c5703aaf4d3425b}{GX\_API}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gx_8h_ae292414c966d829a560ea8a52d680206}{gxUseShader}}(\mbox{\hyperlink{struct_g_x_object}{GXObject}}*\ \textcolor{keywordtype}{object});}
+\DoxyCodeLine{00882\ }
+\DoxyCodeLine{00883\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00884\ \}}
+\DoxyCodeLine{00885\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \_\_cplusplus}}
+\DoxyCodeLine{00886\ }
+\DoxyCodeLine{00887\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \_\_GX\_INCLUDE\_GX\_H\_\_}}
 
 \end{DoxyCode}
