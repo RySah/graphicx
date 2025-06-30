@@ -34,7 +34,8 @@ case $OS in
             sudo dpkg --add-architecture i386
             sudo apt update
             sudo apt install -y gcc-multilib g++-multilib \
-                libx11-dev:i386 libxkbcommon-dev:i386 libwayland-dev:i386 libgl1-mesa-dev:i386
+                libx11-dev:i386 libxkbcommon-dev:i386 libwayland-dev:i386 libgl1-mesa-dev:i386 \
+                libwayland-client0:i386 libwayland-cursor0:i386 libwayland-egl1:i386 libxkbcommon0:i386
         else
             sudo apt install -y libwayland-dev libxkbcommon-dev xorg-dev libgl1-mesa-dev
         fi
