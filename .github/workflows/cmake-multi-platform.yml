@@ -60,13 +60,7 @@ jobs:
 
     - name: Run pre-CMake setup (Linux only)
       if: runner.os == 'Linux'
-      run: ./install_dep_linux.sh
-
-    - name: Install 32-bit cross packages (Linux) (x86)
-      if: runner.os == 'Linux' && matrix.arch == 'x86'
-      run: |
-        sudo apt-get update
-        sudo apt-get install gcc-multilib g++-multilib
+      run: ./install_dep_linux.sh --arch ${{ matrix.arch }}
 
     - name: Configure CMake (static) (Windows)
       if: runner.os == 'Windows'
