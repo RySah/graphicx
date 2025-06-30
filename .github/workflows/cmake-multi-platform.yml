@@ -110,19 +110,19 @@ jobs:
       # See https://cmake.org/cmake/help/latest/manual/ctest.1.html for more detail
       run: ctest --build-config ${{ matrix.build_type }}
 
-    - name: Upload static libary artifacts (Windows only)
+    - name: Upload artifacts (Windows only)
       if: runner.os == 'Windows'
       uses: actions/upload-artifact@v4
       with:
         name: static-${{ matrix.os }}-${{ matrix.arch }}
-        path: build/gx/Release/gx.lib
+        path: ${{ steps.strings.outputs.build-output-dir }}
 
-    - name: Upload static library artifacts (Linux only)
+    - name: Upload artifacts (Linux only)
       if: runner.os == 'Linux'
       uses: actions/upload-artifact@v4
       with:
         name: static-${{ matrix.os }}-${{ matrix.arch }}
-        path: build/gx/libgx.a
+        path: ${{ steps.strings.outputs.build-output-dir }}
 
     - name: Configure CMake (dynamic) (Windows)
       if: runner.os == 'Windows'
@@ -172,20 +172,16 @@ jobs:
       # See https://cmake.org/cmake/help/latest/manual/ctest.1.html for more detail
       run: ctest --build-config ${{ matrix.build_type }}
 
-    - name: Upload GX (dynamic) libary artifacts (Windows only)
+    - name: Upload artifacts (Windows only)
       if: runner.os == 'Windows'
       uses: actions/upload-artifact@v4
       with:
-        name: gx-dynamic-${{ matrix.os }}
-        path: |
-             build/gx/Release/gx.dll
-             build/dep/glfw-3.4/src/Release/glfw3.dll
+        name: dynamic-${{ matrix.os }}-${{ matrix.arch }}
+        path: ${{ steps.strings.outputs.build-output-dir }}
 
     - name: Upload GX (dynamic) library artifacts (Linux only)
       if: runner.os == 'Linux'
       uses: actions/upload-artifact@v4
       with:
-        name: gx-dynamic-${{ matrix.os }}
-        path: |
-            build/gx/libgx.so
-            build/dep/glfw-3.4/src/libglfw.so
+        name: dynamic-${{ matrix.os }}-${{ matrix.arch }}
+        path: ${{ steps.strings.outputs.build-output-dir }}
