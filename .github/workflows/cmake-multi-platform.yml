@@ -22,6 +22,7 @@ jobs:
       # To add more build types (Release, Debug, RelWithDebInfo, etc.) customize the build_type list.
       matrix:
         os: [ubuntu-latest, windows-latest]
+        arch: [x86, x64, arm64]
         build_type: [Release]
         c_compiler: [gcc, clang, cl]
         include:
@@ -40,6 +41,8 @@ jobs:
             c_compiler: cl
           - os: ubuntu-latest
             c_compiler: clang
+          - os: ubuntu-latest
+            arch: arm64
 
     steps:
     - uses: actions/checkout@v4
@@ -59,16 +62,43 @@ jobs:
       if: runner.os == 'Linux'
       run: ./install_dep_linux.sh
 
-    - name: Configure CMake (static)
-      # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
-      # See https://cmake.org/cmake/help/latest/variable/CMAKE_BUILD_TYPE.html?highlight=cmake_build_type
-      run: >
-        cmake -B ${{ steps.strings.outputs.build-output-dir }}
-        -DCMAKE_CXX_COMPILER=${{ matrix.cpp_compiler }}
-        -DCMAKE_C_COMPILER=${{ matrix.c_compiler }}
-        -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
-        -DBUILD_SHARED_LIBS=OFF
+    - name: Configure CMake (static) (Windows)
+      if: runner.os == 'Windows'
+      run: |
+        $arch = "${{ matrix.arch }}"
+        if ($arch -eq "x86") {
+          $cmake_arch = "Win32"
+        } elseif ($arch -eq "x64") {
+          $cmake_arch = "x64"
+        } elseif ($arch -eq "arm64") {
+          $cmake_arch = "ARM64"
+        }
+        cmake -B ${{ steps.strings.outputs.build-output-dir }} `
+        -G "Visual Studio 17 2022" -A $cmake_arch `
+        -DCMAKE_BUILD_TYPE=${{ matrix.build_type }} `
+        -DBUILD_SHARED_LIBS=OFF `
         -S ${{ github.workspace }}
+
+    - name: Configure CMake (static) (Linux)
+      if: runner.os == 'Linux'
+      run: |
+        arch="${{ matrix.arch }}"
+        if [ "$arch" == "x86" ]; then
+            export CFLAGS="-m32"
+            export CXXFLAGS="-m32"
+        elif [ "$arch" == "x64" ]; then
+            export CFLAGS="-m64"
+            export CXXFLAGS="-m64"
+        elif [ "$arch" == "arm64" ]; then
+            echo "Cross-compiling  to arm64 needs a toolchain, skipping for now"
+            exit 0
+        fi
+        cmake -B ${{ steps.strings.outputs.build-output-dir }} \
+            -DCMAKE_CXX_COMPILER=${{ matrix.cpp_compiler }} \
+            -DCMAKE_C_COMPILER=${{ matrix.c_compiler }} \
+            -DCMAKE_BUILD_TYPE=${{ matrix.build_type }} \
+            -DBUILD_SHARED_LIBS=0FF \
+            -S ${{ github.workspace }}
 
     - name: Build (static)
       # Build your program with the given configuration. Note that --config is needed because the default Windows generator is a multi-config generator (Visual Studio generator).
@@ -80,30 +110,57 @@ jobs:
       # See https://cmake.org/cmake/help/latest/manual/ctest.1.html for more detail
       run: ctest --build-config ${{ matrix.build_type }}
 
-    - name: Upload GX (static) libary artifacts (Windows only)
+    - name: Upload static libary artifacts (Windows only)
       if: runner.os == 'Windows'
       uses: actions/upload-artifact@v4
       with:
-        name: gx-static-${{ matrix.os }}
+        name: static-${{ matrix.os }}-${{ matrix.arch }}
         path: build/gx/Release/gx.lib
 
-    - name: Upload GX (static) library artifacts (Linux only)
+    - name: Upload static library artifacts (Linux only)
       if: runner.os == 'Linux'
       uses: actions/upload-artifact@v4
       with:
-        name: gx-static-${{ matrix.os }}
+        name: static-${{ matrix.os }}-${{ matrix.arch }}
         path: build/gx/libgx.a
 
-    - name: Configure CMake (dynamic)
-      # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
-      # See https://cmake.org/cmake/help/latest/variable/CMAKE_BUILD_TYPE.html?highlight=cmake_build_type
-      run: >
-        cmake -B ${{ steps.strings.outputs.build-output-dir }}
-        -DCMAKE_CXX_COMPILER=${{ matrix.cpp_compiler }}
-        -DCMAKE_C_COMPILER=${{ matrix.c_compiler }}
-        -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
-        -DBUILD_SHARED_LIBS=ON
+    - name: Configure CMake (dynamic) (Windows)
+      if: runner.os == 'Windows'
+      run: |
+        $arch = "${{ matrix.arch }}"
+        if ($arch -eq "x86") {
+          $cmake_arch = "Win32"
+        } elseif ($arch -eq "x64") {
+          $cmake_arch = "x64"
+        } elseif ($arch -eq "arm64") {
+          $cmake_arch = "ARM64"
+        }
+        cmake -B ${{ steps.strings.outputs.build-output-dir }} `
+        -G "Visual Studio 17 2022" -A $cmake_arch `
+        -DCMAKE_BUILD_TYPE=${{ matrix.build_type }} `
+        -DBUILD_SHARED_LIBS=ON `
         -S ${{ github.workspace }}
+
+    - name: Configure CMake (dynamic) (Linux)
+      if: runner.os == 'Linux'
+      run: |
+        arch="${{ matrix.arch }}"
+        if [ "$arch" == "x86" ]; then
+            export CFLAGS="-m32"
+            export CXXFLAGS="-m32"
+        elif [ "$arch" == "x64" ]; then
+            export CFLAGS="-m64"
+            export CXXFLAGS="-m64"
+        elif [ "$arch" == "arm64" ]; then
+            echo "Cross-compiling  to arm64 needs a toolchain, skipping for now"
+            exit 0
+        fi
+        cmake -B ${{ steps.strings.outputs.build-output-dir }} \
+            -DCMAKE_CXX_COMPILER=${{ matrix.cpp_compiler }} \
+            -DCMAKE_C_COMPILER=${{ matrix.c_compiler }} \
+            -DCMAKE_BUILD_TYPE=${{ matrix.build_type }} \
+            -DBUILD_SHARED_LIBS=ON \
+            -S ${{ github.workspace }}
 
     - name: Build (dynamic)
       # Build your program with the given configuration. Note that --config is needed because the default Windows generator is a multi-config generator (Visual Studio generator).

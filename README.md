@@ -3,7 +3,7 @@
 Graphics libary for games and applications.
 
 ## GX
-Main libary for which others rely, provides main API.
+Provides main graphical API.
 
 ### Getting started
 You can get the latest binaries from the release page, or [build it yourself](gx/BUILD.md).
